@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>CHECKFIRST - AI-Powered Third-Party Risk Management</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#135bec",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+    <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+    <div class="relative w-full flex flex-col group/design-root overflow-x-hidden">
+        <!-- Header -->
+        <header class="sticky top-0 z-50 bg-background-dark/80 backdrop-blur-sm border-b border-white/10">
+            <div class="container mx-auto px-4">
+                <div class="flex h-16 items-center justify-between">
+                    <a class="flex items-center gap-2" href="#">
+                        <span class="material-symbols-outlined text-primary text-3xl">verified_user</span>
+                        <span class="text-xl font-bold">CHECKFIRST</span>
+                    </a>
+                    <button class="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg lg:hidden">
+                        <span class="material-symbols-outlined text-3xl">menu</span>
+                    </button>
+                    <nav class="hidden lg:flex items-center gap-6">
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#features">Features</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#services">Services</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#pricing">Pricing</a>
+                        <a class="text-sm font-medium hover:text-primary transition-colors" href="#contact">Contact</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section id="home">
+                <div class="relative flex h-auto min-h-[90vh] w-full flex-col bg-background-dark">
+                    <div class="@container">
+                        <div class="@[480px]:p-4">
+                            <div class="flex min-h-[calc(90vh-2rem)] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 items-center justify-center p-4 text-center" style='background-image: linear-gradient(rgba(16, 22, 34, 0.6) 0%, rgba(16, 22, 34, 1) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDmdJ7LEO4r9eZdCNLKyBX17WVcMRdbUlnY6tOjC7cB1WrFMjRQptLvLxXInSDWM6ai4BMgN5T26aNdf7RSmze5xRe2ZvafHPPuQta0DreNVW0pqOE_cCS3N4UuFofofNqEfARPMVwE-Ck6mrjdVRg4uNNodAaFVY2OEHbj8feDZQzxMLMzReJKMPe8-1kn7zN6Rm3iFQtK2r9cL4vAXa7Vmh2Razoslzt8ZSGzPyojT6U62LdLyo4USjoO8TosDTZ4eFIzxEmvnBs");'>
+                                <div class="flex flex-col gap-2 max-w-3xl">
+                                    <h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-6xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                        Revolutionize Third-Party Risk Management with AI
+                                    </h1>
+                                    <h2 class="text-white/80 text-base font-normal leading-normal @[480px]:text-lg @[480px]:font-normal @[480px]:leading-normal">
+                                        CHECKFIRST leverages AI agents and comprehensive security frameworks to automate and accelerate your security assessments.
+                                    </h2>
+                                </div>
+                                <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+                                    <span class="truncate">Get a Demo</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feature Section -->
+            <section class="py-16 sm:py-24" id="features">
+                <div class="flex flex-col gap-10 px-4 container mx-auto @container">
+                    <div class="flex flex-col gap-4 text-center items-center">
+                        <h2 class="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
+                            Why CHECKFIRST?
+                        </h2>
+                        <p class="text-white/80 text-base font-normal leading-normal max-w-[720px]">
+                            Our AI-powered TPRM solution provides unparalleled speed, accuracy, and scalability to secure your supply chain.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-4 p-0">
+                        <div class="flex flex-1 gap-4 rounded-xl border border-[#324467]/50 bg-[#192233]/50 p-6 flex-col">
+                            <span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-white text-lg font-bold leading-tight">AI-Powered Speed</h3>
+                                <p class="text-[#92a4c9] text-sm font-normal leading-normal">Automate and accelerate security reviews with intelligent AI agents, reducing assessment times from weeks to hours.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-1 gap-4 rounded-xl border border-[#324467]/50 bg-[#192233]/50 p-6 flex-col">
+                            <span class="material-symbols-outlined text-primary text-3xl">shield_lock</span>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-white text-lg font-bold leading-tight">Comprehensive Frameworks</h3>
+                                <p class="text-[#92a4c9] text-sm font-normal leading-normal">Integrate seamlessly with leading security standards like NIST, ISO 27001, and SOC 2 for robust compliance.</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-1 gap-4 rounded-xl border border-[#324467]/50 bg-[#192233]/50 p-6 flex-col">
+                            <span class="material-symbols-outlined text-primary text-3xl">dashboard</span>
+                            <div class="flex flex-col gap-1">
+                                <h3 class="text-white text-lg font-bold leading-tight">Unified SaaS Platform</h3>
+                                <p class="text-[#92a4c9] text-sm font-normal leading-normal">Manage all third-party risks from a single, intuitive dashboard with real-time insights and reporting.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section class="py-16 sm:py-24 bg-[#192233]/30" id="services">
+                <div class="container mx-auto px-4 flex flex-col items-center gap-10">
+                    <div class="flex flex-col gap-4 text-center items-center">
+                        <h2 class="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
+                            A Complete Risk Management Solution
+                        </h2>
+                        <p class="text-white/80 text-base font-normal leading-normal max-w-[720px]">
+                            Explore our core services designed to provide a 360-degree view of your third-party security posture.
+                        </p>
+                    </div>
+                    <div class="flex flex-col gap-3 w-full max-w-3xl">
+                        <details class="flex flex-col rounded-lg border border-[#324467] bg-background-dark px-4 py-2 group" open>
+                            <summary class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none">
+                                <p class="text-white text-base font-medium leading-normal">AI-Agent Security Assessments</p>
+                                <span class="material-symbols-outlined text-white group-open:rotate-180 transition-transform">expand_more</span>
+                            </summary>
+                            <p class="text-[#92a4c9] text-sm font-normal leading-normal pb-2">
+                                Our platform utilizes advanced AI agents to conduct thorough and rapid security assessments, reducing manual effort and delivering actionable insights in a fraction of the time.
+                            </p>
+                        </details>
+                        <details class="flex flex-col rounded-lg border border-[#324467] bg-background-dark px-4 py-2 group">
+                            <summary class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none">
+                                <p class="text-white text-base font-medium leading-normal">Multi-Framework Integration</p>
+                                <span class="material-symbols-outlined text-white group-open:rotate-180 transition-transform">expand_more</span>
+                            </summary>
+                            <p class="text-[#92a4c9] text-sm font-normal leading-normal pb-2">
+                                Seamlessly align your TPRM program with multiple industry-standard security frameworks. Our platform maps controls across NIST, ISO 27001, SOC 2, and more, simplifying compliance and reporting.
+                            </p>
+                        </details>
+                        <details class="flex flex-col rounded-lg border border-[#324467] bg-background-dark px-4 py-2 group">
+                            <summary class="flex cursor-pointer items-center justify-between gap-6 py-2 list-none">
+                                <p class="text-white text-base font-medium leading-normal">The CHECKFIRST SaaS Solution</p>
+                                <span class="material-symbols-outlined text-white group-open:rotate-180 transition-transform">expand_more</span>
+                            </summary>
+                            <p class="text-[#92a4c9] text-sm font-normal leading-normal pb-2">
+                                Experience a centralized, cloud-native platform for all your TPRM needs. From vendor onboarding to continuous monitoring, our SaaS solution provides the tools you need to build a resilient supply chain.
+                            </p>
+                        </details>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section class="py-16 sm:py-24" id="pricing">
+                <div class="container mx-auto px-4 flex flex-col items-center gap-10">
+                    <div class="flex flex-col gap-4 text-center items-center">
+                        <h2 class="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
+                            Clear & Simple Pricing
+                        </h2>
+                        <p class="text-white/80 text-base font-normal leading-normal max-w-[720px]">
+                            Choose the plan that's right for your organization's security needs.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+                        <div class="flex flex-1 flex-col gap-6 rounded-xl border border-solid border-[#324467]/50 bg-[#192233]/50 p-6">
+                            <div class="flex flex-col gap-2">
+                                <h3 class="text-white text-lg font-bold leading-tight">Starter</h3>
+                                <p class="flex items-baseline gap-1.5 text-white">
+                                    <span class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">$499</span>
+                                    <span class="text-white/70 text-base font-medium leading-tight">/ month</span>
+                                </p>
+                            </div>
+                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#232f48] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#324467] transition-colors">
+                                <span class="truncate">Choose Plan</span>
+                            </button>
+                            <div class="flex flex-col gap-3 pt-2 border-t border-white/10">
+                                <div class="text-sm font-normal leading-normal flex gap-3 text-white/90">
+                                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span> 10 AI Assessments
+                                </div>
+                                <div class="text-sm font-normal leading-normal flex gap-3 text-white/90">
+                                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span> Basic Frameworks (NIST, ISO)
+                                </div>
+                                <div class="text-sm font-normal leading-normal flex gap-3 text-white/90">
+                                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span> Standard Email Support
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-1 flex-col gap-6 rounded-xl border border-solid border-primary bg-[#192233] p-6 relative overflow-hidden">
+                            <div class="absolute top-0 right-0 text-white text-xs font-medium leading-normal tracking-[0.015em] bg-primary px-8 py-1 text-center" style="transform: rotate(45deg) translate(25%, -25%); transform-origin: top right;">Popular</div>
+                            <div class="flex flex-col gap-2">
+                                <h3 class="text-white text-lg font-bold leading-tight">Professional</h3>
+                                <p class="flex items-baseline gap-1.5 text-white">
+                                    <span class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">$999</span>
+                                    <span class="text-white/70 text-base font-medium leading-tight">/ month</span>
+                                </p>
+                            </div>
+                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+                                <span class="truncate">Choose Plan</span>
+                            </button>
+                            <div class="flex flex-col gap-3 pt-2 border-t border-white/10">
+                                <div class="text-sm font-normal leading-normal flex gap-3 text-white/90">
+                                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span> 50 AI Assessments
+                                </div>
+                                <div class="text-sm font-normal leading-normal flex gap-3 text-white/90">
+                                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span> All Frameworks & Custom Mapping
+                                </div>
+                                <div class="text-sm font-normal leading-normal flex gap-3 text-white/90">
+                                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span> Priority Support & Onboarding
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-1 flex-col gap-6 rounded-xl border border-solid border-[#324467]/50 bg-[#192233]/50 p-6">
+                            <div class="flex flex-col gap-2">
+                                <h3 class="text-white text-lg font-bold leading-tight">Enterprise</h3>
+                                <p class="flex flex-col text-white">
+                                    <span class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Custom</span>
+                                    <span class="text-white/70 text-base font-medium leading-tight">Tailored to your needs</span>
+                                </p>
+                            </div>
+                            <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-[#232f48] text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-[#324467] transition-colors">
+                                <span class="truncate">Contact Sales</span>
+                            </button>
+                            <div class="flex flex-col gap-3 pt-2 border-t border-white/10">
+                                <div class="text-sm font-normal leading-normal flex gap-3 text-white/90">
+                                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span> Unlimited Assessments
+                                </div>
+                                <div class="text-sm font-normal leading-normal flex gap-3 text-white/90">
+                                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span> Custom Integrations & API Access
+                                </div>
+                                <div class="text-sm font-normal leading-normal flex gap-3 text-white/90">
+                                    <span class="material-symbols-outlined text-primary text-xl">check_circle</span> Dedicated Support Manager
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="py-16 sm:py-24 bg-[#192233]/30" id="contact">
+                <div class="@container container mx-auto">
+                    <div class="flex flex-col justify-end gap-6 px-4 @[480px]:gap-8 items-center">
+                        <div class="flex flex-col gap-2 text-center max-w-xl">
+                            <h2 class="text-white tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                Get in Touch
+                            </h2>
+                            <p class="text-white/80 text-base font-normal leading-normal">
+                                Have questions or want a personalized demo? Fill out the form below and our team will get back to you.
+                            </p>
+                        </div>
+                        <div class="flex flex-1 justify-center w-full max-w-lg">
+                            <label class="flex flex-col min-w-40 h-14 w-full flex-1 @[480px]:h-16">
+                                <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                                    <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-[#232f48] h-full placeholder:text-[#92a4c9] px-4 rounded-r-none border-r-0 pr-2 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal" placeholder="Enter your email address" type="email" value=""/>
+                                    <div class="flex items-center justify-center rounded-r-lg border-l-0 border-none bg-[#232f48] pr-2">
+                                        <button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal hover:bg-primary/90 transition-colors">
+                                            <span class="truncate">Request Info</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="bg-background-dark border-t border-white/10">
+            <div class="container mx-auto px-4 py-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div class="text-center md:text-left">
+                        <p class="text-sm text-white/70">© 2024 CHECKFIRST. All Rights Reserved.</p>
+                        <a class="text-sm text-white/50 hover:text-primary transition-colors" href="#">Privacy Policy</a>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <a aria-label="LinkedIn" class="text-white/70 hover:text-primary transition-colors" href="#">
+                            <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+                        </a>
+                        <a aria-label="Twitter" class="text-white/70 hover:text-primary transition-colors" href="#">
+                            <svg aria-hidden="true" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616v.064c0 2.298 1.634 4.212 3.793 4.649-.65.177-1.354.23-2.067.087.606 1.885 2.364 3.264 4.448 3.303-1.716 1.34-3.882 2.05-6.223 1.72C.931 19.526 3.016 20.5 5.253 20.5c6.305 0 9.762-5.224 9.762-9.762 0-.148-.003-.295-.009-.442A6.995 6.995 0 0 0 24 4.557z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
