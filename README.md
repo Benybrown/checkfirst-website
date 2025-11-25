@@ -66,7 +66,7 @@ tprm-saas/
 # Install dependencies
 npm install
 
-# Run development server
+# Run development server (port 8888)
 npm run dev
 
 # Build for production
@@ -76,14 +76,14 @@ npm run build
 npm start
 ```
 
-The site will be available at `http://localhost:3000`
+The site will be available at `http://localhost:8888`
 
 ## Development
 
 ### Available Scripts
 
 ```bash
-# Development server with hot reload
+# Development server with hot reload (runs on port 8888)
 npm run dev
 
 # Production build
