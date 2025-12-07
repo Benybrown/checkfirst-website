@@ -4,8 +4,8 @@ export default function PricingSection() {
   const plans = [
     {
       name: 'Starter',
-      price: '$499',
-      period: '/month',
+      price: 'Contact us',
+      period: 'for pricing',
       description: 'Perfect for growing organizations',
       features: [
         'Up to 50 vendors',
@@ -19,8 +19,8 @@ export default function PricingSection() {
     },
     {
       name: 'Professional',
-      price: '$1,299',
-      period: '/month',
+      price: 'Contact us',
+      period: 'for pricing',
       description: 'For established enterprises',
       features: [
         'Unlimited vendors',

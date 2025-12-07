@@ -46,21 +46,21 @@ export default function ContactSection() {
                 <div className="text-2xl">📞</div>
                 <div>
                   <p className="font-semibold text-gray-900">Phone</p>
-                  <p className="text-gray-600">+1 (555) 123-4567</p>
+                  <p className="text-gray-600">+32 460 21 49 55</p>
                 </div>
               </div>
               <div className="flex gap-4">
                 <div className="text-2xl">📧</div>
                 <div>
                   <p className="font-semibold text-gray-900">Email</p>
-                  <p className="text-gray-600">sales@tprm.com</p>
+                  <p className="text-gray-600">support@checkfirst.io</p>
                 </div>
               </div>
               <div className="flex gap-4">
                 <div className="text-2xl">🌍</div>
                 <div>
                   <p className="font-semibold text-gray-900">Address</p>
-                  <p className="text-gray-600">123 Enterprise Way, San Francisco, CA 94105</p>
+                  <p className="text-gray-600">Brussels, Belgium</p>
                 </div>
               </div>
             </div>

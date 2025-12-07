@@ -1,26 +1,21 @@
-import Link from 'next/link';
-
 export default function ResourcesSection() {
   const resources = [
     {
       type: 'Whitepaper',
       title: '2024 State of TPRM Report',
       description: 'Essential insights on third-party risk management trends and best practices.',
-      link: '/resources/tprm-report',
       icon: '📄',
     },
     {
       type: 'Blog Post',
       title: 'Top 5 Vendor Risk Assessment Mistakes',
       description: 'Learn how to avoid common pitfalls in your TPRM process.',
-      link: '/blog/vendor-risk-mistakes',
       icon: '✍️',
     },
     {
       type: 'Webinar',
       title: 'Building a Resilient Supply Chain',
       description: 'Expert strategies for managing third-party risks at scale.',
-      link: '/webinars/resilient-supply-chain',
       icon: '🎥',
     },
   ];
@@ -37,20 +32,18 @@ export default function ResourcesSection() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {resources.map((resource, index) => (
-            <Link key={index} href={resource.link}>
-              <div className="card-hover bg-white rounded-xl overflow-hidden shadow-md h-full cursor-pointer">
-                <div className="bg-gradient-to-r from-[#0F4C81] to-[#00ACC1] h-2"></div>
-                <div className="p-8">
-                  <div className="text-4xl mb-4">{resource.icon}</div>
-                  <p className="text-sm font-semibold text-[#0F4C81] mb-2">{resource.type}</p>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{resource.title}</h3>
-                  <p className="text-gray-600">{resource.description}</p>
-                  <div className="mt-6 text-[#0F4C81] font-semibold flex items-center gap-2">
-                    Get Resource →
-                  </div>
+            <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md h-full">
+              <div className="bg-gradient-to-r from-[#0F4C81] to-[#00ACC1] h-2"></div>
+              <div className="p-8">
+                <div className="text-4xl mb-4">{resource.icon}</div>
+                <p className="text-sm font-semibold text-[#0F4C81] mb-2">{resource.type}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">{resource.title}</h3>
+                <p className="text-gray-600">{resource.description}</p>
+                <div className="mt-6 text-[#0F4C81] font-semibold flex items-center gap-2">
+                  Coming Soon
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 
@@ -80,19 +73,12 @@ export default function ResourcesSection() {
                 excerpt: 'Learn how to automate and accelerate vendor risk remediation.',
               },
             ].map((post, index) => (
-              <Link key={index} href={`/blog/${post.title.toLowerCase().replace(/\s+/g, '-')}`}>
-                <div className="card-hover p-6 border border-gray-200 rounded-lg hover:shadow-lg cursor-pointer">
-                  <p className="text-sm text-gray-500 mb-2">{post.date}</p>
-                  <h4 className="text-lg font-semibold text-gray-900 mb-2">{post.title}</h4>
-                  <p className="text-gray-600">{post.excerpt}</p>
-                </div>
-              </Link>
+              <div key={index} className="p-6 border border-gray-200 rounded-lg">
+                <p className="text-sm text-gray-500 mb-2">{post.date}</p>
+                <h4 className="text-lg font-semibold text-gray-900 mb-2">{post.title}</h4>
+                <p className="text-gray-600">{post.excerpt}</p>
+              </div>
             ))}
-          </div>
-          <div className="mt-8 text-center">
-            <Link href="/blog" className="btn-primary">
-              View All Posts
-            </Link>
           </div>
         </div>
       </div>
