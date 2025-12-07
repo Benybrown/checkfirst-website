@@ -13,6 +13,8 @@ export default function ContactSection() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e: any) => {
     const { name, value, type, checked } = e.target;
@@ -22,12 +24,44 @@ export default function ContactSection() {
     }));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
-    // In a real app, this would send to your backend
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          company: formData.company,
+          vendors: formData.vendors,
+          message: formData.message,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        vendors: '50-100',
+        message: '',
+        gdpr: false,
+      });
+    } catch (err) {
+      setError('Failed to send message. Please try again or email us directly.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -167,14 +201,21 @@ export default function ContactSection() {
 
               <button
                 type="submit"
-                className="w-full btn-primary bg-[#0F4C81] text-white py-3 rounded-lg font-semibold"
+                disabled={loading}
+                className="w-full btn-primary bg-[#0F4C81] text-white py-3 rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Request Demo
+                {loading ? 'Sending...' : 'Request Demo'}
               </button>
 
               {submitted && (
                 <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
                   Thank you! We'll be in touch shortly.
+                </div>
+              )}
+
+              {error && (
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg">
+                  {error}
                 </div>
               )}
             </form>
