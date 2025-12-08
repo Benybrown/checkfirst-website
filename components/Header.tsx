@@ -33,11 +33,8 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* CTA Buttons */}
+        {/* CTA Button */}
         <div className="hidden md:flex items-center gap-4">
-          <Link href="/login" className="text-cyan-400 hover:text-cyan-300 transition">
-            Sign In
-          </Link>
           <Link href="/#contact" className="btn-primary">
             Request Demo
           </Link>
@@ -73,9 +70,6 @@ export default function Header() {
             </Link>
             <Link href="/#contact" className="text-white hover:text-cyan-400 transition" onClick={() => setMenuOpen(false)}>
               Contact
-            </Link>
-            <Link href="/login" className="text-cyan-400 hover:text-cyan-300 transition" onClick={() => setMenuOpen(false)}>
-              Sign In
             </Link>
             <Link href="/#contact" className="btn-primary w-full text-center" onClick={() => setMenuOpen(false)}>
               Request Demo
