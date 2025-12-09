@@ -5,56 +5,56 @@ export default function Blog() {
     {
       slug: 'implement-tprm-30-days',
       title: 'How to Implement a TPRM Program in 30 Days',
-      date: 'Nov 15, 2024',
+      date: 'Nov 15, 2025',
       category: 'Implementation',
       excerpt:
         'A practical roadmap for rapidly deploying third-party risk management across your organization without disrupting existing workflows.',
-      author: 'Sarah Chen',
+      author: 'Echouah.R',
     },
     {
       slug: 'gdpr-vendor-management',
       title: 'GDPR Compliance for Vendor Management',
-      date: 'Nov 10, 2024',
+      date: 'Nov 10, 2025',
       category: 'Compliance',
       excerpt:
         'Essential guide to keeping your third-party vendors GDPR compliant and avoiding regulatory penalties.',
-      author: 'Michael Roberts',
+      author: 'Echouah.R',
     },
     {
       slug: 'saas-vendor-checklist',
       title: 'SaaS Vendor Risk Assessment Checklist',
-      date: 'Nov 5, 2024',
+      date: 'Nov 5, 2025',
       category: 'Best Practices',
       excerpt:
         'Complete checklist for evaluating cloud-based service providers and managing SaaS vendor risks.',
-      author: 'Jennifer Park',
+      author: 'Echouah.R',
     },
     {
       slug: 'automate-remediation',
       title: 'Automating Your Risk Remediation Workflow',
-      date: 'Oct 28, 2024',
+      date: 'Oct 28, 2025',
       category: 'Automation',
       excerpt:
         'Learn how to automate and accelerate vendor risk remediation with intelligent workflows.',
-      author: 'David Kumar',
+      author: 'Echouah.R',
     },
     {
       slug: 'supply-chain-risk',
-      title: 'Supply Chain Risk Management in 2024',
-      date: 'Oct 20, 2024',
+      title: 'Supply Chain Risk Management in 2025',
+      date: 'Oct 20, 2025',
       category: 'Strategy',
       excerpt:
         'Strategic insights on managing risks across your entire supply chain ecosystem.',
-      author: 'Lisa Wong',
+      author: 'Echouah.R',
     },
     {
       slug: 'vendor-red-flags',
       title: '10 Red Flags That Indicate Vendor Risk',
-      date: 'Oct 15, 2024',
+      date: 'Oct 15, 2025',
       category: 'Risk Management',
       excerpt:
         'Learn to identify warning signs that should trigger deeper vendor risk investigations.',
-      author: 'James Mitchell',
+      author: 'Echouah.R',
     },
   ];
 
@@ -69,7 +69,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <section className="section-padding">
+      <section className="section-padding bg-white">
         <div className="max-w-4xl mx-auto">
           <div className="grid gap-8">
             {posts.map((post) => (

@@ -1,34 +1,34 @@
 export default function FeaturesSection() {
   const features = [
     {
-      icon: '⚡',
-      title: 'Automated Assessments',
-      description: 'Streamline vendor onboarding with intelligent, automated risk questionnaires and assessments.',
+      icon: '🤖',
+      title: 'AI-Powered Intelligence',
+      description: 'Accelerate due diligence with AI-driven research, assessments, and reporting.',
+    },
+    {
+      icon: '🎯',
+      title: 'Adaptive Smart Assessments',
+      description: 'Leverage dynamic questionnaires that automatically adjust based on responses.',
+    },
+    {
+      icon: '🔄',
+      title: 'Risk Lifecycle Management',
+      description: 'Identify, evaluate, treat, and monitor every risk with automated workflows.',
+    },
+    {
+      icon: '✅',
+      title: 'Automated Task Management',
+      description: 'Turn risk findings into action with auto-assigned remediation tasks, team ownership, and real-time implementation status tracking.',
     },
     {
       icon: '🔍',
-      title: 'Continuous Monitoring',
-      description: 'Monitor third-party risks in real-time with automated alerts and compliance updates.',
+      title: '360° Supplier Intelligence',
+      description: 'Get a comprehensive view of any supplier—from risk history to security documentation—powered by automated AI researchs.',
     },
     {
-      icon: '📋',
-      title: 'Compliance Management',
-      description: 'Maintain compliance across frameworks: SOC 2, ISO 27001, GDPR, HIPAA, and more.',
-    },
-    {
-      icon: '📊',
-      title: 'Risk Scoring Engine',
-      description: 'Advanced algorithms calculate dynamic risk scores based on vendor health and vulnerabilities.',
-    },
-    {
-      icon: '📈',
-      title: 'Analytics & Reporting',
-      description: 'Comprehensive dashboards and exportable reports for board-level risk visibility.',
-    },
-    {
-      icon: '⚙️',
-      title: 'Workflow Automation',
-      description: 'Automate approvals, escalations, and remediation workflows with custom logic.',
+      icon: '🛡️',
+      title: 'Continuous Security Monitoring',
+      description: 'Monitor supplier security posture 24/7 with ongoing scans, alerts, and trend visibility to track improvements over time.',
     },
   ];
 

@@ -22,12 +22,12 @@ export default function HeroSection() {
 
     // Star particles with gravitational attraction
     const particles: any[] = [];
-    const numStars = 100;
+    const numStars = 75; // Reduced by 25% (was 100)
 
     // Center point (where text is)
     const centerX = canvas.width / 2 - 100; // Shifted left
     const centerY = canvas.height / 2;
-    const circleRadius = 350; // Radius of the orbit circle
+    const circleRadius = 420; // Increased by 20% (was 350)
     const attractionRadius = 550; // Distance to start being attracted
     const attractionStrength = 0.12; // How much acceleration towards circle
 
@@ -189,7 +189,7 @@ export default function HeroSection() {
         <div className="mt-20 pt-20 border-t border-purple-500/20">
           <p className="text-center text-gray-400 text-sm mb-8">Trusted by leading enterprises</p>
           <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center opacity-60">
-            {['TechCorp', 'FinanceHub', 'CloudSys', 'SecureNet', 'GlobalTrade', 'DataVault'].map((company) => (
+            {['Fintech', 'Healthcare', 'Industrial', 'Telecom', 'Blockchain', 'Public'].map((company) => (
               <div key={company} className="text-center font-semibold text-gray-400 hover:text-purple-400 transition">
                 {company}
               </div>

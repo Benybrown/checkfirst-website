@@ -2,26 +2,26 @@ export default function TestimonialsSection() {
   const testimonials = [
     {
       quote:
-        'TPRM reduced our vendor assessment time by 80% and helped us achieve 100% compliance audits. The platform is intuitive and the support team is outstanding.',
+        'CHECKFIRST AI approach reduced our vendor assessment time by 80% and helped us achieve our compliance audits. The platform is intuitive and the support team is outstanding.',
       author: 'Sarah Chen',
       role: 'Chief Risk Officer',
-      company: 'TechCorp Inc',
+      company: '',
       rating: 5,
     },
     {
       quote:
-        'We were managing TPRM manually with spreadsheets. TPRM platform gave us visibility into all our third-party risks in real-time. Best investment we made.',
+        'We were managing TPRM manually with spreadsheets. CHECKFIRST platform gave us visibility and control into all our third-party risks and remediation controls implementations. Best investment we made.',
       author: 'Michael Roberts',
-      role: 'Compliance Director',
-      company: 'FinanceHub Ltd',
+      role: 'CISO',
+      company: '',
       rating: 5,
     },
     {
       quote:
-        'The automated monitoring alerts have caught potential issues before they became problems. The ROI was immediate - saved us thousands in risk remediation.',
-      author: 'Jennifer Park',
-      role: 'Enterprise Risk Manager',
-      company: 'SecureNet Solutions',
+        'The Smart Questionnaire feature helped us build an intelligent and unified process that can adapt and cover complex cases with one Smart Assessment and reduce our SLA by at least 50%.',
+      author: 'Jennifer Parker',
+      role: 'Third Party Risk Manager',
+      company: '',
       rating: 5,
     },
   ];
@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
               <div className="border-t pt-4">
                 <p className="font-semibold text-gray-900">{testimonial.author}</p>
                 <p className="text-sm text-gray-600">
-                  {testimonial.role} at {testimonial.company}
+                  {testimonial.company ? `${testimonial.role} at ${testimonial.company}` : testimonial.role}
                 </p>
               </div>
             </div>
