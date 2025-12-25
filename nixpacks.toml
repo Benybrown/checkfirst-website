@@ -1,4 +1,9 @@
+# Build-time configuration only - NO SECRETS HERE
+# All secrets must be set in Coolify environment variables (runtime)
 [variables]
-ZEPTOMAIL_API_KEY = "Zoho-enczapikey yA6KbHtZug30wGxWQUQ418CD8Iw1qKA8iCiz4SHiK5dxK4Xgi6Ft3kBvcIG6IjPS24/R4/9YathDJom7vo4MdpQ1Z4RWKpTGTuv4P2uV48xh8ciEYNYjgpqgB7EZG6RMch0nDig1RfMmWA=="
+# Non-sensitive defaults only
 ZEPTOMAIL_FROM_EMAIL = "noreply@checkfirst.io"
 ZEPTOMAIL_FROM_NAME = "CheckFirst TPRM"
+
+# SECURITY NOTE: ZEPTOMAIL_API_KEY must be set in Coolify environment variables
+# Never commit API keys to git or nixpacks.toml
