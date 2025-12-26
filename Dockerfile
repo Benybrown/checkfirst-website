@@ -38,8 +38,8 @@ WORKDIR /app
 RUN addgroup --system --gid 1001 nodejs && \
     adduser --system --uid 1001 nextjs
 
-# Security: Install only essential packages, remove package managers
-RUN apk add --no-cache dumb-init && \
+# Security: Install only essential packages
+RUN apk add --no-cache dumb-init curl && \
     rm -rf /var/cache/apk/*
 
 # Set production environment
@@ -67,8 +67,9 @@ USER nextjs
 # Expose port
 EXPOSE 3000
 
-# Note: Healthcheck handled by Coolify/orchestrator
-# The container runs as non-root user 'nextjs' for security
+# Healthcheck required by Coolify
+HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
+    CMD curl -f http://localhost:3000/ || exit 1
 
 # Security: Use dumb-init to handle signals properly
 ENTRYPOINT ["dumb-init", "--"]
