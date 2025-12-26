@@ -67,9 +67,8 @@ USER nextjs
 # Expose port
 EXPOSE 3000
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD wget --no-verbose --tries=1 --spider http://localhost:3000/ || exit 1
+# Note: Healthcheck handled by Coolify/orchestrator
+# The container runs as non-root user 'nextjs' for security
 
 # Security: Use dumb-init to handle signals properly
 ENTRYPOINT ["dumb-init", "--"]
