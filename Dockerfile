@@ -49,9 +49,13 @@ ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
 
 # Copy built application with correct ownership
+# Note: public directory must exist (even if empty, use .gitkeep)
 COPY --from=builder --chown=nextjs:nodejs /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+# Ensure proper permissions on all app files
+RUN chown -R nextjs:nodejs /app
 
 # Security: Create writable directories for Next.js cache (will be tmpfs in production)
 RUN mkdir -p /app/.next/cache && \
