@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function ContactSection() {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -58,7 +60,7 @@ export default function ContactSection() {
         gdpr: false,
       });
     } catch (err) {
-      setError('Failed to send message. Please try again or email us directly.');
+      setError(t('contact.form.errorMessage'));
     } finally {
       setLoading(false);
     }
@@ -70,31 +72,31 @@ export default function ContactSection() {
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">Ready to Transform Your TPRM?</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">{t('contact.title')}</h2>
             <p className="text-lg text-gray-600 mb-8">
-              Join hundreds of enterprises reducing vendor risk and improving compliance. Schedule a personalized demo with our team.
+              {t('contact.subtitle')}
             </p>
 
             <div className="space-y-6">
               <div className="flex gap-4">
                 <div className="text-2xl">📞</div>
                 <div>
-                  <p className="font-semibold text-gray-900">Phone</p>
+                  <p className="font-semibold text-gray-900">{t('contact.phone')}</p>
                   <p className="text-gray-600">+32 460 21 49 55</p>
                 </div>
               </div>
               <div className="flex gap-4">
                 <div className="text-2xl">📧</div>
                 <div>
-                  <p className="font-semibold text-gray-900">Email</p>
+                  <p className="font-semibold text-gray-900">{t('contact.email')}</p>
                   <p className="text-gray-600">support@checkfirst.io</p>
                 </div>
               </div>
               <div className="flex gap-4">
                 <div className="text-2xl">🌍</div>
                 <div>
-                  <p className="font-semibold text-gray-900">Address</p>
-                  <p className="text-gray-600">Brussels, Belgium</p>
+                  <p className="font-semibold text-gray-900">{t('contact.address')}</p>
+                  <p className="text-gray-600">{t('contact.addressValue')}</p>
                 </div>
               </div>
             </div>
@@ -105,7 +107,7 @@ export default function ContactSection() {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Full Name
+                  {t('contact.form.fullName')}
                 </label>
                 <input
                   type="text"
@@ -115,13 +117,13 @@ export default function ContactSection() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0F4C81]"
-                  placeholder="Your name"
+                  placeholder={t('contact.form.fullNamePlaceholder')}
                 />
               </div>
 
               <div>
                 <label htmlFor="email" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Work Email
+                  {t('contact.form.workEmail')}
                 </label>
                 <input
                   type="email"
@@ -131,13 +133,13 @@ export default function ContactSection() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0F4C81]"
-                  placeholder="you@company.com"
+                  placeholder={t('contact.form.workEmailPlaceholder')}
                 />
               </div>
 
               <div>
                 <label htmlFor="company" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Company Name
+                  {t('contact.form.companyName')}
                 </label>
                 <input
                   type="text"
@@ -147,13 +149,13 @@ export default function ContactSection() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0F4C81]"
-                  placeholder="Your company"
+                  placeholder={t('contact.form.companyNamePlaceholder')}
                 />
               </div>
 
               <div>
                 <label htmlFor="vendors" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Number of Vendors
+                  {t('contact.form.numberOfVendors')}
                 </label>
                 <select
                   id="vendors"
@@ -162,16 +164,16 @@ export default function ContactSection() {
                   onChange={handleChange}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0F4C81]"
                 >
-                  <option value="1-50">1-50 vendors</option>
-                  <option value="50-100">50-100 vendors</option>
-                  <option value="100-500">100-500 vendors</option>
-                  <option value="500+">500+ vendors</option>
+                  <option value="1-50">{t('contact.form.vendors1_50')}</option>
+                  <option value="50-100">{t('contact.form.vendors50_100')}</option>
+                  <option value="100-500">{t('contact.form.vendors100_500')}</option>
+                  <option value="500+">{t('contact.form.vendors500plus')}</option>
                 </select>
               </div>
 
               <div>
                 <label htmlFor="message" className="block text-sm font-semibold text-gray-900 mb-2">
-                  Message (optional)
+                  {t('contact.form.message')}
                 </label>
                 <textarea
                   id="message"
@@ -180,7 +182,7 @@ export default function ContactSection() {
                   onChange={handleChange}
                   rows={4}
                   className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#0F4C81]"
-                  placeholder="Tell us about your TPRM needs..."
+                  placeholder={t('contact.form.messagePlaceholder')}
                 ></textarea>
               </div>
 
@@ -195,7 +197,7 @@ export default function ContactSection() {
                   className="mt-1 w-4 h-4 accent-[#0F4C81]"
                 />
                 <label htmlFor="gdpr" className="text-sm text-gray-600">
-                  I agree to the privacy policy and consent to receive communications from TPRM.
+                  {t('contact.form.gdprConsent')}
                 </label>
               </div>
 
@@ -204,12 +206,12 @@ export default function ContactSection() {
                 disabled={loading}
                 className="w-full btn-primary bg-[#0F4C81] text-white py-3 rounded-lg font-semibold disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {loading ? 'Sending...' : 'Request Demo'}
+                {loading ? t('contact.form.sending') : t('contact.form.requestDemo')}
               </button>
 
               {submitted && (
                 <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
-                  Thank you! We'll be in touch shortly.
+                  {t('contact.form.successMessage')}
                 </div>
               )}
 

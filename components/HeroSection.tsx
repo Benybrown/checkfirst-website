@@ -2,9 +2,11 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 
 export default function HeroSection() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -139,6 +141,8 @@ export default function HeroSection() {
     };
   }, []);
 
+  const companies = ['fintech', 'healthcare', 'industrial', 'telecom', 'blockchain', 'public'] as const;
+
   return (
     <section className="relative min-h-screen overflow-hidden py-40 px-4 md:px-8">
       {/* Canvas-based Starfield with Gravitational Attraction */}
@@ -159,27 +163,27 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8">
         <div className="flex items-start">
           {/* Left Content - Aligned to Features position */}
-          <div className="animate-fade-in max-w-2xl ml-64">
+          <div className="animate-fade-in max-w-2xl ml-64 rtl:ml-0 rtl:mr-64">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/50 bg-purple-900/20 backdrop-blur-sm mb-6">
               <div className="relative flex items-center justify-center w-8 h-8">
                 <span className="absolute text-yellow-300 text-3xl animate-pulse" style={{textShadow: '0 0 10px rgba(253, 224, 71, 0.8), 0 0 20px rgba(253, 224, 71, 0.5)', fontFamily: 'serif', fontWeight: 'bold', animation: 'spin-y 3s linear infinite, pulse 2s ease-in-out infinite'}}>✦</span>
               </div>
-              <span className="text-cyan-400 text-sm font-semibold whitespace-nowrap" style={{textShadow: '0 0 8px rgba(6, 182, 212, 0.8), 0 0 16px rgba(6, 182, 212, 0.6), 0 0 24px rgba(6, 182, 212, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.1)'}}>AI-Powered TPRM</span>
+              <span className="text-cyan-400 text-sm font-semibold whitespace-nowrap" style={{textShadow: '0 0 8px rgba(6, 182, 212, 0.8), 0 0 16px rgba(6, 182, 212, 0.6), 0 0 24px rgba(6, 182, 212, 0.4), 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 4px rgba(255, 255, 255, 0.1)'}}>{t('hero.badge')}</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 via-blue-300 to-cyan-400 bg-clip-text text-transparent leading-tight mb-6">
-              Enterprise Risk Management Reimagined with AI
+              {t('hero.title')}
             </h1>
 
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Automate vendor assessments with cutting-edge AI. Monitor risks continuously, maintain compliance, and protect your supply chain with intelligent, autonomous insights.
+              {t('hero.description')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Link href="/#contact" className="btn-primary text-center shadow-glow">
-                Start Free Trial
+                {t('hero.startTrial')}
               </Link>
               <button className="btn-secondary text-center">
-                Watch Demo
+                {t('hero.watchDemo')}
               </button>
             </div>
           </div>
@@ -187,11 +191,11 @@ export default function HeroSection() {
 
         {/* Company Logos */}
         <div className="mt-20 pt-20 border-t border-purple-500/20">
-          <p className="text-center text-gray-400 text-sm mb-8">Trusted by leading enterprises</p>
+          <p className="text-center text-gray-400 text-sm mb-8">{t('hero.trustedBy')}</p>
           <div className="grid grid-cols-2 md:grid-cols-6 gap-8 items-center opacity-60">
-            {['Fintech', 'Healthcare', 'Industrial', 'Telecom', 'Blockchain', 'Public'].map((company) => (
+            {companies.map((company) => (
               <div key={company} className="text-center font-semibold text-gray-400 hover:text-purple-400 transition">
-                {company}
+                {t(`hero.companies.${company}`)}
               </div>
             ))}
           </div>

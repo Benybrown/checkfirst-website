@@ -2,9 +2,12 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <header className="sticky top-0 z-50 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/60 backdrop-blur-md border-b border-purple-500/20">
@@ -17,26 +20,27 @@ export default function Header() {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           <Link href="/#features" className="text-white hover:text-cyan-400 transition">
-            Features
+            {t('nav.features')}
           </Link>
           <Link href="/#pricing" className="text-white hover:text-cyan-400 transition">
-            Pricing
+            {t('nav.pricing')}
           </Link>
           <Link href="/case-studies" className="text-white hover:text-cyan-400 transition">
-            Case Studies
+            {t('nav.caseStudies')}
           </Link>
           <Link href="/blog" className="text-white hover:text-cyan-400 transition">
-            Blog
+            {t('nav.blog')}
           </Link>
           <Link href="/#contact" className="text-white hover:text-cyan-400 transition">
-            Contact
+            {t('nav.contact')}
           </Link>
         </div>
 
-        {/* CTA Button */}
+        {/* CTA Button + Language Switcher */}
         <div className="hidden md:flex items-center gap-4">
+          <LanguageSwitcher />
           <Link href="/#contact" className="btn-primary">
-            Request Demo
+            {t('nav.requestDemo')}
           </Link>
         </div>
 
@@ -57,22 +61,25 @@ export default function Header() {
         <div className="md:hidden bg-gradient-to-b from-slate-900/90 to-slate-900/80 backdrop-blur-md border-t border-purple-500/20">
           <div className="flex flex-col gap-4 px-4 py-4">
             <Link href="/#features" className="text-white hover:text-cyan-400 transition" onClick={() => setMenuOpen(false)}>
-              Features
+              {t('nav.features')}
             </Link>
             <Link href="/#pricing" className="text-white hover:text-cyan-400 transition" onClick={() => setMenuOpen(false)}>
-              Pricing
+              {t('nav.pricing')}
             </Link>
             <Link href="/case-studies" className="text-white hover:text-cyan-400 transition" onClick={() => setMenuOpen(false)}>
-              Case Studies
+              {t('nav.caseStudies')}
             </Link>
             <Link href="/blog" className="text-white hover:text-cyan-400 transition" onClick={() => setMenuOpen(false)}>
-              Blog
+              {t('nav.blog')}
             </Link>
             <Link href="/#contact" className="text-white hover:text-cyan-400 transition" onClick={() => setMenuOpen(false)}>
-              Contact
+              {t('nav.contact')}
             </Link>
+            <div className="py-2">
+              <LanguageSwitcher />
+            </div>
             <Link href="/#contact" className="btn-primary w-full text-center" onClick={() => setMenuOpen(false)}>
-              Request Demo
+              {t('nav.requestDemo')}
             </Link>
           </div>
         </div>

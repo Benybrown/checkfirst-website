@@ -1,0 +1,241 @@
+{
+  "nav": {
+    "features": "Fonctionnalités",
+    "pricing": "Tarifs",
+    "caseStudies": "Études de cas",
+    "blog": "Blog",
+    "contact": "Contact",
+    "requestDemo": "Demander une démo"
+  },
+  "hero": {
+    "badge": "TPRM propulsé par l'IA",
+    "title": "La gestion des risques d'entreprise réinventée avec l'IA",
+    "description": "Automatisez les évaluations des fournisseurs avec une IA de pointe. Surveillez les risques en continu, maintenez la conformité et protégez votre chaîne d'approvisionnement avec des analyses intelligentes et autonomes.",
+    "startTrial": "Essai gratuit",
+    "watchDemo": "Voir la démo",
+    "trustedBy": "Approuvé par les entreprises leaders",
+    "companies": {
+      "fintech": "Fintech",
+      "healthcare": "Santé",
+      "industrial": "Industrie",
+      "telecom": "Télécom",
+      "blockchain": "Blockchain",
+      "public": "Secteur public"
+    }
+  },
+  "features": {
+    "title": "Fonctionnalités puissantes pour la gestion des risques d'entreprise",
+    "subtitle": "Tout ce dont vous avez besoin pour gérer efficacement les risques tiers",
+    "items": {
+      "aiPowered": {
+        "title": "Intelligence propulsée par l'IA",
+        "description": "Accélérez la due diligence avec des recherches, évaluations et rapports pilotés par l'IA."
+      },
+      "smartAssessments": {
+        "title": "Évaluations intelligentes adaptatives",
+        "description": "Utilisez des questionnaires dynamiques qui s'ajustent automatiquement en fonction des réponses."
+      },
+      "riskLifecycle": {
+        "title": "Gestion du cycle de vie des risques",
+        "description": "Identifiez, évaluez, traitez et surveillez chaque risque avec des workflows automatisés."
+      },
+      "taskManagement": {
+        "title": "Gestion automatisée des tâches",
+        "description": "Transformez les conclusions de risques en actions avec des tâches de remédiation assignées automatiquement, une propriété d'équipe et un suivi en temps réel."
+      },
+      "supplierIntelligence": {
+        "title": "Intelligence fournisseur 360°",
+        "description": "Obtenez une vue complète de tout fournisseur—de l'historique des risques à la documentation de sécurité—alimentée par des recherches IA automatisées."
+      },
+      "securityMonitoring": {
+        "title": "Surveillance de sécurité continue",
+        "description": "Surveillez la posture de sécurité des fournisseurs 24/7 avec des scans continus, des alertes et une visibilité des tendances."
+      }
+    }
+  },
+  "howItWorks": {
+    "title": "4 façons de conduire votre TPRM",
+    "subtitle": "Comment ça marche",
+    "steps": {
+      "smartAssessments": {
+        "title": "Évaluations intelligentes",
+        "description": "Envoyez des questionnaires standards ou intelligents aux fournisseurs et générez automatiquement des conclusions de risques."
+      },
+      "jino360": {
+        "title": "Scan IA JINO360",
+        "description": "Entrez l'URL d'un fournisseur et générez instantanément un profil de risque complet avec recherche IA."
+      },
+      "jinoXtreme": {
+        "title": "Analyse IA JINO Xtreme",
+        "description": "Analysez automatiquement la documentation de sécurité publiée pour produire une évaluation complète de la posture."
+      },
+      "jinoQA": {
+        "title": "IA JINO Q&A Docs",
+        "description": "Téléchargez des fichiers ou questionnaires et laissez l'IA extraire, évaluer et noter les risques de sécurité."
+      }
+    }
+  },
+  "stats": {
+    "title": "Impact réel chez nos clients",
+    "items": {
+      "assessmentTime": {
+        "metric": "85%",
+        "description": "Réduction du temps d'évaluation"
+      },
+      "vendorOnboarding": {
+        "metric": "3x",
+        "description": "Intégration fournisseur plus rapide"
+      },
+      "compliance": {
+        "metric": "100%",
+        "description": "Taux de conformité aux audits"
+      },
+      "savings": {
+        "metric": "2M€+",
+        "description": "Économies annuelles moyennes"
+      }
+    }
+  },
+  "pricing": {
+    "title": "Tarification simple et transparente",
+    "subtitle": "Choisissez le plan qui correspond le mieux aux besoins de votre organisation",
+    "mostPopular": "Le plus populaire",
+    "contactUs": "Contactez-nous",
+    "forPricing": "pour les tarifs",
+    "custom": "Personnalisé",
+    "customPricing": "tarification",
+    "complianceTitle": "Sécurité et conformité de niveau entreprise",
+    "plans": {
+      "starter": {
+        "name": "Starter",
+        "description": "Parfait pour les organisations en croissance",
+        "cta": "Commencer",
+        "features": {
+          "vendors": "Jusqu'à 50 fournisseurs",
+          "assessments": "Évaluations de risques basiques",
+          "reports": "Rapports mensuels",
+          "support": "Support par email",
+          "integrations": "Intégrations standards"
+        }
+      },
+      "professional": {
+        "name": "Professionnel",
+        "description": "Pour les entreprises établies",
+        "cta": "Essai gratuit",
+        "features": {
+          "vendors": "Fournisseurs illimités",
+          "scoring": "Scoring de risque avancé",
+          "monitoring": "Surveillance en temps réel",
+          "support": "Support prioritaire",
+          "integrations": "Intégrations personnalisées",
+          "automation": "Automatisation des workflows"
+        }
+      },
+      "enterprise": {
+        "name": "Entreprise",
+        "description": "Pour les grandes organisations",
+        "cta": "Contacter les ventes",
+        "features": {
+          "everything": "Tout dans Professionnel",
+          "accountManager": "Gestionnaire de compte dédié",
+          "sla": "SLA personnalisé",
+          "reporting": "Rapports avancés",
+          "sso": "Single Sign-On (SSO)",
+          "workflows": "Workflows personnalisés"
+        }
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Ce que disent nos clients",
+    "subtitle": "Rejoignez des centaines d'entreprises qui font confiance à TPRM",
+    "items": {
+      "sarah": {
+        "quote": "L'approche IA de CHECKFIRST a réduit notre temps d'évaluation des fournisseurs de 80% et nous a aidés à réussir nos audits de conformité. La plateforme est intuitive et l'équipe de support est exceptionnelle.",
+        "author": "Sarah Chen",
+        "role": "Directrice des risques"
+      },
+      "michael": {
+        "quote": "Nous gérions le TPRM manuellement avec des tableurs. La plateforme CHECKFIRST nous a donné visibilité et contrôle sur tous nos risques tiers et implémentations de contrôles de remédiation. Meilleur investissement que nous ayons fait.",
+        "author": "Michael Roberts",
+        "role": "RSSI"
+      },
+      "jennifer": {
+        "quote": "La fonctionnalité de questionnaire intelligent nous a aidés à construire un processus intelligent et unifié qui peut s'adapter et couvrir des cas complexes avec une seule évaluation intelligente et réduire notre SLA d'au moins 50%.",
+        "author": "Jennifer Parker",
+        "role": "Responsable des risques tiers"
+      }
+    }
+  },
+  "resources": {
+    "title": "Ressources & Apprentissage",
+    "subtitle": "Développez vos connaissances TPRM avec nos ressources gratuites",
+    "readMore": "Lire la suite →",
+    "comingSoon": "Bientôt disponible",
+    "latestPosts": "Derniers articles de blog",
+    "items": {
+      "tprmReport": {
+        "type": "Livre blanc",
+        "title": "Rapport 2026 sur l'état du TPRM",
+        "description": "Aperçus essentiels sur les tendances et meilleures pratiques de gestion des risques tiers."
+      },
+      "supplyChain": {
+        "type": "Article de blog",
+        "title": "Construire une chaîne d'approvisionnement résiliente",
+        "description": "Stratégies d'experts pour gérer les risques tiers à grande échelle."
+      }
+    },
+    "blogPosts": {
+      "implement30Days": {
+        "title": "Comment implémenter un programme TPRM en 30 jours",
+        "excerpt": "Une feuille de route pratique pour déployer rapidement la gestion des risques tiers dans votre organisation."
+      },
+      "gdprCompliance": {
+        "title": "Conformité RGPD pour la gestion des fournisseurs",
+        "excerpt": "Guide essentiel pour maintenir vos fournisseurs tiers conformes au RGPD."
+      },
+      "saasChecklist": {
+        "title": "Checklist d'évaluation des risques fournisseurs SaaS",
+        "excerpt": "Checklist complète pour évaluer les fournisseurs de services cloud."
+      },
+      "automateRemediation": {
+        "title": "Automatiser votre workflow de remédiation des risques",
+        "excerpt": "Apprenez à automatiser et accélérer la remédiation des risques fournisseurs."
+      }
+    }
+  },
+  "contact": {
+    "title": "Prêt à transformer votre TPRM ?",
+    "subtitle": "Rejoignez des centaines d'entreprises qui réduisent les risques fournisseurs et améliorent la conformité. Planifiez une démo personnalisée avec notre équipe.",
+    "phone": "Téléphone",
+    "email": "Email",
+    "address": "Adresse",
+    "addressValue": "Bruxelles, Belgique",
+    "form": {
+      "fullName": "Nom complet",
+      "fullNamePlaceholder": "Votre nom",
+      "workEmail": "Email professionnel",
+      "workEmailPlaceholder": "vous@entreprise.com",
+      "companyName": "Nom de l'entreprise",
+      "companyNamePlaceholder": "Votre entreprise",
+      "numberOfVendors": "Nombre de fournisseurs",
+      "vendors1_50": "1-50 fournisseurs",
+      "vendors50_100": "50-100 fournisseurs",
+      "vendors100_500": "100-500 fournisseurs",
+      "vendors500plus": "500+ fournisseurs",
+      "message": "Message (optionnel)",
+      "messagePlaceholder": "Parlez-nous de vos besoins TPRM...",
+      "gdprConsent": "J'accepte la politique de confidentialité et je consens à recevoir des communications de TPRM.",
+      "sending": "Envoi en cours...",
+      "requestDemo": "Demander une démo",
+      "successMessage": "Merci ! Nous vous contacterons bientôt.",
+      "errorMessage": "Échec de l'envoi du message. Veuillez réessayer ou nous envoyer un email directement."
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 CHECKFIRST. Tous droits réservés."
+  },
+  "languageSwitcher": {
+    "selectLanguage": "Choisir la langue"
+  }
+}
