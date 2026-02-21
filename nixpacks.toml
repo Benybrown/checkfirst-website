@@ -1,9 +1,0 @@
-# Build-time configuration only - NO SECRETS HERE
-# All secrets must be set in Coolify environment variables (runtime)
-[variables]
-# Non-sensitive defaults only
-ZEPTOMAIL_FROM_EMAIL = "noreply@checkfirst.io"
-ZEPTOMAIL_FROM_NAME = "CheckFirst TPRM"
-
-# SECURITY NOTE: ZEPTOMAIL_API_KEY must be set in Coolify environment variables
-# Never commit API keys to git or nixpacks.toml

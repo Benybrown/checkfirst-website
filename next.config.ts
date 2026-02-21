@@ -1,8 +1,8 @@
-import type { NextConfig } from 'next';
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  output: 'standalone', // Required for Docker deployment
+  output: "standalone",
 };
 
 export default nextConfig;
