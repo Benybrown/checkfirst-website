@@ -217,8 +217,8 @@ export default function HomePage() {
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate-400 sm:text-xl">
               CheckFirst replaces slow, manual vendor security assessments with
-              instant AI analysis. Evaluate vendors,
-              scan infrastructure with ProvEye, and manage risk end-to-end.
+              instant AI analysis. Evaluate vendors, scan infrastructure, and
+              manage risk end-to-end.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href="/contact" variant="primary" size="lg">
