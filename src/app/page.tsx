@@ -29,46 +29,40 @@ const problemPoints = [
 const metrics = [
   { value: "85%", label: "Faster assessments" },
   { value: "243", label: "CSA CCM controls" },
-  { value: "45+", label: "Frameworks supported" },
+  { value: "40+", label: "Frameworks supported" },
   { value: "99.9%", label: "Platform uptime" },
 ];
 
 const capabilities = [
   {
-    name: "JinoXtreme CSA",
+    name: "JinoXtreme",
     tag: "AI Assessment",
     description:
-      "Evaluates vendors against all 243 CSA Cloud Controls Matrix controls across 18 security domains — with evidence-based compliance ratings, not just pass/fail.",
+      "Evaluates vendors against all 243 Cloud Security Controls across 18 security domains — with evidence-based compliance ratings.",
   },
   {
     name: "ProvEye",
     tag: "External Scanning",
     description:
-      "Independently scans vendor infrastructure — DNS, SSL, open ports, security headers, known vulnerabilities. No questionnaire needed. Results in 30–60 seconds.",
+      "Independently public scans of vendor infrastructure — DNS, SSL, open ports, security headers, known vulnerabilities.",
   },
   {
     name: "Jino 360",
     tag: "Vendor Research",
     description:
-      "AI-powered intelligence gathering from multiple web sources — company website, news, security incidents, certifications, public filings. Synthesised into a structured profile.",
+      "AI-powered intelligence gathering from multiple web sources — company website, news, security incidents, certifications, public filings.",
   },
   {
     name: "Smart Questionnaires",
     tag: "Adaptive Surveys",
     description:
-      "AI-generated questionnaires that adapt to vendor context and risk profile. Jino-QA then analyses responses for completeness, quality, consistency, and compliance alignment.",
+      "Intelligent questionnaires that adapt to vendor context and risk profile. Questionnaires are presented depending on supplier answers for a dynamic assessment.",
   },
   {
-    name: "AgentX",
-    tag: "AI Assistant",
+    name: "JinoQA & JinoDocs",
+    tag: "Vendor Assessment",
     description:
-      "Conversational AI with 11 specialised tools. Ask questions about any vendor, risk, or assessment. Create tasks, look up CSA controls, search security advisories — in natural language.",
-  },
-  {
-    name: "Risk Lifecycle",
-    tag: "End-to-End",
-    description:
-      "9-stage supplier lifecycle from Identified to Offboarded. 5×5 risk scoring matrix with inherent and residual risk auto-calculation. Treatment workflows with documented rationale.",
+      "2 AI specialized tools for assessing supplier documentations and feedbacks. Just upload all supplier documentations or any Q&A file and get a detailed report and security profile.",
   },
 ];
 
@@ -171,7 +165,7 @@ const faqItems = [
   {
     question: "What frameworks do you support?",
     answer:
-      "CheckFirst supports 45+ security and compliance frameworks including CSA CCM v4.0, SOC 2, ISO 27001/27002/27017/27018, NIST CSF, GDPR, DORA, NIS2, PCI DSS, HIPAA/HITRUST, CIS Controls, and more. Custom framework templates are available on Enterprise plans.",
+      "CheckFirst supports 40+ security and compliance frameworks including CSA CCM v4.0, SOC 2, ISO 27001/27002/27017/27018, NIST CSF, GDPR, DORA, NIS2, PCI DSS, HIPAA/HITRUST, CIS Controls, and more. Custom framework templates are available on Enterprise plans.",
   },
   {
     question: "Can vendors fill out assessments themselves?",
@@ -223,9 +217,8 @@ export default function HomePage() {
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate-400 sm:text-xl">
               CheckFirst replaces slow, manual vendor security assessments with
-              instant AI analysis. Evaluate vendors against 243 CSA controls,
-              scan infrastructure with ProvEye, and manage risk end-to-end —
-              so your security team can focus on decisions, not data gathering.
+              instant AI analysis. Evaluate vendors,
+              scan infrastructure with ProvEye, and manage risk end-to-end.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href="/contact" variant="primary" size="lg">
@@ -258,7 +251,7 @@ export default function HomePage() {
         <SectionHeader
           tag="The problem"
           title="Security assessments are broken"
-          description="Every company that handles sensitive data needs to prove they're secure. But the current process wastes everyone's time."
+          description=""
         />
         <div className="grid gap-6 sm:grid-cols-2">
           {problemPoints.map((p) => (
@@ -277,8 +270,7 @@ export default function HomePage() {
             CheckFirst takes a different approach.
           </strong>{" "}
           A unified platform that serves both buyers assessing vendors and
-          vendors proving their security — powered by AI that doesn&apos;t just
-          collect data, but actually understands it.
+          vendors proving their security.
         </p>
       </Section>
 
@@ -286,7 +278,7 @@ export default function HomePage() {
       <Section className="bg-slate-50/60">
         <SectionHeader
           tag="What you get"
-          title="Six engines. One platform. Complete coverage."
+          title="Five engines. One platform. Complete coverage."
           description="Named tools that do specific things — not vague promises about AI."
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -311,7 +303,7 @@ export default function HomePage() {
         <SectionHeader
           tag="The platform"
           title="Everything connects"
-          description="Every module is interconnected. A vendor's risk profile pulls from questionnaire responses, ProvEye scans, Jino 360 research, JinoXtreme assessments, and linked documents. This isn't a collection of point tools — it's a unified platform where every data point enriches the whole picture."
+          description=""
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {platformModules.map((m) => (
@@ -332,7 +324,7 @@ export default function HomePage() {
         <SectionHeader
           tag="How it works"
           title="From vendor intake to ongoing monitoring"
-          description="Four steps to a fully managed vendor risk program."
+          description=""
         />
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {howItWorks.map((item) => (
