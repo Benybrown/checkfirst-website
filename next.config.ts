@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
       { source: "/blog", destination: "https://blog.checkfirst.io/blog/" },
       { source: "/blog/", destination: "https://blog.checkfirst.io/blog/" },
       {
+        source: "/blog/:path*/",
+        destination: "https://blog.checkfirst.io/blog/:path*/",
+      },
+      {
         source: "/blog/:path*",
         destination: "https://blog.checkfirst.io/blog/:path*",
       },
