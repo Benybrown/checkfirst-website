@@ -11,7 +11,7 @@ const footerLinks = {
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
     { href: "/contact", label: "Book a demo" },
-    { href: "#", label: "Blog", external: true },
+    { href: "/blog", label: "Blog" },
   ],
   Frameworks: [
     { href: "/assessments#frameworks", label: "CSA CCM v4.0" },
