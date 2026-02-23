@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
@@ -36,10 +37,23 @@ export default function AIEnginePage() {
     <>
       {/* Hero */}
       <Section>
+        {/* AI tools screenshot — first */}
+        <div className="mx-auto mb-12 max-w-3xl">
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-brand-200/30 via-transparent to-brand-100/20 blur-sm" />
+            <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl">
+              <Image
+                src="/ai-tools-screenshot.png"
+                alt="CheckFirst AI engines — JinoXtreme, Jino-QA, Jino-Docs, and AI Reports"
+                width={900}
+                height={200}
+                className="block w-full"
+                priority
+              />
+            </div>
+          </div>
+        </div>
         <div className="mx-auto max-w-3xl text-center">
-          <span className="mb-6 inline-block rounded-full bg-brand-50 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-wider text-brand-700">
-            AI Engine
-          </span>
           <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
             AI that actually
             <br />
@@ -48,8 +62,7 @@ export default function AIEnginePage() {
           <p className="mt-6 text-lg leading-relaxed text-slate-600 sm:text-xl">
             Not just AI-assisted. Four specialised engines that analyse security
             posture against real frameworks, with real citations and real
-            confidence scores. Every output is designed to be reviewed, verified,
-            and trusted.
+            confidence scores.
           </p>
         </div>
       </Section>
@@ -62,7 +75,7 @@ export default function AIEnginePage() {
               Flagship Engine
             </span>
             <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
-              JinoXtreme CSA
+              JinoXtreme
             </h2>
             <p className="mt-4 font-body text-lg leading-relaxed text-slate-600">
               Comprehensive security assessment against the full CSA Cloud
@@ -102,38 +115,23 @@ export default function AIEnginePage() {
         </div>
       </Section>
 
-      {/* Jino 360 */}
+      {/* Jino Website & Jino 360 */}
       <Section>
         <div className="grid items-start gap-12 lg:grid-cols-2">
-          <div className="order-2 lg:order-1 space-y-4">
-            {[
-              "Multi-provider scraping with automatic failover",
-              "Circuit breaker pattern prevents cascading failures",
-              "Concurrency-limited to prevent rate limiting",
-              "Synthesises raw web data into structured security profiles",
-              "4 scraping providers: ScrapingBee, Scrapfly, BrightData, Jina Reader",
-            ].map((point) => (
-              <div key={point} className="flex items-start gap-3">
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 16 16"
-                  fill="none"
-                  className="mt-1 shrink-0 text-brand-600"
-                >
-                  <path
-                    d="M3.5 8.5L6.5 11.5L12.5 4.5"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-                <span className="font-body text-sm text-slate-700">{point}</span>
-              </div>
-            ))}
+          <div>
+            <span className="mb-3 inline-block rounded-full bg-brand-50 px-3 py-0.5 font-display text-xs font-semibold text-brand-700">
+              Vendor Research
+            </span>
+            <h2 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Jino Website
+            </h2>
+            <p className="mt-4 font-body text-lg leading-relaxed text-slate-600">
+              AI-powered vendor intelligence engine with an intelligent web
+              scraping pipeline. Gathers information from supplier websites,
+              trust-centers, compliance certifications.
+            </p>
           </div>
-          <div className="order-1 lg:order-2">
+          <div>
             <span className="mb-3 inline-block rounded-full bg-brand-50 px-3 py-0.5 font-display text-xs font-semibold text-brand-700">
               Vendor Research
             </span>
@@ -142,9 +140,8 @@ export default function AIEnginePage() {
             </h2>
             <p className="mt-4 font-body text-lg leading-relaxed text-slate-600">
               AI-powered vendor intelligence engine with an intelligent web
-              scraping pipeline. Gathers information from supplier websites,
-              news, security incidents, compliance certifications, and public
-              filings — then synthesises it into actionable profiles.
+              scraping pipeline. Gathers information from web researches, news,
+              security incidents, then synthesises it into actionable profiles.
             </p>
           </div>
         </div>
@@ -167,19 +164,11 @@ export default function AIEnginePage() {
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            {[
-              { title: "Completeness", desc: "Does it fully address the question?" },
-              { title: "Specificity", desc: "Concrete details vs. vague statements?" },
-              { title: "Consistency", desc: "Do answers contradict each other?" },
-              { title: "Compliance", desc: "Do answers demonstrate adequate controls?" },
-            ].map((item) => (
-              <Card key={item.title} hover={false} className="p-5">
+            {["Completeness", "Specificity", "Consistency", "Compliance"].map((title) => (
+              <Card key={title} hover={false} className="p-5">
                 <h4 className="font-display text-sm font-bold text-slate-900">
-                  {item.title}
+                  {title}
                 </h4>
-                <p className="mt-1 font-body text-xs text-slate-500">
-                  {item.desc}
-                </p>
               </Card>
             ))}
           </div>
@@ -194,33 +183,16 @@ export default function AIEnginePage() {
           description="Conversational AI assistant accessible from any page. Uses intent classification, capability routing, and 11 specialised tools to answer questions, search data, and perform actions through natural language."
         />
 
-        <div className="grid gap-8 lg:grid-cols-2">
-          {/* Tools Table */}
-          <div className="overflow-x-auto rounded-[16px] border border-slate-200/80 bg-white">
-            <table className="w-full border-collapse">
-              <thead>
-                <tr className="border-b-2 border-slate-200">
-                  <th className="px-5 py-3 text-left font-display text-xs font-bold uppercase tracking-wider text-slate-500">
-                    Tool
-                  </th>
-                  <th className="px-5 py-3 text-left font-display text-xs font-bold uppercase tracking-wider text-slate-500">
-                    Purpose
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {agentXTools.map((t) => (
-                  <tr key={t.tool} className="border-b border-slate-50">
-                    <td className="px-5 py-2.5 font-body text-xs font-semibold text-brand-700">
-                      {t.tool}
-                    </td>
-                    <td className="px-5 py-2.5 font-body text-xs text-slate-600">
-                      {t.purpose}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+        <div className="grid items-center gap-8 lg:grid-cols-2">
+          {/* AgentX screenshot */}
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl">
+            <Image
+              src="/agentx-screenshot.png"
+              alt="AgentX — Supplier Assessment Assistant with conversational AI interface"
+              width={700}
+              height={500}
+              className="block w-full"
+            />
           </div>
 
           {/* Examples */}
@@ -256,9 +228,9 @@ export default function AIEnginePage() {
         />
         <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
-            "Executive summary",
-            "Methodology description",
-            "Per-section findings",
+            "Executive reports",
+            "Detailed reports",
+            "Security posture",
             "Risk ratings",
             "Remediation priorities",
             "Export to PDF",
@@ -283,46 +255,6 @@ export default function AIEnginePage() {
                 />
               </svg>
               <span className="font-body text-sm text-slate-700">{item}</span>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* What Stays Human */}
-      <Section>
-        <SectionHeader
-          tag="Our philosophy"
-          title="AI amplifies your team. It doesn't replace it."
-        />
-        <div className="mx-auto max-w-3xl space-y-8">
-          {[
-            {
-              title: "Every AI output is reviewable",
-              desc: "Assessment reports highlight confidence levels so you know exactly where to focus manual review. Nothing is a black box.",
-            },
-            {
-              title: "Risk decisions require human approval",
-              desc: "Treatment decisions (Accept, Mitigate, Transfer, Avoid) require documented rationale and human sign-off. AI recommends, your team decides.",
-            },
-            {
-              title: "No automated actions without oversight",
-              desc: "Every automation in CheckFirst runs within guardrails your team configures. The AI works for you, not the other way around.",
-            },
-          ].map((item) => (
-            <div key={item.title} className="flex gap-5">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-brand-50 text-brand-700">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-              </div>
-              <div>
-                <h3 className="font-display text-base font-bold text-slate-900">
-                  {item.title}
-                </h3>
-                <p className="mt-1 font-body text-sm leading-relaxed text-slate-600">
-                  {item.desc}
-                </p>
-              </div>
             </div>
           ))}
         </div>
