@@ -59,10 +59,16 @@ const capabilities = [
       "Intelligent questionnaires that adapt to vendor context and risk profile. Questionnaires are presented depending on supplier answers for a dynamic assessment.",
   },
   {
-    name: "JinoQA & JinoDocs",
-    tag: "Vendor Assessment",
+    name: "JinoQA",
+    tag: "Q&A Assessment",
     description:
-      "2 AI specialized tools for assessing supplier documentations and feedbacks. Just upload all supplier documentations or any Q&A file and get a detailed report and security profile.",
+      "AI specialized tool for assessing supplier feedbacks. Just upload all supplier Questions & Answers file and get a detailed report and security profile.",
+  },
+  {
+    name: "JinoDocs",
+    tag: "Document Assessment",
+    description:
+      "AI specialized tool for assessing supplier documentations. Just upload all supplier documentations PDF files and get a detailed report and security profile.",
   },
 ];
 
