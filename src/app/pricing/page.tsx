@@ -8,7 +8,7 @@ import { FAQ } from "@/components/FAQ";
 export const metadata: Metadata = {
   title: "CheckFirst Pricing — Transparent Plans | Security Assessments",
   description:
-    "Clear plans for AI security assessment software. Compare features across Starter, Professional, and Enterprise tiers.",
+    "Transparent pricing for AI security assessment software. Compare features across Core, Professional, and Enterprise plans — starting at $1,199/month.",
 };
 
 const checkIcon = (
@@ -23,27 +23,76 @@ const dashIcon = (
   </svg>
 );
 
-const featureRows = [
-  { feature: "ProvEye scans", starter: "25/month", pro: "Unlimited", enterprise: "Unlimited" },
-  { feature: "AI assessments", starter: "50/month", pro: "Unlimited", enterprise: "Unlimited" },
-  { feature: "Frameworks", starter: "15", pro: "45+", enterprise: "All + Custom" },
-  { feature: "Suppliers", starter: "Up to 50", pro: "Up to 500", enterprise: "Unlimited" },
-  { feature: "JinoXtreme CSA", starter: true, pro: true, enterprise: true },
-  { feature: "Jino 360 Research", starter: true, pro: true, enterprise: true },
-  { feature: "Smart Questionnaires", starter: false, pro: true, enterprise: true },
-  { feature: "AgentX AI Assistant", starter: false, pro: true, enterprise: true },
-  { feature: "CSA CAIQ Template", starter: true, pro: true, enterprise: true },
-  { feature: "Risk Management", starter: true, pro: true, enterprise: true },
-  { feature: "Task Management", starter: true, pro: true, enterprise: true },
-  { feature: "SSO", starter: false, pro: true, enterprise: true },
-  { feature: "SCIM Provisioning", starter: false, pro: false, enterprise: true },
-  { feature: "Dedicated Instance", starter: false, pro: false, enterprise: true },
-  { feature: "Custom Branding", starter: false, pro: true, enterprise: true },
-  { feature: "Support", starter: "Email", pro: "Priority", enterprise: "Dedicated CSM" },
+type FeatureSection = {
+  section: string;
+  rows: { feature: string; core: boolean | string; pro: boolean | string; enterprise: boolean | string }[];
+};
+
+const featureSections: FeatureSection[] = [
+  {
+    section: "Platform",
+    rows: [
+      { feature: "Vendors", core: "100", pro: "300", enterprise: "Unlimited" },
+      { feature: "Users", core: "Unlimited", pro: "Unlimited", enterprise: "Unlimited" },
+      { feature: "Core risk assessments", core: "Unlimited", pro: "Unlimited", enterprise: "Unlimited" },
+      { feature: "Smart Questionnaires", core: true, pro: true, enterprise: true },
+      { feature: "Continuous Monitoring 360", core: true, pro: true, enterprise: true },
+      { feature: "Security ratings/scoring", core: true, pro: true, enterprise: true },
+      { feature: "AI Agents (4 tools)", core: true, pro: true, enterprise: true },
+      { feature: "Task Management Module", core: true, pro: true, enterprise: true },
+      { feature: "Dedicated Instance & DB", core: true, pro: true, enterprise: true },
+      { feature: "Onboarding assistance", core: true, pro: true, enterprise: true },
+    ],
+  },
+  {
+    section: "Customisation",
+    rows: [
+      { feature: "Custom assessment templates", core: false, pro: true, enterprise: true },
+      { feature: "Custom branding", core: false, pro: true, enterprise: true },
+      { feature: "Custom advanced framework", core: false, pro: false, enterprise: true },
+    ],
+  },
+  {
+    section: "Add-ons & Integrations",
+    rows: [
+      { feature: "AgentX AI Assistant", core: "Add-on", pro: true, enterprise: true },
+      { feature: "Trust-center page", core: "Add-on", pro: "Add-on", enterprise: true },
+      { feature: "SSO/SAML", core: "Add-on", pro: "Add-on", enterprise: true },
+      { feature: "HIPAA Eligible", core: "Add-on", pro: "Add-on", enterprise: "Add-on" },
+    ],
+  },
+  {
+    section: "Support & SLA",
+    rows: [
+      { feature: "Support", core: "Email", pro: "Priority", enterprise: "2-hour SLA" },
+      { feature: "Quarterly business reviews", core: false, pro: false, enterprise: true },
+      { feature: "Dedicated CSM", core: false, pro: false, enterprise: true },
+    ],
+  },
+];
+
+const hostingCore = [
+  "SOC 2 Type II & SOC 3 & CSA certified infrastructure",
+  "GDPR compliant",
+  "99.99% uptime SLA",
+  "TLS/SSL encryption in transit",
+  "Encryption at rest",
+  "Daily automated backups (7-day retention)",
+];
+
+const hostingEnterprise = [
+  "All Professional certifications PLUS:",
+  "Cloudflare Protection \u2014 Advanced",
+  "Daily automated backups (30-day retention)",
+  "Multi-region High-availability",
+  "Clustered instances",
 ];
 
 function CellValue({ value }: { value: boolean | string }) {
   if (typeof value === "string") {
+    if (value === "Add-on") {
+      return <span className="inline-block rounded-full bg-slate-100 px-2.5 py-0.5 font-display text-xs font-medium text-slate-500">Add-on</span>;
+    }
     return <span className="font-body text-sm text-slate-700">{value}</span>;
   }
   return value ? checkIcon : dashIcon;
@@ -68,7 +117,7 @@ const pricingFaq = [
   {
     question: "What payment methods do you accept?",
     answer:
-      "Major credit cards for Starter and Professional plans. Enterprise customers can pay by invoice with net-30 terms.",
+      "Major credit cards for Core and Professional plans. Enterprise customers can pay by invoice with net-30 terms.",
   },
 ];
 
@@ -87,22 +136,25 @@ export default function PricingPage() {
         <div className="mb-16 grid gap-8 lg:grid-cols-3">
           {[
             {
-              name: "Starter",
-              price: "Contact us",
+              name: "Core",
+              price: "$1,199",
+              period: "/month",
               description: "For teams getting started with structured vendor risk management.",
               highlight: false,
               cta: "Get started",
             },
             {
               name: "Professional",
-              price: "Contact us",
+              price: "$2,499",
+              period: "/month",
               description: "For growing security teams that need the full assessment engine.",
               highlight: true,
               cta: "Book a demo",
             },
             {
               name: "Enterprise",
-              price: "Custom",
+              price: "$3,999",
+              period: "/month",
               description: "For large organisations and managed service providers.",
               highlight: false,
               cta: "Contact sales",
@@ -122,6 +174,7 @@ export default function PricingPage() {
               <p className="mt-1 font-body text-sm text-slate-500">{plan.description}</p>
               <p className="mt-6 font-display text-3xl font-extrabold tracking-tight text-slate-900">
                 {plan.price}
+                <span className="text-base font-medium text-slate-400">{plan.period}</span>
               </p>
               <div className="mt-8">
                 <Button
@@ -145,7 +198,7 @@ export default function PricingPage() {
                   Feature
                 </th>
                 <th className="px-6 py-4 text-center font-display text-sm font-bold text-slate-900">
-                  Starter
+                  Core
                 </th>
                 <th className="px-6 py-4 text-center font-display text-sm font-bold text-brand-700">
                   Professional
@@ -156,22 +209,66 @@ export default function PricingPage() {
               </tr>
             </thead>
             <tbody>
-              {featureRows.map((row) => (
-                <tr key={row.feature} className="border-b border-slate-50">
-                  <td className="px-6 py-3 font-body text-sm text-slate-700">
-                    {row.feature}
-                  </td>
-                  <td className="px-6 py-3 text-center">
-                    <CellValue value={row.starter} />
-                  </td>
-                  <td className="px-6 py-3 text-center bg-brand-50/30">
-                    <CellValue value={row.pro} />
-                  </td>
-                  <td className="px-6 py-3 text-center">
-                    <CellValue value={row.enterprise} />
-                  </td>
-                </tr>
+              {featureSections.map((section) => (
+                <>
+                  <tr key={`section-${section.section}`} className="border-b border-slate-100 bg-slate-50/60">
+                    <td colSpan={4} className="px-6 py-2.5 font-display text-xs font-bold uppercase tracking-wider text-slate-400">
+                      {section.section}
+                    </td>
+                  </tr>
+                  {section.rows.map((row) => (
+                    <tr key={row.feature} className="border-b border-slate-50">
+                      <td className="px-6 py-3 font-body text-sm text-slate-700">
+                        {row.feature}
+                      </td>
+                      <td className="px-6 py-3 text-center">
+                        <CellValue value={row.core} />
+                      </td>
+                      <td className="px-6 py-3 text-center bg-brand-50/30">
+                        <CellValue value={row.pro} />
+                      </td>
+                      <td className="px-6 py-3 text-center">
+                        <CellValue value={row.enterprise} />
+                      </td>
+                    </tr>
+                  ))}
+                </>
               ))}
+              {/* Hosting section */}
+              <tr className="border-b border-slate-100 bg-slate-50/60">
+                <td colSpan={4} className="px-6 py-2.5 font-display text-xs font-bold uppercase tracking-wider text-slate-400">
+                  Hosting &amp; Security
+                </td>
+              </tr>
+              <tr className="border-b border-slate-50">
+                <td className="px-6 py-3 font-body text-sm text-slate-700">
+                  Hosting
+                </td>
+                <td className="px-6 py-4 align-top" colSpan={2}>
+                  <ul className="space-y-1">
+                    {hostingCore.map((item) => (
+                      <li key={item} className="flex items-start gap-2 font-body text-xs leading-relaxed text-slate-600">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0 text-brand-600">
+                          <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </td>
+                <td className="px-6 py-4 align-top">
+                  <ul className="space-y-1">
+                    {hostingEnterprise.map((item) => (
+                      <li key={item} className="flex items-start gap-2 font-body text-xs leading-relaxed text-slate-600">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0 text-brand-600">
+                          <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
