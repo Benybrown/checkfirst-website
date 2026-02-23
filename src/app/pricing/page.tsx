@@ -139,7 +139,6 @@ export default function PricingPage() {
               name: "Core",
               price: "$1,199",
               period: "/month",
-              description: "For teams getting started with structured vendor risk management.",
               highlight: false,
               cta: "Get started",
             },
@@ -147,7 +146,6 @@ export default function PricingPage() {
               name: "Professional",
               price: "$2,499",
               period: "/month",
-              description: "For growing security teams that need the full assessment engine.",
               highlight: true,
               cta: "Book a demo",
             },
@@ -155,7 +153,6 @@ export default function PricingPage() {
               name: "Enterprise",
               price: "$3,999",
               period: "/month",
-              description: "For large organisations and managed service providers.",
               highlight: false,
               cta: "Contact sales",
             },
@@ -163,20 +160,24 @@ export default function PricingPage() {
             <Card
               key={plan.name}
               hover={false}
-              className={`flex flex-col ${plan.highlight ? "relative ring-2 ring-brand-600" : ""}`}
+              className={`flex flex-col items-center text-center ${plan.highlight ? "relative ring-2 ring-brand-600" : ""}`}
             >
               {plan.highlight && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-700 px-3 py-0.5 font-display text-xs font-semibold text-white">
                   Most popular
                 </span>
               )}
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-50">
+                <svg width="24" height="24" viewBox="0 0 16 16" fill="none" className="text-brand-600">
+                  <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
               <h3 className="font-display text-lg font-bold text-slate-900">{plan.name}</h3>
-              <p className="mt-1 font-body text-sm text-slate-500">{plan.description}</p>
-              <p className="mt-6 font-display text-3xl font-extrabold tracking-tight text-slate-900">
+              <p className="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900">
                 {plan.price}
                 <span className="text-base font-medium text-slate-400">{plan.period}</span>
               </p>
-              <div className="mt-8">
+              <div className="mt-6 w-full">
                 <Button
                   href="/contact"
                   variant={plan.highlight ? "primary" : "secondary"}
@@ -240,12 +241,13 @@ export default function PricingPage() {
                   Hosting &amp; Security
                 </td>
               </tr>
-              <tr className="border-b border-slate-50">
-                <td className="px-6 py-3 font-body text-sm text-slate-700">
-                  Hosting
+              {/* Core + Professional hosting (same tier) */}
+              <tr className="border-b border-slate-100 bg-brand-50/20">
+                <td className="px-6 py-4 align-top font-body text-sm text-slate-700" rowSpan={1}>
+                  <span className="font-display text-xs font-semibold uppercase tracking-wider text-brand-600">Core &amp; Professional</span>
                 </td>
-                <td className="px-6 py-4 align-top" colSpan={2}>
-                  <ul className="space-y-1">
+                <td className="px-6 py-4 align-top" colSpan={3}>
+                  <ul className="grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
                     {hostingCore.map((item) => (
                       <li key={item} className="flex items-start gap-2 font-body text-xs leading-relaxed text-slate-600">
                         <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0 text-brand-600">
@@ -256,11 +258,18 @@ export default function PricingPage() {
                     ))}
                   </ul>
                 </td>
-                <td className="px-6 py-4 align-top">
-                  <ul className="space-y-1">
-                    {hostingEnterprise.map((item) => (
-                      <li key={item} className="flex items-start gap-2 font-body text-xs leading-relaxed text-slate-600">
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0 text-brand-600">
+              </tr>
+              {/* Enterprise hosting (elevated tier) */}
+              <tr className="border-b border-slate-50 bg-slate-900">
+                <td className="rounded-bl-lg px-6 py-4 align-top">
+                  <span className="font-display text-xs font-semibold uppercase tracking-wider text-white">Enterprise</span>
+                </td>
+                <td className="rounded-br-lg px-6 py-4 align-top" colSpan={3}>
+                  <p className="mb-2 font-body text-xs font-medium text-slate-300">Everything in Core &amp; Professional, plus:</p>
+                  <ul className="grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
+                    {hostingEnterprise.filter((_, i) => i > 0).map((item) => (
+                      <li key={item} className="flex items-start gap-2 font-body text-xs leading-relaxed text-slate-300">
+                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0 text-brand-400">
                           <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                         {item}
