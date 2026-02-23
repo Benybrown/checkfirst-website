@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import type { Metadata } from "next";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -112,12 +113,12 @@ const pricingFaq = [
   {
     question: "Do you offer annual billing?",
     answer:
-      "Yes. Annual plans save 20% compared to monthly billing. Enterprise plans include custom terms.",
+      "Yes. Make additional savings by choosing annual plans compared to monthly billing.",
   },
   {
     question: "What payment methods do you accept?",
     answer:
-      "Major credit cards for Core and Professional plans. Enterprise customers can pay by invoice with net-30 terms.",
+      "Major credit cards for Core and Professional plans. Enterprise customers can pay by invoice with net-30 terms. Cryptocurrency are also accepted.",
   },
 ];
 
@@ -203,8 +204,8 @@ export default function PricingPage() {
             </thead>
             <tbody>
               {featureSections.map((section) => (
-                <>
-                  <tr key={`section-${section.section}`} className="border-b border-slate-200 bg-slate-100">
+                <Fragment key={section.section}>
+                  <tr className="border-b border-slate-200 bg-slate-100">
                     <td colSpan={4} className="px-6 py-3 font-display text-xs font-bold uppercase tracking-wider text-slate-600">
                       {section.section}
                     </td>
@@ -214,18 +215,18 @@ export default function PricingPage() {
                       <td className="px-6 py-3 font-body text-sm text-slate-700">
                         {row.feature}
                       </td>
-                      <td className="px-6 py-3 text-center">
-                        <CellValue value={row.core} />
+                      <td className="px-6 py-3">
+                        <div className="flex justify-center"><CellValue value={row.core} /></div>
                       </td>
-                      <td className="px-6 py-3 text-center bg-brand-50/30">
-                        <CellValue value={row.pro} />
+                      <td className="px-6 py-3 bg-brand-50/30">
+                        <div className="flex justify-center"><CellValue value={row.pro} /></div>
                       </td>
-                      <td className="px-6 py-3 text-center">
-                        <CellValue value={row.enterprise} />
+                      <td className="px-6 py-3">
+                        <div className="flex justify-center"><CellValue value={row.enterprise} /></div>
                       </td>
                     </tr>
                   ))}
-                </>
+                </Fragment>
               ))}
               {/* Hosting section */}
               <tr className="border-b border-slate-200 bg-slate-100">
