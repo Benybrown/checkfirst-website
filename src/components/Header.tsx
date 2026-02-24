@@ -12,6 +12,7 @@ interface NavLink {
 const navLinks: NavLink[] = [
   { href: "/assessments", label: "Assessments" },
   { href: "/ai-engine", label: "AI Engine" },
+  { href: "/managed-tprm", label: "Managed TPRM" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },

@@ -4,6 +4,7 @@ const footerLinks = {
   Platform: [
     { href: "/assessments", label: "Security Assessments" },
     { href: "/ai-engine", label: "AI Engine" },
+    { href: "/managed-tprm", label: "Managed TPRM" },
     { href: "/#how-it-works", label: "How it works" },
     { href: "/pricing", label: "Pricing" },
   ],
