@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://checkfirst.io/blog/sitemap_index.xml
