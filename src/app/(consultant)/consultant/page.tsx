@@ -8,11 +8,11 @@ import { EmailOptIn } from "@/components/EmailOptIn";
 export const metadata: Metadata = {
   title: "CheckFirst for Consultants — AI Security Tools at $99/month",
   description:
-    "Run CSA assessments, analyze vendor documents, and generate security reports with 5 AI tools. Built for independent security consultants. $99/month flat.",
+    "Scan vendor infrastructure with ProvEye, run CSA assessments, and analyze vendor documents with 4 AI tools. Built for independent security consultants. $99/month flat.",
   openGraph: {
     title: "CheckFirst for Consultants — AI Security Tools at $99/month",
     description:
-      "5 AI tools for security consultants. Assess vendors against 243 CSA controls, analyze documents, generate reports. $99/month flat.",
+      "4 AI tools for security consultants. Scan vendor infrastructure, assess against 243 CSA controls, analyze documents. $99/month flat.",
     type: "website",
   },
 };
@@ -69,6 +69,12 @@ const painPoints = [
 
 const aiTools = [
   {
+    name: "ProvEye",
+    tag: "External Scanning",
+    description:
+      "Scans vendor infrastructure in under 60 seconds — DNS health, SSL/TLS status, open ports, security headers, and known CVEs. No vendor cooperation needed.",
+  },
+  {
     name: "JinoXtreme",
     tag: "AI Assessment",
     description:
@@ -86,18 +92,6 @@ const aiTools = [
     description:
       "Feed in SOC 2 reports, ISO certificates, security policies — JinoDocs extracts key findings, maps to controls, and flags gaps.",
   },
-  {
-    name: "AI-Report",
-    tag: "Report Generation",
-    description:
-      "Generate professional assessment reports with executive summaries, detailed findings, and prioritised recommendations. Client-ready in minutes.",
-  },
-  {
-    name: "AgentX",
-    tag: "AI Research Agent",
-    description:
-      "Autonomous AI agent that researches vendors across the web — company intel, security incidents, certifications, public filings.",
-  },
 ];
 
 const howItWorks = [
@@ -111,7 +105,7 @@ const howItWorks = [
     step: "02",
     title: "Run the AI",
     description:
-      "Feed documents into JinoDocs, run JinoXtreme for CSA assessment, use AgentX for vendor research. All in parallel.",
+      "Scan vendor infrastructure with ProvEye, feed documents into JinoDocs, run JinoXtreme for CSA assessment. All in parallel.",
   },
   {
     step: "03",
@@ -128,11 +122,10 @@ const howItWorks = [
 ];
 
 const pricingFeatures = [
+  "ProvEye — external infrastructure scanning (DNS, SSL, ports, CVEs)",
   "JinoXtreme — full 243-control CSA assessment",
   "JinoQ&A — questionnaire response analysis",
   "JinoDocs — document intelligence & extraction",
-  "AI-Report — professional report generation",
-  "AgentX — AI-powered vendor research",
   "Unlimited usage — no per-assessment fees",
   "Same AI engine as the enterprise platform",
 ];
@@ -141,12 +134,12 @@ const faqItems = [
   {
     question: "What exactly is included in the $99/month plan?",
     answer:
-      "You get access to five AI tools: JinoXtreme (CSA assessment), JinoQ&A (questionnaire analysis), JinoDocs (document intelligence), AI-Report (report generation), and AgentX (AI research agent). Usage is unlimited — no per-assessment or per-report fees.",
+      "You get access to four AI tools: ProvEye (external infrastructure scanning), JinoXtreme (CSA assessment), JinoQ&A (questionnaire analysis), and JinoDocs (document intelligence). Usage is unlimited — no per-assessment or per-report fees.",
   },
   {
     question: "How is this different from the full CheckFirst platform?",
     answer:
-      "The full platform ($399/month) includes everything: ProvEye external scanning, supplier management, risk matrix, smart questionnaires, task management, and the document vault. The Consultant plan focuses on the five AI tools that independent consultants use most — assessment, analysis, and reporting.",
+      "The full platform ($399/month) includes everything in the Consultant plan plus AgentX AI research, supplier management, risk matrix, smart questionnaires, task management, and the document vault. The Consultant plan gives you four core AI tools — scanning, assessment, and analysis — without the platform overhead.",
   },
   {
     question: "Can I generate client-ready reports?",
@@ -197,9 +190,9 @@ export default function ConsultantPage() {
               security practice.
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate-400 sm:text-xl">
-              Run CSA assessments, analyze vendor documents, and generate
-              professional reports — no enterprise contract, no per-assessment
-              fees.
+              Scan vendor infrastructure, run CSA assessments, analyze
+              documents, and generate professional reports — no enterprise
+              contract, no per-assessment fees.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <a
@@ -223,18 +216,24 @@ export default function ConsultantPage() {
       <section className="border-b border-slate-200/60 bg-slate-50/50 px-6 py-12 lg:px-8">
         <div className="mx-auto grid max-w-[1280px] gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            { value: "5", label: "AI tools" },
+            { value: "4", label: "AI tools" },
             { value: "243", label: "CSA controls" },
-            { value: "$99", label: "/month flat" },
+            { value: "$99", label: "with promo code" },
             { value: "∞", label: "Unlimited usage" },
           ].map((m) => (
-            <div key={m.label} className="text-center">
+            <div key={m.value} className="text-center">
+              {"topLabel" in m && (
+                <p className="font-body text-sm text-slate-400">{m.topLabel}</p>
+              )}
               <p className="font-display text-3xl font-extrabold tracking-tight text-brand-700">
                 {m.value}
               </p>
-              <p className="mt-1 font-body text-sm text-slate-600">
+              <p className="mt-1 font-body text-sm text-slate-400">
                 {m.label}
               </p>
+              {"bottomLabel" in m && (
+                <p className="mt-0.5 font-body text-sm text-slate-400">{m.bottomLabel}</p>
+              )}
             </div>
           ))}
         </div>
@@ -267,24 +266,22 @@ export default function ConsultantPage() {
       <Section id="tools" className="bg-slate-50/60">
         <SectionHeader
           tag="What you get"
-          title="Five AI tools. One subscription. No limits."
-          description="The same AI engine that powers enterprise CheckFirst — focused on the tools consultants use most."
+          title="Four AI tools. One subscription. No limits."
+          description="The same AI engine that powers enterprise CheckFirst — plus ProvEye infrastructure scanning. Everything consultants need."
         />
-        <div className="flex flex-wrap justify-center gap-6">
+        <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2">
           {aiTools.map((tool) => (
-            <div key={tool.name} className="w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]">
-              <Card className="h-full">
-                <span className="mb-3 inline-block rounded-full bg-brand-50 px-3 py-0.5 font-display text-xs font-semibold text-brand-700">
-                  {tool.tag}
-                </span>
-                <h3 className="font-display text-lg font-bold text-slate-900">
-                  {tool.name}
-                </h3>
-                <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">
-                  {tool.description}
-                </p>
-              </Card>
-            </div>
+            <Card key={tool.name} className="h-full">
+              <span className="mb-3 inline-block rounded-full bg-brand-50 px-3 py-0.5 font-display text-xs font-semibold text-brand-700">
+                {tool.tag}
+              </span>
+              <h3 className="font-display text-lg font-bold text-slate-900">
+                {tool.name}
+              </h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">
+                {tool.description}
+              </p>
+            </Card>
           ))}
         </div>
       </Section>
