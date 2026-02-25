@@ -222,18 +222,12 @@ export default function ConsultantPage() {
             { value: "∞", label: "Unlimited usage" },
           ].map((m) => (
             <div key={m.value} className="text-center">
-              {"topLabel" in m && (
-                <p className="font-body text-sm text-slate-400">{m.topLabel}</p>
-              )}
               <p className="font-display text-3xl font-extrabold tracking-tight text-brand-700">
                 {m.value}
               </p>
               <p className="mt-1 font-body text-sm text-slate-400">
                 {m.label}
               </p>
-              {"bottomLabel" in m && (
-                <p className="mt-0.5 font-body text-sm text-slate-400">{m.bottomLabel}</p>
-              )}
             </div>
           ))}
         </div>
