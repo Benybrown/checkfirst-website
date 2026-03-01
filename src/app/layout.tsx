@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Outfit, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -17,6 +18,7 @@ const ibmPlexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://checkfirst.io"),
   title: "CheckFirst — AI-Powered Vendor Security Assessments & TPRM Platform",
   description:
     "CheckFirst replaces slow, manual vendor security assessments with instant AI analysis. Assess vendors against 243+ CSA controls in minutes. 45+ frameworks supported.",
@@ -29,6 +31,9 @@ export const metadata: Metadata = {
       "Replace slow vendor assessments with instant AI analysis. 243 CSA controls, ProvEye scanning, and smart questionnaires in one platform.",
     type: "website",
   },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({
@@ -38,6 +43,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${outfit.variable} ${ibmPlexSans.variable}`}>
+      <head>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-P9C2NQ87BK"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-P9C2NQ87BK');`}
+        </Script>
+      </head>
       <body>{children}</body>
     </html>
   );

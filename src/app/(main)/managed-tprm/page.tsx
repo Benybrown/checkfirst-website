@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Managed TPRM — CheckFirst",
   description:
     "Let CheckFirst run your entire third-party risk management program. Dedicated analysts plus AI-powered assessments — launch in weeks, not months.",
+  alternates: {
+    canonical: "/managed-tprm",
+  },
 };
 
 const painPoints = [

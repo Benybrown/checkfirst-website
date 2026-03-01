@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Book a Demo or Contact Us — CheckFirst",
   description:
     "See CheckFirst in action with a personalised demo. We'll walk you through assessments, ProvEye scanning, and AI capabilities.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 const contactMethods = [

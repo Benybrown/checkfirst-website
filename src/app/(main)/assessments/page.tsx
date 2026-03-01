@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
+import { Card } from "@/components/Card";
 
 export const metadata: Metadata = {
   title: "AI Security Assessments — ProvEye Scanning, CSA CCM, Smart Questionnaires | CheckFirst",
   description:
     "Run complete vendor security assessments in minutes with AI-powered analysis, external ProvEye scanning, and 243-control CSA CCM evaluation. 45+ frameworks supported.",
+  alternates: {
+    canonical: "/assessments",
+  },
 };
 
 const steps = [
@@ -21,25 +24,25 @@ const steps = [
     step: "02",
     title: "Scan with ProvEye",
     description:
-      "Run an external security scan on the vendor's domain with our ProvEye public scanner in minutes.",
+      "Run an external security scan on the vendor's domain. ProvEye independently analyses DNS health (SPF, DKIM, DMARC), SSL/TLS status, open ports, security headers (HSTS, CSP), and known vulnerabilities. No questionnaire needed. Results in 30–60 seconds.",
   },
   {
     step: "03",
     title: "AI-powered assessment",
     description:
-      "Launch JinoXtreme AI agents assessment to evaluate the vendor against all 243 security controls.",
+      "Launch a JinoXtreme CSA assessment to evaluate the vendor against all 243 CSA Cloud Controls Matrix controls across 18 security domains. The AI produces per-control compliance ratings (Compliant, Partially Compliant, Non-Compliant) with evidence-based justifications.",
   },
   {
     step: "04",
     title: "Send Smart Questionnaires",
     description:
-      "Generate smart questionnaires that adapts questions to the vendor's profile and risk level.",
+      "Generate targeted questionnaires using AI that adapts questions to the vendor's profile and risk level. Jino-QA analyses responses for completeness, quality, consistency, and compliance alignment.",
   },
   {
     step: "05",
     title: "Research with Jino 360",
     description:
-      "Automatically gather vendor intelligence from deep web researches or company website resources.",
+      "Automatically gather vendor intelligence from multiple web sources — company website, news, security incidents, compliance certifications, public filings. AI synthesises findings into a structured profile.",
   },
   {
     step: "06",
@@ -119,261 +122,74 @@ export default function AssessmentsPage() {
         </div>
       </Section>
 
-      {/* Steps — visual process flow */}
-      <Section className="overflow-hidden bg-slate-50/60">
+      {/* Steps */}
+      <Section className="bg-slate-50/60">
         <SectionHeader
-          tag="How it works"
+          tag="How assessments work"
           title="Six steps to a complete vendor assessment"
         />
-
-        {/* ── Step 1 — full-width intro card ── */}
-        <div className="mx-auto mb-12 max-w-2xl animate-fade-in-up">
-          <div className="relative rounded-2xl border border-brand-200/60 bg-gradient-to-br from-brand-50 to-white p-8 shadow-card text-center">
-            <span className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-brand-600 font-display text-lg font-extrabold text-white shadow-md">
-              1
-            </span>
-            <h3 className="font-display text-xl font-bold text-slate-900">
-              {steps[0].title}
-            </h3>
-            <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">
-              {steps[0].description}
-            </p>
-            {/* Down arrow */}
-            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2">
-              <svg width="24" height="32" viewBox="0 0 24 32" fill="none" className="text-brand-400">
-                <path d="M12 0v26m0 0l-7-7m7 7l7-7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        {/* ── Middle: 2×2 card grid with overlapping screenshot ── */}
-        <div className="relative mt-16">
-          {/* 2×2 grid of step cards */}
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-            {/* Step 2 — top left */}
-            <div className="animate-fade-in-up animate-delay-100 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-card transition-shadow hover:shadow-card-hover lg:pr-[45%]">
-              <div className="flex items-start gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-100 font-display text-sm font-extrabold text-brand-700">
-                  02
-                </span>
-                <div>
-                  <h3 className="font-display text-lg font-bold text-slate-900">
-                    {steps[1].title}
-                  </h3>
-                  <p className="mt-1.5 font-body text-sm leading-relaxed text-slate-600">
-                    {steps[1].description}
-                  </p>
-                </div>
+        <div className="space-y-8">
+          {steps.map((s) => (
+            <div
+              key={s.step}
+              className="grid items-start gap-6 rounded-[16px] border border-slate-200/80 bg-white p-8 sm:grid-cols-[80px_1fr]"
+            >
+              <span aria-hidden="true" className="font-display text-4xl font-extrabold text-brand-600">
+                {s.step}
+              </span>
+              <div>
+                <h3 className="font-display text-xl font-bold text-slate-900">
+                  {s.title}
+                </h3>
+                <p className="mt-2 font-body text-base leading-relaxed text-slate-600">
+                  {s.description}
+                </p>
               </div>
             </div>
-
-            {/* Step 4 — top right */}
-            <div className="animate-fade-in-up animate-delay-200 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-card transition-shadow hover:shadow-card-hover lg:pl-[45%]">
-              <div className="flex items-start gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-100 font-display text-sm font-extrabold text-brand-700">
-                  04
-                </span>
-                <div>
-                  <h3 className="font-display text-lg font-bold text-slate-900">
-                    {steps[3].title}
-                  </h3>
-                  <p className="mt-1.5 font-body text-sm leading-relaxed text-slate-600">
-                    {steps[3].description}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Step 3 — bottom left */}
-            <div className="animate-fade-in-up animate-delay-300 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-card transition-shadow hover:shadow-card-hover lg:pr-[45%]">
-              <div className="flex items-start gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-100 font-display text-sm font-extrabold text-brand-700">
-                  03
-                </span>
-                <div>
-                  <h3 className="font-display text-lg font-bold text-slate-900">
-                    {steps[2].title}
-                  </h3>
-                  <p className="mt-1.5 font-body text-sm leading-relaxed text-slate-600">
-                    {steps[2].description}
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Step 5 — bottom right */}
-            <div className="animate-fade-in-up animate-delay-400 rounded-2xl border border-slate-200/80 bg-white p-6 shadow-card transition-shadow hover:shadow-card-hover lg:pl-[45%]">
-              <div className="flex items-start gap-3">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-brand-100 font-display text-sm font-extrabold text-brand-700">
-                  05
-                </span>
-                <div>
-                  <h3 className="font-display text-lg font-bold text-slate-900">
-                    {steps[4].title}
-                  </h3>
-                  <p className="mt-1.5 font-body text-sm leading-relaxed text-slate-600">
-                    {steps[4].description}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Centered overlapping screenshot */}
-          <div className="pointer-events-none absolute inset-0 hidden items-center justify-center lg:flex">
-            <div className="pointer-events-auto relative animate-fade-in-up animate-delay-200">
-              {/* Glow behind screenshot */}
-              <div className="absolute -inset-6 rounded-3xl bg-gradient-to-br from-brand-200/40 via-white/80 to-brand-100/30 blur-md" />
-              <div className="relative overflow-hidden rounded-2xl border-2 border-white bg-white shadow-2xl ring-1 ring-slate-200/60">
-                <Image
-                  src="/app-screenshot.png"
-                  alt="CheckFirst security posture dashboard showing vendor scores across ProvEye, Jino Website, Jino 360, AI Q&A, and AI Reports assessments"
-                  width={480}
-                  height={330}
-                  className="block"
-                  priority
-                />
-              </div>
-              {/* Floating label */}
-              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-brand-200 bg-white px-4 py-1.5 font-display text-xs font-semibold text-brand-700 shadow-lg">
-                Unified Security Posture
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile-only screenshot (shown below cards) */}
-          <div className="mt-8 flex justify-center lg:hidden">
-            <div className="relative">
-              <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl">
-                <Image
-                  src="/app-screenshot.png"
-                  alt="CheckFirst security posture dashboard"
-                  width={480}
-                  height={330}
-                  className="block"
-                />
-              </div>
-              <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full border border-brand-200 bg-white px-4 py-1.5 font-display text-xs font-semibold text-brand-700 shadow-md">
-                Unified Security Posture
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* ── Step 6 — full-width conclusion card ── */}
-        <div className="mx-auto mt-16 max-w-2xl animate-fade-in-up animate-delay-500">
-          {/* Down arrow */}
-          <div className="mb-6 flex justify-center">
-            <svg width="24" height="32" viewBox="0 0 24 32" fill="none" className="text-brand-400">
-              <path d="M12 0v26m0 0l-7-7m7 7l7-7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
-          <div className="rounded-2xl border-2 border-brand-300/60 bg-gradient-to-br from-brand-50 via-white to-brand-50 p-8 text-center shadow-card">
-            <span className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-brand-600 font-display text-lg font-extrabold text-white shadow-md">
-              6
-            </span>
-            <h3 className="font-display text-xl font-bold text-slate-900">
-              {steps[5].title}
-            </h3>
-            <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">
-              {steps[5].description}
-            </p>
-          </div>
+          ))}
         </div>
       </Section>
 
-      {/* Assessment Types */}
+      {/* Assessment Types Table */}
       <Section>
-        <span className="mb-6 block text-center">
-          <span className="inline-block rounded-full bg-brand-50 px-3.5 py-1 font-display text-xs font-semibold uppercase tracking-wider text-brand-700">
-            Assessment types
-          </span>
-        </span>
-
-        {/* 3 questionnaire buttons image */}
-        <div className="mx-auto mb-4 max-w-2xl">
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
-            <Image
-              src="/assessment-types-buttons.png"
-              alt="Three assessment types — Standard Questionnaire, Smart Questionnaire, and Triage Questionnaire"
-              width={800}
-              height={100}
-              className="block w-full"
-            />
-          </div>
-        </div>
-
-        {/* Description */}
-        <div className="mx-auto mb-16 max-w-2xl text-center">
-          <p className="text-lg leading-relaxed text-slate-600">
-            Each assessment type attacks vendor risk from a different angle.
-            Together, they give you complete coverage.
-          </p>
-        </div>
-
-        {/* 3 overlapping screenshots — smaller on sides, bigger in center */}
-        <div className="relative mx-auto max-w-5xl">
-          {/* Center — CCM Lite (largest) */}
-          <div className="mx-auto max-w-3xl">
-            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl">
-              <Image
-                src="/assessment-ccm-lite.png"
-                alt="CCM Lite standard questionnaire with security domains and questions"
-                width={900}
-                height={600}
-                className="block w-full"
-              />
-            </div>
-          </div>
-
-          {/* Bottom center — Decision Tree Flow (smaller, overlapping) */}
-          <div className="absolute -bottom-12 left-1/2 z-10 hidden w-[45%] -translate-x-1/2 lg:block">
-            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg ring-4 ring-white">
-              <Image
-                src="/assessment-decision-tree.png"
-                alt="Decision Tree Flow for triage questionnaires with conditional logic"
-                width={500}
-                height={400}
-                className="block w-full"
-              />
-            </div>
-          </div>
-
-          {/* Top center — Assessment types list (smaller, overlapping) */}
-          <div className="absolute -top-10 left-1/2 z-10 hidden w-[40%] -translate-x-1/2 lg:block">
-            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg ring-4 ring-white">
-              <Image
-                src="/assessment-types-list.png"
-                alt="Assessment types — Triage, Smart, and Standard questionnaires"
-                width={500}
-                height={200}
-                className="block w-full"
-              />
-            </div>
-          </div>
-
-          {/* Mobile fallback — show all 3 stacked */}
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:hidden">
-            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
-              <Image
-                src="/assessment-decision-tree.png"
-                alt="Decision Tree Flow"
-                width={500}
-                height={400}
-                className="block w-full"
-              />
-            </div>
-            <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
-              <Image
-                src="/assessment-types-list.png"
-                alt="Assessment types list"
-                width={500}
-                height={200}
-                className="block w-full"
-              />
-            </div>
-          </div>
+        <SectionHeader
+          tag="Assessment types"
+          title="Five engines, one platform"
+          description="Each assessment type attacks vendor risk from a different angle. Together, they give you complete coverage."
+        />
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="border-b-2 border-slate-200">
+                <th className="pb-4 text-left font-display text-sm font-bold text-slate-900">
+                  Assessment Type
+                </th>
+                <th className="pb-4 text-left font-display text-sm font-bold text-slate-900">
+                  What It Does
+                </th>
+                <th className="pb-4 text-left font-display text-sm font-bold text-slate-900">
+                  Speed
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {assessmentTypes.map((a) => (
+                <tr key={a.name} className="border-b border-slate-100">
+                  <td className="py-4 font-display text-sm font-semibold text-slate-900">
+                    {a.name}
+                  </td>
+                  <td className="py-4 font-body text-sm text-slate-600">
+                    {a.what}
+                  </td>
+                  <td className="py-4">
+                    <span className="inline-block rounded-full bg-brand-50 px-3 py-0.5 font-display text-xs font-semibold text-brand-700">
+                      {a.speed}
+                    </span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </Section>
 
@@ -381,19 +197,33 @@ export default function AssessmentsPage() {
       <Section id="frameworks" className="bg-slate-50/60">
         <SectionHeader
           tag="Built-in frameworks"
-          title="Security and Compliance Frameworks"
+          title="45+ security and compliance frameworks"
           description="CheckFirst supports the frameworks your auditors and customers care about."
         />
-        <div className="mx-auto max-w-4xl">
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
-            <Image
-              src="/frameworks-screenshot.png"
-              alt="Security and compliance frameworks — Security Triage, CSA, NIST, ISO 27001, SOC 2, PCI DSS"
-              width={1000}
-              height={600}
-              className="block w-full"
-            />
-          </div>
+        <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-2">
+          {frameworks.map((f) => (
+            <div
+              key={f}
+              className="flex items-center gap-3 rounded-[12px] border border-slate-200/80 bg-white px-5 py-4"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                className="shrink-0 text-brand-600"
+              >
+                <path
+                  d="M3.5 8.5L6.5 11.5L12.5 4.5"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span className="font-body text-sm text-slate-700">{f}</span>
+            </div>
+          ))}
         </div>
         <p className="mt-8 text-center font-body text-sm text-slate-500">
           Plus COBIT, ENISA, FedRAMP, SOX, and many more. Custom frameworks on Enterprise plans.

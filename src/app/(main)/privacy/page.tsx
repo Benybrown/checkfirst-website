@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Privacy Policy | CheckFirst",
   description:
     "CheckFirst Privacy Policy — how we collect, use, and protect your personal information.",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 export default function PrivacyPage() {

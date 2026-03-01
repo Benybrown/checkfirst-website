@@ -1,3 +1,8 @@
+# Dev server
+- **Port**: 6670 — `npx next dev -p 6670` → http://localhost:6670
+- **Git repo**: `Benybrown/checkfirst-website` (use `gh auth switch --user Benybrown`)
+- This folder IS the git repo (has .git)
+
 # Website goals
 - Build a premium-feeling, modern marketing site.
 - Primary CTA: "Book a demo" (sticky in header on desktop).

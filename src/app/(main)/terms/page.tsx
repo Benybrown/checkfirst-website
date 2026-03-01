@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Terms of Service | CheckFirst",
   description:
     "CheckFirst Terms of Service — the agreement governing your use of our platform and services.",
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 export default function TermsPage() {

@@ -1,4 +1,3 @@
-import { Fragment } from "react";
 import type { Metadata } from "next";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -9,7 +8,10 @@ import { FAQ } from "@/components/FAQ";
 export const metadata: Metadata = {
   title: "CheckFirst Pricing — Transparent Plans | Security Assessments",
   description:
-    "Transparent pricing for AI security assessment software. Compare features across Core, Professional, and Enterprise plans.",
+    "Clear plans for AI security assessment software. Compare features across Starter, Professional, and Enterprise tiers.",
+  alternates: {
+    canonical: "/pricing",
+  },
 };
 
 const checkIcon = (
@@ -24,76 +26,27 @@ const dashIcon = (
   </svg>
 );
 
-type FeatureSection = {
-  section: string;
-  rows: { feature: string; core: boolean | string; pro: boolean | string; enterprise: boolean | string }[];
-};
-
-const featureSections: FeatureSection[] = [
-  {
-    section: "Platform",
-    rows: [
-      { feature: "Vendors", core: "100", pro: "300", enterprise: "Unlimited" },
-      { feature: "Users", core: "Unlimited", pro: "Unlimited", enterprise: "Unlimited" },
-      { feature: "Core risk assessments", core: "Unlimited", pro: "Unlimited", enterprise: "Unlimited" },
-      { feature: "Smart Questionnaires", core: true, pro: true, enterprise: true },
-      { feature: "Continuous Monitoring 360", core: true, pro: true, enterprise: true },
-      { feature: "Security ratings/scoring", core: true, pro: true, enterprise: true },
-      { feature: "AI Agents (4 tools)", core: true, pro: true, enterprise: true },
-      { feature: "Task Management Module", core: true, pro: true, enterprise: true },
-      { feature: "Dedicated Instance & DB", core: true, pro: true, enterprise: true },
-      { feature: "Onboarding assistance", core: true, pro: true, enterprise: true },
-    ],
-  },
-  {
-    section: "Customisation",
-    rows: [
-      { feature: "Custom assessment templates", core: false, pro: true, enterprise: true },
-      { feature: "Custom branding", core: false, pro: true, enterprise: true },
-      { feature: "Custom advanced framework", core: false, pro: false, enterprise: true },
-    ],
-  },
-  {
-    section: "Add-ons & Integrations",
-    rows: [
-      { feature: "AgentX AI Assistant", core: "Add-on", pro: true, enterprise: true },
-      { feature: "Trust-center page", core: "Add-on", pro: "Add-on", enterprise: true },
-      { feature: "SSO/SAML", core: "Add-on", pro: "Add-on", enterprise: true },
-      { feature: "HIPAA Eligible", core: "Add-on", pro: "Add-on", enterprise: "Add-on" },
-    ],
-  },
-  {
-    section: "Support & SLA",
-    rows: [
-      { feature: "Support", core: "Email", pro: "Priority", enterprise: "2-hour SLA" },
-      { feature: "Quarterly business reviews", core: false, pro: false, enterprise: true },
-      { feature: "Dedicated CSM", core: false, pro: false, enterprise: true },
-    ],
-  },
-];
-
-const hostingCore = [
-  "SOC 2 Type II & SOC 3 & CSA certified infrastructure",
-  "GDPR compliant",
-  "99.99% uptime SLA",
-  "TLS/SSL encryption in transit",
-  "Encryption at rest",
-  "Daily automated backups (7-day retention)",
-];
-
-const hostingEnterprise = [
-  "All Professional certifications PLUS:",
-  "Cloudflare Protection \u2014 Advanced",
-  "Daily automated backups (30-day retention)",
-  "Multi-region High-availability",
-  "Clustered instances",
+const featureRows = [
+  { feature: "ProvEye scans", starter: "25/month", pro: "Unlimited", enterprise: "Unlimited" },
+  { feature: "AI assessments", starter: "50/month", pro: "Unlimited", enterprise: "Unlimited" },
+  { feature: "Frameworks", starter: "15", pro: "45+", enterprise: "All + Custom" },
+  { feature: "Suppliers", starter: "Up to 50", pro: "Up to 500", enterprise: "Unlimited" },
+  { feature: "JinoXtreme CSA", starter: true, pro: true, enterprise: true },
+  { feature: "Jino 360 Research", starter: true, pro: true, enterprise: true },
+  { feature: "Smart Questionnaires", starter: false, pro: true, enterprise: true },
+  { feature: "AgentX AI Assistant", starter: false, pro: true, enterprise: true },
+  { feature: "CSA CAIQ Template", starter: true, pro: true, enterprise: true },
+  { feature: "Risk Management", starter: true, pro: true, enterprise: true },
+  { feature: "Task Management", starter: true, pro: true, enterprise: true },
+  { feature: "SSO", starter: false, pro: true, enterprise: true },
+  { feature: "SCIM Provisioning", starter: false, pro: false, enterprise: true },
+  { feature: "Dedicated Instance", starter: false, pro: false, enterprise: true },
+  { feature: "Custom Branding", starter: false, pro: true, enterprise: true },
+  { feature: "Support", starter: "Email", pro: "Priority", enterprise: "Dedicated CSM" },
 ];
 
 function CellValue({ value }: { value: boolean | string }) {
   if (typeof value === "string") {
-    if (value === "Add-on") {
-      return <span className="inline-block rounded-full bg-slate-100 px-2.5 py-0.5 font-display text-xs font-medium text-slate-500">Add-on</span>;
-    }
     return <span className="font-body text-sm text-slate-700">{value}</span>;
   }
   return value ? checkIcon : dashIcon;
@@ -113,12 +66,12 @@ const pricingFaq = [
   {
     question: "Do you offer annual billing?",
     answer:
-      "Yes. Make additional savings by choosing annual plans compared to monthly billing.",
+      "Yes. Annual plans save 20% compared to monthly billing. Enterprise plans include custom terms.",
   },
   {
     question: "What payment methods do you accept?",
     answer:
-      "Major credit cards for Core and Professional plans. Enterprise customers can pay by invoice with net-30 terms. Cryptocurrency are also accepted.",
+      "Major credit cards for Starter and Professional plans. Enterprise customers can pay by invoice with net-30 terms.",
   },
 ];
 
@@ -130,23 +83,30 @@ export default function PricingPage() {
         <SectionHeader
           tag="Pricing"
           title="Clear plans. No surprises."
+          description="We believe transparency builds trust. If we're asking you to trust us with your security data, the least we can do is be upfront about what you get."
         />
 
         {/* Plan Cards */}
         <div className="mb-16 grid gap-8 lg:grid-cols-3">
           {[
             {
-              name: "Core",
+              name: "Starter",
+              price: "Contact us",
+              description: "For teams getting started with structured vendor risk management.",
               highlight: false,
               cta: "Get started",
             },
             {
               name: "Professional",
+              price: "Contact us",
+              description: "For growing security teams that need the full assessment engine.",
               highlight: true,
               cta: "Book a demo",
             },
             {
               name: "Enterprise",
+              price: "Custom",
+              description: "For large organisations and managed service providers.",
               highlight: false,
               cta: "Contact sales",
             },
@@ -154,23 +114,19 @@ export default function PricingPage() {
             <Card
               key={plan.name}
               hover={false}
-              className={`flex flex-col items-center text-center ${plan.highlight ? "relative ring-2 ring-brand-600" : ""}`}
+              className={`flex flex-col ${plan.highlight ? "relative ring-2 ring-brand-600" : ""}`}
             >
               {plan.highlight && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-700 px-3 py-0.5 font-display text-xs font-semibold text-white">
                   Most popular
                 </span>
               )}
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-50">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-brand-600">
-                  <path d="M5 12.5L9.5 17L19 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
               <h3 className="font-display text-lg font-bold text-slate-900">{plan.name}</h3>
-              <p className="mt-3 font-display text-xl font-semibold text-slate-500">
-                Contact us
+              <p className="mt-1 font-body text-sm text-slate-500">{plan.description}</p>
+              <p className="mt-6 font-display text-3xl font-extrabold tracking-tight text-slate-900">
+                {plan.price}
               </p>
-              <div className="mt-6 w-full">
+              <div className="mt-8">
                 <Button
                   href="/contact"
                   variant={plan.highlight ? "primary" : "secondary"}
@@ -192,7 +148,7 @@ export default function PricingPage() {
                   Feature
                 </th>
                 <th className="px-6 py-4 text-center font-display text-sm font-bold text-slate-900">
-                  Core
+                  Starter
                 </th>
                 <th className="px-6 py-4 text-center font-display text-sm font-bold text-brand-700">
                   Professional
@@ -203,74 +159,22 @@ export default function PricingPage() {
               </tr>
             </thead>
             <tbody>
-              {featureSections.map((section) => (
-                <Fragment key={section.section}>
-                  <tr className="border-b border-slate-200 bg-slate-100">
-                    <td colSpan={4} className="px-6 py-3 font-display text-xs font-bold uppercase tracking-wider text-slate-600">
-                      {section.section}
-                    </td>
-                  </tr>
-                  {section.rows.map((row) => (
-                    <tr key={row.feature} className="border-b border-slate-50">
-                      <td className="px-6 py-3 font-body text-sm text-slate-700">
-                        {row.feature}
-                      </td>
-                      <td className="px-6 py-3">
-                        <div className="flex justify-center"><CellValue value={row.core} /></div>
-                      </td>
-                      <td className="px-6 py-3 bg-brand-50/30">
-                        <div className="flex justify-center"><CellValue value={row.pro} /></div>
-                      </td>
-                      <td className="px-6 py-3">
-                        <div className="flex justify-center"><CellValue value={row.enterprise} /></div>
-                      </td>
-                    </tr>
-                  ))}
-                </Fragment>
+              {featureRows.map((row) => (
+                <tr key={row.feature} className="border-b border-slate-50">
+                  <td className="px-6 py-3 font-body text-sm text-slate-700">
+                    {row.feature}
+                  </td>
+                  <td className="px-6 py-3 text-center">
+                    <CellValue value={row.starter} />
+                  </td>
+                  <td className="px-6 py-3 text-center bg-brand-50/30">
+                    <CellValue value={row.pro} />
+                  </td>
+                  <td className="px-6 py-3 text-center">
+                    <CellValue value={row.enterprise} />
+                  </td>
+                </tr>
               ))}
-              {/* Hosting section */}
-              <tr className="border-b border-slate-200 bg-slate-100">
-                <td colSpan={4} className="px-6 py-3 font-display text-xs font-bold uppercase tracking-wider text-slate-600">
-                  Hosting &amp; Security
-                </td>
-              </tr>
-              {/* Core + Professional hosting (same tier) */}
-              <tr className="border-b border-slate-100 bg-brand-50/20">
-                <td className="px-6 py-4 align-top font-body text-sm text-slate-700" rowSpan={1}>
-                  <span className="font-display text-xs font-semibold uppercase tracking-wider text-brand-600">Core &amp; Professional</span>
-                </td>
-                <td className="px-6 py-4 align-top" colSpan={3}>
-                  <ul className="grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
-                    {hostingCore.map((item) => (
-                      <li key={item} className="flex items-start gap-2 font-body text-xs leading-relaxed text-slate-600">
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0 text-brand-600">
-                          <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </td>
-              </tr>
-              {/* Enterprise hosting (elevated tier) */}
-              <tr className="border-b border-slate-50 bg-slate-900">
-                <td className="rounded-bl-lg px-6 py-4 align-top">
-                  <span className="font-display text-xs font-semibold uppercase tracking-wider text-white">Enterprise</span>
-                </td>
-                <td className="rounded-br-lg px-6 py-4 align-top" colSpan={3}>
-                  <p className="mb-2 font-body text-xs font-medium text-slate-300">Everything in Core &amp; Professional, plus:</p>
-                  <ul className="grid gap-x-8 gap-y-1.5 sm:grid-cols-2">
-                    {hostingEnterprise.filter((_, i) => i > 0).map((item) => (
-                      <li key={item} className="flex items-start gap-2 font-body text-xs leading-relaxed text-slate-300">
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0 text-brand-400">
-                          <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </td>
-              </tr>
             </tbody>
           </table>
         </div>

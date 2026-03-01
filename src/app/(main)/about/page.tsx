@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "About CheckFirst — Making Security Trust Instant and Accessible",
   description:
     "CheckFirst was founded to eliminate the friction in security assessments. Our AI-powered platform helps companies assess vendor risk and share their security posture in minutes.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const values = [
