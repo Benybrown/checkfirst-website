@@ -3,6 +3,8 @@ import Script from "next/script";
 import { Outfit, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import CookieBanner from "@/components/CookieBanner";
+import PostHogPageView from "@/components/PostHogPageView";
+import { PHProvider } from "./providers";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -54,8 +56,11 @@ export default function RootLayout({
         </Script>
       </head>
       <body>
-        {children}
-        <CookieBanner />
+        <PHProvider>
+          <PostHogPageView />
+          {children}
+          <CookieBanner />
+        </PHProvider>
       </body>
     </html>
   );

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import posthog from "posthog-js";
 
 declare global {
   interface Window {
@@ -28,11 +29,14 @@ export default function CookieBanner() {
     window.gtag?.("consent", "update", {
       analytics_storage: "granted",
     });
+    posthog.opt_in_capturing();
+    posthog.set_config({ persistence: "localStorage+cookie" });
     setVisible(false);
   }
 
   function decline() {
     localStorage.setItem("cookie-consent", "declined");
+    posthog.opt_out_capturing();
     setVisible(false);
   }
 
