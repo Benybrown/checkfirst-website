@@ -5,6 +5,14 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: [
+        "/blog/feed/",
+        "/blog/comments/",
+        "/blog/category/*/feed/",
+        "/blog/wp-includes/",
+        "/blog/wp-admin/",
+        "/blog/wp-json/",
+      ],
     },
     sitemap: [
       "https://checkfirst.io/sitemap.xml",
