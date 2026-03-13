@@ -8,7 +8,6 @@ const languages: { code: Lang; flag: string; label: string }[] = [
   { code: "en", flag: "🇬🇧", label: "English" },
   { code: "fr", flag: "🇫🇷", label: "Français" },
   { code: "es", flag: "🇪🇸", label: "Español" },
-  { code: "ar", flag: "🇸🇦", label: "العربية" },
 ];
 
 export function LanguageSwitcher() {

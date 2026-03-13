@@ -19,7 +19,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     const stored = localStorage.getItem("cf-lang") as Lang | null;
-    if (stored && ["en", "fr", "es", "ar"].includes(stored)) {
+    if (stored && ["en", "fr", "es"].includes(stored)) {
       setLanguageState(stored);
     }
     setMounted(true);
