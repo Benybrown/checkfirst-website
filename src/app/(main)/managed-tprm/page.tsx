@@ -91,6 +91,33 @@ const comparison = [
   { label: "Scale during busy periods", diy: "Hire or delay", managed: "Flexible analyst capacity" },
 ];
 
+const relatedCommercialPages = [
+  {
+    href: "/",
+    title: "CheckFirst platform overview",
+    description:
+      "Start here for the top-level product narrative before evaluating whether you need platform-only or managed delivery.",
+  },
+  {
+    href: "/assessments",
+    title: "Vendor security assessment software",
+    description:
+      "Shows the operational workflow behind supplier reviews, questionnaires, and evidence collection.",
+  },
+  {
+    href: "/ai-engine",
+    title: "AI vendor risk assessment engine",
+    description:
+      "Explains how CheckFirst compresses review time with AI while keeping human approval in the loop.",
+  },
+  {
+    href: "/tprm-software",
+    title: "TPRM software overview",
+    description:
+      "Useful when managed-service buyers also need the broader platform category and evaluation story.",
+  },
+];
+
 const survivorLinks = [
   {
     href: "/blog/3rd-party-risk-management-program/",

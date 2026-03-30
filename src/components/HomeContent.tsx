@@ -48,6 +48,11 @@ export function HomeContent() {
       title: "AI vendor risk assessment engine",
       description: "How CheckFirst uses AI for supplier due diligence, questionnaire analysis, and structured risk review.",
     },
+    {
+      href: "/tprm-software",
+      title: "TPRM software overview",
+      description: "Category page for buyers comparing third-party risk management platforms, workflows, and evaluation criteria.",
+    },
   ];
 
   const survivorLinks = [
@@ -318,7 +323,7 @@ export function HomeContent() {
           title="Choose the buying path that fits your TPRM team"
           description="Commercial pages for software buyers, managed-service buyers, and teams evaluating AI-led vendor review."
         />
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {buyerPages.map((page) => (
             <Link
               key={page.href}
