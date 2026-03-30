@@ -267,6 +267,27 @@ export default function ManagedTPRM() {
 
       <Section className="bg-slate-50/60">
         <SectionHeader
+          tag="Related commercial pages"
+          title="Explore the full CheckFirst commercial path"
+          description="These internal links connect software, managed service, AI, and platform-intent pages so buyers can move to the next relevant evaluation step."
+        />
+        <div className="grid gap-6 md:grid-cols-2">
+          {relatedCommercialPages.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-[16px] border border-slate-200/80 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+            >
+              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <span className="mt-4 inline-flex font-display text-sm font-semibold text-brand-700">Visit page →</span>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="bg-slate-50/60">
+        <SectionHeader
           tag="Support resources"
           title="Internal links for buyers evaluating managed TPRM"
           description="These supporting pages connect the service offer to the broader CheckFirst category and process narrative."
