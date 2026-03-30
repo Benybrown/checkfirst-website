@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useLanguage } from "./LanguageProvider";
 import { translations, type Lang } from "@/lib/homepage-translations";
 import { Section } from "@/components/Section";
@@ -27,8 +28,49 @@ export function HomeContent() {
   const metrics = [
     { value: "85%", label: t(tx.metrics.fasterAssessments, lang) },
     { value: "243", label: t(tx.metrics.csaControls, lang) },
-    { value: "40+", label: t(tx.metrics.frameworksSupported, lang) },
+    { value: "45+", label: t(tx.metrics.frameworksSupported, lang) },
     { value: "99.9%", label: t(tx.metrics.platformUptime, lang) },
+  ];
+
+  const buyerPages = [
+    {
+      href: "/assessments",
+      title: "Vendor security assessment software",
+      description: "Buyer-intent page for supplier assessment workflows, questionnaires, due diligence, and evidence review.",
+    },
+    {
+      href: "/managed-tprm",
+      title: "Managed TPRM services",
+      description: "For teams that need outsourced third-party risk management support without building extra headcount.",
+    },
+    {
+      href: "/ai-engine",
+      title: "AI vendor risk assessment engine",
+      description: "How CheckFirst uses AI for supplier due diligence, questionnaire analysis, and structured risk review.",
+    },
+  ];
+
+  const survivorLinks = [
+    {
+      href: "/blog/best-tprm-tool-2026/",
+      title: "Best TPRM Software in 2026",
+      description: "Commercial comparison page for category buyers evaluating software options.",
+    },
+    {
+      href: "/blog/vendor-security-assessment-guide-2026/",
+      title: "Vendor Security Assessment Guide",
+      description: "Process-level support page for teams improving assessment workflow and review quality.",
+    },
+    {
+      href: "/blog/3rd-party-risk-management-program/",
+      title: "Third-Party Risk Management Program Guide",
+      description: "Operational guide for building a repeatable TPRM program around assessment findings.",
+    },
+    {
+      href: "/blog/tprm-agentic-ai-assessment/",
+      title: "AI Vendor Risk Assessment",
+      description: "Canonical support page for AI in supplier due diligence and risk review.",
+    },
   ];
 
   const capabilities = tx.capabilities.items.map((c) => ({
@@ -265,6 +307,54 @@ export function HomeContent() {
                 </Button>
               </div>
             </Card>
+          ))}
+        </div>
+      </Section>
+
+      {/* ── Buyer Pages ── */}
+      <Section>
+        <SectionHeader
+          tag="Explore the platform"
+          title="Choose the buying path that fits your TPRM team"
+          description="Commercial pages for software buyers, managed-service buyers, and teams evaluating AI-led vendor review."
+        />
+        <div className="grid gap-6 md:grid-cols-3">
+          {buyerPages.map((page) => (
+            <Link
+              key={page.href}
+              href={page.href}
+              className="rounded-[16px] border border-slate-200/80 bg-white p-6 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-hover"
+            >
+              <h3 className="font-display text-lg font-bold text-slate-900">{page.title}</h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{page.description}</p>
+              <span className="mt-4 inline-flex font-display text-sm font-semibold text-brand-700">
+                Visit page →
+              </span>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      {/* ── Canonical Resources ── */}
+      <Section className="bg-slate-50/60">
+        <SectionHeader
+          tag="Learn more"
+          title="Canonical resources that support the core commercial pages"
+          description="Internal links to the survivor blog assets that reinforce category, process, and AI intent."
+        />
+        <div className="grid gap-6 sm:grid-cols-2">
+          {survivorLinks.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-[16px] border border-slate-200/80 bg-white p-6 shadow-card transition-all duration-200 hover:-translate-y-0.5 hover:shadow-card-hover"
+            >
+              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <span className="mt-4 inline-flex font-display text-sm font-semibold text-brand-700">
+                Read article →
+              </span>
+            </Link>
           ))}
         </div>
       </Section>

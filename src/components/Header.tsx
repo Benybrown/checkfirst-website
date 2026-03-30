@@ -7,6 +7,7 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 const navGroups = {
   Platform: [
     { href: "/assessments", label: "Security Assessments" },
+    { href: "/tprm-software", label: "TPRM Software" },
     { href: "/ai-engine", label: "AI Engine" },
     { href: "/#how-it-works", label: "How it works" },
   ],

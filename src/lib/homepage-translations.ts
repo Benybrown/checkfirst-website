@@ -15,19 +15,19 @@ export const translations = {
       "منصة إدارة مخاطر الأطراف الثالثة بالذكاء الاصطناعي"
     ),
     titleLine1: t(
-      "Stop chasing spreadsheets.",
+      "Replace slow vendor reviews.",
       "Arrêtez de courir après les tableurs.",
       "Deja de perseguir hojas de cálculo.",
       "توقف عن ملاحقة جداول البيانات."
     ),
     titleLine2: t(
-      "Assess vendors in minutes.",
+      "Own TPRM with AI.",
       "Évaluez vos fournisseurs en minutes.",
       "Evalúa proveedores en minutos.",
       "قيّم الموردين في دقائق."
     ),
     description: t(
-      "CheckFirst replaces slow, manual vendor security assessments with instant AI analysis. Evaluate vendors, scan infrastructure, and manage risk end-to-end.",
+      "CheckFirst is an AI-powered third-party risk management platform for faster vendor security assessments, supplier due diligence, and evidence-backed risk decisions.",
       "CheckFirst remplace les évaluations manuelles et lentes de la sécurité des fournisseurs par une analyse IA instantanée. Évaluez les fournisseurs, analysez l'infrastructure et gérez les risques de bout en bout.",
       "CheckFirst reemplaza las evaluaciones de seguridad de proveedores lentas y manuales con análisis instantáneo de IA. Evalúa proveedores, escanea infraestructura y gestiona riesgos de extremo a extremo.",
       "CheckFirst يستبدل تقييمات أمان الموردين اليدوية والبطيئة بتحليل فوري بالذكاء الاصطناعي. قيّم الموردين، وافحص البنية التحتية، وأدِر المخاطر من البداية إلى النهاية."
@@ -91,13 +91,13 @@ export const translations = {
   capabilities: {
     tag: t("What you get", "Ce que vous obtenez", "Lo que obtienes", "ما تحصل عليه"),
     title: t(
-      "Five engines. One platform. Complete coverage.",
+      "One TPRM platform for assessments, due diligence, and managed delivery.",
       "Cinq moteurs. Une plateforme. Couverture complète.",
       "Cinco motores. Una plataforma. Cobertura completa.",
       "خمسة محركات. منصة واحدة. تغطية شاملة."
     ),
     description: t(
-      "Named tools that do specific things — not vague promises about AI.",
+      "Designed for buyer-intent workflows: vendor security assessments, outsourced TPRM, and AI-assisted supplier due diligence.",
       "Des outils concrets qui font des choses précises — pas de vagues promesses sur l'IA.",
       "Herramientas concretas que hacen cosas específicas — no promesas vagas sobre IA.",
       "أدوات محددة تقوم بأشياء محددة — وليست وعوداً غامضة حول الذكاء الاصطناعي."
@@ -168,7 +168,7 @@ export const translations = {
 
   platform: {
     tag: t("The platform", "La plateforme", "La plataforma", "المنصة"),
-    title: t("Everything connects", "Tout est connecté", "Todo se conecta", "كل شيء متصل"),
+    title: t("Built for real TPRM operations", "Tout est connecté", "Todo se conecta", "كل شيء متصل"),
     modules: [
       {
         title: t("Supplier Management", "Gestion des fournisseurs", "Gestión de proveedores", "إدارة الموردين"),

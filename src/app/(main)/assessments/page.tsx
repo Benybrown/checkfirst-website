@@ -1,148 +1,239 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
+import { FAQ } from "@/components/FAQ";
 
 export const metadata: Metadata = {
-  title: "AI Security Assessments — ProvEye Scanning, CSA CCM, Smart Questionnaires | CheckFirst",
+  title: "Vendor Security Assessment Software | AI Supplier Assessments | CheckFirst",
   description:
-    "Run complete vendor security assessments in minutes with AI-powered analysis, external ProvEye scanning, and 243-control CSA CCM evaluation. 45+ frameworks supported.",
+    "Run vendor security assessments faster with AI-powered supplier due diligence, external scanning, adaptive questionnaires, and evidence-based review workflows.",
   alternates: {
     canonical: "/assessments",
   },
 };
 
-const steps = [
+const capabilities = [
+  {
+    title: "Supplier due diligence in one workflow",
+    description:
+      "Capture supplier context, criticality, data access, and business impact before you launch the assessment. Every review starts with the risk profile that matters.",
+  },
+  {
+    title: "External validation before the questionnaire returns",
+    description:
+      "ProvEye scans the vendor's internet-facing footprint for DNS, SSL/TLS, exposed services, headers, and known vulnerabilities so your team gets immediate signals.",
+  },
+  {
+    title: "Adaptive security questionnaires",
+    description:
+      "Send smarter questionnaires that change based on vendor type, risk tier, and prior answers, so suppliers only see relevant questions and your team gets cleaner data.",
+  },
+  {
+    title: "Evidence-based AI analysis",
+    description:
+      "JinoXtreme CSA and Jino-QA score answers, controls, and documents with citations and confidence signals so reviewers can move faster without losing control.",
+  },
+  {
+    title: "Built for buyer-ready review",
+    description:
+      "Turn questionnaires, scans, documents, and web research into one report your security, procurement, legal, and business owners can act on quickly.",
+  },
+  {
+    title: "Continuous follow-up and remediation",
+    description:
+      "Track gaps, assign remediation, and revisit high-risk vendors on the right schedule instead of restarting from scratch every year.",
+  },
+];
+
+const workflow = [
   {
     step: "01",
-    title: "Add your vendor",
+    title: "Intake and triage the vendor",
     description:
-      "Create a supplier profile with basic details — name, website, industry, criticality tier. The 9-stage lifecycle tracking begins automatically.",
+      "Capture vendor details, criticality, data sensitivity, and business use case so the assessment starts with the right level of scrutiny.",
   },
   {
     step: "02",
-    title: "Scan with ProvEye",
+    title: "Run external attack-surface checks",
     description:
-      "Run an external security scan on the vendor's domain. ProvEye independently analyses DNS health (SPF, DKIM, DMARC), SSL/TLS status, open ports, security headers (HSTS, CSP), and known vulnerabilities. No questionnaire needed. Results in 30–60 seconds.",
+      "Scan the vendor's domain and infrastructure with ProvEye to surface quick security signals before waiting on questionnaire responses.",
   },
   {
     step: "03",
-    title: "AI-powered assessment",
+    title: "Launch AI-powered assessment flows",
     description:
-      "Launch a JinoXtreme CSA assessment to evaluate the vendor against all 243 CSA Cloud Controls Matrix controls across 18 security domains. The AI produces per-control compliance ratings (Compliant, Partially Compliant, Non-Compliant) with evidence-based justifications.",
+      "Evaluate suppliers against CSA CCM controls, gather public intelligence, and collect documentation in parallel instead of sequentially.",
   },
   {
     step: "04",
-    title: "Send Smart Questionnaires",
+    title: "Send adaptive questionnaires",
     description:
-      "Generate targeted questionnaires using AI that adapts questions to the vendor's profile and risk level. Jino-QA analyses responses for completeness, quality, consistency, and compliance alignment.",
+      "Route vendors into the right questionnaire path and dynamically adjust questions based on profile, tier, and previous answers.",
   },
   {
     step: "05",
-    title: "Research with Jino 360",
+    title: "Review evidence, not just answers",
     description:
-      "Automatically gather vendor intelligence from multiple web sources — company website, news, security incidents, compliance certifications, public filings. AI synthesises findings into a structured profile.",
+      "Use Jino-QA and JinoDocs to assess completeness, consistency, and supporting documents so your team can focus on real exceptions.",
   },
   {
     step: "06",
-    title: "Review, score, decide",
+    title: "Decide and document",
     description:
-      "All data feeds into a unified risk profile with 5×5 matrix scoring. Review AI-generated reports with executive summaries, detailed findings, and prioritised recommendations.",
+      "Produce a unified risk profile, recommended treatment path, and stakeholder-ready summary for approve, escalate, or remediate decisions.",
   },
 ];
 
-const assessmentTypes = [
+const buyerOutcomes = [
   {
-    name: "ProvEye Scan",
-    what: "External infrastructure security analysis",
-    speed: "30–60 seconds",
+    title: "Security teams",
+    points: [
+      "Reduce manual review hours",
+      "Standardise assessment depth",
+      "Escalate only real risk issues",
+    ],
   },
   {
-    name: "JinoXtreme CSA",
-    what: "Full 243-control CSA CCM compliance evaluation",
-    speed: "Minutes",
+    title: "Procurement teams",
+    points: [
+      "Shorten vendor onboarding delays",
+      "Stop chasing spreadsheet questionnaires",
+      "Keep deals moving with clear status visibility",
+    ],
   },
   {
-    name: "Jino 360",
-    what: "Multi-source web intelligence gathering",
-    speed: "Minutes",
-  },
-  {
-    name: "Jino-QA",
-    what: "Semantic questionnaire response analysis",
-    speed: "Minutes",
-  },
-  {
-    name: "Smart Questionnaire",
-    what: "AI-generated targeted questionnaire",
-    speed: "Instant creation",
+    title: "Compliance leaders",
+    points: [
+      "Map findings to recognised frameworks",
+      "Keep audit-ready evidence in one place",
+      "Track remediation with documented rationale",
+    ],
   },
 ];
 
-const frameworks = [
-  "CSA CCM v4.0 (243 controls)",
-  "SOC 2 Type I & II",
-  "ISO 27001 / 27002 / 27017 / 27018",
-  "NIST Cybersecurity Framework",
-  "GDPR, DORA, NIS2",
-  "PCI DSS",
-  "HIPAA / HITRUST",
-  "CIS Controls",
+const survivorLinks = [
+  {
+    href: "/blog/vendor-security-assessment-guide-2026/",
+    title: "Vendor Security Assessment Guide",
+    description:
+      "Process, checklist, and best practices for building a stronger vendor assessment workflow.",
+  },
+  {
+    href: "/blog/3rd-party-risk-management-program/",
+    title: "Third-Party Risk Management Program Guide",
+    description:
+      "How to operationalise assessment findings inside a repeatable TPRM program.",
+  },
+  {
+    href: "/blog/tprm-agentic-ai-assessment/",
+    title: "AI Vendor Risk Assessment",
+    description:
+      "How AI can accelerate supplier reviews without removing human oversight.",
+  },
+  {
+    href: "/blog/best-tprm-tool-2026/",
+    title: "Best TPRM Software in 2026",
+    description:
+      "Commercial comparison page for teams evaluating the software category and alternatives.",
+  },
+];
+
+const faqItems = [
+  {
+    question: "What makes CheckFirst different from a standard questionnaire tool?",
+    answer:
+      "CheckFirst combines supplier intake, external scanning, adaptive questionnaires, AI document analysis, web research, and framework-based scoring in one workflow. Instead of collecting answers and leaving the review to your team, the platform helps your reviewers interpret evidence faster.",
+  },
+  {
+    question: "Can we use CheckFirst for high-risk vendors and lighter-tier suppliers?",
+    answer:
+      "Yes. You can route vendors by criticality and risk profile, use lighter triage flows where appropriate, and apply deeper evidence collection for higher-risk suppliers.",
+  },
+  {
+    question: "Which frameworks can we align assessments to?",
+    answer:
+      "CheckFirst supports 45+ frameworks including CSA CCM, SOC 2, ISO 27001 family controls, NIST CSF, GDPR, DORA, NIS2, PCI DSS, HIPAA/HITRUST, and more, with custom framework support available for enterprise programs.",
+  },
+  {
+    question: "How quickly can a vendor assessment be completed?",
+    answer:
+      "External scans complete in 30–60 seconds, while AI-supported assessment and review workflows run in minutes. Full turnaround still depends on vendor responsiveness and document quality, but the internal review bottleneck is dramatically reduced.",
+  },
 ];
 
 export default function AssessmentsPage() {
   return (
     <>
-      {/* Hero */}
       <Section>
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-4xl text-center">
           <span className="mb-6 inline-block rounded-full bg-brand-50 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-wider text-brand-700">
-            Security Assessments
+            Vendor security assessment software
           </span>
-          <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
-            Vendor assessments that take
+          <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+            Run vendor security assessments faster
             <br />
-            <span className="text-brand-700">minutes, not months</span>
+            <span className="text-brand-700">without sacrificing review quality</span>
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-slate-600 sm:text-xl">
-            Automate the painful parts of vendor assessment while keeping your
-            team in control. CheckFirst combines AI analysis, external scanning,
-            and structured frameworks to give you a complete picture of vendor
-            security — fast.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
+            CheckFirst gives security and procurement teams a faster way to complete
+            vendor security assessments, supplier due diligence, and control reviews.
+            Combine external scanning, adaptive questionnaires, AI evidence analysis,
+            and framework-based scoring in one platform.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="/contact" variant="primary" size="lg">
               Book a demo
             </Button>
             <Button href="/ai-engine" variant="secondary" size="lg">
-              Explore AI engines
+              See the AI engine
             </Button>
+          </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-500">
+            <span className="rounded-full bg-slate-100 px-3 py-1">Supplier assessment software</span>
+            <span className="rounded-full bg-slate-100 px-3 py-1">Vendor due diligence automation</span>
+            <span className="rounded-full bg-slate-100 px-3 py-1">CSA-aligned review workflows</span>
           </div>
         </div>
       </Section>
 
-      {/* Steps */}
       <Section className="bg-slate-50/60">
         <SectionHeader
-          tag="How assessments work"
-          title="Six steps to a complete vendor assessment"
+          tag="Why teams switch"
+          title="Turn a slow vendor review process into an operational workflow"
+          description="Built for buyers who need faster vendor onboarding, clearer risk decisions, and better evidence than spreadsheets can provide."
         />
-        <div className="space-y-8">
-          {steps.map((s) => (
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {capabilities.map((item) => (
+            <Card key={item.title}>
+              <h2 className="font-display text-lg font-bold text-slate-900">{item.title}</h2>
+              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">
+                {item.description}
+              </p>
+            </Card>
+          ))}
+        </div>
+      </Section>
+
+      <Section>
+        <SectionHeader
+          tag="Assessment workflow"
+          title="How CheckFirst handles vendor security assessments"
+          description="A buyer-intent workflow designed to shorten turnaround, improve evidence collection, and keep stakeholders aligned."
+        />
+        <div className="space-y-6">
+          {workflow.map((item) => (
             <div
-              key={s.step}
-              className="grid items-start gap-6 rounded-[16px] border border-slate-200/80 bg-white p-8 sm:grid-cols-[80px_1fr]"
+              key={item.step}
+              className="grid items-start gap-6 rounded-[16px] border border-slate-200/80 bg-white p-8 sm:grid-cols-[72px_1fr]"
             >
-              <span aria-hidden="true" className="font-display text-4xl font-extrabold text-brand-600">
-                {s.step}
-              </span>
+              <span className="font-display text-4xl font-extrabold text-brand-600">{item.step}</span>
               <div>
-                <h3 className="font-display text-xl font-bold text-slate-900">
-                  {s.title}
-                </h3>
+                <h2 className="font-display text-xl font-bold text-slate-900">{item.title}</h2>
                 <p className="mt-2 font-body text-base leading-relaxed text-slate-600">
-                  {s.description}
+                  {item.description}
                 </p>
               </div>
             </div>
@@ -150,99 +241,76 @@ export default function AssessmentsPage() {
         </div>
       </Section>
 
-      {/* Assessment Types Table */}
-      <Section>
+      <Section className="bg-slate-50/60">
         <SectionHeader
-          tag="Assessment types"
-          title="Five engines, one platform"
-          description="Each assessment type attacks vendor risk from a different angle. Together, they give you complete coverage."
+          tag="Who it helps"
+          title="Built for cross-functional buying and review teams"
+          description="Security owns the decision, but procurement, legal, compliance, and the business need the process to move."
         />
-        <div className="overflow-x-auto">
-          <table className="w-full border-collapse">
-            <thead>
-              <tr className="border-b-2 border-slate-200">
-                <th className="pb-4 text-left font-display text-sm font-bold text-slate-900">
-                  Assessment Type
-                </th>
-                <th className="pb-4 text-left font-display text-sm font-bold text-slate-900">
-                  What It Does
-                </th>
-                <th className="pb-4 text-left font-display text-sm font-bold text-slate-900">
-                  Speed
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {assessmentTypes.map((a) => (
-                <tr key={a.name} className="border-b border-slate-100">
-                  <td className="py-4 font-display text-sm font-semibold text-slate-900">
-                    {a.name}
-                  </td>
-                  <td className="py-4 font-body text-sm text-slate-600">
-                    {a.what}
-                  </td>
-                  <td className="py-4">
-                    <span className="inline-block rounded-full bg-brand-50 px-3 py-0.5 font-display text-xs font-semibold text-brand-700">
-                      {a.speed}
-                    </span>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </Section>
-
-      {/* Frameworks */}
-      <Section id="frameworks" className="bg-slate-50/60">
-        <SectionHeader
-          tag="Built-in frameworks"
-          title="45+ security and compliance frameworks"
-          description="CheckFirst supports the frameworks your auditors and customers care about."
-        />
-        <div className="mx-auto grid max-w-3xl gap-4 sm:grid-cols-2">
-          {frameworks.map((f) => (
-            <div
-              key={f}
-              className="flex items-center gap-3 rounded-[12px] border border-slate-200/80 bg-white px-5 py-4"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                className="shrink-0 text-brand-600"
-              >
-                <path
-                  d="M3.5 8.5L6.5 11.5L12.5 4.5"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span className="font-body text-sm text-slate-700">{f}</span>
-            </div>
+        <div className="grid gap-6 lg:grid-cols-3">
+          {buyerOutcomes.map((group) => (
+            <Card key={group.title}>
+              <h3 className="font-display text-lg font-bold text-slate-900">{group.title}</h3>
+              <ul className="mt-4 space-y-3">
+                {group.points.map((point) => (
+                  <li key={point} className="flex gap-3 text-sm text-slate-600">
+                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-brand-600" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </Card>
           ))}
         </div>
-        <p className="mt-8 text-center font-body text-sm text-slate-500">
-          Plus COBIT, ENISA, FedRAMP, SOX, and many more. Custom frameworks on Enterprise plans.
-        </p>
       </Section>
 
-      {/* CTA */}
+      <Section>
+        <SectionHeader
+          tag="Support resources"
+          title="Internal links for deeper evaluation"
+          description="These supporting assets reinforce the core assessments page and help buyers validate process, category fit, and AI workflow maturity."
+        />
+        <div className="grid gap-6 sm:grid-cols-2">
+          {survivorLinks.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-[16px] border border-slate-200/80 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+            >
+              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <span className="mt-4 inline-flex font-display text-sm font-semibold text-brand-700">
+                Read article →
+              </span>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      <Section className="bg-slate-50/60">
+        <SectionHeader
+          tag="FAQ"
+          title="Common questions about assessment software"
+          description="Everything buyers typically need before moving into a live evaluation."
+        />
+        <FAQ items={faqItems} />
+      </Section>
+
       <Section dark>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            See assessments in action
+            See how fast your vendor reviews could move
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-slate-400">
-            Book a demo and we&apos;ll run a live assessment on one of your
-            actual vendors.
+            Book a demo and we&apos;ll walk through a real vendor security assessment workflow,
+            from intake and scanning to review and decision support.
           </p>
-          <div className="mt-10">
+          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="/contact" variant="primary" size="lg">
               Book a demo
+            </Button>
+            <Button href="/managed-tprm" variant="ghost-dark" size="lg">
+              Need outsourced support?
             </Button>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
@@ -6,9 +7,9 @@ import { Card } from "@/components/Card";
 import { FAQ } from "@/components/FAQ";
 
 export const metadata: Metadata = {
-  title: "Managed TPRM — CheckFirst",
+  title: "Managed TPRM Services | Outsourced Third-Party Risk Management | CheckFirst",
   description:
-    "Let CheckFirst run your entire third-party risk management program. Dedicated analysts plus AI-powered assessments — launch in weeks, not months.",
+    "Outsource third-party risk management to CheckFirst. Get a dedicated analyst team, AI-assisted assessments, vendor follow-up, and executive reporting without building headcount.",
   alternates: {
     canonical: "/managed-tprm",
   },
@@ -16,350 +17,272 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
-    icon: (
-      <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path
-          d="M12 8v4l3 3"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <circle
-          cx="12"
-          cy="12"
-          r="9"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-      </svg>
-    ),
-    title: "Overwhelmed security teams",
+    title: "Backlogged vendor reviews",
     description:
-      "Your team is juggling 100+ vendors while handling security operations, incident response, and compliance — vendor assessments keep falling to the bottom of the pile.",
+      "Your internal team is balancing incidents, architecture reviews, audits, and vendor onboarding, so assessments slip and procurement waits.",
   },
   {
-    icon: (
-      <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path
-          d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-    title: "Slow vendor response cycles",
+    title: "Vendors need constant chasing",
     description:
-      "Vendors take weeks to return questionnaires, delaying procurement decisions and stalling deals that your business depends on.",
+      "Questionnaires, evidence requests, and follow-ups drag on for weeks unless someone owns the process end to end.",
   },
   {
-    icon: (
-      <svg width="24" height="24" fill="none" viewBox="0 0 24 24">
-        <path
-          d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <circle
-          cx="12"
-          cy="12"
-          r="3"
-          stroke="currentColor"
-          strokeWidth="2"
-        />
-      </svg>
-    ),
-    title: "Point-in-time assessments",
+    title: "DIY programs are hard to scale",
     description:
-      "Annual questionnaires create a false sense of security. Vendor risk changes continuously, but your assessments don't.",
+      "As vendor volume grows, spreadsheet-based TPRM creates inconsistent depth, uneven documentation, and limited executive visibility.",
   },
 ];
 
 const offerings = [
   {
-    title: "Dedicated TPRM Analyst",
+    title: "Dedicated TPRM analysts",
     description:
-      "End-to-end vendor assessment management — vendor outreach, document collection, follow-ups, and escalation. Your analyst becomes an extension of your team.",
+      "Get an operating layer for intake, outreach, evidence collection, assessment coordination, and follow-up. Your team stays in control of decisions while we keep work moving.",
   },
   {
-    title: "Full AI Platform Access",
+    title: "AI-powered assessment execution",
     description:
-      "ProvEye, JinoXtreme (243 controls), Jino 360, Smart Questionnaires, Jino-QA, and AgentX — all working behind the scenes to accelerate every assessment.",
+      "ProvEye, JinoXtreme, Jino 360, Jino-QA, and document analysis accelerate the heavy lifting behind every review so analysts spend less time on manual admin.",
   },
   {
-    title: "Executive Reporting",
+    title: "Program-level reporting",
     description:
-      "Quarterly risk reviews, executive summaries, and remediation tracking. Board-ready reports delivered on schedule, every time.",
+      "Receive stakeholder-ready summaries, vendor status visibility, remediation tracking, and recurring leadership reporting instead of rebuilding updates from scratch.",
   },
   {
-    title: "Vendor Communication",
+    title: "Flexible capacity without headcount risk",
     description:
-      "We handle all vendor outreach, questionnaire distribution, and follow-up. Your team never has to chase a vendor again.",
+      "Scale support during procurement waves, board reviews, customer due diligence spikes, or audit periods without hiring and training a larger in-house team.",
   },
 ];
 
 const steps = [
   {
     number: "01",
-    title: "Onboarding",
+    title: "Program intake",
     description:
-      "We map your vendor landscape, categorise vendors by criticality, and build your assessment calendar.",
+      "We map your vendor population, criticality model, approval path, and required framework coverage so assessments align with your actual operating model.",
   },
   {
     number: "02",
-    title: "Assessment",
+    title: "Assessment operations",
     description:
-      "AI-powered scans and analyst-led questionnaires run across all vendors — simultaneously, not sequentially.",
+      "Our team drives outreach, questionnaire distribution, scan execution, document follow-up, and exception management with CheckFirst running underneath.",
   },
   {
     number: "03",
-    title: "Reporting",
+    title: "Review and escalation",
     description:
-      "Executive risk reports with clear findings, risk ratings, and actionable remediation plans.",
+      "We package findings, surface high-risk issues, and route clear recommendations to your decision-makers instead of dumping raw questionnaire data on them.",
   },
   {
     number: "04",
-    title: "Continuous monitoring",
+    title: "Ongoing monitoring",
     description:
-      "Ongoing reassessment cycles and real-time risk updates keep your program current, not stale.",
+      "Vendors do not disappear after onboarding. We help maintain reassessment rhythm, remediation follow-up, and current program visibility.",
   },
 ];
 
 const comparison = [
+  { label: "Time to first operational coverage", diy: "Months", managed: "Weeks" },
+  { label: "Vendor outreach ownership", diy: "Internal team", managed: "CheckFirst analysts" },
+  { label: "Assessment consistency", diy: "Depends on bandwidth", managed: "Standardised workflow" },
+  { label: "Executive reporting", diy: "Manual prep", managed: "Built into delivery" },
+  { label: "Scale during busy periods", diy: "Hire or delay", managed: "Flexible analyst capacity" },
+];
+
+const survivorLinks = [
   {
-    label: "Time to first assessment",
-    diy: "Weeks",
-    managed: "Days",
+    href: "/blog/3rd-party-risk-management-program/",
+    title: "How to Build a Third-Party Risk Management Program",
+    description:
+      "Helpful for buyers comparing outsourced support with building the whole TPRM operating model in-house.",
   },
   {
-    label: "Vendor follow-up",
-    diy: "Your team",
-    managed: "Our analysts",
+    href: "/blog/vendor-security-assessment-guide-2026/",
+    title: "Vendor Security Assessment Guide",
+    description:
+      "A process-oriented resource that shows the assessment workload managed programs need to absorb.",
   },
   {
-    label: "Assessment depth",
-    diy: "Varies",
-    managed: "243 CSA controls every time",
-  },
-  {
-    label: "Monitoring",
-    diy: "Manual",
-    managed: "Continuous",
-  },
-  {
-    label: "Reporting",
-    diy: "Build your own",
-    managed: "Executive-ready",
+    href: "/blog/tprm-agentic-ai-assessment/",
+    title: "AI Vendor Risk Assessment",
+    description:
+      "Explains how AI can accelerate managed delivery without removing human oversight from risk decisions.",
   },
 ];
 
 const faqItems = [
   {
+    question: "Who is managed TPRM best suited for?",
+    answer:
+      "Managed TPRM is ideal for teams with growing vendor volume, limited internal analyst capacity, urgent onboarding pressure, or inconsistent follow-through on vendor reviews and remediation.",
+  },
+  {
+    question: "Do we still keep visibility and decision control?",
+    answer:
+      "Yes. CheckFirst acts as your operating layer, not a black box. You keep access to the platform, dashboards, reports, and risk decisions while our analysts handle execution overhead.",
+  },
+  {
     question: "How quickly can we launch?",
     answer:
-      "Most clients are fully onboarded within two weeks. We start with a vendor inventory workshop, configure the platform, and begin assessments immediately after.",
+      "Most clients can launch within a few weeks once vendor inventory, scoping, workflows, and stakeholder expectations are aligned. The exact timeline depends on vendor volume and process complexity.",
   },
   {
-    question: "How many vendors can you manage?",
+    question: "Can managed support scale with our vendor count?",
     answer:
-      "There's no hard limit. Our managed service scales from 50 to 5,000+ vendors. We adjust analyst capacity and AI throughput based on your portfolio size.",
-  },
-  {
-    question: "Do we still get platform access?",
-    answer:
-      "Absolutely. You get full access to the CheckFirst platform — dashboards, reports, and real-time risk data. The managed service adds analyst capacity on top, it doesn't replace your visibility.",
-  },
-  {
-    question: "What's the typical assessment turnaround?",
-    answer:
-      "AI-powered assessments complete in minutes. Full analyst-reviewed assessments, including vendor outreach and document review, typically take 3–5 business days.",
-  },
-  {
-    question: "Can we scale up or down?",
-    answer:
-      "Yes. The managed service is flexible — scale up during vendor onboarding waves or audit seasons, and scale back when things quiet down. No long-term lock-in.",
+      "Yes. The service is designed to expand around vendor growth, busy procurement windows, and audit-heavy periods without forcing you to hire ahead of demand.",
   },
 ];
 
 export default function ManagedTPRM() {
   return (
     <>
-      {/* Hero */}
       <Section>
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-4xl text-center">
           <span className="mb-6 inline-block rounded-full bg-brand-50 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-wider text-brand-700">
-            Managed Service
+            Managed TPRM services
           </span>
           <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            Your entire TPRM program —{" "}
-            <span className="text-brand-700">handled</span>
+            Outsource third-party risk management
+            <br />
+            <span className="text-brand-700">without losing control of the program</span>
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-slate-600 sm:text-xl">
-            Dedicated analysts backed by CheckFirst&apos;s full AI toolkit. We
-            run your vendor assessments end-to-end so your team can focus on what
-            matters. Launch in weeks, not months.
+          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
+            CheckFirst combines dedicated analysts with an AI-powered assessment platform so your
+            team can run a more responsive TPRM program without building a larger internal operation.
+            We handle the workflow, vendor follow-up, and reporting burden while your team keeps the decision rights.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="/contact" variant="primary" size="lg">
               Book a consultation
             </Button>
-            <Button href="#how-it-works" variant="secondary" size="lg">
-              See how it works
+            <Button href="/assessments" variant="secondary" size="lg">
+              See the platform workflow
             </Button>
           </div>
         </div>
       </Section>
 
-      {/* Pain Points */}
       <Section className="bg-slate-50/60">
         <SectionHeader
-          tag="The challenge"
-          title="Why vendor assessments stall"
-          description="Security teams are stretched thin. These are the problems we hear every day."
+          tag="Why outsourced TPRM"
+          title="When internal bandwidth is the bottleneck, managed delivery wins"
+          description="The goal is not to replace your program. It is to make sure the program actually runs at the pace the business needs."
         />
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 lg:grid-cols-3">
           {painPoints.map((point) => (
             <Card key={point.title}>
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-[10px] bg-brand-50 text-brand-700">
-                {point.icon}
-              </div>
-              <h3 className="font-display text-lg font-bold text-slate-900">
-                {point.title}
-              </h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">
-                {point.description}
-              </p>
+              <h2 className="font-display text-lg font-bold text-slate-900">{point.title}</h2>
+              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{point.description}</p>
             </Card>
           ))}
         </div>
       </Section>
 
-      {/* What You Get */}
       <Section>
         <SectionHeader
           tag="What you get"
-          title="A complete TPRM team, on demand"
-          description="Everything you need to run a world-class vendor risk program — without hiring a single person."
+          title="A managed third-party risk management operating layer"
+          description="Designed for teams that need assessment throughput, vendor accountability, and better reporting without a headcount-heavy rebuild."
         />
-        <div className="grid gap-8 sm:grid-cols-2">
+        <div className="grid gap-6 sm:grid-cols-2">
           {offerings.map((item) => (
             <Card key={item.title}>
-              <div className="mb-3 flex h-8 w-8 items-center justify-center rounded-full bg-brand-50 text-brand-700">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <path
-                    d="M3.5 8.5L6.5 11.5L12.5 4.5"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <h3 className="font-display text-lg font-bold text-slate-900">
-                {item.title}
-              </h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">
-                {item.description}
-              </p>
+              <h2 className="font-display text-lg font-bold text-slate-900">{item.title}</h2>
+              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
             </Card>
           ))}
         </div>
       </Section>
 
-      {/* How It Works */}
       <Section className="bg-slate-50/60" id="how-it-works">
         <SectionHeader
-          tag="Process"
-          title="How it works"
-          description="From onboarding to continuous monitoring — four steps to a fully managed program."
+          tag="Delivery model"
+          title="How managed TPRM works with CheckFirst"
+          description="A practical four-step service model focused on getting assessments completed and leadership informed."
         />
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => (
-            <div key={step.number} className="text-center lg:text-left">
-              <span className="font-display text-4xl font-extrabold text-brand-200">
-                {step.number}
-              </span>
-              <h3 className="mt-3 font-display text-lg font-bold text-slate-900">
-                {step.title}
-              </h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">
-                {step.description}
-              </p>
+            <div key={step.number} className="rounded-[16px] border border-slate-200/80 bg-white p-6">
+              <span className="font-display text-4xl font-extrabold text-brand-200">{step.number}</span>
+              <h3 className="mt-3 font-display text-lg font-bold text-slate-900">{step.title}</h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{step.description}</p>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* Comparison */}
       <Section>
         <SectionHeader
           tag="Comparison"
-          title="Why managed beats DIY"
-          description="See the difference between running TPRM yourself and letting CheckFirst handle it."
+          title="Managed support vs. building everything yourself"
+          description="A commercial view of the tradeoff buyers usually need to justify internally."
         />
-        <div className="mx-auto max-w-3xl overflow-hidden rounded-[16px] border border-slate-200/80 bg-white shadow-card">
-          {/* Header row */}
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-[16px] border border-slate-200/80 bg-white shadow-card">
           <div className="grid grid-cols-3 border-b border-slate-200 bg-slate-50 px-6 py-4">
             <div className="font-display text-sm font-semibold text-slate-500" />
-            <div className="text-center font-display text-sm font-semibold text-slate-500">
-              Do it yourself
-            </div>
-            <div className="text-center font-display text-sm font-semibold text-brand-700">
-              Managed by CheckFirst
-            </div>
+            <div className="text-center font-display text-sm font-semibold text-slate-500">DIY program</div>
+            <div className="text-center font-display text-sm font-semibold text-brand-700">Managed by CheckFirst</div>
           </div>
-          {/* Rows */}
-          {comparison.map((row, i) => (
+          {comparison.map((row, index) => (
             <div
               key={row.label}
-              className={`grid grid-cols-3 items-center px-6 py-4 ${
-                i < comparison.length - 1 ? "border-b border-slate-100" : ""
-              }`}
+              className={`grid grid-cols-3 items-center px-6 py-4 ${index < comparison.length - 1 ? "border-b border-slate-100" : ""}`}
             >
-              <div className="font-body text-sm font-medium text-slate-900">
-                {row.label}
-              </div>
-              <div className="text-center font-body text-sm text-slate-500">
-                {row.diy}
-              </div>
-              <div className="text-center font-display text-sm font-semibold text-brand-700">
-                {row.managed}
-              </div>
+              <div className="font-body text-sm font-medium text-slate-900">{row.label}</div>
+              <div className="text-center font-body text-sm text-slate-500">{row.diy}</div>
+              <div className="text-center font-display text-sm font-semibold text-brand-700">{row.managed}</div>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* FAQ */}
       <Section className="bg-slate-50/60">
+        <SectionHeader
+          tag="Support resources"
+          title="Internal links for buyers evaluating managed TPRM"
+          description="These supporting pages connect the service offer to the broader CheckFirst category and process narrative."
+        />
+        <div className="grid gap-6 md:grid-cols-3">
+          {survivorLinks.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="rounded-[16px] border border-slate-200/80 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+            >
+              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <span className="mt-4 inline-flex font-display text-sm font-semibold text-brand-700">Read article →</span>
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      <Section>
         <SectionHeader
           tag="FAQ"
           title="Frequently asked questions"
-          description="Everything you need to know about the managed TPRM service."
+          description="The practical questions buyers ask before moving from software evaluation to managed-service adoption."
         />
         <FAQ items={faqItems} />
       </Section>
 
-      {/* CTA */}
       <Section dark>
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-            Let us handle your vendor risk
+            Need a TPRM program that actually keeps up?
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-slate-400">
-            Stop chasing vendors and building spreadsheets. Get a dedicated team
-            and AI-powered platform managing your entire TPRM program.
+            Let&apos;s review your vendor volume, current bottlenecks, and service model.
+            We&apos;ll show how CheckFirst can combine platform software with managed analyst capacity.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="/contact" variant="primary" size="lg">
               Book a consultation
             </Button>
-            <Button href="#how-it-works" variant="ghost-dark" size="lg">
-              See how it works
+            <Button href="/ai-engine" variant="ghost-dark" size="lg">
+              Explore the AI layer
             </Button>
           </div>
         </div>

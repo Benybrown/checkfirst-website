@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: base, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${base}/assessments`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${base}/tprm-software`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/ai-engine`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/managed-tprm`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/pricing`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },

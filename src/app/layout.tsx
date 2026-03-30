@@ -22,16 +22,16 @@ const ibmPlexSans = IBM_Plex_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://checkfirst.io"),
-  title: "CheckFirst — AI-Powered Vendor Security Assessments & TPRM Platform",
+  title: "CheckFirst — Third-Party Risk Management Platform & AI Vendor Assessments",
   description:
-    "CheckFirst replaces slow, manual vendor security assessments with instant AI analysis. Assess vendors against 243+ CSA controls in minutes. 45+ frameworks supported.",
+    "CheckFirst helps teams run vendor security assessments, supplier due diligence, and third-party risk management faster with AI-powered workflows and evidence-backed review.",
   icons: {
     icon: "/favicon.svg",
   },
   openGraph: {
-    title: "CheckFirst — AI-Powered Vendor Security Assessments & TPRM Platform",
+    title: "CheckFirst — Third-Party Risk Management Platform & AI Vendor Assessments",
     description:
-      "Replace slow vendor assessments with instant AI analysis. 243 CSA controls, ProvEye scanning, and smart questionnaires in one platform.",
+      "Run faster vendor security assessments, supplier due diligence, and AI-assisted third-party risk reviews in one platform.",
     type: "website",
   },
   alternates: {
