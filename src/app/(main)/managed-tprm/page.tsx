@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Link from "next/link";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -10,6 +11,27 @@ export const metadata: Metadata = {
   title: "Managed TPRM Services | Outsourced Third-Party Risk Management | CheckFirst",
   description:
     "Outsource third-party risk management to CheckFirst. Get a dedicated analyst team, AI-assisted assessments, vendor follow-up, and executive reporting without building headcount.",
+  keywords: [
+    "managed tprm",
+    "outsourced third-party risk management",
+    "managed vendor risk management",
+    "tprm as a service",
+    "third-party risk management service",
+  ],
+  openGraph: {
+    title: "Managed TPRM Services | Outsourced Third-Party Risk Management | CheckFirst",
+    description:
+      "Outsource third-party risk management to CheckFirst. Get a dedicated analyst team, AI-assisted assessments, vendor follow-up, and executive reporting without building headcount.",
+    url: "https://checkfirst.io/managed-tprm",
+    siteName: "CheckFirst",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Managed TPRM Services | Outsourced Third-Party Risk Management | CheckFirst",
+    description:
+      "Outsource third-party risk management to CheckFirst. Get a dedicated analyst team, AI-assisted assessments, vendor follow-up, and executive reporting without building headcount.",
+  },
   alternates: {
     canonical: "/managed-tprm",
   },
@@ -30,6 +52,24 @@ const painPoints = [
     title: "DIY programs are hard to scale",
     description:
       "As vendor volume grows, spreadsheet-based TPRM creates inconsistent depth, uneven documentation, and limited executive visibility.",
+  },
+];
+
+const serviceFit = [
+  {
+    title: "For lean internal security teams",
+    description:
+      "Managed TPRM is a strong fit when your team owns risk decisions but lacks the analyst bandwidth to run every intake, follow-up, and assessment cycle internally.",
+  },
+  {
+    title: "For procurement-heavy onboarding environments",
+    description:
+      "When deal speed matters, outsourced operational ownership helps prevent vendor review queues from becoming a revenue blocker.",
+  },
+  {
+    title: "For scaling vendor ecosystems",
+    description:
+      "As third-party count grows, managed service delivery helps teams add operating capacity without committing to a larger permanent headcount model.",
   },
 ];
 
@@ -162,9 +202,70 @@ const faqItems = [
   },
 ];
 
+const managedSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      name: "Managed TPRM Services",
+      url: "https://checkfirst.io/managed-tprm",
+      description:
+        "Outsource third-party risk management to CheckFirst. Get a dedicated analyst team, AI-assisted assessments, vendor follow-up, and executive reporting without building headcount.",
+    },
+    {
+      "@type": "Service",
+      name: "Managed TPRM Services",
+      serviceType: "Third-Party Risk Management Service",
+      provider: {
+        "@type": "Organization",
+        name: "CheckFirst",
+        url: "https://checkfirst.io",
+      },
+      areaServed: "Global",
+      url: "https://checkfirst.io/managed-tprm",
+      description:
+        "Outsourced third-party risk management combining analyst execution, vendor follow-up, AI-assisted assessments, and executive reporting.",
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://checkfirst.io/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Managed TPRM",
+          item: "https://checkfirst.io/managed-tprm",
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
+  ],
+};
+
 export default function ManagedTPRM() {
   return (
     <>
+      <Script
+        id="managed-tprm-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(managedSchema) }}
+      />
+
       <Section>
         <div className="mx-auto max-w-4xl text-center">
           <span className="mb-6 inline-block rounded-full bg-brand-50 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-wider text-brand-700">
@@ -188,6 +289,22 @@ export default function ManagedTPRM() {
               See the platform workflow
             </Button>
           </div>
+        </div>
+      </Section>
+
+      <Section className="bg-slate-50/60">
+        <SectionHeader
+          tag="Service fit"
+          title="When managed TPRM is the right commercial move"
+          description="This page is for teams whose main bottleneck is execution capacity, not just software access."
+        />
+        <div className="grid gap-6 lg:grid-cols-3">
+          {serviceFit.map((item) => (
+            <Card key={item.title}>
+              <h2 className="font-display text-lg font-bold text-slate-900">{item.title}</h2>
+              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+            </Card>
+          ))}
         </div>
       </Section>
 

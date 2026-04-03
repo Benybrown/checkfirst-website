@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Link from "next/link";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -10,6 +11,27 @@ export const metadata: Metadata = {
   title: "Vendor Security Assessment Software | AI Supplier Assessments | CheckFirst",
   description:
     "Run vendor security assessments faster with AI-powered supplier due diligence, external scanning, adaptive questionnaires, and evidence-based review workflows.",
+  keywords: [
+    "vendor security assessment software",
+    "supplier assessment software",
+    "vendor risk assessment software",
+    "supplier due diligence software",
+    "security questionnaire automation",
+  ],
+  openGraph: {
+    title: "Vendor Security Assessment Software | AI Supplier Assessments | CheckFirst",
+    description:
+      "Run vendor security assessments faster with AI-powered supplier due diligence, external scanning, adaptive questionnaires, and evidence-based review workflows.",
+    url: "https://checkfirst.io/assessments",
+    siteName: "CheckFirst",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vendor Security Assessment Software | AI Supplier Assessments | CheckFirst",
+    description:
+      "Run vendor security assessments faster with AI-powered supplier due diligence, external scanning, adaptive questionnaires, and evidence-based review workflows.",
+  },
   alternates: {
     canonical: "/assessments",
   },
@@ -45,6 +67,24 @@ const capabilities = [
     title: "Continuous follow-up and remediation",
     description:
       "Track gaps, assign remediation, and revisit high-risk vendors on the right schedule instead of restarting from scratch every year.",
+  },
+];
+
+const buyerCriteria = [
+  {
+    title: "Assessment quality",
+    description:
+      "Good assessment software should help teams collect better evidence, not just more answers. Buyers need context, validation, and clearer reviewer guidance.",
+  },
+  {
+    title: "Operational speed",
+    description:
+      "A strong platform shortens intake, questionnaire routing, document review, and stakeholder follow-up so procurement and security can move faster together.",
+  },
+  {
+    title: "Review confidence",
+    description:
+      "The system should make exceptions, weak answers, evidence gaps, and risk signals easier to review so human decisions become faster and more defensible.",
   },
 ];
 
@@ -191,9 +231,70 @@ const faqItems = [
   },
 ];
 
+const assessmentsSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      name: "Vendor Security Assessment Software",
+      url: "https://checkfirst.io/assessments",
+      description:
+        "Run vendor security assessments faster with AI-powered supplier due diligence, external scanning, adaptive questionnaires, and evidence-based review workflows.",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "CheckFirst Assessments",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      url: "https://checkfirst.io/assessments",
+      description:
+        "Vendor security assessment software for supplier due diligence, adaptive questionnaires, evidence review, and AI-assisted risk analysis.",
+      publisher: {
+        "@type": "Organization",
+        name: "CheckFirst",
+        url: "https://checkfirst.io",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://checkfirst.io/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Assessments",
+          item: "https://checkfirst.io/assessments",
+        },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
+    },
+  ],
+};
+
 export default function AssessmentsPage() {
   return (
     <>
+      <Script
+        id="assessments-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(assessmentsSchema) }}
+      />
+
       <Section>
         <div className="mx-auto max-w-4xl text-center">
           <span className="mb-6 inline-block rounded-full bg-brand-50 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-wider text-brand-700">
@@ -223,6 +324,22 @@ export default function AssessmentsPage() {
             <span className="rounded-full bg-slate-100 px-3 py-1">Vendor due diligence automation</span>
             <span className="rounded-full bg-slate-100 px-3 py-1">CSA-aligned review workflows</span>
           </div>
+        </div>
+      </Section>
+
+      <Section className="bg-slate-50/60">
+        <SectionHeader
+          tag="Buyer criteria"
+          title="What buyers should expect from vendor assessment software"
+          description="The goal is not just collecting responses. The goal is faster, more defensible vendor risk decisions with less operational drag."
+        />
+        <div className="grid gap-6 lg:grid-cols-3">
+          {buyerCriteria.map((item) => (
+            <Card key={item.title}>
+              <h2 className="font-display text-lg font-bold text-slate-900">{item.title}</h2>
+              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+            </Card>
+          ))}
         </div>
       </Section>
 
