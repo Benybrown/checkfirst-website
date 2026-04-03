@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Link from "next/link";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
@@ -9,6 +10,27 @@ export const metadata: Metadata = {
   title: "AI Vendor Risk Assessment Engine | Automated Supplier Due Diligence | CheckFirst",
   description:
     "See how CheckFirst uses AI for vendor risk assessment, questionnaire review, document analysis, and supplier due diligence while keeping human approval in the loop.",
+  keywords: [
+    "ai vendor risk assessment",
+    "security questionnaire automation",
+    "supplier due diligence automation",
+    "ai risk assessment",
+    "vendor security assessment ai",
+  ],
+  openGraph: {
+    title: "AI Vendor Risk Assessment Engine | Automated Supplier Due Diligence | CheckFirst",
+    description:
+      "See how CheckFirst uses AI for vendor risk assessment, questionnaire review, document analysis, and supplier due diligence while keeping human approval in the loop.",
+    url: "https://checkfirst.io/ai-engine",
+    siteName: "CheckFirst",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Vendor Risk Assessment Engine | Automated Supplier Due Diligence | CheckFirst",
+    description:
+      "See how CheckFirst uses AI for vendor risk assessment, questionnaire review, document analysis, and supplier due diligence while keeping human approval in the loop.",
+  },
   alternates: {
     canonical: "/ai-engine",
   },
@@ -142,9 +164,58 @@ const survivorLinks = [
   },
 ];
 
+const aiEngineSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      name: "AI Vendor Risk Assessment Engine",
+      url: "https://checkfirst.io/ai-engine",
+      description:
+        "See how CheckFirst uses AI for vendor risk assessment, questionnaire review, document analysis, and supplier due diligence while keeping human approval in the loop.",
+    },
+    {
+      "@type": "SoftwareApplication",
+      name: "CheckFirst AI Engine",
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      url: "https://checkfirst.io/ai-engine",
+      description:
+        "AI-assisted vendor risk assessment, security questionnaire analysis, supplier due diligence, and evidence review for third-party risk workflows.",
+      publisher: {
+        "@type": "Organization",
+        name: "CheckFirst",
+        url: "https://checkfirst.io",
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://checkfirst.io/",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "AI Engine",
+          item: "https://checkfirst.io/ai-engine",
+        },
+      ],
+    },
+  ],
+};
+
 export default function AIEnginePage() {
   return (
     <>
+      <Script
+        id="ai-engine-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aiEngineSchema) }}
+      />
       <Section>
         <div className="mx-auto max-w-4xl text-center">
           <span className="mb-6 inline-block rounded-full bg-brand-50 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-wider text-brand-700">
