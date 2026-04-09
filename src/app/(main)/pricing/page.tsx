@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
-import { Card } from "@/components/Card";
 import { FAQ } from "@/components/FAQ";
+import { PricingCards } from "@/components/PricingCards";
 
 export const metadata: Metadata = {
   title: "CheckFirst Pricing — Transparent Plans | Security Assessments",
   description:
-    "Clear plans for AI security assessment software. Compare features across Starter, Professional, and Enterprise tiers.",
+    "Clear plans for AI security assessment software. Compare features across Starter, Professional, Scale, and Enterprise tiers.",
   alternates: {
     canonical: "/pricing",
   },
@@ -26,30 +26,54 @@ const dashIcon = (
   </svg>
 );
 
-const featureRows = [
-  { feature: "ProvEye scans", starter: "25/month", pro: "Unlimited", enterprise: "Unlimited" },
-  { feature: "AI assessments", starter: "50/month", pro: "Unlimited", enterprise: "Unlimited" },
-  { feature: "Frameworks", starter: "15", pro: "45+", enterprise: "All + Custom" },
-  { feature: "Suppliers", starter: "Up to 50", pro: "Up to 500", enterprise: "Unlimited" },
-  { feature: "JinoXtreme CSA", starter: true, pro: true, enterprise: true },
-  { feature: "Jino 360 Research", starter: true, pro: true, enterprise: true },
-  { feature: "Smart Questionnaires", starter: false, pro: true, enterprise: true },
-  { feature: "AgentX AI Assistant", starter: false, pro: true, enterprise: true },
-  { feature: "CSA CAIQ Template", starter: true, pro: true, enterprise: true },
-  { feature: "Risk Management", starter: true, pro: true, enterprise: true },
-  { feature: "Task Management", starter: true, pro: true, enterprise: true },
-  { feature: "SSO", starter: false, pro: true, enterprise: true },
-  { feature: "SCIM Provisioning", starter: false, pro: false, enterprise: true },
-  { feature: "Dedicated Instance", starter: false, pro: false, enterprise: true },
-  { feature: "Custom Branding", starter: false, pro: true, enterprise: true },
-  { feature: "Support", starter: "Email", pro: "Priority", enterprise: "Dedicated CSM" },
+const aiBadge = (
+  <span className="mr-1.5 inline-flex items-center gap-1 rounded-md bg-violet-50 px-2 py-0.5">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-violet-500">
+      <path d="M9 2l1.5 3.5L14 7l-3.5 1.5L9 12l-1.5-3.5L4 7l3.5-1.5L9 2z"/>
+      <path d="M18 8l1 2.5L21.5 12l-2.5 1-1 2.5-1-2.5L14.5 12l2.5-1L18 8z"/>
+      <path d="M9 15l.75 1.75L11.5 17.5l-1.75.75L9 20l-.75-1.75L6.5 17.5l1.75-.75L9 15z"/>
+    </svg>
+    <span className="font-display text-[11px] font-bold uppercase tracking-wide text-violet-600">AI</span>
+  </span>
+);
+
+const featureRows: { feature: string; starter: boolean | string; pro: boolean | string; scale: boolean | string; enterprise: boolean | string; ai?: boolean }[] = [
+  // Limits
+  { feature: "Vendors", starter: "Up to 10", pro: "Up to 35", scale: "Up to 100", enterprise: "Unlimited" },
+  { feature: "Users", starter: "Up to 3", pro: "Up to 10", scale: "Unlimited", enterprise: "Unlimited" },
+  { feature: "Templates", starter: "Up to 3", pro: "Up to 10", scale: "Unlimited", enterprise: "Unlimited" },
+  // Tier A — All plans
+  { feature: "Core Assessments", starter: true, pro: true, scale: true, enterprise: true },
+  { feature: "Smart Questionnaires", starter: true, pro: true, scale: true, enterprise: true },
+  { feature: "Security Ratings", starter: true, pro: true, scale: true, enterprise: true },
+  { feature: "Dedicated Instance", starter: true, pro: true, scale: true, enterprise: true },
+  { feature: "Onboarding", starter: true, pro: true, scale: true, enterprise: true },
+  { feature: "LLM BYOK", starter: true, pro: true, scale: true, enterprise: true },
+  { feature: "Jino Reports", starter: true, pro: true, scale: true, enterprise: true, ai: true },
+  { feature: "Jino QA", starter: true, pro: true, scale: true, enterprise: true, ai: true },
+  // Tier B — Professional+ or Scale+
+  { feature: "Jino Docs", starter: "Add-on", pro: true, scale: true, enterprise: true, ai: true },
+  { feature: "Jino Xtreme (Supplier)", starter: "Add-on", pro: "Add-on", scale: true, enterprise: true, ai: true },
+  { feature: "Jino Xtreme (Web)", starter: "Add-on", pro: "Add-on", scale: true, enterprise: true, ai: true },
+  { feature: "Unified Report", starter: "Add-on", pro: "Add-on", scale: true, enterprise: true, ai: true },
+  { feature: "Task Management", starter: false, pro: false, scale: true, enterprise: true },
+  { feature: "Custom Branding", starter: false, pro: false, scale: true, enterprise: true },
+  { feature: "ProvEye Monitoring", starter: false, pro: true, scale: true, enterprise: true },
+  // Tier C — Enterprise only
+  { feature: "Custom Framework", starter: "Add-on", pro: "Add-on", scale: "Add-on", enterprise: true },
+  { feature: "Trust Center", starter: false, pro: false, scale: false, enterprise: true },
+  { feature: "SSO / SAML", starter: false, pro: false, scale: false, enterprise: true },
+  { feature: "HIPAA Compliance", starter: false, pro: false, scale: false, enterprise: true },
+  { feature: "White Label", starter: false, pro: false, scale: false, enterprise: true },
+  // Support
+  { feature: "Support", starter: "Email", pro: "Priority", scale: "Priority", enterprise: "Dedicated CSM" },
 ];
 
 function CellValue({ value }: { value: boolean | string }) {
   if (typeof value === "string") {
     return <span className="font-body text-sm text-slate-700">{value}</span>;
   }
-  return value ? checkIcon : dashIcon;
+  return <span className="inline-flex justify-center">{value ? checkIcon : dashIcon}</span>;
 }
 
 const pricingFaq = [
@@ -66,12 +90,17 @@ const pricingFaq = [
   {
     question: "Do you offer annual billing?",
     answer:
-      "Yes. Annual plans save 20% compared to monthly billing. Enterprise plans include custom terms.",
+      "Yes. All plans are billed annually. Enterprise customers can arrange custom billing terms.",
   },
   {
     question: "What payment methods do you accept?",
     answer:
-      "Major credit cards for Starter and Professional plans. Enterprise customers can pay by invoice with net-30 terms.",
+      "Major credit cards for Starter, Professional, and Scale plans. Enterprise customers can pay by invoice with net-30 terms.",
+  },
+  {
+    question: "What are add-ons?",
+    answer:
+      "Some advanced features like Jino Xtreme, Unified Report, and Custom Framework are available as paid add-ons for plans that don't include them by default. Contact us for add-on pricing.",
   },
 ];
 
@@ -86,58 +115,8 @@ export default function PricingPage() {
           description="We believe transparency builds trust. If we're asking you to trust us with your security data, the least we can do is be upfront about what you get."
         />
 
-        {/* Plan Cards */}
-        <div className="mb-16 grid gap-8 lg:grid-cols-3">
-          {[
-            {
-              name: "Starter",
-              price: "Contact us",
-              description: "For teams getting started with structured vendor risk management.",
-              highlight: false,
-              cta: "Get started",
-            },
-            {
-              name: "Professional",
-              price: "Contact us",
-              description: "For growing security teams that need the full assessment engine.",
-              highlight: true,
-              cta: "Book a demo",
-            },
-            {
-              name: "Enterprise",
-              price: "Custom",
-              description: "For large organisations and managed service providers.",
-              highlight: false,
-              cta: "Contact sales",
-            },
-          ].map((plan) => (
-            <Card
-              key={plan.name}
-              hover={false}
-              className={`flex flex-col ${plan.highlight ? "relative ring-2 ring-brand-600" : ""}`}
-            >
-              {plan.highlight && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-700 px-3 py-0.5 font-display text-xs font-semibold text-white">
-                  Most popular
-                </span>
-              )}
-              <h3 className="font-display text-lg font-bold text-slate-900">{plan.name}</h3>
-              <p className="mt-1 font-body text-sm text-slate-500">{plan.description}</p>
-              <p className="mt-6 font-display text-3xl font-extrabold tracking-tight text-slate-900">
-                {plan.price}
-              </p>
-              <div className="mt-8">
-                <Button
-                  href="/contact"
-                  variant={plan.highlight ? "primary" : "secondary"}
-                  className="w-full"
-                >
-                  {plan.cta}
-                </Button>
-              </div>
-            </Card>
-          ))}
-        </div>
+        {/* Plan Cards — client component with checkout modal */}
+        <PricingCards />
 
         {/* Feature Comparison Table */}
         <div className="overflow-x-auto rounded-[16px] border border-slate-200/80 bg-white">
@@ -150,8 +129,11 @@ export default function PricingPage() {
                 <th className="px-6 py-4 text-center font-display text-sm font-bold text-slate-900">
                   Starter
                 </th>
-                <th className="px-6 py-4 text-center font-display text-sm font-bold text-brand-700">
+                <th className="px-6 py-4 text-center font-display text-sm font-bold text-slate-900">
                   Professional
+                </th>
+                <th className="px-6 py-4 text-center font-display text-sm font-bold text-brand-700">
+                  Scale
                 </th>
                 <th className="px-6 py-4 text-center font-display text-sm font-bold text-slate-900">
                   Enterprise
@@ -162,15 +144,21 @@ export default function PricingPage() {
               {featureRows.map((row) => (
                 <tr key={row.feature} className="border-b border-slate-50">
                   <td className="px-6 py-3 font-body text-sm text-slate-700">
-                    {row.feature}
+                    <span className="inline-flex items-center">
+                      {row.ai && aiBadge}
+                      {row.feature}
+                    </span>
                   </td>
-                  <td className="px-6 py-3 text-center">
+                  <td className={`px-6 py-3 text-center ${row.ai ? "bg-violet-50/40" : ""}`}>
                     <CellValue value={row.starter} />
                   </td>
-                  <td className="px-6 py-3 text-center bg-brand-50/30">
+                  <td className={`px-6 py-3 text-center ${row.ai ? "bg-violet-50/40" : ""}`}>
                     <CellValue value={row.pro} />
                   </td>
-                  <td className="px-6 py-3 text-center">
+                  <td className={`px-6 py-3 text-center ${row.ai ? "bg-violet-50/40" : "bg-brand-50/30"}`}>
+                    <CellValue value={row.scale} />
+                  </td>
+                  <td className={`px-6 py-3 text-center ${row.ai ? "bg-violet-50/40" : ""}`}>
                     <CellValue value={row.enterprise} />
                   </td>
                 </tr>
