@@ -77,6 +77,11 @@ const buyerCriteria = [
       "Good assessment software should help teams collect better evidence, not just more answers. Buyers need context, validation, and clearer reviewer guidance.",
   },
   {
+    title: "A real upgrade from spreadsheets",
+    description:
+      "The right platform should replace email chasing, spreadsheet trackers, and fragmented document review with one workflow that security and procurement can actually run together.",
+  },
+  {
     title: "Operational speed",
     description:
       "A strong platform shortens intake, questionnaire routing, document review, and stakeholder follow-up so procurement and security can move faster together.",
@@ -308,8 +313,8 @@ export default function AssessmentsPage() {
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
             CheckFirst gives security and procurement teams a faster way to complete
             vendor security assessments, supplier due diligence, and control reviews.
-            Combine external scanning, adaptive questionnaires, AI evidence analysis,
-            and framework-based scoring in one platform.
+            It is built for buyers replacing spreadsheet-based reviews, slow questionnaire follow-up,
+            and disconnected evidence collection with one structured workflow.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="/contact" variant="primary" size="lg">
@@ -318,6 +323,11 @@ export default function AssessmentsPage() {
             <Button href="/ai-engine" variant="secondary" size="lg">
               See the AI engine
             </Button>
+          </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-500">
+            <span className="rounded-full bg-slate-100 px-3 py-1">Supplier assessment software</span>
+            <span className="rounded-full bg-slate-100 px-3 py-1">Security questionnaire automation</span>
+            <span className="rounded-full bg-slate-100 px-3 py-1">Vendor due diligence workflow</span>
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-500">
             <span className="rounded-full bg-slate-100 px-3 py-1">Supplier assessment software</span>

@@ -8,9 +8,9 @@ import { Card } from "@/components/Card";
 import { FAQ } from "@/components/FAQ";
 
 export const metadata: Metadata = {
-  title: "TPRM Software | Third-Party Risk Management Platform | CheckFirst",
+  title: "TPRM Software | Third-Party Risk Management Software | CheckFirst",
   description:
-    "Evaluate modern TPRM software for vendor assessments, supplier due diligence, continuous monitoring, and AI-assisted third-party risk workflows.",
+    "Compare TPRM software for vendor assessments, supplier due diligence, continuous monitoring, and AI-assisted third-party risk workflows with CheckFirst.",
   keywords: [
     "tprm software",
     "third-party risk management software",
@@ -20,18 +20,18 @@ export const metadata: Metadata = {
     "tprm platform",
   ],
   openGraph: {
-    title: "TPRM Software | Third-Party Risk Management Platform | CheckFirst",
+    title: "TPRM Software | Third-Party Risk Management Software | CheckFirst",
     description:
-      "Evaluate modern TPRM software for vendor assessments, supplier due diligence, continuous monitoring, and AI-assisted third-party risk workflows.",
+      "Compare TPRM software for vendor assessments, supplier due diligence, continuous monitoring, and AI-assisted third-party risk workflows with CheckFirst.",
     url: "https://checkfirst.io/tprm-software",
     siteName: "CheckFirst",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TPRM Software | Third-Party Risk Management Platform | CheckFirst",
+    title: "TPRM Software | Third-Party Risk Management Software | CheckFirst",
     description:
-      "Evaluate modern TPRM software for vendor assessments, supplier due diligence, continuous monitoring, and AI-assisted third-party risk workflows.",
+      "Compare TPRM software for vendor assessments, supplier due diligence, continuous monitoring, and AI-assisted third-party risk workflows with CheckFirst.",
   },
   alternates: {
     canonical: "/tprm-software",
@@ -268,12 +268,17 @@ export default function TPRMSoftwarePage() {
             <span className="text-brand-700">built for modern vendor review teams</span>
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
-            CheckFirst helps teams manage vendor assessments, supplier due diligence,
-            AI-supported review, and remediation tracking in one third-party risk management platform.
+            CheckFirst gives buyers a modern TPRM software platform for vendor assessments, supplier due diligence,
+            AI-supported review, remediation tracking, and faster cross-functional risk decisions.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="/contact" variant="primary" size="lg">Book a demo</Button>
             <Button href="/blog/best-tprm-tool-2026/" variant="secondary" size="lg">See category comparison</Button>
+          </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-500">
+            <span className="rounded-full bg-slate-100 px-3 py-1">Third-party risk management software</span>
+            <span className="rounded-full bg-slate-100 px-3 py-1">Vendor risk management platform</span>
+            <span className="rounded-full bg-slate-100 px-3 py-1">Supplier due diligence workflow</span>
           </div>
         </div>
       </Section>
@@ -329,7 +334,7 @@ export default function TPRMSoftwarePage() {
         <SectionHeader
           tag="Why CheckFirst"
           title="Why CheckFirst fits the modern TPRM software category"
-          description="CheckFirst is designed for teams that need assessment throughput, better evidence, and stronger stakeholder visibility without adding process chaos."
+          description="CheckFirst is designed for teams that need assessment throughput, better evidence, stronger stakeholder visibility, and a clearer alternative to spreadsheets or generic GRC workflows."
         />
         <div className="grid gap-6 md:grid-cols-3">
           {whyCheckFirst.map((item) => (

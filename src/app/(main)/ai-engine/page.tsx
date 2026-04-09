@@ -82,6 +82,11 @@ const useCases = [
       "Accelerate first-pass risk reviews by combining external scanning, supplier intelligence, questionnaire analysis, and framework mapping.",
   },
   {
+    title: "A safer alternative to manual triage",
+    description:
+      "Instead of burying analysts in repetitive first-pass review work, use AI to structure evidence and surface exceptions that actually need human judgment.",
+  },
+  {
     title: "Automated supplier due diligence",
     description:
       "Shorten onboarding bottlenecks by gathering public evidence and structuring findings before your team performs final review.",
@@ -229,7 +234,7 @@ export default function AIEnginePage() {
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
             CheckFirst uses specialised AI engines to accelerate vendor risk assessment,
             security questionnaire review, document analysis, and supplier research.
-            The result is faster assessment throughput with better structure, evidence, and human oversight.
+            This is built for buyers who want faster due diligence and clearer risk signals without handing final decisions to a black box.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="/contact" variant="primary" size="lg">
@@ -238,6 +243,11 @@ export default function AIEnginePage() {
             <Button href="/assessments" variant="secondary" size="lg">
               See assessment workflow
             </Button>
+          </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-500">
+            <span className="rounded-full bg-slate-100 px-3 py-1">AI vendor risk assessment</span>
+            <span className="rounded-full bg-slate-100 px-3 py-1">Automated supplier due diligence</span>
+            <span className="rounded-full bg-slate-100 px-3 py-1">Security questionnaire automation</span>
           </div>
         </div>
       </Section>

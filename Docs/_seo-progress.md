@@ -1,6 +1,24 @@
 # CheckFirst — SEO Progress
 
-> Last updated: March 15, 2026
+> Last updated: April 9, 2026
+
+## Apr 9, 2026 Implementation Proof
+- Added homepage `FAQPage` JSON-LD in `src/app/(main)/page.tsx` to strengthen homepage structured-data coverage for platform-intent queries.
+- Added a new commercial-intent internal-link strip on the homepage in `src/components/HomeContent.tsx` pointing directly to:
+  - `/tprm-software`
+  - `/assessments`
+  - `/managed-tprm`
+  - `/ai-engine`
+- Tightened root metadata in `src/app/layout.tsx` to align title/description with `TPRM software`, `vendor security assessments`, and `managed TPRM` intent.
+- Tightened homepage hero copy in `src/components/HomeContent.tsx` so English primary messaging now leads with category and commercial-intent language.
+- Strengthened `/tprm-software` metadata and buyer framing in `src/app/(main)/tprm-software/page.tsx`.
+- Strengthened `/assessments` hero copy and buyer framing in `src/app/(main)/assessments/page.tsx`.
+- Strengthened `/managed-tprm` hero copy and buyer framing in `src/app/(main)/managed-tprm/page.tsx`.
+- Strengthened `/ai-engine` hero copy and buyer framing in `src/app/(main)/ai-engine/page.tsx`.
+- Purpose: concentrate internal-link equity on the 4 commercial pages we want to push, improve homepage/category intent, and make all four commercial pages more page-one ready.
+- Verification: code edits completed in the CheckFirst site repo at `/home/node/.openclaw/workspace/projects/checkfirst-website/`.
+
+---
 
 ---
 

@@ -62,6 +62,11 @@ const serviceFit = [
       "Managed TPRM is a strong fit when your team owns risk decisions but lacks the analyst bandwidth to run every intake, follow-up, and assessment cycle internally.",
   },
   {
+    title: "For teams stuck in spreadsheet operations",
+    description:
+      "If vendor reviews live in inboxes, spreadsheets, and scattered reminders, managed TPRM gives you a real operating layer instead of more admin overhead.",
+  },
+  {
     title: "For procurement-heavy onboarding environments",
     description:
       "When deal speed matters, outsourced operational ownership helps prevent vendor review queues from becoming a revenue blocker.",
@@ -279,7 +284,7 @@ export default function ManagedTPRM() {
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
             CheckFirst combines dedicated analysts with an AI-powered assessment platform so your
             team can run a more responsive TPRM program without building a larger internal operation.
-            We handle the workflow, vendor follow-up, and reporting burden while your team keeps the decision rights.
+            This is built for buyers replacing backlog, spreadsheet coordination, and vendor chasing with one managed workflow.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button href="/contact" variant="primary" size="lg">
@@ -288,6 +293,11 @@ export default function ManagedTPRM() {
             <Button href="/assessments" variant="secondary" size="lg">
               See the platform workflow
             </Button>
+          </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-500">
+            <span className="rounded-full bg-slate-100 px-3 py-1">Outsourced third-party risk management</span>
+            <span className="rounded-full bg-slate-100 px-3 py-1">Managed vendor risk management</span>
+            <span className="rounded-full bg-slate-100 px-3 py-1">TPRM as a service</span>
           </div>
         </div>
       </Section>

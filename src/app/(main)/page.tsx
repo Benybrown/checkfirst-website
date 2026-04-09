@@ -33,6 +33,29 @@ export const metadata: Metadata = {
   },
 };
 
+const homepageFaqs = [
+  {
+    question: "What does CheckFirst help teams do?",
+    answer:
+      "CheckFirst helps teams run vendor security assessments, supplier due diligence, AI-assisted review, remediation tracking, and managed third-party risk management workflows in one platform.",
+  },
+  {
+    question: "Who is CheckFirst built for?",
+    answer:
+      "CheckFirst is built for security, procurement, compliance, and risk teams that need to review more vendors without slowing onboarding or lowering assessment quality.",
+  },
+  {
+    question: "Does CheckFirst support both software and managed delivery?",
+    answer:
+      "Yes. Teams can use CheckFirst as TPRM software for internal execution, or combine it with managed TPRM services when internal analyst capacity is the bottleneck.",
+  },
+  {
+    question: "How does AI fit into the CheckFirst workflow?",
+    answer:
+      "CheckFirst uses AI to help with supplier research, questionnaire analysis, document review, and framework-based assessment support, while keeping final risk decisions with human reviewers.",
+  },
+];
+
 const homeSchema = {
   "@context": "https://schema.org",
   "@graph": [
@@ -65,6 +88,17 @@ const homeSchema = {
         name: "CheckFirst",
         url: "https://checkfirst.io",
       },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: homepageFaqs.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.answer,
+        },
+      })),
     },
   ],
 };

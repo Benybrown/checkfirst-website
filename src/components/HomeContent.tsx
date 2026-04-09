@@ -133,20 +133,35 @@ export function HomeContent() {
               {t(tx.hero.badge, lang)}
             </span>
             <h1 className="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[64px] lg:leading-[1.08]">
-              {t(tx.hero.titleLine1, lang)}
+              {lang === "en" ? "TPRM software for faster vendor security assessments." : t(tx.hero.titleLine1, lang)}
               <br />
-              <span className="text-brand-400">{t(tx.hero.titleLine2, lang)}</span>
+              <span className="text-brand-400">
+                {lang === "en" ? "AI-assisted due diligence and managed TPRM in one platform." : t(tx.hero.titleLine2, lang)}
+              </span>
             </h1>
             <p className="mt-6 text-lg leading-relaxed text-slate-400 sm:text-xl">
-              {t(tx.hero.description, lang)}
+              {lang === "en"
+                ? "CheckFirst helps security, procurement, and compliance teams run vendor security assessments, supplier due diligence, and third-party risk management workflows without the spreadsheet bottleneck."
+                : t(tx.hero.description, lang)}
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button href="/contact" variant="primary" size="lg">
                 {t(tx.hero.ctaPrimary, lang)}
               </Button>
-              <Button href="/pricing" variant="secondary" size="lg">
-                {t(tx.hero.ctaSecondary, lang)}
+              <Button href="/tprm-software" variant="secondary" size="lg">
+                Explore TPRM software
               </Button>
+            </div>
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-400">
+              <Link href="/assessments" className="rounded-full bg-white/5 px-3 py-1 transition hover:bg-white/10">
+                Vendor security assessment software
+              </Link>
+              <Link href="/tprm-software" className="rounded-full bg-white/5 px-3 py-1 transition hover:bg-white/10">
+                Third-party risk management software
+              </Link>
+              <Link href="/managed-tprm" className="rounded-full bg-white/5 px-3 py-1 transition hover:bg-white/10">
+                Outsourced TPRM services
+              </Link>
             </div>
           </div>
         </div>
@@ -163,6 +178,25 @@ export function HomeContent() {
               <p className="mt-1 font-body text-sm text-slate-600">{m.label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── Commercial intent strip ── */}
+      <section className="border-b border-slate-200/60 bg-white px-6 py-8 lg:px-8">
+        <div className="mx-auto flex max-w-[1280px] flex-wrap items-center justify-center gap-3 text-sm text-slate-600">
+          <span className="font-display font-semibold text-slate-900">Popular evaluation paths:</span>
+          <Link href="/tprm-software" className="rounded-full bg-slate-100 px-3 py-1 transition hover:bg-slate-200">
+            TPRM software
+          </Link>
+          <Link href="/assessments" className="rounded-full bg-slate-100 px-3 py-1 transition hover:bg-slate-200">
+            Vendor security assessment software
+          </Link>
+          <Link href="/managed-tprm" className="rounded-full bg-slate-100 px-3 py-1 transition hover:bg-slate-200">
+            Managed TPRM services
+          </Link>
+          <Link href="/ai-engine" className="rounded-full bg-slate-100 px-3 py-1 transition hover:bg-slate-200">
+            AI vendor risk assessment
+          </Link>
         </div>
       </section>
 
