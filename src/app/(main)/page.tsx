@@ -3,9 +3,9 @@ import Script from "next/script";
 import { HomeContent } from "@/components/HomeContent";
 
 export const metadata: Metadata = {
-  title: "CheckFirst | TPRM Software, Vendor Security Assessments & Managed TPRM",
+  title: "CheckFirst — AI Vendor Security Assessment & TPRM Platform",
   description:
-    "CheckFirst helps teams run vendor security assessments, supplier due diligence, AI-assisted review, and managed third-party risk management from one platform.",
+    "Cut vendor security reviews from weeks to hours. AI-powered TPRM platform for questionnaire automation, evidence analysis, and continuous monitoring.",
   keywords: [
     "tprm software",
     "third-party risk management",
@@ -15,18 +15,18 @@ export const metadata: Metadata = {
     "ai vendor risk assessment",
   ],
   openGraph: {
-    title: "CheckFirst | TPRM Software, Vendor Security Assessments & Managed TPRM",
+    title: "CheckFirst — AI Vendor Security Assessment & TPRM Platform",
     description:
-      "CheckFirst helps teams run vendor security assessments, supplier due diligence, AI-assisted review, and managed third-party risk management from one platform.",
+      "Cut vendor security reviews from weeks to hours. AI-powered TPRM platform for questionnaire automation, evidence analysis, and continuous monitoring.",
     url: "https://checkfirst.io/",
     siteName: "CheckFirst",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CheckFirst | TPRM Software, Vendor Security Assessments & Managed TPRM",
+    title: "CheckFirst — AI Vendor Security Assessment & TPRM Platform",
     description:
-      "CheckFirst helps teams run vendor security assessments, supplier due diligence, AI-assisted review, and managed third-party risk management from one platform.",
+      "Cut vendor security reviews from weeks to hours. AI-powered TPRM platform for questionnaire automation, evidence analysis, and continuous monitoring.",
   },
   alternates: {
     canonical: "/",
