@@ -78,6 +78,14 @@ export function Footer() {
             >
               Terms of Service
             </Link>
+            <a
+              href="https://www.linkedin.com/company/checkfirstsecurity/"
+              rel="me"
+              target="_blank"
+              className="font-body text-xs text-slate-400 transition-colors hover:text-slate-200"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
       </div>

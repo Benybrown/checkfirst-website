@@ -53,6 +53,21 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${outfit.variable} ${ibmPlexSans.variable}`}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "CheckFirst",
+              "url": "https://checkfirst.io",
+              "logo": "https://checkfirst.io/logo.png",
+              "sameAs": [
+                "https://www.linkedin.com/company/checkfirstsecurity/"
+              ]
+            })
+          }}
+        />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-P9C2NQ87BK"
           strategy="afterInteractive"

@@ -30,6 +30,14 @@ export function ConsultantFooter() {
             >
               Contact
             </Link>
+            <a
+              href="https://www.linkedin.com/company/checkfirstsecurity/"
+              rel="me"
+              target="_blank"
+              className="font-body text-sm text-slate-400 transition-colors hover:text-white"
+            >
+              LinkedIn
+            </a>
           </div>
         </div>
 
