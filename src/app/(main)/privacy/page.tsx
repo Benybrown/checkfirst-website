@@ -14,16 +14,16 @@ export default function PrivacyPage() {
   return (
     <Section>
       <div className="mx-auto max-w-3xl">
-        <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+        <h1 className="font-display text-[30px] leading-[1.08] tracking-[-0.025em] text-ink-900 [text-wrap:balance] sm:text-[40px] md:text-[44px] lg:text-[52px]">
           Privacy Policy
         </h1>
-        <p className="mt-4 font-body text-sm text-slate-500">
+        <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
           Last updated: February 23, 2026
         </p>
 
-        <div className="mt-12 space-y-10 font-body text-base leading-relaxed text-slate-600">
+        <div className="mt-12 space-y-10 font-body text-base leading-relaxed text-ink-500">
           <div>
-            <h2 className="font-display text-xl font-bold text-slate-900">
+            <h2 className="font-display text-xl font-bold text-ink-900">
               1. Introduction
             </h2>
             <p className="mt-3">
@@ -36,7 +36,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-slate-900">
+            <h2 className="font-display text-xl font-bold text-ink-900">
               2. Information We Collect
             </h2>
             <p className="mt-3">
@@ -69,7 +69,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-slate-900">
+            <h2 className="font-display text-xl font-bold text-ink-900">
               3. How We Use Your Information
             </h2>
             <p className="mt-3">We use collected information to:</p>
@@ -88,7 +88,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-slate-900">
+            <h2 className="font-display text-xl font-bold text-ink-900">
               4. How We Share Your Information
             </h2>
             <p className="mt-3">
@@ -113,7 +113,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-slate-900">
+            <h2 className="font-display text-xl font-bold text-ink-900">
               5. Data Security
             </h2>
             <p className="mt-3">
@@ -126,7 +126,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-slate-900">
+            <h2 className="font-display text-xl font-bold text-ink-900">
               6. Data Retention
             </h2>
             <p className="mt-3">
@@ -138,7 +138,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-slate-900">
+            <h2 className="font-display text-xl font-bold text-ink-900">
               7. Cookies
             </h2>
             <p className="mt-3">
@@ -151,7 +151,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-slate-900">
+            <h2 className="font-display text-xl font-bold text-ink-900">
               8. Your Rights
             </h2>
             <p className="mt-3">
@@ -193,7 +193,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-slate-900">
+            <h2 className="font-display text-xl font-bold text-ink-900">
               9. Third-Party Links
             </h2>
             <p className="mt-3">
@@ -205,7 +205,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-slate-900">
+            <h2 className="font-display text-xl font-bold text-ink-900">
               10. Children&apos;s Privacy
             </h2>
             <p className="mt-3">
@@ -217,7 +217,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-slate-900">
+            <h2 className="font-display text-xl font-bold text-ink-900">
               11. Changes to This Policy
             </h2>
             <p className="mt-3">
@@ -230,7 +230,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-slate-900">
+            <h2 className="font-display text-xl font-bold text-ink-900">
               12. Contact Us
             </h2>
             <p className="mt-3">

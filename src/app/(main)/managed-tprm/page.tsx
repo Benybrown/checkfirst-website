@@ -273,15 +273,15 @@ export default function ManagedTPRM() {
 
       <Section>
         <div className="mx-auto max-w-4xl text-center">
-          <span className="mb-6 inline-block rounded-full bg-brand-50 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-wider text-brand-700">
+          <span className="eyebrow mb-6 justify-center">
             Managed TPRM services
           </span>
-          <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-[30px] leading-[1.08] tracking-[-0.025em] text-ink-900 [text-wrap:balance] sm:text-[40px] md:text-[46px] lg:text-[52px] xl:text-[58px]">
             Outsource third-party risk management
             <br />
-            <span className="text-brand-700">without losing control of the program</span>
+            <span className="italic text-ink-500">without losing control of the program</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
+          <p className="mx-auto mt-7 max-w-[60ch] font-body text-[17px] leading-[1.65] text-ink-500 sm:text-[18px]">
             CheckFirst combines dedicated analysts with an AI-powered assessment platform so your
             team can run a more responsive TPRM program without building a larger internal operation.
             This is built for buyers replacing backlog, spreadsheet coordination, and vendor chasing with one managed workflow.
@@ -294,15 +294,15 @@ export default function ManagedTPRM() {
               See the platform workflow
             </Button>
           </div>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-500">
-            <span className="rounded-full bg-slate-100 px-3 py-1">Outsourced third-party risk management</span>
-            <span className="rounded-full bg-slate-100 px-3 py-1">Managed vendor risk management</span>
-            <span className="rounded-full bg-slate-100 px-3 py-1">TPRM as a service</span>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-ink-400">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-500">Outsourced third-party risk management</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-500">Managed vendor risk management</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-500">TPRM as a service</span>
           </div>
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="Service fit"
           title="When managed TPRM is the right commercial move"
@@ -311,14 +311,14 @@ export default function ManagedTPRM() {
         <div className="grid gap-6 lg:grid-cols-3">
           {serviceFit.map((item) => (
             <Card key={item.title}>
-              <h2 className="font-display text-lg font-bold text-slate-900">{item.title}</h2>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <h2 className="font-display text-lg font-bold text-ink-900">{item.title}</h2>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">{item.description}</p>
             </Card>
           ))}
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="Why outsourced TPRM"
           title="When internal bandwidth is the bottleneck, managed delivery wins"
@@ -327,8 +327,8 @@ export default function ManagedTPRM() {
         <div className="grid gap-6 lg:grid-cols-3">
           {painPoints.map((point) => (
             <Card key={point.title}>
-              <h2 className="font-display text-lg font-bold text-slate-900">{point.title}</h2>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{point.description}</p>
+              <h2 className="font-display text-lg font-bold text-ink-900">{point.title}</h2>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">{point.description}</p>
             </Card>
           ))}
         </div>
@@ -343,14 +343,14 @@ export default function ManagedTPRM() {
         <div className="grid gap-6 sm:grid-cols-2">
           {offerings.map((item) => (
             <Card key={item.title}>
-              <h2 className="font-display text-lg font-bold text-slate-900">{item.title}</h2>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <h2 className="font-display text-lg font-bold text-ink-900">{item.title}</h2>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">{item.description}</p>
             </Card>
           ))}
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60" id="how-it-works">
+      <Section className="bg-canvas-raised" id="how-it-works">
         <SectionHeader
           tag="Delivery model"
           title="How managed TPRM works with CheckFirst"
@@ -358,10 +358,10 @@ export default function ManagedTPRM() {
         />
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((step) => (
-            <div key={step.number} className="rounded-[16px] border border-slate-200/80 bg-white p-6">
+            <div key={step.number} className="rounded-[16px] border border-ink-200 bg-white p-6">
               <span className="font-display text-4xl font-extrabold text-brand-200">{step.number}</span>
-              <h3 className="mt-3 font-display text-lg font-bold text-slate-900">{step.title}</h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{step.description}</p>
+              <h3 className="mt-3 font-display text-lg font-bold text-ink-900">{step.title}</h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">{step.description}</p>
             </div>
           ))}
         </div>
@@ -373,26 +373,26 @@ export default function ManagedTPRM() {
           title="Managed support vs. building everything yourself"
           description="A commercial view of the tradeoff buyers usually need to justify internally."
         />
-        <div className="mx-auto max-w-4xl overflow-hidden rounded-[16px] border border-slate-200/80 bg-white shadow-card">
-          <div className="grid grid-cols-3 border-b border-slate-200 bg-slate-50 px-6 py-4">
-            <div className="font-display text-sm font-semibold text-slate-500" />
-            <div className="text-center font-display text-sm font-semibold text-slate-500">DIY program</div>
+        <div className="mx-auto max-w-4xl overflow-hidden rounded-[16px] border border-ink-200 bg-white shadow-card">
+          <div className="grid grid-cols-3 border-b border-ink-200 bg-canvas-raised px-6 py-4">
+            <div className="font-display text-sm font-semibold text-ink-400" />
+            <div className="text-center font-display text-sm font-semibold text-ink-400">DIY program</div>
             <div className="text-center font-display text-sm font-semibold text-brand-700">Managed by CheckFirst</div>
           </div>
           {comparison.map((row, index) => (
             <div
               key={row.label}
-              className={`grid grid-cols-3 items-center px-6 py-4 ${index < comparison.length - 1 ? "border-b border-slate-100" : ""}`}
+              className={`grid grid-cols-3 items-center px-6 py-4 ${index < comparison.length - 1 ? "border-b border-ink-100" : ""}`}
             >
-              <div className="font-body text-sm font-medium text-slate-900">{row.label}</div>
-              <div className="text-center font-body text-sm text-slate-500">{row.diy}</div>
+              <div className="font-body text-sm font-medium text-ink-900">{row.label}</div>
+              <div className="text-center font-body text-sm text-ink-400">{row.diy}</div>
               <div className="text-center font-display text-sm font-semibold text-brand-700">{row.managed}</div>
             </div>
           ))}
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="Related commercial pages"
           title="Explore the full CheckFirst commercial path"
@@ -403,17 +403,17 @@ export default function ManagedTPRM() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-[16px] border border-slate-200/80 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+              className="rounded-[16px] border border-ink-200 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
             >
-              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <h3 className="font-display text-lg font-bold text-ink-900">{item.title}</h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">{item.description}</p>
               <span className="mt-4 inline-flex font-display text-sm font-semibold text-brand-700">Visit page →</span>
             </Link>
           ))}
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="Support resources"
           title="Internal links for buyers evaluating managed TPRM"
@@ -424,10 +424,10 @@ export default function ManagedTPRM() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-[16px] border border-slate-200/80 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+              className="rounded-[16px] border border-ink-200 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
             >
-              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <h3 className="font-display text-lg font-bold text-ink-900">{item.title}</h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">{item.description}</p>
               <span className="mt-4 inline-flex font-display text-sm font-semibold text-brand-700">Read article →</span>
             </Link>
           ))}
@@ -444,16 +444,17 @@ export default function ManagedTPRM() {
       </Section>
 
       <Section dark>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="eyebrow eyebrow-dark mb-6 justify-center">Talk to us</span>
+          <h2 className="font-display text-[34px] leading-[1.08] tracking-[-0.028em] text-white sm:text-[44px] lg:text-[52px]">
             Need a TPRM program that actually keeps up?
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-slate-400">
+          <p className="mx-auto mt-6 max-w-xl font-body text-[17px] leading-[1.65] text-white/70">
             Let&apos;s review your vendor volume, current bottlenecks, and service model.
             We&apos;ll show how CheckFirst can combine platform software with managed analyst capacity.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button href="/contact" variant="primary" size="lg">
+          <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            <Button href="/contact" variant="primary" size="lg" className="!bg-white !text-ink-950 !ring-white hover:!bg-ink-100">
               Book a consultation
             </Button>
             <Button href="/ai-engine" variant="ghost-dark" size="lg">

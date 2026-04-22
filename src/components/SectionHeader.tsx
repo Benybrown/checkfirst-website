@@ -6,6 +6,12 @@ interface SectionHeaderProps {
   dark?: boolean;
 }
 
+/*
+  Editorial section header.
+  - Eyebrow: mono, uppercase, tracked, with hairline dash before.
+  - Title: serif display (Newsreader), large-scale, tight tracking.
+  - Description: body sans, generous line-height, ink-500.
+*/
 export function SectionHeader({
   tag,
   title,
@@ -13,34 +19,34 @@ export function SectionHeader({
   align = "center",
   dark,
 }: SectionHeaderProps) {
+  const isCenter = align === "center";
+
   return (
     <div
-      className={`mb-16 ${
-        align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"
+      className={`mb-14 sm:mb-16 ${
+        isCenter ? "mx-auto max-w-2xl text-center" : "max-w-3xl"
       }`}
     >
       {tag && (
         <span
-          className={`mb-4 inline-block rounded-full px-3.5 py-1 font-display text-xs font-semibold uppercase tracking-wider ${
-            dark
-              ? "bg-brand-900/40 text-brand-300"
-              : "bg-brand-50 text-brand-700"
+          className={`eyebrow mb-6 ${dark ? "eyebrow-dark" : ""} ${
+            isCenter ? "justify-center" : ""
           }`}
         >
           {tag}
         </span>
       )}
       <h2
-        className={`font-display text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-[44px] ${
-          dark ? "text-white" : "text-slate-900"
+        className={`font-display tracking-[-0.028em] text-[32px] leading-[1.08] sm:text-[40px] lg:text-[52px] ${
+          dark ? "text-white" : "text-ink-900"
         }`}
       >
         {title}
       </h2>
       {description && (
         <p
-          className={`mt-5 text-lg leading-relaxed ${
-            dark ? "text-slate-400" : "text-slate-600"
+          className={`mt-5 text-[17px] leading-[1.65] sm:text-[18px] ${
+            dark ? "text-white/65" : "text-ink-500"
           }`}
         >
           {description}

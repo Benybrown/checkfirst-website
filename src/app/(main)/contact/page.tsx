@@ -67,84 +67,101 @@ const demoExpectations = [
 
 export default function ContactPage() {
   return (
-    <Section>
-      <div className="grid gap-16 lg:grid-cols-2">
-        {/* Left: Info */}
-        <div>
-          <span className="mb-4 inline-block rounded-full bg-brand-50 px-3.5 py-1 font-display text-xs font-semibold uppercase tracking-wider text-brand-700">
-            Get started
-          </span>
-          <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+    <>
+      {/* Hero header strip */}
+      <section className="relative overflow-hidden bg-canvas px-6 pt-16 pb-6 sm:pt-20 lg:px-8 lg:pt-24">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-dotgrid opacity-[0.9]" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-32 right-[-10%] h-[380px] w-[380px] rounded-full blur-3xl opacity-[0.14]"
+          style={{ background: "radial-gradient(circle, var(--color-brand-400), transparent 62%)" }}
+        />
+        <div className="relative mx-auto max-w-[1200px]">
+          <span className="eyebrow mb-6">Get started</span>
+          <h1 className="font-display text-[30px] leading-[1.08] tracking-[-0.025em] text-ink-900 [text-wrap:balance] sm:text-[40px] md:text-[46px] lg:text-[52px] xl:text-[58px]">
             See CheckFirst in action
           </h1>
-          <p className="mt-5 max-w-md text-lg leading-relaxed text-slate-600">
+          <p className="mt-6 max-w-2xl font-body text-[17px] leading-[1.65] text-ink-500 sm:text-[18px]">
             Book a personalised demo with our team. We&apos;ll walk you through
             the platform, run a live assessment, and answer your questions.
           </p>
+        </div>
+      </section>
 
-          {/* What to Expect */}
-          <div className="mt-10">
-            <h2 className="font-display text-sm font-semibold uppercase tracking-wider text-slate-500">
-              What to expect
-            </h2>
-            <ul className="mt-4 space-y-3">
-              {demoExpectations.map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    className="mt-0.5 shrink-0 text-brand-600"
+      <Section>
+        <div className="grid gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+          {/* Left: Info */}
+          <div>
+            {/* What to Expect */}
+            <div>
+              <span className="eyebrow mb-5">What to expect</span>
+              <ul className="space-y-3.5 border-t border-ink-200 pt-5">
+                {demoExpectations.map((item) => (
+                  <li key={item} className="flex items-start gap-3">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      className="mt-1 shrink-0 text-brand-600"
+                    >
+                      <path
+                        d="M3.5 8.5L6.5 11.5L12.5 4.5"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                    <span className="font-body text-[15px] leading-[1.55] text-ink-700">
+                      {item}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Contact Methods — editorial grid */}
+            <div className="mt-12">
+              <span className="eyebrow mb-5">Other ways to reach us</span>
+              <div className="grid gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 sm:grid-cols-2">
+                {contactMethods.map((method) => (
+                  <div
+                    key={method.label}
+                    className="flex items-start gap-4 bg-canvas-raised p-5 transition-colors hover:bg-canvas"
                   >
-                    <path
-                      d="M3.5 8.5L6.5 11.5L12.5 4.5"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                  <span className="font-body text-sm text-slate-700">{item}</span>
-                </li>
-              ))}
-            </ul>
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] border border-ink-200 bg-canvas text-ink-700">
+                      {method.icon}
+                    </div>
+                    <div>
+                      <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+                        {method.label}
+                      </p>
+                      {method.href ? (
+                        <a
+                          href={method.href}
+                          className="mt-1 block font-body text-[14.5px] text-ink-900 transition-colors hover:text-brand-600"
+                        >
+                          {method.value}
+                        </a>
+                      ) : (
+                        <p className="mt-1 font-body text-[14.5px] text-ink-700">
+                          {method.value}
+                        </p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Contact Methods */}
-          <div className="mt-12 space-y-6">
-            {contactMethods.map((method) => (
-              <div key={method.label} className="flex items-start gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[12px] bg-brand-50 text-brand-600">
-                  {method.icon}
-                </div>
-                <div>
-                  <p className="font-display text-sm font-semibold text-slate-900">
-                    {method.label}
-                  </p>
-                  {method.href ? (
-                    <a
-                      href={method.href}
-                      className="font-body text-sm text-brand-700 transition-colors hover:text-brand-800"
-                    >
-                      {method.value}
-                    </a>
-                  ) : (
-                    <p className="font-body text-sm text-slate-600">
-                      {method.value}
-                    </p>
-                  )}
-                </div>
-              </div>
-            ))}
+          {/* Right: Form */}
+          <div className="rounded-[18px] border border-ink-200 bg-canvas-raised p-7 sm:p-10">
+            <ContactForm />
           </div>
         </div>
-
-        {/* Right: Form */}
-        <Card hover={false} className="p-8 lg:p-10">
-          <ContactForm />
-        </Card>
-      </div>
-    </Section>
+      </Section>
+    </>
   );
 }

@@ -302,15 +302,15 @@ export default function AssessmentsPage() {
 
       <Section>
         <div className="mx-auto max-w-4xl text-center">
-          <span className="mb-6 inline-block rounded-full bg-brand-50 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-wider text-brand-700">
+          <span className="eyebrow mb-6 justify-center">
             Vendor security assessment software
           </span>
-          <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-[30px] leading-[1.08] tracking-[-0.025em] text-ink-900 [text-wrap:balance] sm:text-[40px] md:text-[46px] lg:text-[52px] xl:text-[58px]">
             Run vendor security assessments faster
             <br />
-            <span className="text-brand-700">without sacrificing review quality</span>
+            <span className="italic text-ink-500">without sacrificing review quality</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
+          <p className="mx-auto mt-7 max-w-[60ch] font-body text-[17px] leading-[1.65] text-ink-500 sm:text-[18px]">
             CheckFirst gives security and procurement teams a faster way to complete
             vendor security assessments, supplier due diligence, and control reviews.
             It is built for buyers replacing spreadsheet-based reviews, slow questionnaire follow-up,
@@ -324,20 +324,20 @@ export default function AssessmentsPage() {
               See the AI engine
             </Button>
           </div>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-500">
-            <span className="rounded-full bg-slate-100 px-3 py-1">Supplier assessment software</span>
-            <span className="rounded-full bg-slate-100 px-3 py-1">Security questionnaire automation</span>
-            <span className="rounded-full bg-slate-100 px-3 py-1">Vendor due diligence workflow</span>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-ink-400">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-500">Supplier assessment software</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-500">Security questionnaire automation</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-500">Vendor due diligence workflow</span>
           </div>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-500">
-            <span className="rounded-full bg-slate-100 px-3 py-1">Supplier assessment software</span>
-            <span className="rounded-full bg-slate-100 px-3 py-1">Vendor due diligence automation</span>
-            <span className="rounded-full bg-slate-100 px-3 py-1">CSA-aligned review workflows</span>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-ink-400">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-500">Supplier assessment software</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-500">Vendor due diligence automation</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-500">CSA-aligned review workflows</span>
           </div>
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="Buyer criteria"
           title="What buyers should expect from vendor assessment software"
@@ -346,14 +346,14 @@ export default function AssessmentsPage() {
         <div className="grid gap-6 lg:grid-cols-3">
           {buyerCriteria.map((item) => (
             <Card key={item.title}>
-              <h2 className="font-display text-lg font-bold text-slate-900">{item.title}</h2>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <h2 className="font-display text-lg font-bold text-ink-900">{item.title}</h2>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">{item.description}</p>
             </Card>
           ))}
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="Why teams switch"
           title="Turn a slow vendor review process into an operational workflow"
@@ -362,8 +362,8 @@ export default function AssessmentsPage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {capabilities.map((item) => (
             <Card key={item.title}>
-              <h2 className="font-display text-lg font-bold text-slate-900">{item.title}</h2>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">
+              <h2 className="font-display text-lg font-bold text-ink-900">{item.title}</h2>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">
                 {item.description}
               </p>
             </Card>
@@ -381,12 +381,12 @@ export default function AssessmentsPage() {
           {workflow.map((item) => (
             <div
               key={item.step}
-              className="grid items-start gap-6 rounded-[16px] border border-slate-200/80 bg-white p-8 sm:grid-cols-[72px_1fr]"
+              className="grid items-start gap-6 rounded-[16px] border border-ink-200 bg-white p-8 sm:grid-cols-[72px_1fr]"
             >
               <span className="font-display text-4xl font-extrabold text-brand-600">{item.step}</span>
               <div>
-                <h2 className="font-display text-xl font-bold text-slate-900">{item.title}</h2>
-                <p className="mt-2 font-body text-base leading-relaxed text-slate-600">
+                <h2 className="font-display text-xl font-bold text-ink-900">{item.title}</h2>
+                <p className="mt-2 font-body text-base leading-relaxed text-ink-500">
                   {item.description}
                 </p>
               </div>
@@ -395,7 +395,7 @@ export default function AssessmentsPage() {
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="Who it helps"
           title="Built for cross-functional buying and review teams"
@@ -404,10 +404,10 @@ export default function AssessmentsPage() {
         <div className="grid gap-6 lg:grid-cols-3">
           {buyerOutcomes.map((group) => (
             <Card key={group.title}>
-              <h3 className="font-display text-lg font-bold text-slate-900">{group.title}</h3>
+              <h3 className="font-display text-lg font-bold text-ink-900">{group.title}</h3>
               <ul className="mt-4 space-y-3">
                 {group.points.map((point) => (
-                  <li key={point} className="flex gap-3 text-sm text-slate-600">
+                  <li key={point} className="flex gap-3 text-sm text-ink-500">
                     <span className="mt-1 h-2.5 w-2.5 rounded-full bg-brand-600" />
                     <span>{point}</span>
                   </li>
@@ -418,7 +418,7 @@ export default function AssessmentsPage() {
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="Related commercial pages"
           title="Explore the full CheckFirst commercial path"
@@ -429,10 +429,10 @@ export default function AssessmentsPage() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-[16px] border border-slate-200/80 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+              className="rounded-[16px] border border-ink-200 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
             >
-              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <h3 className="font-display text-lg font-bold text-ink-900">{item.title}</h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">{item.description}</p>
               <span className="mt-4 inline-flex font-display text-sm font-semibold text-brand-700">Visit page →</span>
             </Link>
           ))}
@@ -450,10 +450,10 @@ export default function AssessmentsPage() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-[16px] border border-slate-200/80 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+              className="rounded-[16px] border border-ink-200 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
             >
-              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <h3 className="font-display text-lg font-bold text-ink-900">{item.title}</h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">{item.description}</p>
               <span className="mt-4 inline-flex font-display text-sm font-semibold text-brand-700">
                 Read article →
               </span>
@@ -462,7 +462,7 @@ export default function AssessmentsPage() {
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="FAQ"
           title="Common questions about assessment software"
@@ -472,16 +472,17 @@ export default function AssessmentsPage() {
       </Section>
 
       <Section dark>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="eyebrow eyebrow-dark mb-6 justify-center">Book a demo</span>
+          <h2 className="font-display text-[34px] leading-[1.08] tracking-[-0.028em] text-white sm:text-[44px] lg:text-[52px]">
             See how fast your vendor reviews could move
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-slate-400">
+          <p className="mx-auto mt-6 max-w-xl font-body text-[17px] leading-[1.65] text-white/70">
             Book a demo and we&apos;ll walk through a real vendor security assessment workflow,
             from intake and scanning to review and decision support.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button href="/contact" variant="primary" size="lg">
+          <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            <Button href="/contact" variant="primary" size="lg" className="!bg-white !text-ink-950 !ring-white hover:!bg-ink-100">
               Book a demo
             </Button>
             <Button href="/managed-tprm" variant="ghost-dark" size="lg">

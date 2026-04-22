@@ -259,15 +259,15 @@ export default function TPRMSoftwarePage() {
 
       <Section>
         <div className="mx-auto max-w-4xl text-center">
-          <span className="mb-6 inline-block rounded-full bg-brand-50 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-wider text-brand-700">
+          <span className="eyebrow mb-6 justify-center">
             TPRM software
           </span>
-          <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+          <h1 className="font-display text-[30px] leading-[1.08] tracking-[-0.025em] text-ink-900 [text-wrap:balance] sm:text-[40px] md:text-[46px] lg:text-[52px] xl:text-[58px]">
             Third-party risk management software
             <br />
-            <span className="text-brand-700">built for modern vendor review teams</span>
+            <span className="italic text-ink-500">built for modern vendor review teams</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
+          <p className="mx-auto mt-7 max-w-[60ch] font-body text-[17px] leading-[1.65] text-ink-500 sm:text-[18px]">
             CheckFirst gives buyers a modern TPRM software platform for vendor assessments, supplier due diligence,
             AI-supported review, remediation tracking, and faster cross-functional risk decisions.
           </p>
@@ -275,15 +275,15 @@ export default function TPRMSoftwarePage() {
             <Button href="/contact" variant="primary" size="lg">Book a demo</Button>
             <Button href="/blog/best-tprm-tool-2026/" variant="secondary" size="lg">See category comparison</Button>
           </div>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-500">
-            <span className="rounded-full bg-slate-100 px-3 py-1">Third-party risk management software</span>
-            <span className="rounded-full bg-slate-100 px-3 py-1">Vendor risk management platform</span>
-            <span className="rounded-full bg-slate-100 px-3 py-1">Supplier due diligence workflow</span>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-ink-400">
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-500">Third-party risk management software</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-500">Vendor risk management platform</span>
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-500">Supplier due diligence workflow</span>
           </div>
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="Buyer intent"
           title="What category buyers actually need from TPRM software"
@@ -292,8 +292,8 @@ export default function TPRMSoftwarePage() {
         <div className="grid gap-6 lg:grid-cols-3">
           {buyerSignals.map((item) => (
             <Card key={item.title}>
-              <h2 className="font-display text-lg font-bold text-slate-900">{item.title}</h2>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <h2 className="font-display text-lg font-bold text-ink-900">{item.title}</h2>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">{item.description}</p>
             </Card>
           ))}
         </div>
@@ -308,13 +308,13 @@ export default function TPRMSoftwarePage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {checklist.map((item) => (
             <Card key={item}>
-              <h2 className="font-display text-lg font-bold text-slate-900">{item}</h2>
+              <h2 className="font-display text-lg font-bold text-ink-900">{item}</h2>
             </Card>
           ))}
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="Evaluation criteria"
           title="How buyers should evaluate third-party risk management platforms"
@@ -323,8 +323,8 @@ export default function TPRMSoftwarePage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {evaluationCriteria.map((item) => (
             <Card key={item.title}>
-              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <h3 className="font-display text-lg font-bold text-ink-900">{item.title}</h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">{item.description}</p>
             </Card>
           ))}
         </div>
@@ -339,14 +339,14 @@ export default function TPRMSoftwarePage() {
         <div className="grid gap-6 md:grid-cols-3">
           {whyCheckFirst.map((item) => (
             <Card key={item.title}>
-              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <h3 className="font-display text-lg font-bold text-ink-900">{item.title}</h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">{item.description}</p>
             </Card>
           ))}
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="Related commercial pages"
           title="Explore the full CheckFirst commercial path"
@@ -357,10 +357,10 @@ export default function TPRMSoftwarePage() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-[16px] border border-slate-200/80 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+              className="rounded-[16px] border border-ink-200 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
             >
-              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+              <h3 className="font-display text-lg font-bold text-ink-900">{item.title}</h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">{item.description}</p>
               <span className="mt-4 inline-flex font-display text-sm font-semibold text-brand-700">Visit page →</span>
             </Link>
           ))}
@@ -375,16 +375,16 @@ export default function TPRMSoftwarePage() {
         />
         <div className="grid gap-6 md:grid-cols-3">
           {survivorLinks.map((item) => (
-            <Link key={item.href} href={item.href} className="rounded-[16px] border border-slate-200/80 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover">
-              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+            <Link key={item.href} href={item.href} className="rounded-[16px] border border-ink-200 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover">
+              <h3 className="font-display text-lg font-bold text-ink-900">{item.title}</h3>
+              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">{item.description}</p>
               <span className="mt-4 inline-flex font-display text-sm font-semibold text-brand-700">Read article →</span>
             </Link>
           ))}
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="FAQ"
           title="Common questions about TPRM software"
@@ -394,16 +394,17 @@ export default function TPRMSoftwarePage() {
       </Section>
 
       <Section dark>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="eyebrow eyebrow-dark mb-6 justify-center">See it in action</span>
+          <h2 className="font-display text-[34px] leading-[1.08] tracking-[-0.028em] text-white sm:text-[44px] lg:text-[52px]">
             Want to see CheckFirst in a real vendor-review workflow?
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-slate-400">
+          <p className="mx-auto mt-6 max-w-xl font-body text-[17px] leading-[1.65] text-white/70">
             We&apos;ll walk through how the platform handles intake, assessment automation,
             evidence review, and decision support across the full third-party risk workflow.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button href="/contact" variant="primary" size="lg">Book a demo</Button>
+          <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            <Button href="/contact" variant="primary" size="lg" className="!bg-white !text-ink-950 !ring-white hover:!bg-ink-100">Book a demo</Button>
             <Button href="/managed-tprm" variant="ghost-dark" size="lg">Need managed support?</Button>
           </div>
         </div>

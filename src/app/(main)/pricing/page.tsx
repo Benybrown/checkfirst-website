@@ -15,29 +15,52 @@ export const metadata: Metadata = {
 };
 
 const checkIcon = (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0 text-brand-600">
-    <path d="M3.5 8.5L6.5 11.5L12.5 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  <svg
+    width="14"
+    height="14"
+    viewBox="0 0 16 16"
+    fill="none"
+    className="shrink-0 text-brand-600"
+  >
+    <path
+      d="M3.5 8.5L6.5 11.5L12.5 4.5"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
 const dashIcon = (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="mt-0.5 shrink-0 text-slate-300">
-    <path d="M4 8h8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+  <svg
+    width="12"
+    height="12"
+    viewBox="0 0 16 16"
+    fill="none"
+    className="shrink-0 text-ink-300"
+  >
+    <path d="M4 8h8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
   </svg>
 );
 
 const aiBadge = (
-  <span className="mr-1.5 inline-flex items-center gap-1 rounded-md bg-violet-50 px-2 py-0.5">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="text-violet-500">
-      <path d="M9 2l1.5 3.5L14 7l-3.5 1.5L9 12l-1.5-3.5L4 7l3.5-1.5L9 2z"/>
-      <path d="M18 8l1 2.5L21.5 12l-2.5 1-1 2.5-1-2.5L14.5 12l2.5-1L18 8z"/>
-      <path d="M9 15l.75 1.75L11.5 17.5l-1.75.75L9 20l-.75-1.75L6.5 17.5l1.75-.75L9 15z"/>
-    </svg>
-    <span className="font-display text-[11px] font-bold uppercase tracking-wide text-violet-600">AI</span>
+  <span className="mr-2 inline-flex items-center gap-1 rounded-[4px] border border-brand-500/30 bg-brand-50/70 px-1.5 py-0.5">
+    <span className="h-1 w-1 rounded-full bg-brand-500 animate-signal" />
+    <span className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-brand-700">
+      AI
+    </span>
   </span>
 );
 
-const featureRows: { feature: string; starter: boolean | string; pro: boolean | string; scale: boolean | string; enterprise: boolean | string; ai?: boolean }[] = [
+const featureRows: {
+  feature: string;
+  starter: boolean | string;
+  pro: boolean | string;
+  scale: boolean | string;
+  enterprise: boolean | string;
+  ai?: boolean;
+}[] = [
   // Limits
   { feature: "Vendors", starter: "Up to 10", pro: "Up to 35", scale: "Up to 100", enterprise: "Unlimited" },
   { feature: "Users", starter: "Up to 3", pro: "Up to 10", scale: "Unlimited", enterprise: "Unlimited" },
@@ -51,7 +74,7 @@ const featureRows: { feature: string; starter: boolean | string; pro: boolean | 
   { feature: "LLM BYOK", starter: true, pro: true, scale: true, enterprise: true },
   { feature: "Jino Reports", starter: true, pro: true, scale: true, enterprise: true, ai: true },
   { feature: "Jino QA", starter: true, pro: true, scale: true, enterprise: true, ai: true },
-  // Tier B — Professional+ or Scale+
+  // Tier B
   { feature: "Jino Docs", starter: "Add-on", pro: true, scale: true, enterprise: true, ai: true },
   { feature: "Jino Xtreme (Supplier)", starter: "Add-on", pro: "Add-on", scale: true, enterprise: true, ai: true },
   { feature: "Jino Xtreme (Web)", starter: "Add-on", pro: "Add-on", scale: true, enterprise: true, ai: true },
@@ -71,9 +94,17 @@ const featureRows: { feature: string; starter: boolean | string; pro: boolean | 
 
 function CellValue({ value }: { value: boolean | string }) {
   if (typeof value === "string") {
-    return <span className="font-body text-sm text-slate-700">{value}</span>;
+    return (
+      <span className="font-body text-[13px] text-ink-700">
+        {value}
+      </span>
+    );
   }
-  return <span className="inline-flex justify-center">{value ? checkIcon : dashIcon}</span>;
+  return (
+    <span className="inline-flex justify-center">
+      {value ? checkIcon : dashIcon}
+    </span>
+  );
 }
 
 const pricingFaq = [
@@ -115,50 +146,52 @@ export default function PricingPage() {
           description="We believe transparency builds trust. If we're asking you to trust us with your security data, the least we can do is be upfront about what you get."
         />
 
-        {/* Plan Cards — client component with checkout modal */}
         <PricingCards />
 
-        {/* Feature Comparison Table */}
-        <div className="overflow-x-auto rounded-[16px] border border-slate-200/80 bg-white">
+        {/* Feature Comparison Table — editorial, hairline-driven */}
+        <div className="mt-6 overflow-x-auto rounded-[14px] border border-ink-200 bg-canvas-raised">
           <table className="w-full border-collapse">
-            <thead>
-              <tr className="border-b-2 border-slate-200">
-                <th className="px-6 py-4 text-left font-display text-sm font-bold text-slate-900">
+            <thead className="sticky top-0 bg-canvas-raised">
+              <tr className="border-b border-ink-200">
+                <th className="px-6 py-5 text-left font-mono text-[11px] uppercase tracking-[0.14em] text-ink-500">
                   Feature
                 </th>
-                <th className="px-6 py-4 text-center font-display text-sm font-bold text-slate-900">
+                <th className="px-6 py-5 text-center font-mono text-[11px] uppercase tracking-[0.14em] text-ink-500">
                   Starter
                 </th>
-                <th className="px-6 py-4 text-center font-display text-sm font-bold text-slate-900">
+                <th className="px-6 py-5 text-center font-mono text-[11px] uppercase tracking-[0.14em] text-ink-500">
                   Professional
                 </th>
-                <th className="px-6 py-4 text-center font-display text-sm font-bold text-brand-700">
+                <th className="bg-ink-950 px-6 py-5 text-center font-mono text-[11px] uppercase tracking-[0.14em] text-brand-300">
                   Scale
                 </th>
-                <th className="px-6 py-4 text-center font-display text-sm font-bold text-slate-900">
+                <th className="px-6 py-5 text-center font-mono text-[11px] uppercase tracking-[0.14em] text-ink-500">
                   Enterprise
                 </th>
               </tr>
             </thead>
             <tbody>
               {featureRows.map((row) => (
-                <tr key={row.feature} className="border-b border-slate-50">
-                  <td className="px-6 py-3 font-body text-sm text-slate-700">
+                <tr
+                  key={row.feature}
+                  className="border-b border-ink-100 last:border-0 transition-colors hover:bg-canvas"
+                >
+                  <td className="px-6 py-4 font-body text-[14px] text-ink-800">
                     <span className="inline-flex items-center">
                       {row.ai && aiBadge}
                       {row.feature}
                     </span>
                   </td>
-                  <td className={`px-6 py-3 text-center ${row.ai ? "bg-violet-50/40" : ""}`}>
+                  <td className="px-6 py-4 text-center">
                     <CellValue value={row.starter} />
                   </td>
-                  <td className={`px-6 py-3 text-center ${row.ai ? "bg-violet-50/40" : ""}`}>
+                  <td className="px-6 py-4 text-center">
                     <CellValue value={row.pro} />
                   </td>
-                  <td className={`px-6 py-3 text-center ${row.ai ? "bg-violet-50/40" : "bg-brand-50/30"}`}>
+                  <td className="bg-ink-950/[0.02] px-6 py-4 text-center">
                     <CellValue value={row.scale} />
                   </td>
-                  <td className={`px-6 py-3 text-center ${row.ai ? "bg-violet-50/40" : ""}`}>
+                  <td className="px-6 py-4 text-center">
                     <CellValue value={row.enterprise} />
                   </td>
                 </tr>
@@ -169,24 +202,40 @@ export default function PricingPage() {
       </Section>
 
       {/* FAQ */}
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader tag="FAQ" title="Pricing questions" />
         <FAQ items={pricingFaq} />
       </Section>
 
       {/* CTA */}
       <Section dark>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="eyebrow eyebrow-dark mb-6 justify-center">
+            Get started
+          </span>
+          <h2 className="font-display text-[34px] leading-[1.08] tracking-[-0.028em] text-white sm:text-[44px] lg:text-[52px]">
             Not sure which plan fits?
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-slate-400">
+          <p className="mx-auto mt-6 max-w-xl font-body text-[17px] leading-[1.65] text-white/70">
             Book a demo and we&apos;ll help you find the right plan based on
             your vendor volume and assessment needs.
           </p>
           <div className="mt-10">
-            <Button href="/contact" variant="primary" size="lg">
+            <Button
+              href="/contact"
+              variant="primary"
+              size="lg"
+              className="!bg-white !text-ink-950 !ring-white hover:!bg-ink-100"
+            >
               Book a demo
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path
+                  d="M4.5 3l3 3-3 3"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                />
+              </svg>
             </Button>
           </div>
         </div>

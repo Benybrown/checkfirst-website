@@ -16,40 +16,66 @@ const footerLinks = {
     { href: "/contact", label: "Contact" },
     { href: "/blog", label: "Blog" },
   ],
-  Contact: [
-    { href: "/contact", label: "Book a demo" },
-  ],
+  Contact: [{ href: "/contact", label: "Book a demo" }],
 };
 
 export function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-400">
-      <div className="mx-auto max-w-[1280px] px-6 py-16 lg:px-8 lg:py-20">
-        <div className="flex flex-col gap-12 sm:flex-row sm:justify-between">
+    <footer className="relative overflow-hidden bg-ink-950 text-white/70">
+      {/* Subtle diagonal hairline pattern */}
+      <div aria-hidden="true" className="absolute inset-0 bg-diag-lines-dark opacity-60" />
+      {/* Single off-axis brand glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-40 right-[10%] h-[420px] w-[420px] rounded-full blur-3xl opacity-10"
+        style={{
+          background: "radial-gradient(circle, var(--color-brand-400), transparent 60%)",
+        }}
+      />
+
+      <div className="relative mx-auto max-w-[1280px] px-6 pt-20 pb-10 lg:px-8 lg:pt-24">
+        <div className="grid gap-14 lg:grid-cols-[1.4fr_3fr]">
+          {/* Brand block */}
           <div>
             <Link
               href="/"
-              className="font-display text-xl font-extrabold tracking-tight text-white"
+              className="group inline-flex items-center gap-2 font-display text-[24px] font-semibold tracking-[-0.03em] text-white"
             >
-              Check<span className="text-brand-400">First</span>
+              <span>Check</span>
+              <span
+                aria-hidden="true"
+                className="h-1.5 w-1.5 rounded-full bg-brand-400 transition-transform duration-200 group-hover:scale-125"
+              />
+              <span className="italic">First</span>
             </Link>
-            <p className="mt-4 max-w-xs font-body text-sm leading-relaxed text-slate-400">
+            <p className="mt-5 max-w-xs font-body text-[15px] leading-[1.65] text-white/60">
               AI-powered third-party risk management.
             </p>
+            <div className="mt-8 flex items-center gap-2">
+              <span
+                aria-hidden="true"
+                className="relative flex h-2.5 w-2.5 items-center justify-center"
+              >
+                <span className="absolute inset-0 rounded-full bg-signal/30 animate-signal" />
+                <span className="relative h-1.5 w-1.5 rounded-full bg-signal" />
+              </span>
+              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/50">
+                Enterprise TPRM · Operational
+              </span>
+            </div>
           </div>
 
-          <div className="flex gap-16">
+          {/* Link columns */}
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-4">
             {Object.entries(footerLinks).map(([heading, links]) => (
               <div key={heading}>
-                <h3 className="font-display text-sm font-semibold uppercase tracking-wider text-slate-200">
-                  {heading}
-                </h3>
-                <ul className="mt-4 space-y-3">
+                <h3 className="eyebrow eyebrow-dark mb-5">{heading}</h3>
+                <ul className="space-y-3">
                   {links.map((link) => (
                     <li key={link.label}>
                       <Link
                         href={link.href}
-                        className="font-body text-sm text-slate-400 transition-colors duration-200 hover:text-white"
+                        className="font-body text-[14px] text-white/65 transition-colors duration-200 hover:text-white"
                       >
                         {link.label}
                       </Link>
@@ -61,20 +87,20 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 sm:flex-row">
-          <p className="font-body text-xs text-slate-400">
-            &copy; {new Date().getFullYear()} CheckFirst. All rights reserved.
+        <div className="mt-20 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
+          <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-white/40">
+            &copy; {new Date().getFullYear()} CheckFirst · All rights reserved
           </p>
-          <div className="flex gap-6">
+          <div className="flex flex-wrap gap-6">
             <Link
               href="/privacy"
-              className="font-body text-xs text-slate-400 transition-colors hover:text-slate-200"
+              className="font-body text-[13px] text-white/55 transition-colors hover:text-white"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="font-body text-xs text-slate-400 transition-colors hover:text-slate-200"
+              className="font-body text-[13px] text-white/55 transition-colors hover:text-white"
             >
               Terms of Service
             </Link>
@@ -82,7 +108,7 @@ export function Footer() {
               href="https://www.linkedin.com/company/checkfirstsecurity/"
               rel="me"
               target="_blank"
-              className="font-body text-xs text-slate-400 transition-colors hover:text-slate-200"
+              className="font-body text-[13px] text-white/55 transition-colors hover:text-white"
             >
               LinkedIn
             </a>

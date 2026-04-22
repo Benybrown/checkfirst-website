@@ -205,32 +205,33 @@ export default function ArabicHomePage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="relative overflow-hidden bg-slate-900 px-6 pb-24 pt-20 lg:px-8 lg:pb-32 lg:pt-28">
+      <section className="relative overflow-hidden bg-canvas px-6 pt-16 pb-24 sm:pt-20 lg:px-8 lg:pt-28 lg:pb-32">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-dotgrid opacity-[0.9]" />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-40 left-0 h-[600px] w-[600px] rounded-full bg-brand-600/10 blur-[120px]"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-40 right-0 h-[400px] w-[400px] rounded-full bg-brand-400/8 blur-[100px]"
+          className="pointer-events-none absolute -top-32 left-[-10%] h-[520px] w-[520px] rounded-full blur-3xl opacity-[0.18]"
+          style={{ background: "radial-gradient(circle, var(--color-brand-400), transparent 62%)" }}
         />
 
-        <div className="relative mx-auto max-w-[1280px]">
+        <div className="relative mx-auto max-w-[1200px]">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="mb-6 inline-block rounded-full bg-brand-900/40 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-wider text-brand-300">
-              منصة إدارة مخاطر الأطراف الثالثة بالذكاء الاصطناعي
-            </span>
-            <h1 className="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[64px] lg:leading-[1.08]">
-              توقف عن ملاحقة جداول البيانات.
-              <br />
-              <span className="text-brand-400">قيّم الموردين في دقائق.</span>
+            <div className="eyebrow mb-6 justify-center">
+              <span className="relative flex h-2 w-2 items-center justify-center">
+                <span className="absolute inset-0 rounded-full bg-brand-500/35 animate-signal" />
+                <span className="relative h-1.5 w-1.5 rounded-full bg-brand-600" />
+              </span>
+              <span>منصة إدارة مخاطر الأطراف الثالثة بالذكاء الاصطناعي</span>
+            </div>
+            <h1 className="font-display text-[30px] leading-[1.14] tracking-[-0.02em] text-ink-900 [text-wrap:balance] sm:text-[40px] md:text-[46px] lg:text-[52px] xl:text-[58px]">
+              توقف عن ملاحقة جداول البيانات.{" "}
+              <span className="italic text-ink-500">قيّم الموردين في دقائق.</span>
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-slate-400 sm:text-xl">
+            <p className="mx-auto mt-7 max-w-[60ch] font-body text-[17px] leading-[1.75] text-ink-500 sm:text-[18px]">
               CheckFirst يستبدل تقييمات أمان الموردين اليدوية والبطيئة بتحليل فوري
               بالذكاء الاصطناعي. قيّم الموردين، وافحص البنية التحتية، وأدِر المخاطر
               من البداية إلى النهاية.
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
               <Button href="/ar/contact" variant="primary" size="lg">
                 احجز عرضاً تجريبياً
               </Button>
@@ -243,14 +244,21 @@ export default function ArabicHomePage() {
       </section>
 
       {/* ── Metrics Bar ── */}
-      <section className="border-b border-slate-200/60 bg-slate-50/50 px-6 py-12 lg:px-8">
-        <div className="mx-auto grid max-w-[1280px] gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {metrics.map((m) => (
-            <div key={m.label} className="text-center">
-              <p className="font-display text-3xl font-extrabold tracking-tight text-brand-700">
+      <section className="border-y border-ink-200 bg-canvas-raised px-6 py-10 lg:px-8 lg:py-14">
+        <div className="mx-auto grid max-w-[1200px] divide-ink-200 gap-0 sm:grid-cols-2 sm:divide-x lg:grid-cols-4">
+          {metrics.map((m, idx) => (
+            <div
+              key={m.label}
+              className={`flex flex-col gap-2 py-4 sm:py-2 sm:px-6 ${
+                idx === 0 ? "sm:pl-0" : ""
+              } ${idx === metrics.length - 1 ? "sm:pr-0" : ""}`}
+            >
+              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+                {m.label}
+              </span>
+              <span className="font-display text-[40px] tabular-nums leading-none tracking-[-0.03em] text-ink-900 sm:text-[44px]">
                 {m.value}
-              </p>
-              <p className="mt-1 font-body text-sm text-slate-600">{m.label}</p>
+              </span>
             </div>
           ))}
         </div>
@@ -266,8 +274,8 @@ export default function ArabicHomePage() {
         <div className="grid gap-6 sm:grid-cols-2">
           {problemPoints.map((p) => (
             <Card key={p.who}>
-              <p className="font-body text-base leading-relaxed text-slate-700">
-                <span className="font-display font-bold text-slate-900">
+              <p className="font-body text-base leading-relaxed text-ink-700">
+                <span className="font-display font-bold text-ink-900">
                   {p.who}
                 </span>{" "}
                 {p.pain}.
@@ -275,8 +283,8 @@ export default function ArabicHomePage() {
             </Card>
           ))}
         </div>
-        <p className="mx-auto mt-12 max-w-2xl text-center font-body text-base leading-relaxed text-slate-600">
-          <strong className="font-display text-slate-900">
+        <p className="mx-auto mt-12 max-w-2xl text-center font-body text-base leading-relaxed text-ink-500">
+          <strong className="font-display text-ink-900">
             CheckFirst يتبع نهجاً مختلفاً.
           </strong>{" "}
           منصة موحدة تخدم كلاً من المشترين الذين يقيّمون الموردين والموردين الذين
@@ -284,23 +292,33 @@ export default function ArabicHomePage() {
         </p>
       </Section>
 
-      {/* ── Core Capabilities ── */}
-      <Section className="bg-slate-50/60">
-        <SectionHeader
-          tag="ما تحصل عليه"
-          title="خمسة محركات. منصة واحدة. تغطية شاملة."
-          description="أدوات محددة تقوم بأشياء محددة — وليست وعوداً غامضة حول الذكاء الاصطناعي."
-        />
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {capabilities.map((c) => (
-            <Card key={c.name}>
-              <span className="mb-3 inline-block rounded-full bg-brand-50 px-3 py-0.5 font-display text-xs font-semibold text-brand-700">
-                {c.tag}
-              </span>
-              <h3 className="font-display text-lg font-bold text-slate-900">
+      {/* ── Core Capabilities — DARK brand moment ── */}
+      <Section dark>
+        <div className="mb-14 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+          <div>
+            <span className="eyebrow eyebrow-dark mb-6">ما تحصل عليه</span>
+            <h2 className="font-display text-[32px] leading-[1.14] tracking-[-0.02em] text-white sm:text-[40px] lg:text-[48px]">
+              خمسة محركات. منصة واحدة. تغطية شاملة.
+            </h2>
+          </div>
+          <p className="max-w-md font-body text-[17px] leading-[1.75] text-white/65">
+            أدوات محددة تقوم بأشياء محددة — وليست وعوداً غامضة حول الذكاء الاصطناعي.
+          </p>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {capabilities.map((c, idx) => (
+            <Card key={c.name} variant="data" className="flex h-full flex-col">
+              <div className="mb-6 flex items-center justify-between">
+                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/45">
+                  {String(idx + 1).padStart(2, "0")} · {c.tag}
+                </span>
+                <span className="h-px w-6 bg-brand-400/60" />
+              </div>
+              <h3 className="font-display text-[22px] leading-[1.2] tracking-[-0.02em] text-white">
                 {c.name}
               </h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">
+              <p className="mt-3 font-body text-[14.5px] leading-[1.75] text-white/65">
                 {c.description}
               </p>
             </Card>
@@ -313,15 +331,18 @@ export default function ArabicHomePage() {
         <SectionHeader
           tag="المنصة"
           title="كل شيء متصل"
-          description=""
+          align="left"
         />
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {platformModules.map((m) => (
-            <div key={m.title} className="rounded-[16px] border border-slate-200/80 bg-white p-6">
-              <h3 className="font-display text-base font-bold text-slate-900">
+        <div className="grid gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 sm:grid-cols-2 lg:grid-cols-3">
+          {platformModules.map((m, idx) => (
+            <div key={m.title} className="group relative bg-canvas-raised p-7 transition-colors hover:bg-canvas">
+              <span className="mb-5 flex h-8 w-8 items-center justify-center rounded-[8px] border border-ink-200 bg-canvas font-mono text-[11px] text-ink-500 transition-colors group-hover:border-ink-900 group-hover:text-ink-900">
+                {String(idx + 1).padStart(2, "0")}
+              </span>
+              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-ink-900">
                 {m.title}
               </h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">
+              <p className="mt-3 font-body text-[14.5px] leading-[1.75] text-ink-500">
                 {m.description}
               </p>
             </div>
@@ -330,22 +351,24 @@ export default function ArabicHomePage() {
       </Section>
 
       {/* ── How It Works ── */}
-      <Section id="how-it-works" className="bg-slate-50/60">
+      <Section id="how-it-works" className="bg-canvas-raised">
         <SectionHeader
           tag="كيف يعمل"
           title="من استقبال المورد إلى المراقبة المستمرة"
-          description=""
         />
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {howItWorks.map((item) => (
+        <div className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div aria-hidden="true" className="pointer-events-none absolute left-[6%] right-[6%] top-[26px] hidden h-px bg-gradient-to-r from-transparent via-ink-200 to-transparent lg:block" />
+          {howItWorks.map((item, idx) => (
             <div key={item.step}>
-              <span aria-hidden="true" className="font-display text-5xl font-extrabold text-brand-600">
-                {item.step}
-              </span>
-              <h3 className="mt-3 font-display text-lg font-bold text-slate-900">
+              <div className="mb-5">
+                <span className="relative flex h-[52px] w-[52px] items-center justify-center rounded-full border border-ink-200 bg-canvas font-mono text-[13px] text-ink-700">
+                  {String(idx + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-ink-900">
                 {item.title}
               </h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">
+              <p className="mt-3 max-w-xs font-body text-[14.5px] leading-[1.75] text-ink-500">
                 {item.description}
               </p>
             </div>
@@ -367,42 +390,47 @@ export default function ArabicHomePage() {
       </Section>
 
       {/* ── Pricing Teaser ── */}
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="الأسعار"
           title="أسعار بسيطة وشفافة"
           description="خطط واضحة. بدون مفاجآت."
         />
-        <div className="grid gap-6 sm:grid-cols-3">
+        <div className="grid gap-5 sm:grid-cols-3">
           {pricingTeaser.map((plan) => (
-            <Card
+            <div
               key={plan.name}
-              className={plan.highlight ? "ring-2 ring-brand-600 relative" : ""}
+              className={`relative flex flex-col rounded-[14px] border p-7 transition-all duration-200 ${
+                plan.highlight
+                  ? "border-ink-900 bg-ink-950 text-white"
+                  : "border-ink-200 bg-canvas-raised hover:border-ink-900"
+              }`}
             >
               {plan.highlight && (
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-700 px-3 py-0.5 font-display text-xs font-semibold text-white">
+                <span className="absolute -top-2.5 right-7 inline-flex items-center gap-1.5 rounded-full border border-brand-400/40 bg-ink-900 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-brand-300">
+                  <span className="h-1 w-1 rounded-full bg-brand-400 animate-signal" />
                   الأكثر شعبية
                 </span>
               )}
-              <h3 className="font-display text-base font-bold text-slate-900">
+              <h3 className={`font-mono text-[11px] uppercase tracking-[0.14em] ${plan.highlight ? "text-white/60" : "text-ink-400"}`}>
                 {plan.name}
               </h3>
-              <p className="mt-3 font-display text-3xl font-extrabold tracking-tight text-slate-900">
+              <p className={`mt-4 font-display text-[40px] tabular-nums leading-none tracking-[-0.03em] ${plan.highlight ? "text-white" : "text-ink-900"}`}>
                 {plan.price}
               </p>
-              <p className="mt-1 font-body text-sm text-slate-500">
+              <p className={`mt-2 font-body text-[13.5px] ${plan.highlight ? "text-white/60" : "text-ink-500"}`}>
                 {plan.note}
               </p>
-              <div className="mt-6">
+              <div className="mt-7">
                 <Button
                   href="/ar/pricing"
-                  variant={plan.highlight ? "primary" : "secondary"}
+                  variant={plan.highlight ? "ghost-dark" : "secondary"}
                   className="w-full"
                 >
                   عرض خطة {plan.name}
                 </Button>
               </div>
-            </Card>
+            </div>
           ))}
         </div>
       </Section>
@@ -419,16 +447,17 @@ export default function ArabicHomePage() {
 
       {/* ── Final CTA ── */}
       <Section dark>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="eyebrow eyebrow-dark mb-6 justify-center">ابدأ الآن</span>
+          <h2 className="font-display text-[34px] leading-[1.14] tracking-[-0.02em] text-white sm:text-[44px] lg:text-[52px]">
             هل أنت مستعد للسيطرة على مخاطر الموردين؟
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-slate-400">
+          <p className="mx-auto mt-6 max-w-xl font-body text-[17px] leading-[1.75] text-white/70">
             اكتشف كيف يمكن لـ CheckFirst استبدال جداول البيانات والبريد الإلكتروني
             والتخمين بمنصة واحدة مدعومة بالذكاء الاصطناعي.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button href="/ar/contact" variant="primary" size="lg">
+          <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            <Button href="/ar/contact" variant="primary" size="lg" className="!bg-white !text-ink-950 !ring-white hover:!bg-ink-100">
               احجز عرضاً تجريبياً
             </Button>
             <Button href="/ar/pricing" variant="ghost-dark" size="lg">

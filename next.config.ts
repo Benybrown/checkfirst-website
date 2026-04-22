@@ -1,9 +1,15 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   output: "standalone",
   skipTrailingSlashRedirect: true,
+  // Pin Turbopack to this project root so it doesn't walk up to the _SEO-sites
+  // parent folder and fail to resolve tailwindcss / posthog / etc.
+  turbopack: {
+    root: path.join(__dirname),
+  },
   async redirects() {
     return [
       // Canonical root aliases for blog sitemaps

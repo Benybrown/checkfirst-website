@@ -3,9 +3,10 @@
 import { useState, type FormEvent } from "react";
 
 const inputClasses =
-  "w-full rounded-[12px] border border-slate-200 bg-white px-4 py-3 font-body text-sm text-slate-900 placeholder:text-slate-400 transition-colors duration-200 focus:border-brand-500 focus:outline-none focus:ring-2 focus:ring-brand-500/20";
+  "w-full rounded-[10px] border border-ink-200 bg-canvas-raised px-4 py-3 font-body text-[14.5px] text-ink-900 placeholder:text-ink-300 transition-colors duration-200 focus:border-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-500/15";
 
-const labelClasses = "block font-display text-sm font-semibold text-slate-800 mb-2";
+const labelClasses =
+  "block font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-400 mb-2";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -48,15 +49,15 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="flex flex-col items-center justify-center py-12 text-center">
-        <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand-50">
+      <div className="flex flex-col items-center justify-center py-16 text-center">
+        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-brand-500/30 bg-brand-50">
           <svg
-            width="28"
-            height="28"
+            width="24"
+            height="24"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
-            strokeWidth="2"
+            strokeWidth="1.8"
             strokeLinecap="round"
             strokeLinejoin="round"
             className="text-brand-600"
@@ -64,12 +65,11 @@ export function ContactForm() {
             <path d="M20 6L9 17l-5-5" />
           </svg>
         </div>
-        <h3 className="font-display text-xl font-bold text-slate-900">
+        <h3 className="font-display text-[24px] tracking-[-0.02em] text-ink-900">
           Thanks for reaching out
         </h3>
-        <p className="mt-2 font-body text-sm text-slate-600">
-          We&apos;ll get back to you within one business day to schedule your
-          demo.
+        <p className="mt-3 max-w-sm font-body text-[15px] leading-[1.55] text-ink-500">
+          We&apos;ll get back to you within one business day to schedule your demo.
         </p>
       </div>
     );
@@ -173,7 +173,7 @@ export function ContactForm() {
       </div>
 
       {error && (
-        <p className="rounded-[8px] bg-red-50 px-4 py-3 font-body text-sm text-red-600">
+        <p className="rounded-[10px] border border-red-200 bg-red-50 px-4 py-3 font-body text-[13.5px] text-red-700">
           {error}
         </p>
       )}
@@ -181,14 +181,18 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded-[12px] bg-brand-700 px-5 py-3.5 font-display text-sm font-semibold text-white shadow-button transition-all duration-200 hover:bg-brand-800 hover:shadow-md disabled:opacity-60 disabled:cursor-not-allowed"
+        className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-ink-950 font-body text-[14.5px] font-medium text-white ring-1 ring-inset ring-ink-950 transition-all duration-200 hover:bg-ink-800 disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {loading ? "Sending..." : "Book a demo"}
+        {loading ? "Sending…" : "Book a demo"}
+        {!loading && (
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 group-hover:translate-x-0.5">
+            <path d="M4.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          </svg>
+        )}
       </button>
 
-      <p className="text-center font-body text-xs text-slate-400">
-        No commitment. We&apos;ll set up a 30-minute call to walk through
-        CheckFirst.
+      <p className="text-center font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-400">
+        No commitment · 30-minute call
       </p>
     </form>
   );

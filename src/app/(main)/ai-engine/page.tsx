@@ -5,6 +5,7 @@ import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
+import { OrchestrationGrid } from "@/components/OrchestrationGrid";
 
 export const metadata: Metadata = {
   title: "AI Vendor Risk Assessment Engine | Automated Supplier Due Diligence | CheckFirst",
@@ -221,150 +222,300 @@ export default function AIEnginePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(aiEngineSchema) }}
       />
-      <Section>
-        <div className="mx-auto max-w-4xl text-center">
-          <span className="mb-6 inline-block rounded-full bg-brand-50 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-wider text-brand-700">
-            AI vendor risk assessment engine
-          </span>
-          <h1 className="font-display text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            AI for supplier due diligence
-            <br />
-            <span className="text-brand-700">that your security team can actually trust</span>
-          </h1>
-          <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
-            CheckFirst uses specialised AI engines to accelerate vendor risk assessment,
-            security questionnaire review, document analysis, and supplier research.
-            This is built for buyers who want faster due diligence and clearer risk signals without handing final decisions to a black box.
-          </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button href="/contact" variant="primary" size="lg">
-              Book a demo
-            </Button>
-            <Button href="/assessments" variant="secondary" size="lg">
-              See assessment workflow
-            </Button>
-          </div>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-500">
-            <span className="rounded-full bg-slate-100 px-3 py-1">AI vendor risk assessment</span>
-            <span className="rounded-full bg-slate-100 px-3 py-1">Automated supplier due diligence</span>
-            <span className="rounded-full bg-slate-100 px-3 py-1">Security questionnaire automation</span>
+
+      {/* ── HERO ── */}
+      <section className="relative overflow-hidden bg-canvas px-6 pt-16 pb-24 sm:pt-20 lg:px-8 lg:pt-28 lg:pb-28">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-dotgrid opacity-[0.9]" />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-32 right-[-10%] h-[520px] w-[520px] rounded-full blur-3xl opacity-[0.18]"
+          style={{ background: "radial-gradient(circle, var(--color-brand-400), transparent 62%)" }}
+        />
+
+        <div className="relative mx-auto max-w-[1200px]">
+          <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_1fr] lg:gap-20">
+            <div>
+              <div className="eyebrow mb-6">
+                <span className="relative flex h-2 w-2 items-center justify-center">
+                  <span className="absolute inset-0 rounded-full bg-brand-500/35 animate-signal" />
+                  <span className="relative h-1.5 w-1.5 rounded-full bg-brand-600" />
+                </span>
+                <span>AI vendor risk assessment engine</span>
+              </div>
+              <h1 className="font-display text-[30px] leading-[1.08] tracking-[-0.025em] text-ink-900 [text-wrap:balance] sm:text-[40px] md:text-[46px] lg:text-[52px] xl:text-[58px]">
+                AI for supplier due diligence{" "}
+                <span className="italic text-ink-500">
+                  that your security team can actually trust
+                </span>
+              </h1>
+              <p className="mt-7 max-w-[58ch] font-body text-[17px] leading-[1.65] text-ink-500 sm:text-[18px]">
+                CheckFirst uses specialised AI engines to accelerate vendor risk assessment,
+                security questionnaire review, document analysis, and supplier research.
+                This is built for buyers who want faster due diligence and clearer risk signals without handing final decisions to a black box.
+              </p>
+              <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+                <Button href="/contact" variant="primary" size="lg">
+                  Book a demo
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path d="M4.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                  </svg>
+                </Button>
+                <Button href="/assessments" variant="secondary" size="lg">
+                  See assessment workflow
+                </Button>
+              </div>
+              <div className="mt-10 flex flex-wrap gap-2">
+                {[
+                  "AI vendor risk assessment",
+                  "Automated supplier due diligence",
+                  "Security questionnaire automation",
+                ].map((chip) => (
+                  <span
+                    key={chip}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-500"
+                  >
+                    <span className="h-1 w-1 rounded-full bg-ink-300" />
+                    {chip}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Motif */}
+            <div className="relative hidden lg:block">
+              <div className="relative aspect-[5/4] w-full rounded-[14px] border border-ink-200 bg-canvas-raised p-5 shadow-card">
+                <div className="mb-4 flex items-center justify-between border-b border-ink-100 pb-3">
+                  <div className="flex items-center gap-2">
+                    <span className="relative flex h-2 w-2 items-center justify-center">
+                      <span className="absolute inset-0 rounded-full bg-brand-500/35 animate-signal" />
+                      <span className="relative h-1 w-1 rounded-full bg-brand-600" />
+                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-500">
+                      Jino Engines · Streaming
+                    </span>
+                  </div>
+                  <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-400">
+                    3 active
+                  </span>
+                </div>
+                <OrchestrationGrid variant="light" />
+                <div className="mt-5 grid grid-cols-3 gap-3 border-t border-ink-100 pt-4">
+                  <div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-400">CSA</div>
+                    <div className="mt-1 font-display text-[20px] tabular-nums tracking-[-0.02em] text-ink-900">243</div>
+                  </div>
+                  <div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-400">Domains</div>
+                    <div className="mt-1 font-display text-[20px] tabular-nums tracking-[-0.02em] text-ink-900">18</div>
+                  </div>
+                  <div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-400">HITL</div>
+                    <div className="mt-1 font-display text-[20px] tabular-nums tracking-[-0.02em] text-brand-600">100%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </Section>
+      </section>
 
-      <Section className="bg-slate-50/60">
+      {/* ── ENGINE BLOCKS ── */}
+      <Section>
         <SectionHeader
           tag="Why this matters"
           title="AI should reduce review time, not create new trust problems"
           description="The CheckFirst AI layer is designed for commercial buyers who need faster decisions and technical reviewers who still need defensible outputs."
+          align="left"
         />
-        <div className="grid gap-6 lg:grid-cols-3">
-          {engineBlocks.map((block) => (
-            <Card key={block.title}>
-              <span className="mb-3 inline-block rounded-full bg-brand-50 px-3 py-0.5 font-display text-xs font-semibold text-brand-700">
-                {block.tag}
-              </span>
-              <h2 className="font-display text-xl font-bold text-slate-900">{block.title}</h2>
-              <p className="mt-3 font-body text-sm leading-relaxed text-slate-600">{block.description}</p>
-              <ul className="mt-4 space-y-3">
+        <div className="grid gap-5 lg:grid-cols-3">
+          {engineBlocks.map((block, idx) => (
+            <div
+              key={block.title}
+              className="group relative flex h-full flex-col rounded-[14px] border border-ink-200 bg-canvas-raised p-7 transition-all hover:border-ink-900 hover:-translate-y-0.5"
+            >
+              <div className="mb-6 flex items-center justify-between">
+                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+                  {String(idx + 1).padStart(2, "0")} · {block.tag}
+                </span>
+                <span className="h-px w-8 bg-brand-500" />
+              </div>
+              <h2 className="font-display text-[24px] leading-[1.15] tracking-[-0.02em] text-ink-900">
+                {block.title}
+              </h2>
+              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-ink-500">
+                {block.description}
+              </p>
+              <ul className="mt-5 space-y-2.5 border-t border-ink-100 pt-5">
                 {block.bullets.map((bullet) => (
-                  <li key={bullet} className="flex gap-3 text-sm text-slate-600">
-                    <span className="mt-1 h-2.5 w-2.5 rounded-full bg-brand-600" />
+                  <li
+                    key={bullet}
+                    className="flex items-start gap-3 font-body text-[13.5px] leading-[1.55] text-ink-700"
+                  >
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      className="mt-0.5 shrink-0 text-brand-600"
+                    >
+                      <path
+                        d="M3.5 8.5L6.5 11.5L12.5 4.5"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                     <span>{bullet}</span>
                   </li>
                 ))}
               </ul>
-            </Card>
+            </div>
           ))}
         </div>
       </Section>
 
-      <Section>
+      {/* ── USE CASES ── */}
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="Commercial use cases"
           title="Where the AI engine creates immediate buyer value"
           description="Built around the buyer-intent problems teams actually pay to solve."
+          align="left"
         />
-        <div className="grid gap-6 sm:grid-cols-2">
-          {useCases.map((item) => (
-            <Card key={item.title}>
-              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
-            </Card>
+        <div className="grid gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 sm:grid-cols-2">
+          {useCases.map((item, idx) => (
+            <div
+              key={item.title}
+              className="group relative bg-canvas-raised p-7 transition-colors hover:bg-canvas"
+            >
+              <span className="mb-5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+                {String(idx + 1).padStart(2, "0")} · Use case
+              </span>
+              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-ink-900">
+                {item.title}
+              </h3>
+              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-ink-500">
+                {item.description}
+              </p>
+            </div>
           ))}
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60">
+      {/* ── REVIEW PRINCIPLES (DARK) ── */}
+      <Section dark>
         <SectionHeader
           tag="Review model"
           title="What stays human in the loop"
           description="AI can accelerate the heavy lifting, but risk decisions still need accountable review."
+          dark
+          align="left"
         />
-        <div className="mx-auto grid max-w-4xl gap-6 md:grid-cols-3">
-          {reviewPrinciples.map((item) => (
-            <Card key={item.title}>
-              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
+        <div className="grid gap-5 md:grid-cols-3">
+          {reviewPrinciples.map((item, idx) => (
+            <Card key={item.title} variant="data" className="flex h-full flex-col">
+              <div className="mb-6 flex items-center justify-between">
+                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/45">
+                  {String(idx + 1).padStart(2, "0")} · Principle
+                </span>
+                <span className="h-px w-8 bg-brand-400/60" />
+              </div>
+              <h3 className="font-display text-[22px] leading-[1.15] tracking-[-0.02em] text-white">
+                {item.title}
+              </h3>
+              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-white/65">
+                {item.description}
+              </p>
             </Card>
           ))}
         </div>
       </Section>
 
-      <Section className="bg-slate-50/60">
+      {/* ── RELATED COMMERCIAL PAGES ── */}
+      <Section>
         <SectionHeader
           tag="Related commercial pages"
           title="Explore the full CheckFirst commercial path"
           description="These internal links connect software, managed service, AI, and platform-intent pages so buyers can move to the next relevant evaluation step."
+          align="left"
         />
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 md:grid-cols-2">
           {relatedCommercialPages.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-[16px] border border-slate-200/80 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+              className="group relative flex flex-col bg-canvas-raised p-7 transition-colors hover:bg-canvas"
             >
-              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
-              <span className="mt-4 inline-flex font-display text-sm font-semibold text-brand-700">Visit page →</span>
+              <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-ink-900">
+                {item.title}
+              </h3>
+              <p className="mt-3 font-body text-[14px] leading-[1.6] text-ink-500">
+                {item.description}
+              </p>
+              <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-900">
+                Visit page
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 group-hover:translate-x-0.5">
+                  <path d="M4.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              </span>
             </Link>
           ))}
         </div>
       </Section>
 
-      <Section>
+      {/* ── SUPPORT RESOURCES ── */}
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="Support resources"
           title="Internal links for deeper AI evaluation"
           description="These canonical blog pages strengthen topical support around AI-led TPRM and category fit."
+          align="left"
         />
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-5 md:grid-cols-3">
           {survivorLinks.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-[16px] border border-slate-200/80 bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:shadow-card-hover"
+              className="group flex flex-col rounded-[14px] border border-ink-200 bg-canvas p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-ink-900"
             >
-              <h3 className="font-display text-lg font-bold text-slate-900">{item.title}</h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">{item.description}</p>
-              <span className="mt-4 inline-flex font-display text-sm font-semibold text-brand-700">Read article →</span>
+              <span className="mb-5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+                Article
+              </span>
+              <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-ink-900">
+                {item.title}
+              </h3>
+              <p className="mt-3 flex-1 font-body text-[14px] leading-[1.6] text-ink-500">
+                {item.description}
+              </p>
+              <span className="mt-5 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-900">
+                Read article
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 group-hover:translate-x-0.5">
+                  <path d="M4.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              </span>
             </Link>
           ))}
         </div>
       </Section>
 
+      {/* ── CTA ── */}
       <Section dark>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="eyebrow eyebrow-dark mb-6 justify-center">See it live</span>
+          <h2 className="font-display text-[34px] leading-[1.08] tracking-[-0.028em] text-white sm:text-[44px] lg:text-[52px]">
             Want to see the AI layer against a real supplier?
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-slate-400">
+          <p className="mx-auto mt-6 max-w-xl font-body text-[17px] leading-[1.65] text-white/70">
             We&apos;ll show how CheckFirst uses AI to compress assessment time,
             structure evidence, and support defensible vendor risk decisions.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Button href="/contact" variant="primary" size="lg">
+          <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            <Button href="/contact" variant="primary" size="lg" className="!bg-white !text-ink-950 !ring-white hover:!bg-ink-100">
               Book a demo
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M4.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
             </Button>
             <Button href="/managed-tprm" variant="ghost-dark" size="lg">
               Need a managed service?

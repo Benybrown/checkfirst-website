@@ -9,23 +9,24 @@ interface TestimonialProps {
 
 export function Testimonial({ quote, name, role, company }: TestimonialProps) {
   return (
-    <Card>
-      <svg
-        className="mb-4 text-brand-300"
-        width="32"
-        height="32"
-        viewBox="0 0 32 32"
-        fill="currentColor"
+    <Card variant="proof" className="flex h-full flex-col p-8">
+      {/* Minimal quote mark — top-left, mono style */}
+      <span
+        aria-hidden="true"
+        className="font-display text-[56px] leading-none text-ink-200 -mt-2 mb-2 select-none"
       >
-        <path d="M6 18h4l-2 6h4l2-6V8H6v10zm14 0h4l-2 6h4l2-6V8H20v10z" />
-      </svg>
-      <p className="font-body text-base leading-relaxed text-slate-700">
+        &ldquo;
+      </span>
+      <p className="font-display text-[19px] leading-[1.45] tracking-[-0.01em] text-ink-800">
         {quote}
       </p>
-      <div className="mt-6 border-t border-slate-100 pt-4">
-        <p className="font-display text-sm font-semibold text-slate-900">{name}</p>
-        <p className="font-body text-sm text-slate-500">
-          {role}, {company}
+      <div className="mt-auto pt-8">
+        <div className="mb-4 h-px w-8 bg-ink-300" />
+        <p className="font-body text-[14px] font-medium text-ink-900">
+          {name}
+        </p>
+        <p className="mt-0.5 font-mono text-[11px] uppercase tracking-[0.1em] text-ink-400">
+          {role} · {company}
         </p>
       </div>
     </Card>

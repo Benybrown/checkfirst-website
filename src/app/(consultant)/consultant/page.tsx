@@ -169,41 +169,51 @@ export default function ConsultantPage() {
   return (
     <>
       {/* ── 1. Hero ── */}
-      <section className="relative overflow-hidden bg-slate-900 px-6 pb-24 pt-20 lg:px-8 lg:pb-32 lg:pt-28">
+      <section className="relative overflow-hidden bg-ink-950 px-6 pt-16 pb-24 sm:pt-20 lg:px-8 lg:pt-28 lg:pb-32">
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-dotgrid-dark opacity-60" />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-diag-lines-dark opacity-50" />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-40 right-0 h-[600px] w-[600px] rounded-full bg-brand-600/10 blur-[120px]"
+          className="pointer-events-none absolute -top-40 right-0 h-[600px] w-[600px] rounded-full blur-3xl opacity-[0.18]"
+          style={{ background: "radial-gradient(circle, var(--color-brand-400), transparent 62%)" }}
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -bottom-40 left-0 h-[400px] w-[400px] rounded-full bg-brand-400/8 blur-[100px]"
+          className="pointer-events-none absolute -bottom-40 left-0 h-[400px] w-[400px] rounded-full blur-3xl opacity-10"
+          style={{ background: "radial-gradient(circle, var(--color-brand-500), transparent 60%)" }}
         />
 
-        <div className="relative mx-auto max-w-[1280px]">
+        <div className="relative mx-auto max-w-[1200px]">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="mb-6 inline-block rounded-full bg-brand-900/40 px-4 py-1.5 font-display text-xs font-semibold uppercase tracking-wider text-brand-300">
-              For Security Consultants
-            </span>
-            <h1 className="font-display text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-[64px] lg:leading-[1.08]">
-              Your AI-powered
-              <br />
-              security practice.
+            <div className="eyebrow eyebrow-dark mb-6 justify-center">
+              <span className="relative flex h-2 w-2 items-center justify-center">
+                <span className="absolute inset-0 rounded-full bg-brand-500/35 animate-signal" />
+                <span className="relative h-1.5 w-1.5 rounded-full bg-brand-400" />
+              </span>
+              <span>For Security Consultants</span>
+            </div>
+            <h1 className="font-display text-[32px] leading-[1.08] tracking-[-0.025em] text-white [text-wrap:balance] sm:text-[42px] md:text-[48px] lg:text-[56px] xl:text-[62px]">
+              Your AI-powered{" "}
+              <span className="italic text-white/70">security practice.</span>
             </h1>
-            <p className="mt-6 text-lg leading-relaxed text-slate-400 sm:text-xl">
+            <p className="mx-auto mt-7 max-w-2xl font-body text-[17px] leading-[1.65] text-white/70 sm:text-[18px]">
               Scan vendor infrastructure, run CSA assessments, analyze
               documents, and generate professional reports — no enterprise
               contract, no per-assessment fees.
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
               <a
                 href="#pricing"
-                className="inline-flex items-center justify-center rounded-[12px] bg-brand-700 px-7 py-3.5 font-display text-base font-semibold text-white shadow-button transition-all duration-200 hover:bg-brand-800 hover:shadow-md"
+                className="group inline-flex h-12 items-center justify-center gap-2 rounded-[10px] bg-white px-6 font-body text-[14.5px] font-medium text-ink-950 transition-all duration-200 hover:bg-ink-100"
               >
                 Get your promo code
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 group-hover:translate-x-0.5">
+                  <path d="M4.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
               </a>
               <a
                 href="#tools"
-                className="inline-flex items-center justify-center rounded-[12px] bg-white px-7 py-3.5 font-display text-base font-semibold text-slate-800 ring-1 ring-slate-200 transition-all duration-200 hover:bg-slate-50 hover:ring-slate-300"
+                className="group inline-flex h-12 items-center justify-center rounded-[10px] bg-transparent px-6 font-body text-[14.5px] font-medium text-white/70 ring-1 ring-inset ring-white/15 transition-all duration-200 hover:text-white hover:ring-white/40 hover:bg-white/5"
               >
                 See what&apos;s included
               </a>
@@ -213,21 +223,26 @@ export default function ConsultantPage() {
       </section>
 
       {/* ── 2. Metrics Bar ── */}
-      <section className="border-b border-slate-200/60 bg-slate-50/50 px-6 py-12 lg:px-8">
-        <div className="mx-auto grid max-w-[1280px] gap-8 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="border-y border-ink-200 bg-canvas-raised px-6 py-10 lg:px-8 lg:py-14">
+        <div className="mx-auto grid max-w-[1200px] divide-ink-200 gap-0 sm:grid-cols-2 sm:divide-x lg:grid-cols-4">
           {[
             { value: "4", label: "AI tools" },
             { value: "243", label: "CSA controls" },
             { value: "$99", label: "with promo code" },
             { value: "∞", label: "Unlimited usage" },
-          ].map((m) => (
-            <div key={m.value} className="text-center">
-              <p className="font-display text-3xl font-extrabold tracking-tight text-brand-700">
-                {m.value}
-              </p>
-              <p className="mt-1 font-body text-sm text-slate-400">
+          ].map((m, idx, arr) => (
+            <div
+              key={m.value}
+              className={`flex flex-col gap-2 py-4 sm:py-2 sm:px-6 ${
+                idx === 0 ? "sm:pl-0" : ""
+              } ${idx === arr.length - 1 ? "sm:pr-0" : ""}`}
+            >
+              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
                 {m.label}
-              </p>
+              </span>
+              <span className="font-display text-[40px] tabular-nums leading-none tracking-[-0.03em] text-ink-900 sm:text-[44px]">
+                {m.value}
+              </span>
             </div>
           ))}
         </div>
@@ -238,44 +253,54 @@ export default function ConsultantPage() {
         <SectionHeader
           tag="The problem"
           title="Security consulting shouldn't mean juggling 10 tools"
+          align="left"
         />
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 sm:grid-cols-2">
           {painPoints.map((p) => (
-            <Card key={p.title}>
-              <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-[10px] bg-brand-50">
+            <div
+              key={p.title}
+              className="bg-canvas-raised p-7 transition-colors hover:bg-canvas"
+            >
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-[10px] border border-ink-200 bg-canvas text-ink-700">
                 {p.icon}
               </div>
-              <h3 className="font-display text-base font-bold text-slate-900">
+              <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-ink-900">
                 {p.title}
               </h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">
+              <p className="mt-2 font-body text-[14px] leading-[1.6] text-ink-500">
                 {p.description}
               </p>
-            </Card>
+            </div>
           ))}
         </div>
       </Section>
 
       {/* ── 4. AI Toolkit ── */}
-      <Section id="tools" className="bg-slate-50/60">
+      <Section id="tools" className="bg-canvas-raised">
         <SectionHeader
           tag="What you get"
           title="Four AI tools. One subscription. No limits."
           description="The same AI engine that powers enterprise CheckFirst — plus ProvEye infrastructure scanning. Everything consultants need."
         />
-        <div className="mx-auto grid max-w-3xl gap-6 sm:grid-cols-2">
-          {aiTools.map((tool) => (
-            <Card key={tool.name} className="h-full">
-              <span className="mb-3 inline-block rounded-full bg-brand-50 px-3 py-0.5 font-display text-xs font-semibold text-brand-700">
-                {tool.tag}
-              </span>
-              <h3 className="font-display text-lg font-bold text-slate-900">
+        <div className="mx-auto grid max-w-3xl gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 sm:grid-cols-2">
+          {aiTools.map((tool, idx) => (
+            <div
+              key={tool.name}
+              className="group relative flex h-full flex-col bg-canvas-raised p-7 transition-colors hover:bg-canvas"
+            >
+              <div className="mb-5 flex items-center justify-between">
+                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+                  {String(idx + 1).padStart(2, "0")} · {tool.tag}
+                </span>
+                <span className="h-px w-6 bg-brand-500" />
+              </div>
+              <h3 className="font-display text-[22px] leading-[1.15] tracking-[-0.02em] text-ink-900">
                 {tool.name}
               </h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">
+              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-ink-500">
                 {tool.description}
               </p>
-            </Card>
+            </div>
           ))}
         </div>
       </Section>
@@ -286,19 +311,25 @@ export default function ConsultantPage() {
           tag="How it works"
           title="From client brief to delivered report"
         />
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-[6%] right-[6%] top-[26px] hidden h-px bg-gradient-to-r from-transparent via-ink-200 to-transparent lg:block"
+          />
           {howItWorks.map((item) => (
             <div key={item.step}>
-              <span
-                aria-hidden="true"
-                className="font-display text-5xl font-extrabold text-brand-600"
-              >
-                {item.step}
-              </span>
-              <h3 className="mt-3 font-display text-lg font-bold text-slate-900">
+              <div className="mb-5">
+                <span
+                  aria-hidden="true"
+                  className="relative flex h-[52px] w-[52px] items-center justify-center rounded-full border border-ink-200 bg-canvas font-mono text-[13px] text-ink-700"
+                >
+                  {item.step}
+                </span>
+              </div>
+              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-ink-900">
                 {item.title}
               </h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-slate-600">
+              <p className="mt-3 max-w-xs font-body text-[14.5px] leading-[1.65] text-ink-500">
                 {item.description}
               </p>
             </div>
@@ -313,51 +344,52 @@ export default function ConsultantPage() {
           title="One plan. Everything you need."
         />
         <div className="grid items-start gap-8 lg:grid-cols-2">
-          {/* Pricing card */}
-          <Card hover={false} className="ring-2 ring-brand-600">
-            <div className="mb-6">
-              <span className="font-display text-sm font-semibold uppercase tracking-wider text-brand-700">
-                Consultant Plan
-              </span>
-              <div className="mt-3 flex items-baseline gap-2">
-                <span className="font-display text-5xl font-extrabold tracking-tight text-slate-900">
+          {/* Pricing card — dark ink surface with brand signal */}
+          <div className="relative flex flex-col rounded-[18px] border border-ink-200 bg-ink-950 p-8 text-white">
+            <span className="absolute -top-2.5 left-8 inline-flex items-center gap-1.5 rounded-full border border-brand-400/40 bg-ink-900 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-brand-300">
+              <span className="h-1 w-1 rounded-full bg-brand-400 animate-signal" />
+              Consultant Plan
+            </span>
+            <div className="mb-8 mt-2">
+              <div className="flex items-baseline gap-2">
+                <span className="font-display text-[56px] tabular-nums leading-none tracking-[-0.03em] text-white">
                   $99
                 </span>
-                <span className="font-body text-base text-slate-500">
+                <span className="font-body text-[18px] text-white/60">
                   /month
                 </span>
               </div>
-              <p className="mt-1 font-body text-sm text-slate-400">
+              <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.1em] text-white/50">
                 <span className="line-through">$399/month</span>{" "}
-                — consultant discount
+                · consultant discount
               </p>
             </div>
 
-            <ul className="space-y-3">
+            <ul className="space-y-3 border-t border-white/10 pt-6">
               {pricingFeatures.map((feature) => (
                 <li key={feature} className="flex items-start gap-3">
                   <svg
-                    width="20"
-                    height="20"
+                    width="16"
+                    height="16"
                     viewBox="0 0 24 24"
                     fill="none"
-                    className="mt-0.5 shrink-0 text-brand-600"
+                    className="mt-1 shrink-0 text-brand-400"
                   >
                     <path
                       d="M20 6L9 17l-5-5"
                       stroke="currentColor"
-                      strokeWidth="2"
+                      strokeWidth="1.8"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span className="font-body text-sm text-slate-700">
+                  <span className="font-body text-[14px] leading-[1.55] text-white/80">
                     {feature}
                   </span>
                 </li>
               ))}
             </ul>
-          </Card>
+          </div>
 
           {/* Email opt-in */}
           <EmailOptIn />
@@ -365,7 +397,7 @@ export default function ConsultantPage() {
       </Section>
 
       {/* ── 8. FAQ ── */}
-      <Section className="bg-slate-50/60">
+      <Section className="bg-canvas-raised">
         <SectionHeader
           tag="FAQ"
           title="Common questions"
@@ -376,24 +408,28 @@ export default function ConsultantPage() {
 
       {/* ── 9. Final CTA ── */}
       <Section dark>
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="eyebrow eyebrow-dark mb-6 justify-center">Get started</span>
+          <h2 className="font-display text-[34px] leading-[1.08] tracking-[-0.028em] text-white sm:text-[44px] lg:text-[52px]">
             Ready to 10x your consulting output?
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-slate-400">
+          <p className="mx-auto mt-6 max-w-xl font-body text-[17px] leading-[1.65] text-white/70">
             Get the same AI tools enterprise teams use — at a price that makes
             sense for independent consultants.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
             <a
               href="#pricing"
-              className="inline-flex items-center justify-center rounded-[12px] bg-brand-700 px-7 py-3.5 font-display text-base font-semibold text-white shadow-button transition-all duration-200 hover:bg-brand-800 hover:shadow-md"
+              className="group inline-flex h-12 items-center justify-center gap-2 rounded-[10px] bg-white px-6 font-body text-[14.5px] font-medium text-ink-950 transition-all duration-200 hover:bg-ink-100"
             >
               Get your promo code
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 group-hover:translate-x-0.5">
+                <path d="M4.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
             </a>
             <a
               href="https://checkfirst.io"
-              className="inline-flex items-center justify-center rounded-[12px] px-7 py-3.5 font-display text-base font-semibold text-slate-300 transition-all duration-200 hover:text-white hover:bg-slate-800"
+              className="inline-flex h-12 items-center justify-center rounded-[10px] bg-transparent px-6 font-body text-[14.5px] font-medium text-white/70 ring-1 ring-inset ring-white/15 transition-all duration-200 hover:text-white hover:ring-white/40 hover:bg-white/5"
             >
               Visit checkfirst.io
             </a>

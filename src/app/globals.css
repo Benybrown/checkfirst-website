@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
-/* ─── Design Tokens ─── */
+/* ─────────────────────────────────────────────────────────────────────────
+   Design Tokens — "Enterprise Intelligence"
+   Dominant: near-black ink. Canvas: warm off-white (editorial).
+   Single sharp accent: brand teal. One reserved data-signal.
+   ───────────────────────────────────────────────────────────────────────── */
 @theme {
-  --color-brand-50: #f0fdfa;
+  /* Brand — kept for continuity (same values) */
+  --color-brand-50:  #f0fdfa;
   --color-brand-100: #ccfbf1;
   --color-brand-200: #99f6e4;
   --color-brand-300: #5eead4;
@@ -13,51 +18,188 @@
   --color-brand-800: #115e59;
   --color-brand-900: #134e4a;
 
-  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
-  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  /* Ink — dominant palette (near-black with a touch of warmth) */
+  --color-ink-50:  #F4F5F7;
+  --color-ink-100: #E8EAEE;
+  --color-ink-200: #D2D6DD;
+  --color-ink-300: #9197A3;
+  --color-ink-400: #6F7583;
+  --color-ink-500: #4A4F5A;
+  --color-ink-600: #343842;
+  --color-ink-700: #1E2128;
+  --color-ink-800: #14161B;
+  --color-ink-900: #0E1014;
+  --color-ink-950: #08090B;
 
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.06);
-  --shadow-card-hover: 0 10px 25px rgba(0, 0, 0, 0.07), 0 4px 10px rgba(0, 0, 0, 0.04);
-  --shadow-button: 0 1px 2px rgba(0, 0, 0, 0.05);
+  /* Canvas — warm off-white (editorial cue) */
+  --color-canvas:        #F7F5F0;
+  --color-canvas-raised: #FDFCF9;
+
+  /* Reserved data-signal (pulses, live-states, chart highlights) */
+  --color-signal: #BEF264;
+
+  /* Typography */
+  --font-display: "Newsreader", ui-serif, Georgia, "Times New Roman", serif;
+  --font-body:    "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-outfit:  "Outfit", ui-sans-serif, system-ui, sans-serif;
+
+  /* Radii — tighter, more precise */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+
+  /* Elevation — prefer hairlines + one floating shadow */
+  --shadow-card:       0 1px 0 rgba(14, 16, 20, 0.04);
+  --shadow-card-hover: 0 1px 0 rgba(14, 16, 20, 0.06), 0 12px 28px -12px rgba(14, 16, 20, 0.12);
+  --shadow-button:     0 1px 0 rgba(14, 16, 20, 0.06);
+  --shadow-float:      0 20px 44px -18px rgba(14, 16, 20, 0.22), 0 2px 6px -2px rgba(14, 16, 20, 0.08);
+
+  /* Motion */
+  --ease-crisp: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ─── Base layer: lower priority than utilities ─── */
+/* ─── Base layer ─── */
 @layer base {
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
     font-family: var(--font-body);
-    color: #1e293b;
-    background: #ffffff;
-    line-height: 1.6;
+    color: var(--color-ink-700);
+    background: var(--color-canvas);
+    line-height: 1.65;
+    font-size: 17px;
+    font-feature-settings: "ss01", "cv11";
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
-    color: #0f172a;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--color-ink-900);
+    font-weight: 500;
+  }
+
+  /* Mono + tabular numerals when requested */
+  .font-mono,
+  [class*="tabular"] {
+    font-variant-numeric: tabular-nums;
   }
 
   :focus-visible {
     outline: 2px solid var(--color-brand-500);
-    outline-offset: 2px;
+    outline-offset: 3px;
     border-radius: 4px;
   }
 
   ::selection {
-    background: var(--color-brand-200);
-    color: var(--color-brand-900);
+    background: var(--color-ink-900);
+    color: var(--color-canvas);
+  }
+
+  /* Editorial-feeling italic in serif display */
+  .font-display em,
+  .font-display i {
+    font-style: italic;
+    font-family: var(--font-display);
+  }
+}
+
+/* ─── Reusable component patterns ─── */
+@layer components {
+  /* Eyebrow label — mono, uppercase, tight tracking */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-ink-400);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .eyebrow-dark {
+    color: rgba(255, 255, 255, 0.62);
+  }
+
+  .eyebrow::before {
+    content: "";
+    width: 18px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
+  }
+
+  /* Hairline divider */
+  .hairline {
+    border-color: var(--color-ink-200);
+  }
+
+  .hairline-dark {
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
+  /* Dot grid background (hero canvas) */
+  .bg-dotgrid {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(14, 16, 20, 0.09) 1px,
+      transparent 0
+    );
+    background-size: 24px 24px;
+  }
+
+  .bg-dotgrid-dark {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 0
+    );
+    background-size: 24px 24px;
+  }
+
+  /* Diagonal hairline pattern for dark sections */
+  .bg-diag-lines-dark {
+    background-image:
+      linear-gradient(
+        115deg,
+        transparent 0,
+        transparent calc(50% - 0.5px),
+        rgba(255, 255, 255, 0.05) calc(50% - 0.5px),
+        rgba(255, 255, 255, 0.05) calc(50% + 0.5px),
+        transparent calc(50% + 0.5px)
+      );
+    background-size: 180px 180px;
+  }
+
+  /* Radial glow accents */
+  .glow-brand {
+    position: absolute;
+    inset: auto;
+    pointer-events: none;
+    background: radial-gradient(
+      circle,
+      rgba(20, 184, 166, 0.22),
+      transparent 60%
+    );
+    filter: blur(60px);
   }
 }
 
 /* ─── Reduced Motion ─── */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -68,24 +210,62 @@
 /* ─── Animations ─── */
 @layer utilities {
   @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(24px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes drawLine {
+    from { stroke-dashoffset: 100%; opacity: 0; }
+    to   { stroke-dashoffset: 0; opacity: 1; }
+  }
+
+  /* Signal pulse — used by orchestration-grid dots */
+  @keyframes signalPulse {
+    0%, 100% { opacity: 0.35; transform: scale(1); }
+    50%      { opacity: 1; transform: scale(1.08); }
+  }
+
+  /* Orchestration wave — light sequence sweeping across grid cells */
+  @keyframes gridWave {
+    0%, 100% { background-color: rgba(20, 184, 166, 0.08); }
+    50%      { background-color: rgba(45, 212, 191, 0.75); }
   }
 
   .animate-fade-in-up {
-    animation: fadeInUp 0.5s ease-out forwards;
+    animation: fadeInUp 0.6s var(--ease-out) forwards;
     opacity: 0;
   }
 
+  .animate-slide-up {
+    animation: slideUp 0.5s var(--ease-crisp) forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.6s var(--ease-out) forwards;
+    opacity: 0;
+  }
+
+  .animate-signal {
+    animation: signalPulse 2.4s ease-in-out infinite;
+  }
+
   .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-150 { animation-delay: 150ms; }
   .animate-delay-200 { animation-delay: 200ms; }
   .animate-delay-300 { animation-delay: 300ms; }
   .animate-delay-400 { animation-delay: 400ms; }
   .animate-delay-500 { animation-delay: 500ms; }
+  .animate-delay-600 { animation-delay: 600ms; }
+  .animate-delay-700 { animation-delay: 700ms; }
 }
