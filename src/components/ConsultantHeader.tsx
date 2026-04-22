@@ -3,19 +3,25 @@ import Link from "next/link";
 export function ConsultantHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink-200/80 bg-canvas/85 backdrop-blur-md">
-      <div className="mx-auto flex h-[68px] max-w-[1280px] items-center justify-between px-6 lg:px-8">
+      <div className="mx-auto flex h-[76px] max-w-[1280px] items-center justify-between px-6 lg:px-8">
         <Link
           href="/"
-          className="group inline-flex items-center gap-2 font-display text-[22px] font-semibold tracking-[-0.03em] text-ink-900"
+          className="group inline-flex items-center gap-2.5"
         >
-          <span>Check</span>
-          <span
-            aria-hidden="true"
-            className="h-1.5 w-1.5 rounded-full bg-brand-500 transition-transform duration-200 group-hover:scale-125"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-mark.svg"
+            alt=""
+            width={48}
+            height={48}
+            className="h-12 w-12 shrink-0 transition-transform duration-200 group-hover:scale-105"
           />
-          <span className="italic">First</span>
-          <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.12em] text-ink-400">
-            for Consultants
+          <span className="inline-flex items-baseline font-display text-[22px] font-semibold tracking-[-0.03em] text-ink-900">
+            <span>Check</span>
+            <span className="italic">First</span>
+            <span className="ml-2 font-mono text-[10px] uppercase tracking-[0.12em] text-ink-400 not-italic">
+              for Consultants
+            </span>
           </span>
         </Link>
 

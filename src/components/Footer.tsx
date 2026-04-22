@@ -39,14 +39,20 @@ export function Footer() {
           <div>
             <Link
               href="/"
-              className="group inline-flex items-center gap-2 font-display text-[24px] font-semibold tracking-[-0.03em] text-white"
+              className="group inline-flex items-center gap-3"
             >
-              <span>Check</span>
-              <span
-                aria-hidden="true"
-                className="h-1.5 w-1.5 rounded-full bg-brand-400 transition-transform duration-200 group-hover:scale-125"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo-mark.svg"
+                alt=""
+                width={44}
+                height={44}
+                className="h-11 w-11 shrink-0 transition-transform duration-200 group-hover:scale-105"
               />
-              <span className="italic">First</span>
+              <span className="inline-flex items-center font-display text-[24px] font-semibold tracking-[-0.03em] text-white">
+                <span>Check</span>
+                <span className="italic">First</span>
+              </span>
             </Link>
             <p className="mt-5 max-w-xs font-body text-[15px] leading-[1.65] text-white/60">
               AI-powered third-party risk management.

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   description:
     "CheckFirst helps teams run vendor security assessments, supplier due diligence, TPRM software workflows, and managed third-party risk management faster with AI-assisted review.",
   icons: {
-    icon: "/favicon.svg",
+    icon: "/logo-mark.svg",
   },
   openGraph: {
     title: "CheckFirst | TPRM Software, Vendor Security Assessments & Managed TPRM",
@@ -69,7 +69,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "CheckFirst",
               "url": "https://checkfirst.io",
-              "logo": "https://checkfirst.io/logo.png",
+              "logo": "https://checkfirst.io/logo.svg",
               "sameAs": [
                 "https://www.linkedin.com/company/checkfirstsecurity/"
               ]

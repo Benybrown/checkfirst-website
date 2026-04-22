@@ -17,14 +17,20 @@ export function ConsultantFooter() {
           <div>
             <Link
               href="https://checkfirst.io"
-              className="group inline-flex items-center gap-2 font-display text-[22px] font-semibold tracking-[-0.03em] text-white"
+              className="group inline-flex items-center gap-2.5"
             >
-              <span>Check</span>
-              <span
-                aria-hidden="true"
-                className="h-1.5 w-1.5 rounded-full bg-brand-400 transition-transform duration-200 group-hover:scale-125"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo-mark.svg"
+                alt=""
+                width={40}
+                height={40}
+                className="h-10 w-10 shrink-0 transition-transform duration-200 group-hover:scale-105"
               />
-              <span className="italic">First</span>
+              <span className="inline-flex items-center font-display text-[22px] font-semibold tracking-[-0.03em] text-white">
+                <span>Check</span>
+                <span className="italic">First</span>
+              </span>
             </Link>
             <p className="mt-3 font-body text-[14px] leading-[1.55] text-white/60">
               AI-powered security assessments for independent consultants.

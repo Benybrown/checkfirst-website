@@ -6,17 +6,23 @@
    Single sharp accent: brand teal. One reserved data-signal.
    ───────────────────────────────────────────────────────────────────────── */
 @theme {
-  /* Brand — kept for continuity (same values) */
-  --color-brand-50:  #f0fdfa;
-  --color-brand-100: #ccfbf1;
-  --color-brand-200: #99f6e4;
-  --color-brand-300: #5eead4;
-  --color-brand-400: #2dd4bf;
-  --color-brand-500: #14b8a6;
-  --color-brand-600: #0d9488;
-  --color-brand-700: #0f766e;
-  --color-brand-800: #115e59;
-  --color-brand-900: #134e4a;
+  /* Brand — derived from the CheckFirst shield logo
+     Gradient anchors: magenta #E90DCA → royal blue #1536F1
+     Purple midpoint used as the primary brand anchor. */
+  --color-brand-50:  #F5EDFF;
+  --color-brand-100: #E6D6FF;
+  --color-brand-200: #D0B3FF;
+  --color-brand-300: #B07AFF;
+  --color-brand-400: #9B4AE8;
+  --color-brand-500: #7928CA;
+  --color-brand-600: #6019AB;
+  --color-brand-700: #4A0E86;
+  --color-brand-800: #36095E;
+  --color-brand-900: #22053A;
+
+  /* Brand gradient anchors (used for glows, accents, the live signal) */
+  --color-brand-magenta: #E90DCA;
+  --color-brand-blue:    #1536F1;
 
   /* Ink — dominant palette (near-black with a touch of warmth) */
   --color-ink-50:  #F4F5F7;
@@ -181,17 +187,30 @@
     background-size: 180px 180px;
   }
 
-  /* Radial glow accents */
+  /* Radial glow accents — brand gradient (magenta→blue) */
   .glow-brand {
     position: absolute;
     inset: auto;
     pointer-events: none;
     background: radial-gradient(
       circle,
-      rgba(20, 184, 166, 0.22),
+      rgba(121, 40, 202, 0.28),
       transparent 60%
     );
     filter: blur(60px);
+  }
+
+  /* Brand gradient helper — magenta to blue through purple */
+  .brand-gradient-text {
+    background: linear-gradient(135deg, #E90DCA 0%, #7928CA 50%, #1536F1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .brand-gradient-bg {
+    background: linear-gradient(135deg, #E90DCA 0%, #7928CA 50%, #1536F1 100%);
   }
 }
 

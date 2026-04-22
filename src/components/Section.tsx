@@ -30,22 +30,22 @@ export function Section({
     >
       {dark && (
         <>
-          {/* Single off-axis brand glow */}
+          {/* Primary brand glow (magenta) top-right */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full blur-3xl opacity-[0.18]"
+            className="pointer-events-none absolute -top-40 -right-40 h-[520px] w-[520px] rounded-full blur-3xl opacity-[0.22]"
             style={{
               background:
-                "radial-gradient(circle, var(--color-brand-400), transparent 65%)",
+                "radial-gradient(circle, var(--color-brand-magenta), transparent 65%)",
             }}
           />
-          {/* Secondary subtle glow bottom-left */}
+          {/* Secondary brand glow (blue) bottom-left */}
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute -bottom-32 -left-24 h-[380px] w-[380px] rounded-full blur-3xl opacity-[0.10]"
+            className="pointer-events-none absolute -bottom-32 -left-24 h-[420px] w-[420px] rounded-full blur-3xl opacity-[0.16]"
             style={{
               background:
-                "radial-gradient(circle, var(--color-brand-500), transparent 60%)",
+                "radial-gradient(circle, var(--color-brand-blue), transparent 62%)",
             }}
           />
         </>

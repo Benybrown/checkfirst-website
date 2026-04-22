@@ -32,13 +32,13 @@ export function LanguageSwitcher() {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="inline-flex items-center gap-1.5 rounded-[8px] px-2.5 py-2 font-body text-sm font-medium text-slate-600 transition-colors duration-200 hover:bg-slate-100 hover:text-slate-900"
+        className="inline-flex h-10 items-center gap-1.5 rounded-[10px] px-2.5 font-body text-[13.5px] font-medium text-ink-600 transition-colors duration-200 hover:bg-ink-50 hover:text-ink-900"
         aria-expanded={open}
         aria-label="Select language"
       >
         <svg
-          width="18"
-          height="18"
+          width="16"
+          height="16"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -51,11 +51,11 @@ export function LanguageSwitcher() {
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
         </svg>
         <svg
-          width="12"
-          height="12"
+          width="10"
+          height="10"
           viewBox="0 0 12 12"
           fill="none"
-          className={`transition-transform duration-200 ${open ? "rotate-180" : ""}`}
+          className={`opacity-60 transition-transform duration-200 ${open ? "rotate-180" : ""}`}
         >
           <path
             d="M3 4.5l3 3 3-3"
@@ -68,7 +68,7 @@ export function LanguageSwitcher() {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full z-50 mt-1 w-40 rounded-[12px] border border-slate-200/80 bg-white py-1 shadow-lg">
+        <div className="absolute right-0 top-full z-50 mt-3 w-44 overflow-hidden rounded-[12px] border border-ink-200 bg-canvas-raised p-1.5 shadow-float animate-fade-in" style={{ animationDuration: "140ms" }}>
           {languages.map((lang) => (
             <button
               key={lang.code}
@@ -77,16 +77,16 @@ export function LanguageSwitcher() {
                 setLanguage(lang.code);
                 setOpen(false);
               }}
-              className="flex w-full items-center gap-2.5 px-3 py-2 text-left font-body text-sm text-slate-700 transition-colors hover:bg-slate-50"
+              className="flex w-full items-center gap-2.5 rounded-[8px] px-3 py-2 text-left font-body text-[13.5px] text-ink-700 transition-colors hover:bg-ink-50 hover:text-ink-900"
             >
-              <span className="text-base">{lang.flag}</span>
+              <span className="text-[15px]">{lang.flag}</span>
               <span className="flex-1">{lang.label}</span>
               {language === lang.code && (
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-brand-700">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none" className="text-brand-600">
                   <path
                     d="M3.5 8.5l3 3 6-7"
                     stroke="currentColor"
-                    strokeWidth="2"
+                    strokeWidth="1.8"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                   />
