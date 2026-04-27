@@ -3,7 +3,7 @@ import Script from "next/script";
 import { HomeContent } from "@/components/HomeContent";
 
 export const metadata: Metadata = {
-  title: "CheckFirst — AI Vendor Security Assessment & TPRM Platform",
+  title: "CheckFirst TPRM — AI Vendor Security Assessment Platform",
   description:
     "Cut vendor security reviews from weeks to hours. AI-powered TPRM platform for questionnaire automation, evidence analysis, and continuous monitoring.",
   keywords: [
@@ -15,16 +15,16 @@ export const metadata: Metadata = {
     "ai vendor risk assessment",
   ],
   openGraph: {
-    title: "CheckFirst — AI Vendor Security Assessment & TPRM Platform",
+    title: "CheckFirst TPRM — AI Vendor Security Assessment Platform",
     description:
       "Cut vendor security reviews from weeks to hours. AI-powered TPRM platform for questionnaire automation, evidence analysis, and continuous monitoring.",
     url: "https://checkfirst.io/",
-    siteName: "CheckFirst",
+    siteName: "CheckFirst TPRM",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CheckFirst — AI Vendor Security Assessment & TPRM Platform",
+    title: "CheckFirst TPRM — AI Vendor Security Assessment Platform",
     description:
       "Cut vendor security reviews from weeks to hours. AI-powered TPRM platform for questionnaire automation, evidence analysis, and continuous monitoring.",
   },
