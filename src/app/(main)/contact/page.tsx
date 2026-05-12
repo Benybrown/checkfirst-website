@@ -115,6 +115,13 @@ export default function ContactPage() {
             supplier evidence review, procurement handoff, and how CheckFirst
             fits beside your existing compliance process.
           </p>
+          <p className="mt-4 max-w-2xl font-body text-[15.5px] leading-[1.7] text-ink-500">
+            If you already have a vendor inventory, bring a sample supplier,
+            questionnaire, or assessment pain point. We will show how CheckFirst
+            turns that into an assessment workflow with intake, evidence
+            collection, AI-assisted review, risk decisioning, remediation
+            tracking, and reporting for stakeholders.
+          </p>
         </div>
       </section>
 
