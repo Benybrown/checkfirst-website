@@ -122,6 +122,12 @@ export default function ContactPage() {
             collection, AI-assisted review, risk decisioning, remediation
             tracking, and reporting for stakeholders.
           </p>
+          <p className="mt-4 max-w-2xl font-body text-[15.5px] leading-[1.7] text-ink-500">
+            After the call, you should understand which assessment path fits
+            your team, what data you need to start, and whether software,
+            managed service support, or a combined approach is the right next
+            step.
+          </p>
         </div>
       </section>
 
