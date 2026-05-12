@@ -109,6 +109,12 @@ export default function ContactPage() {
             process, the number of suppliers you assess, and the frameworks you
             care about so the demo can focus on your real workflow.
           </p>
+          <p className="mt-4 max-w-2xl font-body text-[15.5px] leading-[1.7] text-ink-500">
+            We can also help clarify implementation questions such as WordPress
+            or website setup, security questionnaire workflows, CSA CCM mapping,
+            supplier evidence review, procurement handoff, and how CheckFirst
+            fits beside your existing compliance process.
+          </p>
         </div>
       </section>
 
