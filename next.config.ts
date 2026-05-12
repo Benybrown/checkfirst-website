@@ -33,6 +33,17 @@ const nextConfig: NextConfig = {
         destination: "/blog/category-sitemap.xml",
         permanent: true,
       },
+      // Dead blog URLs — deleted/renamed posts with no WP auto-redirect
+      {
+        source: "/blog/tprm-risk-management-maturity",
+        destination: "/blog/3rd-party-risk-management-maturity-framework/",
+        permanent: true,
+      },
+      {
+        source: "/blog/tprm-risk-management-maturity/",
+        destination: "/blog/3rd-party-risk-management-maturity-framework/",
+        permanent: true,
+      },
       // Dead URLs Google found — redirect to relevant pages
       {
         source: "/feed",
