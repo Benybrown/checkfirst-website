@@ -44,7 +44,7 @@ export function Footer() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/logo-mark.svg"
-                alt=""
+                alt="CheckFirst"
                 width={44}
                 height={44}
                 className="h-11 w-11 shrink-0 transition-transform duration-200 group-hover:scale-105"

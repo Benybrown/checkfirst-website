@@ -6,9 +6,10 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { FAQ } from "@/components/FAQ";
+import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Managed TPRM Services | Outsourced Third-Party Risk Management | CheckFirst",
+  title: "Managed TPRM Services | CheckFirst",
   description:
     "Outsource third-party risk management to CheckFirst. Get a dedicated analyst team, AI-assisted assessments, vendor follow-up, and executive reporting without building headcount.",
   keywords: [
@@ -19,18 +20,20 @@ export const metadata: Metadata = {
     "third-party risk management service",
   ],
   openGraph: {
-    title: "Managed TPRM Services | Outsourced Third-Party Risk Management | CheckFirst",
+    title: "Managed TPRM Services | CheckFirst",
     description:
       "Outsource third-party risk management to CheckFirst. Get a dedicated analyst team, AI-assisted assessments, vendor follow-up, and executive reporting without building headcount.",
     url: "https://checkfirst.io/managed-tprm",
     siteName: "CheckFirst",
     type: "website",
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Managed TPRM Services | Outsourced Third-Party Risk Management | CheckFirst",
+    title: "Managed TPRM Services | CheckFirst",
     description:
       "Outsource third-party risk management to CheckFirst. Get a dedicated analyst team, AI-assisted assessments, vendor follow-up, and executive reporting without building headcount.",
+    images: defaultTwitterImages,
   },
   alternates: {
     canonical: "/managed-tprm",

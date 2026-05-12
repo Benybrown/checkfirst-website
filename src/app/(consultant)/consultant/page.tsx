@@ -4,6 +4,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Card } from "@/components/Card";
 import { FAQ } from "@/components/FAQ";
 import { EmailOptIn } from "@/components/EmailOptIn";
+import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "CheckFirst for Consultants — AI Security Tools at $99/month",
@@ -14,6 +15,14 @@ export const metadata: Metadata = {
     description:
       "4 AI tools for security consultants. Scan vendor infrastructure, assess against 243 CSA controls, analyze documents. $99/month flat.",
     type: "website",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CheckFirst for Consultants — AI Security Tools at $99/month",
+    description:
+      "4 AI tools for security consultants. Scan vendor infrastructure, assess against 243 CSA controls, analyze documents. $99/month flat.",
+    images: defaultTwitterImages,
   },
 };
 

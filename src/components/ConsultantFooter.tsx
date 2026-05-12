@@ -22,7 +22,7 @@ export function ConsultantFooter() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/logo-mark.svg"
-                alt=""
+                alt="CheckFirst"
                 width={40}
                 height={40}
                 className="h-10 w-10 shrink-0 transition-transform duration-200 group-hover:scale-105"

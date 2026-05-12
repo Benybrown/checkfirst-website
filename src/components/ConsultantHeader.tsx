@@ -11,7 +11,7 @@ export function ConsultantHeader() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/logo-mark.svg"
-            alt=""
+            alt="CheckFirst"
             width={48}
             height={48}
             className="h-12 w-12 shrink-0 transition-transform duration-200 group-hover:scale-105"

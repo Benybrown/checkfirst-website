@@ -6,9 +6,10 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { FAQ } from "@/components/FAQ";
+import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Vendor Security Assessment Software | AI Supplier Assessments | CheckFirst",
+  title: "Vendor Security Assessment Software | CheckFirst",
   description:
     "Run vendor security assessments faster with AI-powered supplier due diligence, external scanning, adaptive questionnaires, and evidence-based review workflows.",
   keywords: [
@@ -19,18 +20,20 @@ export const metadata: Metadata = {
     "security questionnaire automation",
   ],
   openGraph: {
-    title: "Vendor Security Assessment Software | AI Supplier Assessments | CheckFirst",
+    title: "Vendor Security Assessment Software | CheckFirst",
     description:
       "Run vendor security assessments faster with AI-powered supplier due diligence, external scanning, adaptive questionnaires, and evidence-based review workflows.",
     url: "https://checkfirst.io/assessments",
     siteName: "CheckFirst",
     type: "website",
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vendor Security Assessment Software | AI Supplier Assessments | CheckFirst",
+    title: "Vendor Security Assessment Software | CheckFirst",
     description:
       "Run vendor security assessments faster with AI-powered supplier due diligence, external scanning, adaptive questionnaires, and evidence-based review workflows.",
+    images: defaultTwitterImages,
   },
   alternates: {
     canonical: "/assessments",

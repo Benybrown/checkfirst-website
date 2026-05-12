@@ -1,10 +1,27 @@
 import type { Metadata } from "next";
 import { Section } from "@/components/Section";
+import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Terms of Service | CheckFirst",
   description:
     "CheckFirst Terms of Service — the agreement governing your use of our platform and services.",
+  openGraph: {
+    title: "Terms of Service | CheckFirst",
+    description:
+      "CheckFirst Terms of Service — the agreement governing your use of our platform and services.",
+    url: "https://checkfirst.io/terms",
+    siteName: "CheckFirst",
+    type: "website",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms of Service | CheckFirst",
+    description:
+      "CheckFirst Terms of Service — the agreement governing your use of our platform and services.",
+    images: defaultTwitterImages,
+  },
   alternates: {
     canonical: "/terms",
   },

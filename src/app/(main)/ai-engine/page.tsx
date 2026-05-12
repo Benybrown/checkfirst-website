@@ -6,11 +6,12 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { OrchestrationGrid } from "@/components/OrchestrationGrid";
+import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "AI Vendor Risk Assessment Engine | Automated Supplier Due Diligence | CheckFirst",
+  title: "AI Vendor Risk Assessment Engine | CheckFirst",
   description:
-    "See how CheckFirst uses AI for vendor risk assessment, questionnaire review, document analysis, and supplier due diligence while keeping human approval in the loop.",
+    "See how CheckFirst uses AI for vendor risk assessment, questionnaire review, document analysis, and supplier due diligence with human approval.",
   keywords: [
     "ai vendor risk assessment",
     "security questionnaire automation",
@@ -19,18 +20,20 @@ export const metadata: Metadata = {
     "vendor security assessment ai",
   ],
   openGraph: {
-    title: "AI Vendor Risk Assessment Engine | Automated Supplier Due Diligence | CheckFirst",
+    title: "AI Vendor Risk Assessment Engine | CheckFirst",
     description:
-      "See how CheckFirst uses AI for vendor risk assessment, questionnaire review, document analysis, and supplier due diligence while keeping human approval in the loop.",
+      "See how CheckFirst uses AI for vendor risk assessment, questionnaire review, document analysis, and supplier due diligence with human approval.",
     url: "https://checkfirst.io/ai-engine",
     siteName: "CheckFirst",
     type: "website",
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Vendor Risk Assessment Engine | Automated Supplier Due Diligence | CheckFirst",
+    title: "AI Vendor Risk Assessment Engine | CheckFirst",
     description:
-      "See how CheckFirst uses AI for vendor risk assessment, questionnaire review, document analysis, and supplier due diligence while keeping human approval in the loop.",
+      "See how CheckFirst uses AI for vendor risk assessment, questionnaire review, document analysis, and supplier due diligence with human approval.",
+    images: defaultTwitterImages,
   },
   alternates: {
     canonical: "/ai-engine",

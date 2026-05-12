@@ -5,11 +5,28 @@ import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { FAQ } from "@/components/FAQ";
 import { Testimonial } from "@/components/Testimonial";
+import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "CheckFirst — منصة تقييم أمان الموردين بالذكاء الاصطناعي",
   description:
     "CheckFirst يستبدل تقييمات أمان الموردين اليدوية والبطيئة بتحليل فوري بالذكاء الاصطناعي. قيّم الموردين مقابل أكثر من 243 ضابطاً أمنياً في دقائق.",
+  openGraph: {
+    title: "CheckFirst — منصة تقييم أمان الموردين بالذكاء الاصطناعي",
+    description:
+      "CheckFirst يستبدل تقييمات أمان الموردين اليدوية والبطيئة بتحليل فوري بالذكاء الاصطناعي. قيّم الموردين مقابل أكثر من 243 ضابطاً أمنياً في دقائق.",
+    url: "https://checkfirst.io/ar",
+    siteName: "CheckFirst",
+    type: "website",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CheckFirst — منصة تقييم أمان الموردين بالذكاء الاصطناعي",
+    description:
+      "CheckFirst يستبدل تقييمات أمان الموردين اليدوية والبطيئة بتحليل فوري بالذكاء الاصطناعي. قيّم الموردين مقابل أكثر من 243 ضابطاً أمنياً في دقائق.",
+    images: defaultTwitterImages,
+  },
   alternates: {
     canonical: "/ar",
   },

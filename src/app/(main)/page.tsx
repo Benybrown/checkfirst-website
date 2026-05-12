@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { HomeContent } from "@/components/HomeContent";
+import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "CheckFirst — AI Vendor Security Assessment & TPRM Platform",
@@ -21,12 +22,14 @@ export const metadata: Metadata = {
     url: "https://checkfirst.io/",
     siteName: "CheckFirst",
     type: "website",
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "CheckFirst — AI Vendor Security Assessment & TPRM Platform",
     description:
       "Cut vendor security reviews from weeks to hours. AI-powered TPRM platform for questionnaire automation, evidence analysis, and continuous monitoring.",
+    images: defaultTwitterImages,
   },
   alternates: {
     canonical: "/",

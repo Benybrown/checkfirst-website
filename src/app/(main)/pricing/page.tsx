@@ -1,14 +1,30 @@
 import type { Metadata } from "next";
 import { Section } from "@/components/Section";
-import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { FAQ } from "@/components/FAQ";
 import { PricingCards } from "@/components/PricingCards";
+import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "CheckFirst Pricing — Transparent Plans | Security Assessments",
   description:
     "Clear plans for AI security assessment software. Compare features across Starter, Professional, Scale, and Enterprise tiers.",
+  openGraph: {
+    title: "CheckFirst Pricing — Transparent Plans | Security Assessments",
+    description:
+      "Clear plans for AI security assessment software. Compare features across Starter, Professional, Scale, and Enterprise tiers.",
+    url: "https://checkfirst.io/pricing",
+    siteName: "CheckFirst",
+    type: "website",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CheckFirst Pricing — Transparent Plans | Security Assessments",
+    description:
+      "Clear plans for AI security assessment software. Compare features across Starter, Professional, Scale, and Enterprise tiers.",
+    images: defaultTwitterImages,
+  },
   alternates: {
     canonical: "/pricing",
   },
@@ -140,11 +156,15 @@ export default function PricingPage() {
     <>
       {/* Hero */}
       <Section>
-        <SectionHeader
-          tag="Pricing"
-          title="Clear plans. No surprises."
-          description="We believe transparency builds trust. If we're asking you to trust us with your security data, the least we can do is be upfront about what you get."
-        />
+        <div className="mx-auto mb-14 max-w-2xl text-center sm:mb-16">
+          <span className="eyebrow mb-6 justify-center">Pricing</span>
+          <h1 className="font-display text-[32px] leading-[1.08] tracking-[-0.028em] text-ink-900 sm:text-[40px] lg:text-[52px]">
+            Clear plans. No surprises.
+          </h1>
+          <p className="mt-5 text-[17px] leading-[1.65] text-ink-500 sm:text-[18px]">
+            We believe transparency builds trust. If we&apos;re asking you to trust us with your security data, the least we can do is be upfront about what you get.
+          </p>
+        </div>
 
         <PricingCards />
 
@@ -203,7 +223,12 @@ export default function PricingPage() {
 
       {/* FAQ */}
       <Section className="bg-canvas-raised">
-        <SectionHeader tag="FAQ" title="Pricing questions" />
+        <div className="mx-auto mb-14 max-w-2xl text-center sm:mb-16">
+          <span className="eyebrow mb-6 justify-center">FAQ</span>
+          <h2 className="font-display text-[32px] leading-[1.08] tracking-[-0.028em] text-ink-900 sm:text-[40px] lg:text-[52px]">
+            Pricing questions
+          </h2>
+        </div>
         <FAQ items={pricingFaq} />
       </Section>
 

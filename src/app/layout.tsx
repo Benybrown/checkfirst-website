@@ -5,6 +5,7 @@ import "./globals.css";
 import CookieBanner from "@/components/CookieBanner";
 import PostHogPageView from "@/components/PostHogPageView";
 import { PHProvider } from "./providers";
+import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -41,12 +42,14 @@ export const metadata: Metadata = {
     description:
       "Run faster vendor security assessments, supplier due diligence, TPRM software workflows, and AI-assisted third-party risk reviews in one platform.",
     type: "website",
+    images: [defaultOgImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "CheckFirst | TPRM Software, Vendor Security Assessments & Managed TPRM",
     description:
       "Run faster vendor security assessments, supplier due diligence, TPRM software workflows, and AI-assisted third-party risk reviews in one platform.",
+    images: defaultTwitterImages,
   },
   alternates: {
     canonical: "/",

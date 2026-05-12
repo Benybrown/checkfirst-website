@@ -3,11 +3,28 @@ import { Section } from "@/components/Section";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
+import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "About CheckFirst — Making Security Trust Instant and Accessible",
   description:
     "CheckFirst was founded to eliminate the friction in security assessments. Our AI-powered platform helps companies assess vendor risk and share their security posture in minutes.",
+  openGraph: {
+    title: "About CheckFirst — Making Security Trust Instant and Accessible",
+    description:
+      "CheckFirst was founded to eliminate the friction in security assessments. Our AI-powered platform helps companies assess vendor risk and share their security posture in minutes.",
+    url: "https://checkfirst.io/about",
+    siteName: "CheckFirst",
+    type: "website",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About CheckFirst — Making Security Trust Instant and Accessible",
+    description:
+      "CheckFirst was founded to eliminate the friction in security assessments. Our AI-powered platform helps companies assess vendor risk and share their security posture in minutes.",
+    images: defaultTwitterImages,
+  },
   alternates: {
     canonical: "/about",
   },

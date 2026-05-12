@@ -2,11 +2,28 @@ import type { Metadata } from "next";
 import { Section } from "@/components/Section";
 import { Card } from "@/components/Card";
 import { ContactForm } from "@/components/ContactForm";
+import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Book a Demo or Contact Us — CheckFirst",
   description:
     "See CheckFirst in action with a personalised demo. We'll walk you through assessments, ProvEye scanning, and AI capabilities.",
+  openGraph: {
+    title: "Book a Demo or Contact Us — CheckFirst",
+    description:
+      "See CheckFirst in action with a personalised demo. We'll walk you through assessments, ProvEye scanning, and AI capabilities.",
+    url: "https://checkfirst.io/contact",
+    siteName: "CheckFirst",
+    type: "website",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book a Demo or Contact Us — CheckFirst",
+    description:
+      "See CheckFirst in action with a personalised demo. We'll walk you through assessments, ProvEye scanning, and AI capabilities.",
+    images: defaultTwitterImages,
+  },
   alternates: {
     canonical: "/contact",
   },

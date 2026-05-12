@@ -1,10 +1,27 @@
 import type { Metadata } from "next";
 import { Section } from "@/components/Section";
+import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | CheckFirst",
   description:
     "CheckFirst Privacy Policy — how we collect, use, and protect your personal information.",
+  openGraph: {
+    title: "Privacy Policy | CheckFirst",
+    description:
+      "CheckFirst Privacy Policy — how we collect, use, and protect your personal information.",
+    url: "https://checkfirst.io/privacy",
+    siteName: "CheckFirst",
+    type: "website",
+    images: [defaultOgImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | CheckFirst",
+    description:
+      "CheckFirst Privacy Policy — how we collect, use, and protect your personal information.",
+    images: defaultTwitterImages,
+  },
   alternates: {
     canonical: "/privacy",
   },
