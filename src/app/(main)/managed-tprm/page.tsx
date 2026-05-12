@@ -11,7 +11,7 @@ import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Managed TPRM Services | CheckFirst",
   description:
-    "Outsource third-party risk management to CheckFirst. Get a dedicated analyst team, AI-assisted assessments, vendor follow-up, and executive reporting without building headcount.",
+    "Outsource third-party risk management to CheckFirst with dedicated analysts, AI-assisted assessments, vendor follow-up, and executive reporting.",
   keywords: [
     "managed tprm",
     "outsourced third-party risk management",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Managed TPRM Services | CheckFirst",
     description:
-      "Outsource third-party risk management to CheckFirst. Get a dedicated analyst team, AI-assisted assessments, vendor follow-up, and executive reporting without building headcount.",
+      "Outsource third-party risk management to CheckFirst with dedicated analysts, AI-assisted assessments, vendor follow-up, and executive reporting.",
     url: "https://checkfirst.io/managed-tprm",
     siteName: "CheckFirst",
     type: "website",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Managed TPRM Services | CheckFirst",
     description:
-      "Outsource third-party risk management to CheckFirst. Get a dedicated analyst team, AI-assisted assessments, vendor follow-up, and executive reporting without building headcount.",
+      "Outsource third-party risk management to CheckFirst with dedicated analysts, AI-assisted assessments, vendor follow-up, and executive reporting.",
     images: defaultTwitterImages,
   },
   alternates: {

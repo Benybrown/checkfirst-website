@@ -102,6 +102,13 @@ export default function ContactPage() {
             Book a personalised demo with our team. We&apos;ll walk you through
             the platform, run a live assessment, and answer your questions.
           </p>
+          <p className="mt-4 max-w-2xl font-body text-[15.5px] leading-[1.7] text-ink-500">
+            Use this page if you want to evaluate CheckFirst for vendor security
+            assessments, TPRM software, AI-assisted supplier due diligence, or a
+            managed third-party risk program. Share your current vendor review
+            process, the number of suppliers you assess, and the frameworks you
+            care about so the demo can focus on your real workflow.
+          </p>
         </div>
       </section>
 

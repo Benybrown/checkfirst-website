@@ -8,11 +8,11 @@ import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "About CheckFirst — Making Security Trust Instant and Accessible",
   description:
-    "CheckFirst was founded to eliminate the friction in security assessments. Our AI-powered platform helps companies assess vendor risk and share their security posture in minutes.",
+    "CheckFirst helps companies remove friction from security assessments with AI-powered workflows for vendor risk review and trust sharing.",
   openGraph: {
     title: "About CheckFirst — Making Security Trust Instant and Accessible",
     description:
-      "CheckFirst was founded to eliminate the friction in security assessments. Our AI-powered platform helps companies assess vendor risk and share their security posture in minutes.",
+      "CheckFirst helps companies remove friction from security assessments with AI-powered workflows for vendor risk review and trust sharing.",
     url: "https://checkfirst.io/about",
     siteName: "CheckFirst",
     type: "website",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "About CheckFirst — Making Security Trust Instant and Accessible",
     description:
-      "CheckFirst was founded to eliminate the friction in security assessments. Our AI-powered platform helps companies assess vendor risk and share their security posture in minutes.",
+      "CheckFirst helps companies remove friction from security assessments with AI-powered workflows for vendor risk review and trust sharing.",
     images: defaultTwitterImages,
   },
   alternates: {
