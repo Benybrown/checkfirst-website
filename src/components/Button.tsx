@@ -16,11 +16,11 @@ interface ButtonProps {
 */
 const variants = {
   primary:
-    "group/btn bg-ink-950 text-white ring-1 ring-inset ring-ink-950 shadow-button hover:bg-ink-800 hover:ring-ink-800",
+    "group/btn border border-blue-700 bg-gradient-to-b from-blue-500 to-blue-600 text-white shadow-button hover:from-blue-400 hover:to-blue-500",
   secondary:
-    "group/btn bg-transparent text-ink-900 ring-1 ring-inset ring-ink-200 hover:ring-ink-900 hover:bg-ink-50",
+    "group/btn border border-slate-200 bg-gradient-to-b from-white to-slate-50 text-slate-700 shadow-[0_4px_12px_rgba(15,23,42,0.05),inset_0_1px_0_white] hover:text-blue-600 hover:from-slate-50 hover:to-slate-100",
   ghost:
-    "group/btn bg-transparent text-ink-700 hover:text-ink-900 hover:bg-ink-50",
+    "group/btn bg-transparent text-slate-700 hover:text-blue-600 hover:bg-blue-50",
   "ghost-dark":
     "group/btn bg-transparent text-white/70 ring-1 ring-inset ring-white/15 hover:text-white hover:ring-white/40 hover:bg-white/5",
 };
@@ -37,10 +37,27 @@ export function Button({
   size = "md",
   className = "",
 }: ButtonProps) {
+  const isExternal = href.startsWith("http");
+
+  if (isExternal) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`relative inline-flex items-center justify-center gap-2 rounded-full font-body font-medium tracking-[-0.005em] transition-all duration-300 ease-out hover:-translate-y-0.5 ${variants[variant]} ${sizes[size]} ${className}`}
+      >
+        <span className="relative z-10 inline-flex items-center gap-1.5">
+          {children}
+        </span>
+      </a>
+    );
+  }
+
   return (
     <Link
       href={href}
-      className={`relative inline-flex items-center justify-center gap-2 rounded-[10px] font-body font-medium tracking-[-0.005em] transition-all duration-200 ease-out ${variants[variant]} ${sizes[size]} ${className}`}
+      className={`relative inline-flex items-center justify-center gap-2 rounded-full font-body font-medium tracking-[-0.005em] transition-all duration-300 ease-out hover:-translate-y-0.5 ${variants[variant]} ${sizes[size]} ${className}`}
     >
       <span className="relative z-10 inline-flex items-center gap-1.5">
         {children}

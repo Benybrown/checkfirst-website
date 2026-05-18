@@ -4,9 +4,9 @@ import { HomeContent } from "@/components/HomeContent";
 import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "CheckFirst TPRM — AI Vendor Security Assessment Platform",
+  title: "CheckFirst TPRM Software - SOC 2 & ISO 27001 Vendor Risk",
   description:
-    "Cut vendor security reviews from weeks to hours. AI-powered TPRM platform for questionnaire automation, evidence analysis, and continuous monitoring.",
+    "AI-powered TPRM platform for vendor security assessments, supplier due diligence, SOC 2 vendor evidence, ISO 27001 supplier controls, external scans, and remediation tracking.",
   keywords: [
     "tprm software",
     "third-party risk management",
@@ -16,9 +16,9 @@ export const metadata: Metadata = {
     "ai vendor risk assessment",
   ],
   openGraph: {
-    title: "CheckFirst TPRM — AI Vendor Security Assessment Platform",
+    title: "CheckFirst TPRM Software - SOC 2 & ISO 27001 Vendor Risk",
     description:
-      "Cut vendor security reviews from weeks to hours. AI-powered TPRM platform for questionnaire automation, evidence analysis, and continuous monitoring.",
+      "AI-powered TPRM platform for vendor security assessments, supplier due diligence, SOC 2 vendor evidence, ISO 27001 supplier controls, external scans, and remediation tracking.",
     url: "https://checkfirst.io/",
     siteName: "CheckFirst TPRM",
     type: "website",
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CheckFirst TPRM — AI Vendor Security Assessment Platform",
+    title: "CheckFirst TPRM Software - SOC 2 & ISO 27001 Vendor Risk",
     description:
-      "Cut vendor security reviews from weeks to hours. AI-powered TPRM platform for questionnaire automation, evidence analysis, and continuous monitoring.",
+      "AI-powered TPRM platform for vendor security assessments, supplier due diligence, SOC 2 vendor evidence, ISO 27001 supplier controls, external scans, and remediation tracking.",
     images: defaultTwitterImages,
   },
   alternates: {
@@ -38,24 +38,29 @@ export const metadata: Metadata = {
 
 const homepageFaqs = [
   {
-    question: "What does CheckFirst help teams do?",
+    question: "What can we manage in CheckFirst?",
     answer:
-      "CheckFirst helps teams run vendor security assessments, supplier due diligence, AI-assisted review, remediation tracking, and managed third-party risk management workflows in one platform.",
+      "You can manage vendor intake, risk tiering, questionnaires, document review, external scans, remediation, approvals, reassessments, and audit-ready evidence records.",
   },
   {
-    question: "Who is CheckFirst built for?",
+    question: "Can CheckFirst help with SOC 2 and ISO 27001?",
     answer:
-      "CheckFirst is built for security, procurement, compliance, and risk teams that need to review more vendors without slowing onboarding or lowering assessment quality.",
+      "Yes. CheckFirst helps organize vendor-risk evidence for SOC 2 and supplier-risk records for ISO 27001, while still supporting broader third-party risk management workflows.",
   },
   {
-    question: "Does CheckFirst support both software and managed delivery?",
+    question: "Do vendors need an account to respond?",
     answer:
-      "Yes. Teams can use CheckFirst as TPRM software for internal execution, or combine it with managed TPRM services when internal analyst capacity is the bottleneck.",
+      "No. Vendors can answer questionnaires and provide evidence through secure links, while your team keeps the review record inside CheckFirst.",
   },
   {
-    question: "How does AI fit into the CheckFirst workflow?",
+    question: "Can we keep our existing compliance platform?",
     answer:
-      "CheckFirst uses AI to help with supplier research, questionnaire analysis, document review, and framework-based assessment support, while keeping final risk decisions with human reviewers.",
+      "Yes. Teams can use CheckFirst alongside Vanta, Drata, a consultant, or an internal compliance program when vendor risk needs a more focused workflow.",
+  },
+  {
+    question: "How quickly can we start?",
+    answer:
+      "Most teams can begin with a small set of critical vendors, prove the workflow, and then expand to more suppliers, frameworks, and reassessment cycles.",
   },
 ];
 

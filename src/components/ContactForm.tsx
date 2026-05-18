@@ -3,10 +3,10 @@
 import { useState, type FormEvent } from "react";
 
 const inputClasses =
-  "w-full rounded-[10px] border border-ink-200 bg-canvas-raised px-4 py-3 font-body text-[14.5px] text-ink-900 placeholder:text-ink-300 transition-colors duration-200 focus:border-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-500/15";
+  "w-full rounded-2xl border border-slate-200 bg-white/80 px-4 py-3 font-body text-[14.5px] text-slate-900 placeholder:text-slate-300 shadow-[inset_0_1px_0_white] transition-colors duration-200 focus:border-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500/15";
 
 const labelClasses =
-  "block font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-400 mb-2";
+  "mb-2 block font-mono text-[10.5px] uppercase tracking-[0.12em] text-slate-400";
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
@@ -50,7 +50,7 @@ export function ContactForm() {
   if (submitted) {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center">
-        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-brand-500/30 bg-brand-50">
+        <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-blue-100 bg-blue-50">
           <svg
             width="24"
             height="24"
@@ -60,15 +60,15 @@ export function ContactForm() {
             strokeWidth="1.8"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="text-brand-600"
+            className="text-blue-600"
           >
             <path d="M20 6L9 17l-5-5" />
           </svg>
         </div>
-        <h3 className="font-display text-[24px] tracking-[-0.02em] text-ink-900">
+        <h3 className="text-[24px] tracking-[-0.04em] text-slate-950">
           Thanks for reaching out
         </h3>
-        <p className="mt-3 max-w-sm font-body text-[15px] leading-[1.55] text-ink-500">
+        <p className="mt-3 max-w-sm font-body text-[15px] leading-[1.55] text-slate-500">
           We&apos;ll get back to you within one business day to schedule your demo.
         </p>
       </div>
@@ -181,7 +181,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-ink-950 font-body text-[14.5px] font-medium text-white ring-1 ring-inset ring-ink-950 transition-all duration-200 hover:bg-ink-800 disabled:opacity-60 disabled:cursor-not-allowed"
+        className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-full border border-blue-700 bg-gradient-to-b from-blue-500 to-blue-600 font-body text-[14.5px] font-medium text-white shadow-button transition-all duration-300 hover:-translate-y-0.5 hover:from-blue-400 hover:to-blue-500 disabled:cursor-not-allowed disabled:opacity-60"
       >
         {loading ? "Sending…" : "Book a demo"}
         {!loading && (
@@ -191,7 +191,7 @@ export function ContactForm() {
         )}
       </button>
 
-      <p className="text-center font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-400">
+      <p className="text-center font-mono text-[10.5px] uppercase tracking-[0.12em] text-slate-400">
         No commitment · 30-minute call
       </p>
     </form>

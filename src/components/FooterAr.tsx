@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { type ReactNode } from "react";
 
 const footerLinks = {
   "المنصة": [
@@ -13,10 +14,34 @@ const footerLinks = {
   "الشركة": [
     { href: "/ar/about", label: "من نحن" },
     { href: "/ar/contact", label: "اتصل بنا" },
-    { href: "/blog", label: "المدونة" },
+    { href: "https://checkfirst.io/blog/", label: "المدونة" },
   ],
   "تواصل": [{ href: "/ar/contact", label: "احجز عرضاً تجريبياً" }],
 };
+
+function SmartLink({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className: string;
+  children: ReactNode;
+}) {
+  if (href.startsWith("http")) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  );
+}
 
 export function FooterAr() {
   return (
@@ -74,12 +99,12 @@ export function FooterAr() {
                 <ul className="space-y-3">
                   {links.map((link) => (
                     <li key={link.label}>
-                      <Link
+                      <SmartLink
                         href={link.href}
                         className="font-body text-[14px] text-white/65 transition-colors duration-200 hover:text-white"
                       >
                         {link.label}
-                      </Link>
+                      </SmartLink>
                     </li>
                   ))}
                 </ul>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { type ReactNode } from "react";
 import { useLanguage } from "./LanguageProvider";
 import { translations, type Lang } from "@/lib/homepage-translations";
 import { Section } from "@/components/Section";
@@ -9,10 +10,103 @@ import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { FAQ } from "@/components/FAQ";
 import { Testimonial } from "@/components/Testimonial";
-import { OrchestrationGrid } from "@/components/OrchestrationGrid";
 
 function t(obj: Record<Lang, string>, lang: Lang) {
   return obj[lang];
+}
+
+function Pill({ children }: { children: ReactNode }) {
+  return (
+    <div className="inline-flex items-center gap-2 rounded-full border border-white bg-white/75 px-3.5 py-2 shadow-[0_6px_18px_-12px_rgba(15,23,42,0.3),inset_0_1px_0_white]">
+      <span className="flex h-7 w-7 items-center justify-center rounded-full border border-blue-100 bg-gradient-to-b from-blue-50 to-white text-blue-500 shadow-[inset_0_1px_0_white]">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
+          <path d="M12 3l7 3v5c0 4.5-2.8 8.6-7 10-4.2-1.4-7-5.5-7-10V6l7-3Z" />
+          <path d="m9 12 2 2 4-5" />
+        </svg>
+      </span>
+      <span className="font-mono text-xs font-medium tracking-[-0.04em] text-slate-500">{children}</span>
+    </div>
+  );
+}
+
+function FloatingIcon({ type }: { type: "radar" | "shield" | "chart" }) {
+  if (type === "shield") {
+    return (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
+        <path d="M12 3l7 3v5c0 4.5-2.8 8.6-7 10-4.2-1.4-7-5.5-7-10V6l7-3Z" />
+        <path d="m9 12 2 2 4-5" />
+      </svg>
+    );
+  }
+  if (type === "chart") {
+    return (
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
+        <path d="M4 19V5" />
+        <path d="M4 19h16" />
+        <path d="M8 15v-4" />
+        <path d="M12 15V8" />
+        <path d="M16 15v-6" />
+      </svg>
+    );
+  }
+  return (
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
+      <circle cx="12" cy="12" r="3" />
+      <path d="M4.9 4.9a10 10 0 0 0 0 14.2" />
+      <path d="M19.1 4.9a10 10 0 0 1 0 14.2" />
+    </svg>
+  );
+}
+
+function HeroDashboard() {
+  const cards: [string, string, "radar" | "shield" | "chart"][] = [
+    ["Live assessment", "Public posture view", "radar"],
+    ["Security score", "Detailed report", "shield"],
+    ["Findings grouped", "74 items classified", "chart"],
+  ];
+
+  return (
+    <div className="relative lg:pl-4">
+      <div className="absolute -inset-8 rounded-[3rem] bg-gradient-to-br from-blue-200/40 via-white/20 to-cyan-200/30 blur-3xl" />
+      <div className="relative rounded-[2rem] border border-white bg-[#f8fafc] p-3 shadow-[0_30px_80px_-35px_rgba(15,23,42,0.35),inset_0_2px_0_rgba(255,255,255,1)] sm:p-4">
+        <div className="pointer-events-none absolute inset-0 z-20 hidden md:block">
+          {cards.map(([title, subtitle, icon], index) => (
+            <div
+              key={title}
+              className={`absolute ${
+                index === 0
+                  ? "right-[-1.75rem] top-8"
+                  : index === 1
+                    ? "right-[-1.75rem] top-[42%]"
+                    : "left-8 bottom-[-1.25rem]"
+              } min-w-[12rem] rounded-2xl border border-white bg-white/90 px-4 py-3 shadow-[0_18px_38px_-20px_rgba(15,23,42,0.45),inset_0_1px_0_white] backdrop-blur`}
+            >
+              <div className="flex items-center gap-3">
+                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-50 text-blue-500">
+                  <FloatingIcon type={icon} />
+                </div>
+                <div>
+                  <p className="text-xs text-slate-900">{title}</p>
+                  <p className="text-xs font-light text-slate-400">{subtitle}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[inset_0_1px_0_white]">
+          <div className="relative aspect-[1.1/1] bg-slate-100 md:aspect-[1.16/1]">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/checkfirst-hero-assessment.png"
+              alt="CheckFirst public posture assessment dashboard showing risk rating, security score, and grouped findings"
+              className="h-full w-full object-cover object-left-top"
+            />
+            <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/60" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export function HomeContent() {
@@ -35,52 +129,58 @@ export function HomeContent() {
 
   const buyerPages = [
     {
-      href: "/assessments",
-      title: "Vendor security assessment software",
+      href: "/soc-2-vendor-risk",
+      title: "SOC 2 vendor risk software",
       description:
-        "Buyer-intent page for supplier assessment workflows, questionnaires, due diligence, and evidence review.",
+        "Audit-ready vendor evidence for SOC 2 CC9.2 without spreadsheet chaos.",
+    },
+    {
+      href: "/iso-27001-supplier-risk",
+      title: "ISO 27001 supplier risk",
+      description:
+        "Supplier relationship evidence for ISO 27001 A.5.19-A.5.23.",
+    },
+    {
+      href: "/assessments",
+      title: "Vendor security assessment workflow",
+      description:
+        "Questionnaires, scans, documents, and reviewer decisions in one flow.",
     },
     {
       href: "/managed-tprm",
-      title: "Managed TPRM services",
+      title: "Managed TPRM support",
       description:
-        "For teams that need outsourced third-party risk management support without building extra headcount.",
-    },
-    {
-      href: "/ai-engine",
-      title: "AI vendor risk assessment engine",
-      description:
-        "How CheckFirst uses AI for supplier due diligence, questionnaire analysis, and structured risk review.",
+        "Analyst capacity for vendor follow-up, remediation, and reporting.",
     },
     {
       href: "/tprm-software",
-      title: "TPRM software overview",
+      title: "TPRM software",
       description:
-        "Category page for buyers comparing third-party risk management platforms, workflows, and evaluation criteria.",
+        "A complete third-party risk workflow for vendor reviews and audit readiness.",
     },
   ];
 
   const survivorLinks = [
     {
-      href: "/blog/best-tprm-tool-2026/",
+      href: "https://checkfirst.io/blog/best-tprm-tool-2026/",
       title: "Best TPRM Software in 2026",
-      description: "Commercial comparison page for category buyers evaluating software options.",
+      description: "Compare TPRM software options and category buying criteria.",
     },
     {
-      href: "/blog/vendor-security-assessment-guide-2026/",
+      href: "https://checkfirst.io/blog/vendor-security-assessment-guide-2026/",
       title: "Vendor Security Assessment Guide",
       description:
         "Process-level support page for teams improving assessment workflow and review quality.",
     },
     {
-      href: "/blog/3rd-party-risk-management-program/",
+      href: "https://checkfirst.io/blog/3rd-party-risk-management-program/",
       title: "Third-Party Risk Management Program Guide",
       description: "Operational guide for building a repeatable TPRM program around assessment findings.",
     },
     {
-      href: "/blog/tprm-agentic-ai-assessment/",
+      href: "https://checkfirst.io/blog/tprm-agentic-ai-assessment/",
       title: "AI Vendor Risk Assessment",
-      description: "Canonical support page for AI in supplier due diligence and risk review.",
+      description: "Use AI to accelerate supplier reviews without removing human oversight.",
     },
   ];
 
@@ -115,157 +215,84 @@ export function HomeContent() {
     highlight: p.highlight,
   }));
 
-  const faqItems = tx.faq.items.map((item) => ({
+  const englishFaqItems = [
+    {
+      question: "What can we manage in CheckFirst?",
+      answer:
+        "You can manage vendor intake, risk tiering, questionnaires, document review, external scans, remediation, approvals, reassessments, and audit-ready evidence records.",
+    },
+    {
+      question: "Can CheckFirst help with SOC 2 and ISO 27001?",
+      answer:
+        "Yes. CheckFirst helps organize vendor-risk evidence for SOC 2 and supplier-risk records for ISO 27001, while still supporting broader third-party risk management workflows.",
+    },
+    {
+      question: "Do vendors need an account to respond?",
+      answer:
+        "No. Vendors can answer questionnaires and provide evidence through secure links, while your team keeps the review record inside CheckFirst.",
+    },
+    {
+      question: "Can we keep our existing compliance platform?",
+      answer:
+        "Yes. Teams can use CheckFirst alongside Vanta, Drata, a consultant, or an internal compliance program when vendor risk needs a more focused workflow.",
+    },
+    {
+      question: "How quickly can we start?",
+      answer:
+        "Most teams can begin with a small set of critical vendors, prove the workflow, and then expand to more suppliers, frameworks, and reassessment cycles.",
+    },
+  ];
+
+  const translatedFaqItems = tx.faq.items.map((item) => ({
     question: t(item.question, lang),
     answer: t(item.answer, lang),
   }));
 
+  const faqItems = lang === "en" ? englishFaqItems : translatedFaqItems;
+
   return (
     <>
       {/* ─────────────────────── HERO ─────────────────────── */}
-      <section className="relative overflow-hidden bg-canvas px-6 pt-16 pb-24 sm:pt-20 lg:px-8 lg:pt-28 lg:pb-32">
-        {/* Dot-grid backdrop */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-dotgrid opacity-[0.9]"
-        />
-        {/* Single off-axis brand glow, top-right */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-32 right-[-10%] h-[520px] w-[520px] rounded-full blur-3xl opacity-[0.18]"
-          style={{
-            background: "radial-gradient(circle, var(--color-brand-400), transparent 62%)",
-          }}
-        />
-        {/* Hairline frame at bottom to suggest editorial page */}
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-ink-200 to-transparent"
-        />
-
-        <div className="relative mx-auto max-w-[1200px]">
-          <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
-            {/* ── Left column: text ── */}
-            <div>
-              {/* Eyebrow with animated live dot */}
-              <div className="eyebrow mb-6 animate-slide-up">
-                <span className="relative flex h-2 w-2 items-center justify-center">
-                  <span className="absolute inset-0 rounded-full bg-brand-500/35 animate-signal" />
-                  <span className="relative h-1.5 w-1.5 rounded-full bg-brand-600" />
-                </span>
-                <span>{t(tx.hero.badge, lang)}</span>
-              </div>
-
-              {/* H1 — SEO copy preserved exactly */}
-              <h1 className="font-display text-[30px] leading-[1.08] tracking-[-0.025em] text-ink-900 [text-wrap:balance] sm:text-[40px] md:text-[46px] lg:text-[52px] xl:text-[58px]">
-                <span className="block animate-slide-up animate-delay-100">
-                  {lang === "en"
-                    ? "TPRM software for faster vendor security assessments."
-                    : t(tx.hero.titleLine1, lang)}
-                </span>
-                <span className="mt-1.5 block font-display italic text-ink-500 animate-slide-up animate-delay-200">
-                  {lang === "en"
-                    ? "AI-assisted due diligence and managed TPRM in one platform."
-                    : t(tx.hero.titleLine2, lang)}
-                </span>
-              </h1>
-
-              {/* Subhead */}
-              <p className="mt-7 max-w-[56ch] font-body text-[16px] leading-[1.65] text-ink-500 sm:text-[17.5px] animate-slide-up animate-delay-300">
-                {lang === "en"
-                  ? "CheckFirst helps security, procurement, and compliance teams run vendor security assessments, supplier due diligence, and third-party risk management workflows without the spreadsheet bottleneck."
-                  : t(tx.hero.description, lang)}
-              </p>
-
-              {/* CTAs */}
-              <div className="mt-10 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center animate-slide-up animate-delay-400">
-                <Button href="/contact" variant="primary" size="lg">
-                  {t(tx.hero.ctaPrimary, lang)}
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path
-                      d="M4.5 3l3 3-3 3"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </Button>
-                <Button href="/tprm-software" variant="secondary" size="lg">
-                  Explore TPRM software
-                </Button>
-              </div>
-
-              {/* Quick-path chips */}
-              <div className="mt-10 flex flex-wrap gap-2 animate-fade-in animate-delay-500">
-                {[
-                  { href: "/assessments", label: "Vendor security assessment software" },
-                  { href: "/tprm-software", label: "Third-party risk management software" },
-                  { href: "/managed-tprm", label: "Outsourced TPRM services" },
-                ].map((chip) => (
-                  <Link
-                    key={chip.href}
-                    href={chip.href}
-                    className="group inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-500 transition-all duration-200 hover:border-ink-900 hover:text-ink-900"
-                  >
-                    <span className="h-1 w-1 rounded-full bg-ink-300 transition-colors group-hover:bg-brand-500" />
-                    {chip.label}
-                  </Link>
-                ))}
-              </div>
+      <section className="mx-auto max-w-7xl px-6 pb-14 pt-8 md:pb-20 md:pt-12">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16">
+          <div className="text-center lg:text-left">
+            <Pill>{t(tx.hero.badge, lang)}</Pill>
+            <h1 className="mt-8 max-w-5xl text-[2.35rem] font-light leading-[0.98] tracking-[-0.07em] text-slate-950 sm:text-[3.2rem] md:text-[3.85rem] lg:text-[4.35rem]">
+              <span className="block">TPRM software for audit-ready vendor risk{" "}</span>
+              <span className="mx-auto mt-4 inline-flex whitespace-nowrap rounded-[1.35rem] border border-blue-700 bg-gradient-to-b from-blue-400 to-blue-600 px-4 pb-2.5 pt-1.5 text-[0.68em] font-normal text-white shadow-[0_18px_38px_-20px_rgba(59,130,246,0.55),inset_0_1px_0_rgba(255,255,255,0.38)] sm:text-[0.74em] md:text-[0.78em] lg:mx-0">
+                SOC 2 + ISO 27001{" "}
+              </span>
+              <span className="mt-4 block">In your language</span>
+            </h1>
+            <p className="mx-auto mt-8 max-w-2xl text-base font-light leading-8 text-slate-600 md:text-lg lg:mx-0">
+              {lang === "en"
+                ? "Collect vendor evidence, assess suppliers, and keep audit-ready records for SOC 2, ISO 27001, and modern third-party risk programs."
+                : t(tx.hero.description, lang)}
+            </p>
+            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
+              <Button href="/contact" variant="primary" size="lg">
+                {t(tx.hero.ctaPrimary, lang)}
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path d="M4.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                </svg>
+              </Button>
+              <Button href="/tprm-software" variant="secondary" size="lg">
+                Explore TPRM software
+              </Button>
             </div>
-
-            {/* ── Right column: orchestration grid motif ── */}
-            <div className="relative hidden lg:block animate-fade-in animate-delay-300">
-              {/* Framed card with motif */}
-              <div className="relative aspect-[5/4] w-full rounded-[14px] border border-ink-200 bg-canvas-raised p-5 shadow-card">
-                {/* Card header with mono labels */}
-                <div className="mb-4 flex items-center justify-between border-b border-ink-100 pb-3">
-                  <div className="flex items-center gap-2">
-                    <span className="relative flex h-2 w-2 items-center justify-center">
-                      <span className="absolute inset-0 rounded-full bg-brand-500/35 animate-signal" />
-                      <span className="relative h-1 w-1 rounded-full bg-brand-600" />
-                    </span>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-500">
-                      Assessment Engine · Live
-                    </span>
-                  </div>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-400">
-                    v2.4
-                  </span>
-                </div>
-
-                <OrchestrationGrid variant="light" />
-
-                {/* Footer labels */}
-                <div className="mt-5 grid grid-cols-3 gap-3 border-t border-ink-100 pt-4">
-                  <div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-400">
-                      Controls
-                    </div>
-                    <div className="mt-1 font-display text-[22px] tabular-nums tracking-[-0.02em] text-ink-900">
-                      243
-                    </div>
-                  </div>
-                  <div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-400">
-                      Frameworks
-                    </div>
-                    <div className="mt-1 font-display text-[22px] tabular-nums tracking-[-0.02em] text-ink-900">
-                      45+
-                    </div>
-                  </div>
-                  <div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-400">
-                      Faster
-                    </div>
-                    <div className="mt-1 font-display text-[22px] tabular-nums tracking-[-0.02em] text-brand-600">
-                      85%
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div className="mt-9 flex flex-wrap justify-center gap-2 lg:justify-start">
+              {buyerPages.slice(0, 3).map((page) => (
+                <Link
+                  key={page.href}
+                  href={page.href}
+                  className="rounded-full border border-white bg-white/72 px-3 py-1.5 text-xs text-slate-600 shadow-[inset_0_1px_0_white] transition hover:text-blue-600"
+                >
+                  {page.title}
+                </Link>
+              ))}
             </div>
           </div>
+          <HeroDashboard />
         </div>
       </section>
 
@@ -294,6 +321,20 @@ export function HomeContent() {
       <section className="border-b border-ink-200 bg-canvas px-6 py-6 lg:px-8">
         <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-x-3 gap-y-2 text-sm text-ink-500">
           <span className="eyebrow">Evaluation paths</span>
+          <Link
+            href="/soc-2-vendor-risk"
+            className="font-body text-[13.5px] text-ink-700 transition-colors hover:text-brand-600"
+          >
+            SOC 2 vendor risk
+          </Link>
+          <span className="text-ink-200">·</span>
+          <Link
+            href="/iso-27001-supplier-risk"
+            className="font-body text-[13.5px] text-ink-700 transition-colors hover:text-brand-600"
+          >
+            ISO 27001 supplier risk
+          </Link>
+          <span className="text-ink-200">·</span>
           <Link
             href="/tprm-software"
             className="font-body text-[13.5px] text-ink-700 transition-colors hover:text-brand-600"
@@ -558,8 +599,8 @@ export function HomeContent() {
       <Section>
         <SectionHeader
           tag="Explore the platform"
-          title="Choose the buying path that fits your TPRM team"
-          description="Commercial pages for software buyers, managed-service buyers, and teams evaluating AI-led vendor review."
+          title="Find the workflow that fits your vendor-risk program"
+          description="Compare CheckFirst paths for TPRM software, SOC 2 and ISO 27001 audit evidence, vendor assessments, and managed TPRM support."
           align="left"
         />
         <div className="grid gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 md:grid-cols-2 xl:grid-cols-4">
@@ -570,7 +611,7 @@ export function HomeContent() {
               className="group relative flex flex-col bg-canvas-raised p-7 transition-colors hover:bg-canvas"
             >
               <span className="mb-6 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
-                {String(idx + 1).padStart(2, "0")} · Page
+                {String(idx + 1).padStart(2, "0")} · Workflow
               </span>
               <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-ink-900">
                 {page.title}
@@ -604,8 +645,8 @@ export function HomeContent() {
       <Section className="bg-canvas-raised">
         <SectionHeader
           tag="Learn more"
-          title="Canonical resources that support the core commercial pages"
-          description="Internal links to the survivor blog assets that reinforce category, process, and AI intent."
+          title="Keep building your vendor-risk evidence plan"
+          description="Use these guides to compare TPRM software, improve assessments, and build a repeatable third-party risk program."
           align="left"
         />
         <div className="grid gap-5 sm:grid-cols-2">

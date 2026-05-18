@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, type ReactNode } from "react";
 import Link from "next/link";
 
 const navGroups = {
@@ -16,9 +16,35 @@ const navGroups = {
   "الشركة": [
     { href: "/ar/about", label: "من نحن" },
     { href: "/ar/contact", label: "اتصل بنا" },
-    { href: "/blog", label: "المدونة" },
+    { href: "https://checkfirst.io/blog/", label: "المدونة" },
   ],
 };
+
+function SmartLink({
+  href,
+  className,
+  children,
+  onClick,
+}: {
+  href: string;
+  className: string;
+  children: ReactNode;
+  onClick?: () => void;
+}) {
+  if (href.startsWith("http")) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className={className} onClick={onClick}>
+        {children}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={href} className={className} onClick={onClick}>
+      {children}
+    </Link>
+  );
+}
 
 function NavDropdown({
   label,
@@ -65,14 +91,14 @@ function NavDropdown({
       {open && (
         <div className="absolute right-0 top-full z-50 mt-3 w-60 overflow-hidden rounded-[12px] border border-ink-200 bg-canvas-raised p-1.5 shadow-float animate-fade-in" style={{ animationDuration: "140ms" }}>
           {links.map((link) => (
-            <Link
+            <SmartLink
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
               className="flex items-center justify-between gap-3 rounded-[8px] px-3 py-2.5 font-body text-[13.5px] text-ink-700 transition-colors hover:bg-ink-50 hover:text-ink-900"
             >
               <span>{link.label}</span>
-            </Link>
+            </SmartLink>
           ))}
         </div>
       )}
@@ -146,14 +172,14 @@ export function HeaderAr() {
                 <p className="eyebrow mb-2 px-1">{group}</p>
                 <div className="flex flex-col">
                   {links.map((link) => (
-                    <Link
+                    <SmartLink
                       key={link.href}
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
                       className="flex items-center justify-between rounded-[10px] px-3 py-3 font-body text-[15px] text-ink-800 transition-colors hover:bg-ink-50"
                     >
                       <span>{link.label}</span>
-                    </Link>
+                    </SmartLink>
                   ))}
                 </div>
               </div>

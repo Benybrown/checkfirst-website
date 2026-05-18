@@ -154,19 +154,19 @@ const relatedCommercialPages = [
 
 const survivorLinks = [
   {
-    href: "/blog/tprm-agentic-ai-assessment/",
+    href: "https://checkfirst.io/blog/tprm-agentic-ai-assessment/",
     title: "AI Vendor Risk Assessment Guide",
     description:
       "The canonical supporting piece for buyers evaluating AI in TPRM and supplier assessments.",
   },
   {
-    href: "/blog/vendor-security-assessment-guide-2026/",
+    href: "https://checkfirst.io/blog/vendor-security-assessment-guide-2026/",
     title: "Vendor Security Assessment Guide",
     description:
       "Shows how the AI layer fits into a broader vendor assessment workflow instead of acting as a disconnected feature.",
   },
   {
-    href: "/blog/best-tprm-tool-2026/",
+    href: "https://checkfirst.io/blog/best-tprm-tool-2026/",
     title: "Best TPRM Software Comparison",
     description:
       "Useful for category buyers comparing platforms and looking for AI-specific differentiation.",

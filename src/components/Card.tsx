@@ -20,17 +20,17 @@ export function Card({
   variant = "content",
 }: CardProps) {
   const base =
-    "relative rounded-[14px] p-7 transition-all duration-200 ease-out";
+    "relative rounded-[2rem] p-7 transition-all duration-300 ease-out";
 
   const variants = {
-    content: `bg-canvas-raised border border-ink-200 ${
-      hover ? "hover:border-ink-900 hover:-translate-y-0.5 hover:shadow-card-hover" : ""
+    content: `bg-white/72 border border-white shadow-card backdrop-blur ${
+      hover ? "hover:-translate-y-1 hover:bg-white/90 hover:shadow-card-hover" : ""
     }`,
-    data: `bg-ink-800 border border-white/[0.06] text-white ${
+    data: `bg-white/[0.065] border border-white/10 text-white ${
       hover ? "hover:border-white/20 hover:-translate-y-0.5" : ""
     }`,
-    proof: `bg-canvas-raised border border-ink-200 ${
-      hover ? "hover:border-ink-300" : ""
+    proof: `bg-white/72 border border-white shadow-card backdrop-blur ${
+      hover ? "hover:bg-white/90" : ""
     }`,
   };
 

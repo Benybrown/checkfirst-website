@@ -24,7 +24,7 @@ export function Section({
       id={id}
       className={`relative px-6 py-20 sm:py-24 lg:px-8 lg:py-28 ${
         dark
-          ? "bg-ink-950 text-white bg-diag-lines-dark overflow-hidden"
+          ? "mx-auto max-w-7xl overflow-hidden rounded-[2.75rem] border border-white/10 bg-gradient-to-b from-[#172033] to-[#101827] text-white shadow-[0_40px_90px_-45px_rgba(15,23,42,0.78),inset_0_1px_0_rgba(255,255,255,0.14)]"
           : ""
       } ${className}`}
     >

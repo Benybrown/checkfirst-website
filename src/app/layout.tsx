@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Script from "next/script";
 import { IBM_Plex_Sans, Newsreader, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -59,7 +60,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
     <html lang="en" className={`${ibmPlexSans.variable} ${newsreader.variable} ${jetbrainsMono.variable}`}>

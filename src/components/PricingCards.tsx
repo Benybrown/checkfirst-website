@@ -106,7 +106,7 @@ export function PricingCards() {
     <>
       {/* Success/Canceled banner */}
       {banner === "success" && (
-        <div className="mb-10 flex items-start gap-4 rounded-[14px] border border-brand-500/30 bg-brand-50 p-5">
+        <div className="mb-10 flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50 p-5">
           <span className="relative mt-1 flex h-2.5 w-2.5 items-center justify-center">
             <span className="absolute inset-0 rounded-full bg-brand-500/35 animate-signal" />
             <span className="relative h-1.5 w-1.5 rounded-full bg-brand-600" />
@@ -130,7 +130,7 @@ export function PricingCards() {
       )}
 
       {/* Plan cards — editorial grid with hairline dividers */}
-      <div className="mb-16 grid gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 md:grid-cols-2 xl:grid-cols-4">
+      <div className="mb-16 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {plans.map((plan) => {
           const isHighlight = plan.highlight;
           return (
@@ -138,13 +138,13 @@ export function PricingCards() {
               key={plan.name}
               className={`relative flex flex-col p-7 transition-colors ${
                 isHighlight
-                  ? "bg-ink-950 text-white"
-                  : "bg-canvas-raised hover:bg-canvas"
+                  ? "border border-blue-700 bg-gradient-to-b from-blue-400 to-blue-600 text-white shadow-[0_18px_44px_-26px_rgba(59,130,246,0.7),inset_0_1px_0_rgba(255,255,255,0.3)]"
+                  : "border border-white bg-white/72 shadow-card backdrop-blur hover:bg-white/90"
               }`}
             >
               {isHighlight && (
-                <span className="absolute -top-2.5 left-7 inline-flex items-center gap-1.5 rounded-full border border-brand-400/40 bg-ink-900 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-brand-300">
-                  <span className="h-1 w-1 rounded-full bg-brand-400 animate-signal" />
+                <span className="absolute -top-2.5 left-7 inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/20 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-white">
+                  <span className="h-1 w-1 rounded-full bg-white animate-signal" />
                   Most popular
                 </span>
               )}
@@ -195,8 +195,8 @@ export function PricingCards() {
                     onClick={() => setModalPlan(plan)}
                     className={`group inline-flex h-11 w-full items-center justify-center gap-2 rounded-[10px] font-body text-[13.5px] font-medium transition-all duration-200 ${
                       isHighlight
-                        ? "bg-white text-ink-950 hover:bg-ink-100"
-                        : "bg-ink-950 text-white ring-1 ring-inset ring-ink-950 hover:bg-ink-800"
+                        ? "bg-white text-blue-600 hover:bg-blue-50"
+                        : "border border-blue-700 bg-gradient-to-b from-blue-500 to-blue-600 text-white shadow-button hover:from-blue-400 hover:to-blue-500"
                     }`}
                   >
                     {plan.cta}
@@ -207,7 +207,7 @@ export function PricingCards() {
                 ) : (
                   <a
                     href="/contact"
-                    className="group inline-flex h-11 w-full items-center justify-center gap-2 rounded-[10px] bg-transparent ring-1 ring-inset ring-ink-200 px-4 font-body text-[13.5px] font-medium text-ink-900 transition-all duration-200 hover:ring-ink-900 hover:bg-ink-50"
+                    className="group inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 font-body text-[13.5px] font-medium text-slate-700 shadow-[inset_0_1px_0_white] transition-all duration-300 hover:-translate-y-0.5 hover:text-blue-600"
                   >
                     {plan.cta}
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 group-hover:translate-x-0.5">
