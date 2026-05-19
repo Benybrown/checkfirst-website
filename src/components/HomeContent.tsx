@@ -253,7 +253,7 @@ export function HomeContent() {
   return (
     <>
       {/* ─────────────────────── HERO ─────────────────────── */}
-      <section className="mx-auto max-w-7xl px-6 pb-14 pt-8 md:pb-20 md:pt-12">
+      <section className="mx-auto max-w-7xl px-6 pb-14 pt-14 md:pb-20 md:pt-20 lg:pt-24">
         <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16">
           <div className="text-center lg:text-left">
             <h1 className="mx-auto mt-8 max-w-5xl text-[2.35rem] font-light leading-[0.98] tracking-[-0.07em] text-slate-950 sm:text-[3.2rem] md:text-[3.85rem] lg:mx-0 lg:text-[4.35rem]">
