@@ -266,7 +266,7 @@ export function HomeContent() {
             </h1>
             <p className="mx-auto mt-8 max-w-2xl text-base font-light leading-8 text-slate-600 md:text-lg lg:mx-0">
               {lang === "en"
-                ? "Collect vendor evidence, assess suppliers, and keep audit-ready records for SOC 2, ISO 27001, and modern third-party risk programs."
+                ? "Collect vendor evidence, assess supplier risk, and keep audit-ready records for third-party risk programs."
                 : t(tx.hero.description, lang)}
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
