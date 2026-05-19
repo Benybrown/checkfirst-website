@@ -257,14 +257,16 @@ export function HomeContent() {
         <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16">
           <div className="text-center lg:text-left">
             <Pill>{t(tx.hero.badge, lang)}</Pill>
-            <h1 className="mt-8 max-w-5xl text-[2.35rem] font-light leading-[0.98] tracking-[-0.07em] text-slate-950 sm:text-[3.2rem] md:text-[3.85rem] lg:text-[4.35rem]">
+            <h1 className="mx-auto mt-8 max-w-5xl text-[2.35rem] font-light leading-[0.98] tracking-[-0.07em] text-slate-950 sm:text-[3.2rem] md:text-[3.85rem] lg:mx-0 lg:text-[4.35rem]">
               <span className="block">
-                TPRM software for audit-ready <span className="whitespace-nowrap">vendor risk</span>{" "}
+                TPRM software for
+                <span className="block">audit-ready</span>
+                <span className="block text-right">vendor risk</span>
               </span>
               <span className="mx-auto mt-4 inline-flex whitespace-nowrap rounded-[1.35rem] border border-blue-700 bg-gradient-to-b from-blue-400 to-blue-600 px-4 pb-2.5 pt-1.5 text-[0.68em] font-normal text-white shadow-[0_18px_38px_-20px_rgba(59,130,246,0.55),inset_0_1px_0_rgba(255,255,255,0.38)] sm:text-[0.74em] md:text-[0.78em] lg:mx-0">
                 SOC 2 + ISO 27001{" "}
               </span>
-              <span className="mt-4 block">In your language</span>
+              <span className="mt-4 block text-center">In your language</span>
             </h1>
             <p className="mx-auto mt-8 max-w-2xl text-base font-light leading-8 text-slate-600 md:text-lg lg:mx-0">
               {lang === "en"
