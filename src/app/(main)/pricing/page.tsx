@@ -86,7 +86,6 @@ const featureRows: {
   { feature: "Smart Questionnaires", starter: true, pro: true, scale: true, enterprise: true },
   { feature: "Security Ratings", starter: true, pro: true, scale: true, enterprise: true },
   { feature: "Dedicated Instance", starter: true, pro: true, scale: true, enterprise: true },
-  { feature: "Onboarding", starter: true, pro: true, scale: true, enterprise: true },
   { feature: "LLM BYOK", starter: true, pro: true, scale: true, enterprise: true },
   { feature: "Jino Reports", starter: true, pro: true, scale: true, enterprise: true, ai: true },
   { feature: "Jino QA", starter: true, pro: true, scale: true, enterprise: true, ai: true },
@@ -106,6 +105,8 @@ const featureRows: {
   { feature: "White Label", starter: false, pro: false, scale: false, enterprise: true },
   // Support
   { feature: "Support", starter: "Email", pro: "Priority", scale: "Priority", enterprise: "Dedicated CSM" },
+  // Onboarding — priced separately, contact us
+  { feature: "Onboarding", starter: "Contact us", pro: "Contact us", scale: "Contact us", enterprise: "Contact us" },
 ];
 
 function CellValue({ value }: { value: boolean | string }) {

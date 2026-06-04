@@ -6,9 +6,9 @@ const plans = [
   {
     id: "starter",
     name: "Starter",
-    price: "$149",
+    price: "$249",
     period: "/mo",
-    yearly: "$1,490/yr",
+    yearly: "$2,988/yr",
     description:
       "For teams getting started with structured vendor risk management.",
     highlight: false,
@@ -18,9 +18,9 @@ const plans = [
   {
     id: "professional",
     name: "Professional",
-    price: "$399",
+    price: "$499",
     period: "/mo",
-    yearly: "$3,990/yr",
+    yearly: "$5,988/yr",
     description:
       "For growing security teams that need the full assessment engine.",
     highlight: false,
@@ -30,9 +30,9 @@ const plans = [
   {
     id: "scale",
     name: "Scale",
-    price: "$799",
+    price: "$999",
     period: "/mo",
-    yearly: "$7,990/yr",
+    yearly: "$11,988/yr",
     description:
       "For teams managing a large vendor portfolio with full AI capabilities.",
     highlight: true,
