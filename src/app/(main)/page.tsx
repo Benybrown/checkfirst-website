@@ -4,21 +4,22 @@ import { HomeContent } from "@/components/HomeContent";
 import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "CheckFirst TPRM Software - SOC 2 & ISO 27001 Vendor Risk",
+  title: "CheckFirst | AI TPRM & Vendor Security Assessments",
   description:
-    "AI-powered TPRM platform for vendor security assessments, supplier due diligence, SOC 2 vendor evidence, ISO 27001 supplier controls, external scans, and remediation tracking.",
+    "CheckFirst is AI-powered TPRM software for vendor security assessments, questionnaire automation, and audit-ready evidence. Book a demo.",
   keywords: [
     "tprm software",
     "third-party risk management",
     "vendor security assessment software",
+    "security questionnaire automation",
     "supplier due diligence",
     "managed tprm",
     "ai vendor risk assessment",
   ],
   openGraph: {
-    title: "CheckFirst TPRM Software - SOC 2 & ISO 27001 Vendor Risk",
+    title: "CheckFirst | AI TPRM & Vendor Security Assessments",
     description:
-      "AI-powered TPRM platform for vendor security assessments, supplier due diligence, SOC 2 vendor evidence, ISO 27001 supplier controls, external scans, and remediation tracking.",
+      "CheckFirst is AI-powered TPRM software for vendor security assessments, questionnaire automation, and audit-ready evidence. Book a demo.",
     url: "https://checkfirst.io/",
     siteName: "CheckFirst TPRM",
     type: "website",
@@ -26,9 +27,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CheckFirst TPRM Software - SOC 2 & ISO 27001 Vendor Risk",
+    title: "CheckFirst | AI TPRM & Vendor Security Assessments",
     description:
-      "AI-powered TPRM platform for vendor security assessments, supplier due diligence, SOC 2 vendor evidence, ISO 27001 supplier controls, external scans, and remediation tracking.",
+      "CheckFirst is AI-powered TPRM software for vendor security assessments, questionnaire automation, and audit-ready evidence. Book a demo.",
     images: defaultTwitterImages,
   },
   alternates: {

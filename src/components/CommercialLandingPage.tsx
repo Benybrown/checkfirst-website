@@ -87,6 +87,36 @@ function RouteVisual({ label }: { label: string }) {
   );
 }
 
+function HeroProductVisual({
+  src,
+  alt,
+  label,
+}: {
+  src: string;
+  alt: string;
+  label: string;
+}) {
+  return (
+    <div className="rounded-[2.25rem] border border-white bg-white/72 p-3 shadow-[0_30px_80px_-45px_rgba(15,23,42,0.45),inset_0_1px_0_white] sm:p-5">
+      <div className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-gradient-to-b from-white to-slate-50">
+        <div className="flex items-center justify-between border-b border-slate-200/80 px-5 py-4">
+          <div className="flex items-center gap-2">
+            <span className="h-2.5 w-2.5 rounded-full bg-red-300" />
+            <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
+            <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
+          </div>
+          <p className="font-mono text-xs uppercase tracking-[-0.04em] text-slate-400">{label}</p>
+        </div>
+        <div className="relative aspect-[16/11] bg-slate-100">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={src} alt={alt} className="h-full w-full object-cover object-left-top" />
+          <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/60" />
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function InfoGrid({ items }: { items: TextPair[] }) {
   return (
     <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -185,6 +215,8 @@ function buildSchema(page: CommercialPageContent) {
 }
 
 export function CommercialLandingPage({ page }: { page: CommercialPageContent }) {
+  const secondaryCta = page.secondaryCta ?? { href: "/pricing", label: "View pricing" };
+
   return (
     <>
       <Script
@@ -203,18 +235,108 @@ export function CommercialLandingPage({ page }: { page: CommercialPageContent })
             <p className="mt-6 max-w-2xl font-body text-[17px] leading-[1.7] text-ink-500 md:text-[18px]">
               {page.lead}
             </p>
+            {page.heroBullets && page.heroBullets.length > 0 ? (
+              <ul className="mt-8 grid max-w-xl gap-3">
+                {page.heroBullets.map((bullet) => (
+                  <li key={bullet}>
+                    <CheckRow>{bullet}</CheckRow>
+                  </li>
+                ))}
+              </ul>
+            ) : null}
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Button href="/contact" variant="primary" size="lg">
                 {page.cta}
               </Button>
-              <Button href="/pricing" variant="secondary" size="lg">
-                View pricing
+              <Button href={secondaryCta.href} variant="secondary" size="lg">
+                {secondaryCta.label}
               </Button>
             </div>
           </div>
-          <RouteVisual label={page.eyebrow} />
+          {page.heroImage ? (
+            <HeroProductVisual src={page.heroImage.src} alt={page.heroImage.alt} label={page.eyebrow} />
+          ) : (
+            <RouteVisual label={page.eyebrow} />
+          )}
         </div>
       </section>
+
+      {page.proofMetrics && page.proofMetrics.length > 0 ? (
+        <section className="border-y border-slate-200/80 bg-white/50">
+          <div className="mx-auto grid max-w-7xl gap-6 px-6 py-10 sm:grid-cols-3">
+            {page.proofMetrics.map((metric) => (
+              <div
+                key={metric.label}
+                className="rounded-[1.75rem] border border-white bg-white/80 px-6 py-5 shadow-card backdrop-blur"
+              >
+                <p className="font-display text-[34px] leading-none tracking-[-0.04em] text-ink-900">
+                  {metric.value}
+                </p>
+                <p className="mt-3 font-body text-[14px] leading-[1.5] text-ink-500">{metric.label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      {page.definition ? (
+        <Section>
+          <SectionHeader
+            tag="CATEGORY"
+            title={page.definition.title}
+            description={page.definition.description}
+            align="left"
+          />
+          {page.definition.comparison && page.definition.comparison.length > 0 ? (
+            <div className="overflow-hidden rounded-[2rem] border border-white bg-white/76 shadow-card backdrop-blur">
+              <div className="hidden grid-cols-[0.9fr_1.2fr_1.2fr] gap-4 border-b border-slate-200/80 bg-slate-50/80 px-6 py-4 font-mono text-[11px] uppercase tracking-[0.12em] text-slate-500 md:grid">
+                <span>Aspect</span>
+                <span>Manual</span>
+                <span>Automated</span>
+              </div>
+              <div className="divide-y divide-slate-200/80">
+                {page.definition.comparison.map((row) => (
+                  <div
+                    key={row.aspect}
+                    className="grid gap-3 px-6 py-5 md:grid-cols-[0.9fr_1.2fr_1.2fr] md:items-start md:gap-4"
+                  >
+                    <p className="font-display text-[17px] tracking-[-0.02em] text-ink-900">{row.aspect}</p>
+                    <div>
+                      <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.12em] text-slate-400 md:hidden">
+                        Manual
+                      </p>
+                      <p className="font-body text-[14.5px] leading-[1.6] text-ink-500">{row.manual}</p>
+                    </div>
+                    <div>
+                      <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.12em] text-slate-400 md:hidden">
+                        Automated
+                      </p>
+                      <p className="font-body text-[14.5px] leading-[1.6] text-ink-700">{row.automated}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null}
+          {page.definition.links && page.definition.links.length > 0 ? (
+            <div className="mt-8">
+              <LinkGrid items={page.definition.links} />
+            </div>
+          ) : null}
+        </Section>
+      ) : null}
+
+      {page.differentiation ? (
+        <Section className="bg-canvas-raised">
+          <SectionHeader
+            tag="DIFFERENTIATION"
+            title={page.differentiation.title}
+            description={page.differentiation.description}
+            align="left"
+          />
+          <InfoGrid items={page.differentiation.points} />
+        </Section>
+      ) : null}
 
       <Section>
         <SectionHeader tag="WHAT YOU CAN MANAGE" title={page.coverageTitle} description={page.coverageText} align="left" />
@@ -226,7 +348,7 @@ export function CommercialLandingPage({ page }: { page: CommercialPageContent })
         <InfoGrid items={page.evidence} />
       </Section>
 
-      <Section>
+      <Section id="workflow">
         <SectionHeader tag="WORKFLOW" title="How the workflow moves from intake to decision" />
         <div className="relative grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {page.workflow.map((item) => (
@@ -255,6 +377,18 @@ export function CommercialLandingPage({ page }: { page: CommercialPageContent })
           </div>
         </div>
       </Section>
+
+      {page.internalLinks && page.internalLinks.length > 0 ? (
+        <Section>
+          <SectionHeader
+            tag="INTERNAL LINKS"
+            title="Continue into related CheckFirst workflows"
+            description="Jump from questionnaire automation into AI review, full TPRM, audit-use cases, pricing, or a demo."
+            align="left"
+          />
+          <LinkGrid items={page.internalLinks} />
+        </Section>
+      ) : null}
 
       <Section>
         <SectionHeader

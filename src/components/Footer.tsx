@@ -5,7 +5,7 @@ const footerLinks = {
   "Audit pages": [
     { href: "/soc-2-vendor-risk", label: "SOC 2 vendor risk" },
     { href: "/iso-27001-supplier-risk", label: "ISO 27001 supplier risk" },
-    { href: "/assessments", label: "Vendor security assessments" },
+    { href: "/assessments", label: "Security questionnaire automation" },
     { href: "/managed-tprm", label: "Managed TPRM" },
   ],
   Platform: [
