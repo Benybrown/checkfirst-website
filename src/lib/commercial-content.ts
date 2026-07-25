@@ -427,9 +427,10 @@ export const commercialPages: Record<string, CommercialPageContent> = {
     lead:
       "Automate vendor security questionnaires with AI-assisted review and human sign-off. Collect evidence, cut cycle time, and keep audit-ready records without spreadsheet chaos.",
     cta: "Book a demo",
-    metadataTitle: "Security Questionnaire Automation Software | CheckFirst",
+    // CTR pass 2026-07-25: benefit-first title/meta for GSC impressions @ deep positions
+    metadataTitle: "Cut Vendor Questionnaire Time with Security Questionnaire Automation | CheckFirst",
     metadataDescription:
-      "Automate vendor security questionnaires with AI-assisted review and human sign-off. Collect evidence, cut cycle time, stay audit-ready. Book a demo.",
+      "Stop drowning in vendor security questionnaires. AI-assisted review + human sign-off, evidence packs for SOC 2/ISO, faster cycles. See CheckFirst assessments — book a demo.",
     keywords: [
       "security questionnaire automation",
       "security questionnaire automation software",
