@@ -422,15 +422,16 @@ export const commercialPages: Record<string, CommercialPageContent> = {
 
   "/assessments": {
     path: "/assessments",
-    eyebrow: "Security questionnaire automation",
-    title: "Security questionnaire automation for vendor assessments that still need human judgment",
+    eyebrow: "Buyer-side vendor assessments",
+    // Phase 1b: H1 leads with exact head term; keep readable length
+    title: "Security questionnaire automation for vendor assessments",
     lead:
-      "Automate vendor security questionnaires with AI-assisted review and human sign-off. Collect evidence, cut cycle time, and keep audit-ready records without spreadsheet chaos.",
+      "Buyer-side security questionnaire automation: send questionnaires to vendors, AI-assisted review, human sign-off, and SOC 2/ISO evidence — not a tool that only auto-answers your customers’ inbound RFPs.",
     cta: "Book a demo",
-    // Phase1 2026-08-13 assessments v2 draft (branch only until website deploy OK)
-    metadataTitle: "Security Questionnaire Automation Software — Human-in-the-Loop AI | CheckFirst",
+    // Phase 1b: SERP title ≤60 chars before brand
+    metadataTitle: "Security Questionnaire Automation | CheckFirst",
     metadataDescription:
-      "Security questionnaire automation for vendor assessments: send, collect, AI-assisted review, human sign-off, SOC 2/ISO evidence. Primary product page — book a demo.",
+      "Automate vendor security questionnaires with human-in-the-loop AI. Intake, review, evidence, and decisions for TPRM — not outbound sales RFP bots. Book a CheckFirst demo.",
     keywords: [
       "security questionnaire automation",
       "security questionnaire automation software",
@@ -441,10 +442,10 @@ export const commercialPages: Record<string, CommercialPageContent> = {
       ...commonSocIsoKeywords,
     ],
     heroBullets: [
-      "Primary home for “security questionnaire automation” — not a blog workaround",
-      "AI-assisted review with human sign-off — not black-box auto-approve",
-      "Evidence pack ready for SOC 2 and ISO vendor questions",
-      "Replace spreadsheet chaos with one assessment workspace",
+      "Primary product page for security questionnaire automation (blog supports this URL)",
+      "Buyer-side vendor reviews — not only auto-answering inbound customer questionnaires",
+      "AI flags gaps; humans approve — no black-box auto-approve",
+      "Evidence packs for SOC 2 / ISO vendor questions",
     ],
     heroImage: {
       src: "/checkfirst-hero-assessment.png",
@@ -462,12 +463,17 @@ export const commercialPages: Record<string, CommercialPageContent> = {
     definition: {
       title: "What is security questionnaire automation?",
       description:
-        "Security questionnaire automation is software that sends, collects, reviews, and decides vendor security questionnaires in one workflow — instead of email threads and spreadsheets. CheckFirst Assessments is built for teams that need speed and a human-in-the-loop audit trail, not unsupervised auto-approval of vendor risk. If you searched for security questionnaire automation software, this product page is the primary answer; related guides on our blog only support this workflow.",
+        "Security questionnaire automation is software that sends, collects, reviews, and decides vendor security questionnaires in one workflow — instead of email and spreadsheets. CheckFirst Assessments is buyer-side TPRM: you assess suppliers. Tools such as Conveyor or Responsive primarily help vendors auto-answer inbound customer questionnaires. If you searched for security questionnaire automation software to run vendor assessments, this page is the primary product answer; our blog only supports this URL.",
       comparison: [
+        {
+          aspect: "Who is the user?",
+          manual: "Unclear — sales answering RFPs vs security assessing vendors",
+          automated: "CheckFirst: security/procurement assessing suppliers (buyer-side)",
+        },
         {
           aspect: "Collection",
           manual: "Email chains, versioned spreadsheets, missing owners",
-          automated: "Guided send, reminders, and a single response record",
+          automated: "Guided send, reminders, and a single vendor response record",
         },
         {
           aspect: "Review",
@@ -484,11 +490,6 @@ export const commercialPages: Record<string, CommercialPageContent> = {
           manual: "Verbal sign-off with thin audit history",
           automated: "Human approval with notes, conditions, and next review date",
         },
-        {
-          aspect: "Reuse",
-          manual: "Start from zero on every reassess cycle",
-          automated: "Prior answers and evidence inform the next review",
-        },
       ],
       links: [
         {
@@ -504,14 +505,14 @@ export const commercialPages: Record<string, CommercialPageContent> = {
       ],
     },
     differentiation: {
-      title: "How CheckFirst differs from generic questionnaire bots",
+      title: "Not another outbound questionnaire bot (Conveyor / Responsive-style)",
       description:
-        "Many tools automate answers for sales security reviews. CheckFirst is built for buyer-side vendor risk and TPRM: intake, questionnaires, evidence, external signals, remediation, and audit-ready decisions with humans still accountable.",
+        "SERPs for “security questionnaire automation” are full of tools that help you answer customer RFPs faster. CheckFirst is built for the opposite job: buyer-side vendor risk and TPRM — intake, questionnaires to vendors, evidence, external signals, remediation, and audit-ready decisions.",
       points: [
         {
-          title: "Built for vendor risk / TPRM, not only sales reviews",
+          title: "Buyer-side vendor risk / TPRM",
           description:
-            "Designed for security, procurement, and compliance teams evaluating suppliers — not only answering inbound customer questionnaires.",
+            "Security, procurement, and compliance teams evaluating suppliers — not only sales teams answering inbound questionnaires.",
         },
         {
           title: "AI assists; humans decide",
@@ -524,9 +525,9 @@ export const commercialPages: Record<string, CommercialPageContent> = {
             "Questionnaires connect to inventory, scans, remediation, and program reporting inside CheckFirst TPRM software.",
         },
         {
-          title: "Honest category alternative",
+          title: "Compare fairly before you buy",
           description:
-            "If you are evaluating Conveyor, Vanta-style, or other automation options, compare workflow depth, audit evidence model, and human-in-the-loop controls — then book a demo on the fit.",
+            "If you need outbound RFP auto-answer, evaluate Conveyor/Responsive-class tools. If you need vendor assessment workflows with audit evidence, evaluate CheckFirst Assessments — then book a demo.",
         },
       ],
     },
@@ -622,77 +623,30 @@ export const commercialPages: Record<string, CommercialPageContent> = {
       },
       {
         step: "04",
-        title: "Review evidence, not just answers",
-        description: "Assess completeness, consistency, and supporting documents with AI assistance.",
+        title: "Human review and risk decision",
+        description: "Approve, condition, remediate, or escalate with a full evidence trail.",
       },
       {
         step: "05",
-        title: "Decide and document",
-        description: "Human sign-off with a unified risk profile and recommended treatment path.",
-      },
-    ],
-    internalLinks: [
-      {
-        href: "/ai-engine",
-        title: "AI vendor risk engine",
-        description: "See how AI-assisted review supports questionnaire and document analysis.",
-      },
-      {
-        href: "/tprm-software",
-        title: "TPRM software platform",
-        description: "Place assessments inside the full third-party risk operating model.",
-      },
-      {
-        href: "/soc-2-vendor-risk",
-        title: "SOC 2 vendor risk",
-        description: "Map assessment evidence to SOC 2 CC9.2 vendor-risk expectations.",
-      },
-      {
-        href: "/iso-27001-supplier-risk",
-        title: "ISO 27001 supplier risk",
-        description: "Connect supplier assessments to ISO 27001 A.5.19–A.5.23 evidence.",
-      },
-      {
-        href: "/pricing",
-        title: "Pricing",
-        description: "Compare plans for assessment volume and TPRM scope.",
-      },
-      {
-        href: "/contact",
-        title: "Book a demo",
-        description: "Walk through questionnaire automation on your real vendor queue.",
+        title: "Export audit-ready proof",
+        description: "Package the vendor record for SOC 2 / ISO and internal stakeholders.",
       },
     ],
     faqs: [
       {
-        question: "What makes CheckFirst different from a standard questionnaire tool?",
+        question: "Is this the same as Conveyor or Responsive?",
         answer:
-          "CheckFirst combines intake, scanning, adaptive questionnaires, AI analysis, and evidence-based scoring in one vendor assessment workflow — not just send/collect forms.",
+          "No. Those tools mainly help vendors answer inbound customer security questionnaires. CheckFirst Assessments is buyer-side: you send questionnaires to vendors, review evidence, and decide risk with human sign-off.",
       },
       {
-        question: "Is this the same as TPRM software?",
+        question: "Does AI auto-approve vendors?",
         answer:
-          "Assessments are the questionnaire and vendor-review module. Full TPRM software covers inventory, monitoring, remediation, reporting, and program operations across suppliers. Many teams start on /assessments and expand to the broader platform at /tprm-software.",
+          "No. AI assists review. Humans keep approval, conditional approval, and rejection decisions.",
       },
       {
-        question: "Can AI auto-answer everything?",
+        question: "Is this the primary page for security questionnaire automation?",
         answer:
-          "No. AI helps draft structure, flag weak evidence, and accelerate review. Human reviewers own approval, escalation, remediation, and risk acceptance. CheckFirst is human-in-the-loop by design.",
-      },
-      {
-        question: "Can we use it for high-risk and lighter-tier suppliers?",
-        answer:
-          "Yes. You can route vendors by criticality and apply deeper evidence collection to higher-risk suppliers.",
-      },
-      {
-        question: "Which frameworks can we align assessments to?",
-        answer:
-          "CheckFirst supports vendor evidence workflows for CSA CCM, SOC 2, ISO 27001, NIST CSF, GDPR, DORA, NIS2, PCI DSS, HIPAA/HITRUST, and custom frameworks.",
-      },
-      {
-        question: "Does AI approve vendors automatically?",
-        answer:
-          "No. AI helps structure findings and highlight weak evidence. Human reviewers own approval, escalation, remediation, and risk acceptance decisions.",
+          "Yes. This product page is the commercial primary. Blog guides link here and should not replace this URL for buying intent.",
       },
     ],
   },
@@ -960,15 +914,20 @@ export const commercialPages: Record<string, CommercialPageContent> = {
   "/vanta-vendor-risk-alternative": {
     path: "/vanta-vendor-risk-alternative",
     eyebrow: "Vanta vendor risk alternative",
-    title: "A focused Vanta vendor-risk alternative for SaaS teams that only need the audit evidence.",
+    title: "Vanta alternative for vendor risk — focused audit evidence, not full GRC",
     lead:
-      "CheckFirst is built for teams that need SOC 2 and ISO 27001 vendor-risk evidence their auditor can understand, without starting from a broad enterprise compliance platform rollout.",
+      "Need a Vanta alternative for vendor risk only? CheckFirst delivers SOC 2 and ISO 27001 vendor-risk evidence (questionnaires, scans, remediation, approval records) without a full GRC platform rollout — public pricing, multilingual, works beside broader stacks.",
     cta: "See vendor-risk workflow",
     // Phase1 2026-08-13 Vanta-alt CTR sprint #1 (branch only until website deploy OK)
-    metadataTitle: "Vanta Alternative for Vendor Risk (Not Full GRC) | CheckFirst",
+    metadataTitle: "Vanta Alternative for Vendor Risk | CheckFirst",
     metadataDescription:
       "Looking for a Vanta alternative focused on vendor risk? CheckFirst runs questionnaires, evidence, and SOC 2/ISO vendor proof — without a full compliance platform. Compare scope and book a demo.",
     keywords: ["Vanta vendor risk alternative", "Vanta alternative", ...commonSocIsoKeywords],
+    proofMetrics: [
+      { value: "CC9.2", label: "Vendor-risk evidence pack shape for SOC 2 conversations" },
+      { value: "5–10", label: "Critical vendors to prove value in the first trial window" },
+      { value: "EN/FR", label: "Multilingual workflow for stakeholder adoption" },
+    ],
     coverageTitle: "A careful comparison when your vendor-risk job is narrower",
     coverageText:
       "Use this comparison to decide whether you need a broad compliance automation platform or a focused vendor-risk workflow for evidence, scans, questionnaires, remediation, and approvals.",
