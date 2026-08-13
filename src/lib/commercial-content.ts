@@ -427,10 +427,10 @@ export const commercialPages: Record<string, CommercialPageContent> = {
     lead:
       "Automate vendor security questionnaires with AI-assisted review and human sign-off. Collect evidence, cut cycle time, and keep audit-ready records without spreadsheet chaos.",
     cta: "Book a demo",
-    // CTR pass 2026-07-25: benefit-first title/meta for GSC impressions @ deep positions
-    metadataTitle: "Cut Vendor Questionnaire Time with Security Questionnaire Automation | CheckFirst",
+    // Phase1 2026-08-13 assessments v2 draft (branch only until website deploy OK)
+    metadataTitle: "Security Questionnaire Automation Software — Human-in-the-Loop AI | CheckFirst",
     metadataDescription:
-      "Stop drowning in vendor security questionnaires. AI-assisted review + human sign-off, evidence packs for SOC 2/ISO, faster cycles. See CheckFirst assessments — book a demo.",
+      "Security questionnaire automation for vendor assessments: send, collect, AI-assisted review, human sign-off, SOC 2/ISO evidence. Primary product page — book a demo.",
     keywords: [
       "security questionnaire automation",
       "security questionnaire automation software",
@@ -441,9 +441,10 @@ export const commercialPages: Record<string, CommercialPageContent> = {
       ...commonSocIsoKeywords,
     ],
     heroBullets: [
-      "Send and collect questionnaires without spreadsheet chaos",
+      "Primary home for “security questionnaire automation” — not a blog workaround",
       "AI-assisted review with human sign-off — not black-box auto-approve",
       "Evidence pack ready for SOC 2 and ISO vendor questions",
+      "Replace spreadsheet chaos with one assessment workspace",
     ],
     heroImage: {
       src: "/checkfirst-hero-assessment.png",
@@ -461,7 +462,7 @@ export const commercialPages: Record<string, CommercialPageContent> = {
     definition: {
       title: "What is security questionnaire automation?",
       description:
-        "Security questionnaire automation is the practice of sending, collecting, reviewing, and deciding on vendor security questionnaires with structured workflows instead of email threads and spreadsheets. The goal is faster cycle time with a complete evidence trail — not unsupervised auto-approval of vendor risk.",
+        "Security questionnaire automation is software that sends, collects, reviews, and decides vendor security questionnaires in one workflow — instead of email threads and spreadsheets. CheckFirst Assessments is built for teams that need speed and a human-in-the-loop audit trail, not unsupervised auto-approval of vendor risk. If you searched for security questionnaire automation software, this product page is the primary answer; related guides on our blog only support this workflow.",
       comparison: [
         {
           aspect: "Collection",
@@ -962,10 +963,11 @@ export const commercialPages: Record<string, CommercialPageContent> = {
     title: "A focused Vanta vendor-risk alternative for SaaS teams that only need the audit evidence.",
     lead:
       "CheckFirst is built for teams that need SOC 2 and ISO 27001 vendor-risk evidence their auditor can understand, without starting from a broad enterprise compliance platform rollout.",
-    cta: "Compare vendor risk scope",
-    metadataTitle: "Vanta Vendor Risk Alternative | CheckFirst",
+    cta: "See vendor-risk workflow",
+    // Phase1 2026-08-13 Vanta-alt CTR sprint #1 (branch only until website deploy OK)
+    metadataTitle: "Vanta Alternative for Vendor Risk (Not Full GRC) | CheckFirst",
     metadataDescription:
-      "A focused vendor-risk workflow for SaaS teams that need SOC 2 and ISO 27001 evidence without a broad compliance platform rollout.",
+      "Looking for a Vanta alternative focused on vendor risk? CheckFirst runs questionnaires, evidence, and SOC 2/ISO vendor proof — without a full compliance platform. Compare scope and book a demo.",
     keywords: ["Vanta vendor risk alternative", "Vanta alternative", ...commonSocIsoKeywords],
     coverageTitle: "A careful comparison when your vendor-risk job is narrower",
     coverageText:
