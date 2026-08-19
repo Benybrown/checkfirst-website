@@ -142,9 +142,9 @@ export function HomeContent() {
     },
     {
       href: "/assessments",
-      title: "Vendor security assessment workflow",
+      title: "Security questionnaire automation",
       description:
-        "Questionnaires, scans, documents, and reviewer decisions in one flow.",
+        "Send questionnaires, review evidence with AI assistance, and keep human sign-off on every vendor decision.",
     },
     {
       href: "/managed-tprm",
@@ -162,9 +162,10 @@ export function HomeContent() {
 
   const survivorLinks = [
     {
-      href: "https://checkfirst.io/blog/best-tprm-tool-2026/",
-      title: "Best TPRM Software in 2026",
-      description: "Compare TPRM software options and category buying criteria.",
+      href: "https://checkfirst.io/blog/security-questionnaire-automation-ai-2026/",
+      title: "Security Questionnaire Automation",
+      description:
+        "Support guide for teams cutting vendor review time with AI-assisted questionnaires and human sign-off.",
     },
     {
       href: "https://checkfirst.io/blog/vendor-security-assessment-guide-2026/",
@@ -346,7 +347,7 @@ export function HomeContent() {
             href="/assessments"
             className="font-body text-[13.5px] text-ink-700 transition-colors hover:text-brand-600"
           >
-            Vendor security assessment software
+            Security questionnaire automation
           </Link>
           <span className="text-ink-200">·</span>
           <Link

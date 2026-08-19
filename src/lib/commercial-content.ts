@@ -23,6 +23,30 @@ export type FAQItem = {
   answer: string;
 };
 
+export type ProofMetric = {
+  value: string;
+  label: string;
+};
+
+export type ComparisonRow = {
+  aspect: string;
+  manual: string;
+  automated: string;
+};
+
+export type DefinitionBlock = {
+  title: string;
+  description: string;
+  comparison?: ComparisonRow[];
+  links?: LinkCard[];
+};
+
+export type DifferentiationBlock = {
+  title: string;
+  description: string;
+  points: TextPair[];
+};
+
 export type CommercialPageContent = {
   path: string;
   eyebrow: string;
@@ -44,6 +68,14 @@ export type CommercialPageContent = {
   workflow: WorkflowStep[];
   faqs: FAQItem[];
   alternates?: Record<string, string>;
+  /** Optional money-page upgrades */
+  heroBullets?: string[];
+  heroImage?: { src: string; alt: string };
+  secondaryCta?: { href: string; label: string };
+  proofMetrics?: ProofMetric[];
+  definition?: DefinitionBlock;
+  differentiation?: DifferentiationBlock;
+  internalLinks?: LinkCard[];
 };
 
 export const buyerPages: LinkCard[] = [
@@ -59,8 +91,9 @@ export const buyerPages: LinkCard[] = [
   },
   {
     href: "/assessments",
-    title: "Vendor security assessment workflow",
-    description: "Questionnaires, scans, documents, and reviewer decisions in one flow.",
+    title: "Security questionnaire automation",
+    description:
+      "Send questionnaires, review evidence with AI assistance, and keep human sign-off on every vendor decision.",
   },
   {
     href: "/managed-tprm",
@@ -71,9 +104,9 @@ export const buyerPages: LinkCard[] = [
 
 export const resourceLinks: LinkCard[] = [
   {
-    href: "https://checkfirst.io/blog/best-tprm-tool-2026/",
-    title: "Best TPRM Software in 2026",
-    description: "Compare TPRM software options and category buying criteria.",
+    href: "https://checkfirst.io/blog/security-questionnaire-automation-ai-2026/",
+    title: "Security Questionnaire Automation",
+    description: "Cut vendor review time with AI-assisted questionnaire workflows and human sign-off.",
   },
   {
     href: "https://checkfirst.io/blog/vendor-security-assessment-guide-2026/",
@@ -389,18 +422,118 @@ export const commercialPages: Record<string, CommercialPageContent> = {
 
   "/assessments": {
     path: "/assessments",
-    eyebrow: "Vendor security assessment software",
-    title: "Run vendor security assessments faster with AI-assisted review.",
+    eyebrow: "Buyer-side vendor assessments",
+    // Phase 1b: H1 leads with exact head term; keep readable length
+    title: "Security questionnaire automation for vendor assessments",
     lead:
-      "CheckFirst combines supplier intake, external validation, adaptive questionnaires, AI document analysis, and decision-ready reporting in one workflow.",
-    cta: "Start assessment review",
-    metadataTitle: "Vendor Security Assessment Software | CheckFirst",
+      "Buyer-side security questionnaire automation: send questionnaires to vendors, AI-assisted review, human sign-off, and SOC 2/ISO evidence — not a tool that only auto-answers your customers’ inbound RFPs.",
+    cta: "Book a demo",
+    // Phase 1b: SERP title ≤60 chars before brand
+    metadataTitle: "Security Questionnaire Automation | CheckFirst",
     metadataDescription:
-      "Run vendor security assessments faster with intake, questionnaires, external scans, evidence review, AI analysis, and risk decisions.",
-    keywords: ["vendor security assessment software", "vendor risk assessment software", ...commonSocIsoKeywords],
+      "Automate vendor security questionnaires with human-in-the-loop AI. Intake, review, evidence, and decisions for TPRM — not outbound sales RFP bots. Book a CheckFirst demo.",
+    keywords: [
+      "security questionnaire automation",
+      "security questionnaire automation software",
+      "vendor security assessment software",
+      "vendor risk assessment software",
+      "vendor security questionnaire",
+      "questionnaire automation",
+      ...commonSocIsoKeywords,
+    ],
+    heroBullets: [
+      "Primary product page for security questionnaire automation (blog supports this URL)",
+      "Buyer-side vendor reviews — not only auto-answering inbound customer questionnaires",
+      "AI flags gaps; humans approve — no black-box auto-approve",
+      "Evidence packs for SOC 2 / ISO vendor questions",
+    ],
+    heroImage: {
+      src: "/checkfirst-hero-assessment.png",
+      alt: "CheckFirst assessment workspace showing questionnaire review, risk signals, and AI-assisted findings for vendor security assessments",
+    },
+    secondaryCta: {
+      href: "#workflow",
+      label: "See workflow",
+    },
+    proofMetrics: [
+      { value: "85%", label: "Faster assessment cycles vs manual review" },
+      { value: "243", label: "CSA CCM controls available in assessment flows" },
+      { value: "45+", label: "Frameworks and questionnaire packs supported" },
+    ],
+    definition: {
+      title: "What is security questionnaire automation?",
+      description:
+        "Security questionnaire automation is software that sends, collects, reviews, and decides vendor security questionnaires in one workflow — instead of email and spreadsheets. CheckFirst Assessments is buyer-side TPRM: you assess suppliers. Tools such as Conveyor or Responsive primarily help vendors auto-answer inbound customer questionnaires. If you searched for security questionnaire automation software to run vendor assessments, this page is the primary product answer; our blog only supports this URL.",
+      comparison: [
+        {
+          aspect: "Who is the user?",
+          manual: "Unclear — sales answering RFPs vs security assessing vendors",
+          automated: "CheckFirst: security/procurement assessing suppliers (buyer-side)",
+        },
+        {
+          aspect: "Collection",
+          manual: "Email chains, versioned spreadsheets, missing owners",
+          automated: "Guided send, reminders, and a single vendor response record",
+        },
+        {
+          aspect: "Review",
+          manual: "Analysts re-read every answer line by line",
+          automated: "AI flags weak answers, gaps, and missing evidence",
+        },
+        {
+          aspect: "Evidence",
+          manual: "Files scattered across drives and inboxes",
+          automated: "Questionnaires, docs, and scans tied to the vendor",
+        },
+        {
+          aspect: "Decision",
+          manual: "Verbal sign-off with thin audit history",
+          automated: "Human approval with notes, conditions, and next review date",
+        },
+      ],
+      links: [
+        {
+          href: "/ai-engine",
+          title: "AI review engine",
+          description: "How CheckFirst structures findings while humans keep final control.",
+        },
+        {
+          href: "/tprm-software",
+          title: "Full TPRM platform",
+          description: "Assessments sit inside a broader third-party risk workflow.",
+        },
+      ],
+    },
+    differentiation: {
+      title: "Not another outbound questionnaire bot (Conveyor / Responsive-style)",
+      description:
+        "SERPs for “security questionnaire automation” are full of tools that help you answer customer RFPs faster. CheckFirst is built for the opposite job: buyer-side vendor risk and TPRM — intake, questionnaires to vendors, evidence, external signals, remediation, and audit-ready decisions.",
+      points: [
+        {
+          title: "Buyer-side vendor risk / TPRM",
+          description:
+            "Security, procurement, and compliance teams evaluating suppliers — not only sales teams answering inbound questionnaires.",
+        },
+        {
+          title: "AI assists; humans decide",
+          description:
+            "Jino tools highlight weak evidence and contradictions. Approvals, escalations, and risk acceptance stay with your reviewers.",
+        },
+        {
+          title: "Ties into broader TPRM evidence",
+          description:
+            "Questionnaires connect to inventory, scans, remediation, and program reporting inside CheckFirst TPRM software.",
+        },
+        {
+          title: "Compare fairly before you buy",
+          description:
+            "If you need outbound RFP auto-answer, evaluate Conveyor/Responsive-class tools. If you need vendor assessment workflows with audit evidence, evaluate CheckFirst Assessments — then book a demo.",
+        },
+      ],
+    },
     coverageTitle: "A complete assessment workflow, not just a questionnaire sender",
     coverageText:
-      "Use this workflow when you need vendor security assessment software, supplier security reviews, questionnaire automation, and evidence-based due diligence in one place.",
+      "Use this workflow when you need security questionnaire automation, vendor security assessment software, supplier security reviews, and evidence-based due diligence in one place.",
     sections: [
       {
         title: "Supplier due diligence in one workflow",
@@ -464,7 +597,7 @@ export const commercialPages: Record<string, CommercialPageContent> = {
     ],
     buyerTitle: "Best fit for teams reviewing vendors under time pressure",
     buyerText:
-      "This is a strong fit for security, procurement, and compliance teams that need faster reviews without losing evidence quality.",
+      "This is a strong fit for security, procurement, and compliance teams that need faster questionnaire and assessment cycles without losing evidence quality.",
     buyerPoints: [
       "Security teams overloaded by questionnaire review and document analysis.",
       "Procurement teams that need status visibility before contract approval.",
@@ -486,39 +619,34 @@ export const commercialPages: Record<string, CommercialPageContent> = {
       {
         step: "03",
         title: "Launch AI-powered assessment flows",
-        description: "Evaluate suppliers against controls and collect documentation in parallel.",
+        description: "Send questionnaires, evaluate controls, and collect documentation in parallel.",
       },
       {
         step: "04",
-        title: "Review evidence, not just answers",
-        description: "Assess completeness, consistency, and supporting documents.",
+        title: "Human review and risk decision",
+        description: "Approve, condition, remediate, or escalate with a full evidence trail.",
       },
       {
         step: "05",
-        title: "Decide and document",
-        description: "Produce a unified risk profile and recommended treatment path.",
+        title: "Export audit-ready proof",
+        description: "Package the vendor record for SOC 2 / ISO and internal stakeholders.",
       },
     ],
     faqs: [
       {
-        question: "What makes CheckFirst different from a standard questionnaire tool?",
+        question: "Is this the same as Conveyor or Responsive?",
         answer:
-          "CheckFirst combines intake, scanning, adaptive questionnaires, AI analysis, and evidence-based scoring in one workflow.",
+          "No. Those tools mainly help vendors answer inbound customer security questionnaires. CheckFirst Assessments is buyer-side: you send questionnaires to vendors, review evidence, and decide risk with human sign-off.",
       },
       {
-        question: "Can we use it for high-risk and lighter-tier suppliers?",
+        question: "Does AI auto-approve vendors?",
         answer:
-          "Yes. You can route vendors by criticality and apply deeper evidence collection to higher-risk suppliers.",
+          "No. AI assists review. Humans keep approval, conditional approval, and rejection decisions.",
       },
       {
-        question: "Which frameworks can we align assessments to?",
+        question: "Is this the primary page for security questionnaire automation?",
         answer:
-          "CheckFirst supports vendor evidence workflows for CSA CCM, SOC 2, ISO 27001, NIST CSF, GDPR, DORA, NIS2, PCI DSS, HIPAA/HITRUST, and custom frameworks.",
-      },
-      {
-        question: "Does AI approve vendors automatically?",
-        answer:
-          "No. AI helps structure findings and highlight weak evidence. Human reviewers own approval, escalation, remediation, and risk acceptance decisions.",
+          "Yes. This product page is the commercial primary. Blog guides link here and should not replace this URL for buying intent.",
       },
     ],
   },
@@ -786,14 +914,20 @@ export const commercialPages: Record<string, CommercialPageContent> = {
   "/vanta-vendor-risk-alternative": {
     path: "/vanta-vendor-risk-alternative",
     eyebrow: "Vanta vendor risk alternative",
-    title: "A focused Vanta vendor-risk alternative for SaaS teams that only need the audit evidence.",
+    title: "Vanta alternative for vendor risk — focused audit evidence, not full GRC",
     lead:
-      "CheckFirst is built for teams that need SOC 2 and ISO 27001 vendor-risk evidence their auditor can understand, without starting from a broad enterprise compliance platform rollout.",
-    cta: "Compare vendor risk scope",
-    metadataTitle: "Vanta Vendor Risk Alternative | CheckFirst",
+      "Need a Vanta alternative for vendor risk only? CheckFirst delivers SOC 2 and ISO 27001 vendor-risk evidence (questionnaires, scans, remediation, approval records) without a full GRC platform rollout — public pricing, multilingual, works beside broader stacks.",
+    cta: "See vendor-risk workflow",
+    // Phase1 2026-08-13 Vanta-alt CTR sprint #1 (branch only until website deploy OK)
+    metadataTitle: "Vanta Alternative for Vendor Risk | CheckFirst",
     metadataDescription:
-      "A focused vendor-risk workflow for SaaS teams that need SOC 2 and ISO 27001 evidence without a broad compliance platform rollout.",
+      "Looking for a Vanta alternative focused on vendor risk? CheckFirst runs questionnaires, evidence, and SOC 2/ISO vendor proof — without a full compliance platform. Compare scope and book a demo.",
     keywords: ["Vanta vendor risk alternative", "Vanta alternative", ...commonSocIsoKeywords],
+    proofMetrics: [
+      { value: "CC9.2", label: "Vendor-risk evidence pack shape for SOC 2 conversations" },
+      { value: "5–10", label: "Critical vendors to prove value in the first trial window" },
+      { value: "EN/FR", label: "Multilingual workflow for stakeholder adoption" },
+    ],
     coverageTitle: "A careful comparison when your vendor-risk job is narrower",
     coverageText:
       "Use this comparison to decide whether you need a broad compliance automation platform or a focused vendor-risk workflow for evidence, scans, questionnaires, remediation, and approvals.",
