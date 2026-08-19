@@ -1,0 +1,14 @@
+# Mirrors next.config.ts `redirects()`. Kept here because the static/Pages
+# deployment doesn't run Next.js server-side redirect handling.
+/sitemap_index.xml /blog/sitemap_index.xml 301
+/post-sitemap.xml /blog/post-sitemap.xml 301
+/page-sitemap.xml /blog/page-sitemap.xml 301
+/category-sitemap.xml /blog/category-sitemap.xml 301
+/blog/tprm-risk-management-maturity /blog/3rd-party-risk-management-maturity-framework/ 301
+/blog/tprm-risk-management-maturity/ /blog/3rd-party-risk-management-maturity-framework/ 301
+/feed / 301
+/feed/ / 301
+/comments/feed/ / 301
+/test-only / 301
+/test-only/ / 301
+/support/* / 301
