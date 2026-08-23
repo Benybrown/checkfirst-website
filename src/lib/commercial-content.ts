@@ -429,9 +429,9 @@ export const commercialPages: Record<string, CommercialPageContent> = {
       "Buyer-side security questionnaire automation: send questionnaires to vendors, AI-assisted review, human sign-off, and SOC 2/ISO evidence — not a tool that only auto-answers your customers’ inbound RFPs.",
     cta: "Book a demo",
     // Phase 1b: SERP title ≤60 chars before brand
-    metadataTitle: "Security Questionnaire Automation | CheckFirst",
+    metadataTitle: "Automate Security Questionnaires | CheckFirst",
     metadataDescription:
-      "Automate vendor security questionnaires with human-in-the-loop AI. Intake, review, evidence, and decisions for TPRM — not outbound sales RFP bots. Book a CheckFirst demo.",
+      "Skip the outbound RFP-answer bots. CheckFirst automates buyer-side vendor questionnaires — guided send, AI-assisted review, human sign-off, and SOC 2/ISO evidence packs. Book a demo.",
     keywords: [
       "security questionnaire automation",
       "security questionnaire automation software",
