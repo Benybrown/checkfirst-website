@@ -79,15 +79,15 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
-      { source: "/blog", destination: "https://blog.checkfirst.io/blog/" },
-      { source: "/blog/", destination: "https://blog.checkfirst.io/blog/" },
+      { source: "/blog", destination: "https://checkfirst-blog-pages.pages.dev/blog/" },
+      { source: "/blog/", destination: "https://checkfirst-blog-pages.pages.dev/blog/" },
       {
         source: "/blog/:path*/",
-        destination: "https://blog.checkfirst.io/blog/:path*/",
+        destination: "https://checkfirst-blog-pages.pages.dev/blog/:path*/",
       },
       {
         source: "/blog/:path*",
-        destination: "https://blog.checkfirst.io/blog/:path*",
+        destination: "https://checkfirst-blog-pages.pages.dev/blog/:path*",
       },
     ];
   },
