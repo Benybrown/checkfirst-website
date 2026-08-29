@@ -57,17 +57,18 @@ function SmartLink({
 
 function Wordmark() {
   return (
-    <Link href="/" className="group flex items-center gap-3" aria-label="CheckFirst home">
+    <Link href="/" className="group flex items-center gap-2" aria-label="CheckFirst home">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src="/logo-mark.svg"
         alt=""
         width={40}
         height={40}
-        className="h-10 w-10 shrink-0 scale-[2.25] object-contain"
+        className="h-8 w-8 shrink-0 scale-[1.85] object-contain"
       />
-      <span className="hidden leading-none sm:flex">
-        <span className="cf-logo-clean text-[2.15rem] font-normal tracking-normal">CheckFirst</span>
+      <span className="hidden items-start leading-none sm:flex">
+        <span className="cf-logo-clean text-sm font-normal uppercase tracking-[0.08em]">CheckFirst</span>
+        <span className="ml-1.5 mt-0.5 h-1.5 w-1.5 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.55)]" />
       </span>
     </Link>
   );
@@ -84,19 +85,19 @@ function NavDropdown({
     <div className="group relative">
       <button
         type="button"
-        className="inline-flex items-center gap-1.5 text-xs font-normal text-slate-600 transition-colors hover:text-blue-600"
+        className="inline-flex items-center gap-1.5 text-sm font-normal text-zinc-400 transition-colors hover:text-white"
       >
         {label}
         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:rotate-180">
           <path d="M3 4.5l3 3 3-3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </button>
-      <div className="invisible absolute left-0 top-full z-50 mt-3 w-64 translate-y-2 rounded-2xl border border-white bg-white/95 p-2 opacity-0 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.45)] backdrop-blur-xl transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+      <div className="invisible absolute left-0 top-full z-50 mt-3 w-64 translate-y-2 rounded-lg border border-white/10 bg-zinc-950/95 p-2 opacity-0 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.9)] backdrop-blur-xl transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
         {links.map((link) => (
           <SmartLink
             key={link.href}
             href={link.href}
-            className="flex items-center justify-between rounded-xl px-3 py-2.5 text-sm text-slate-700 transition-colors hover:bg-blue-50 hover:text-blue-600"
+            className="flex items-center justify-between rounded-md px-3 py-2.5 text-sm text-zinc-300 transition-colors hover:bg-white/5 hover:text-white"
           >
             <span>{link.label}</span>
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="opacity-50">
@@ -122,13 +123,13 @@ export function Header() {
   }, [mobileOpen]);
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50">
-      <nav className="mx-auto max-w-7xl px-4 pt-5 sm:px-6">
-        <div className="relative overflow-visible rounded-full border border-white/90 bg-white/84 px-4 py-3 shadow-[0_14px_38px_-22px_rgba(15,23,42,0.42),inset_0_1px_0_rgba(255,255,255,1)] backdrop-blur-2xl">
+    <header className="fixed left-0 right-0 top-0 z-50 bg-black/72 backdrop-blur-xl">
+      <nav className="mx-auto max-w-[1400px] border-b border-white/10 px-6 py-6 md:px-8">
+        <div className="relative overflow-visible">
           <div className="relative z-10 flex items-center justify-between gap-4">
             <Wordmark />
 
-            <div className="hidden items-center gap-7 lg:flex">
+            <div className="hidden items-center gap-8 lg:flex">
               {Object.entries(navGroups).map(([group, links]) => (
                 <NavDropdown key={group} label={group} links={links} />
               ))}
@@ -136,10 +137,10 @@ export function Header() {
 
             <div className="hidden items-center gap-2 sm:flex">
               <LanguageSwitcher />
-              <Link href="/pricing" className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white/78 px-4 py-2 text-xs text-slate-700 shadow-[0_1px_2px_rgba(15,23,42,0.04),inset_0_1px_0_white] transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-blue-600">
+              <Link href="/pricing" className="inline-flex items-center justify-center rounded-full px-4 py-2 text-sm text-zinc-300 transition-colors hover:text-white">
                 View pricing
               </Link>
-              <Link href="/contact" className="inline-flex items-center justify-center rounded-full border border-blue-700 bg-gradient-to-b from-blue-500 to-blue-600 px-4 py-2 text-xs text-white shadow-[0_5px_14px_rgba(59,130,246,0.28),inset_0_1px_0_rgba(255,255,255,0.35)] transition-all duration-300 hover:-translate-y-0.5 hover:from-blue-400 hover:to-blue-500">
+              <Link href="/contact" className="inline-flex items-center justify-center rounded-full border border-white/60 bg-gradient-to-b from-[#f0f0f0] to-[#c8c8c8] px-4 py-2 text-sm text-black shadow-[inset_0_1px_2px_rgba(255,255,255,0.9),0_8px_16px_rgba(0,0,0,0.45)] transition-all hover:-translate-y-0.5 hover:from-white hover:to-[#e0e0e0]">
                 Book a demo
               </Link>
             </div>
@@ -147,7 +148,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setMobileOpen((open) => !open)}
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 lg:hidden"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-zinc-900 text-zinc-100 lg:hidden"
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
             >
@@ -164,17 +165,17 @@ export function Header() {
           </div>
 
           {mobileOpen && (
-            <div className="absolute left-0 right-0 top-[calc(100%+0.75rem)] rounded-[1.5rem] border border-white bg-white/95 p-4 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.45)] backdrop-blur-xl lg:hidden">
+            <div className="absolute left-0 right-0 top-[calc(100%+1rem)] rounded-lg border border-white/10 bg-zinc-950/95 p-4 shadow-[0_24px_60px_-30px_rgba(0,0,0,0.9)] backdrop-blur-xl lg:hidden">
               {Object.entries(navGroups).map(([group, links]) => (
                 <div key={group} className="border-b border-slate-100 py-3 last:border-0">
-                  <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.12em] text-slate-400">{group}</p>
+                  <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-500">{group}</p>
                   <div className="grid gap-1">
                     {links.map((link) => (
                       <SmartLink
                         key={link.href}
                         href={link.href}
                         onClick={() => setMobileOpen(false)}
-                        className="flex items-center justify-between rounded-xl px-3 py-2.5 text-sm text-slate-700 transition-colors hover:bg-blue-50 hover:text-blue-600"
+                        className="flex items-center justify-between rounded-md px-3 py-2.5 text-sm text-zinc-300 transition-colors hover:bg-white/5 hover:text-white"
                       >
                         <span>{link.label}</span>
                         <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="opacity-50">
@@ -186,10 +187,10 @@ export function Header() {
                 </div>
               ))}
               <div className="border-b border-slate-100 py-3">
-                <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.12em] text-slate-400">Language</p>
+                <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-500">Language</p>
                 <LanguageSwitcher />
               </div>
-              <Link href="/contact" onClick={() => setMobileOpen(false)} className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-blue-600 px-5 py-3 text-sm text-white">
+              <Link href="/contact" onClick={() => setMobileOpen(false)} className="mt-3 inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-3 text-sm text-black">
                 Book a demo
               </Link>
             </div>

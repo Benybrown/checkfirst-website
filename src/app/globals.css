@@ -44,6 +44,8 @@
   --font-body:    "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-outfit:  "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-inter:   "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-synapse: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
 
   --radius-sm: 12px;
   --radius-md: 16px;
@@ -207,6 +209,10 @@
   .brand-gradient-bg {
     background: linear-gradient(135deg, #60A5FA 0%, #3B82F6 52%, #2563EB 100%);
   }
+
+  .font-synapse {
+    font-family: var(--font-synapse);
+  }
 }
 
 /* ─── Reduced Motion ─── */
@@ -259,6 +265,31 @@
     50% { transform: translate3d(-2rem, -3rem, 0) scale(1.05); }
   }
 
+  @keyframes synapseReveal {
+    from { opacity: 0; transform: translateY(110%); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes synapseFloat {
+    0%, 100% { transform: translate3d(0, 0, 0) rotateX(58deg) rotateZ(42deg) rotateY(0deg); }
+    50% { transform: translate3d(0, -18px, 0) rotateX(62deg) rotateZ(56deg) rotateY(24deg); }
+  }
+
+  @keyframes synapseGlowDrift {
+    0%, 100% { opacity: 0.56; }
+    50% { opacity: 0.74; }
+  }
+
+  @keyframes synapseOrbit {
+    from { transform: translate(-50%, -50%) rotateZ(0deg) rotateX(68deg); }
+    to { transform: translate(-50%, -50%) rotateZ(360deg) rotateX(68deg); }
+  }
+
+  @keyframes synapseNodePulse {
+    0%, 100% { opacity: 0.34; transform: scale(0.85); }
+    50% { opacity: 1; transform: scale(1.18); }
+  }
+
   .cf-blob-one {
     animation: cfBlobDriftOne 18s ease-in-out infinite;
   }
@@ -300,7 +331,84 @@
   .animate-delay-500 { animation-delay: 500ms; }
   .animate-delay-600 { animation-delay: 600ms; }
   .animate-delay-700 { animation-delay: 700ms; }
+
+  .synapse-reveal {
+    animation: synapseReveal 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+  }
+
+  .synapse-delay-1 { animation-delay: 120ms; }
+  .synapse-delay-2 { animation-delay: 240ms; }
+
+  .synapse-glow-one,
+  .synapse-glow-two {
+    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: synapseGlowDrift 5s ease-in-out infinite;
+  }
 }
+
+.synapse-polyhedron {
+  transform-style: preserve-3d;
+  animation: synapseFloat 5.2s ease-in-out infinite;
+}
+
+.synapse-facet {
+  position: absolute;
+  inset: 14%;
+  clip-path: polygon(50% 0, 95% 28%, 82% 84%, 50% 100%, 18% 84%, 5% 28%);
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  background:
+    linear-gradient(135deg, rgba(147, 197, 253, 0.92), rgba(59, 130, 246, 0.92) 48%, rgba(139, 92, 246, 0.88)),
+    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.72), transparent 38%);
+  box-shadow:
+    0 42px 90px -28px rgba(37, 99, 235, 0.82),
+    inset 0 1px 0 rgba(255, 255, 255, 0.62),
+    inset -20px -20px 40px rgba(30, 64, 175, 0.32);
+}
+
+.synapse-facet-a { transform: translateZ(66px) rotate(0deg); }
+.synapse-facet-b { transform: translateZ(24px) rotate(24deg) scale(0.86); opacity: 0.82; }
+.synapse-facet-c { transform: translateZ(-22px) rotate(-18deg) scale(0.72); opacity: 0.58; }
+.synapse-facet-d { transform: translate3d(-50px, 38px, 8px) rotate(44deg) scale(0.34); opacity: 0.78; }
+.synapse-facet-e { transform: translate3d(86px, -50px, 24px) rotate(-28deg) scale(0.26); opacity: 0.7; }
+
+.synapse-orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border: 1px solid rgba(59, 130, 246, 0.28);
+  border-radius: 9999px;
+  transform-style: preserve-3d;
+  transform-origin: center;
+}
+
+.synapse-orbit-a {
+  height: 78%;
+  width: 112%;
+  animation: synapseOrbit 9s linear infinite;
+}
+
+.synapse-orbit-b {
+  height: 55%;
+  width: 92%;
+  border-color: rgba(139, 92, 246, 0.24);
+  animation: synapseOrbit 12s linear reverse infinite;
+}
+
+.synapse-node {
+  position: absolute;
+  z-index: 2;
+  height: 10px;
+  width: 10px;
+  border-radius: 9999px;
+  background: #3b82f6;
+  box-shadow: 0 0 0 7px rgba(59, 130, 246, 0.12), 0 0 26px rgba(59, 130, 246, 0.62);
+  animation: synapseNodePulse 2.6s ease-in-out infinite;
+}
+
+.synapse-node-a { right: 14%; top: 24%; }
+.synapse-node-b { bottom: 18%; left: 20%; animation-delay: 650ms; }
+.synapse-node-c { right: 28%; bottom: 22%; animation-delay: 1200ms; }
 
 .cf-logo-power {
   position: relative;

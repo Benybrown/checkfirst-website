@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Script from "next/script";
-import { IBM_Plex_Sans, Newsreader, JetBrains_Mono } from "next/font/google";
+import { IBM_Plex_Sans, Inter, JetBrains_Mono, Newsreader, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import CookieBanner from "@/components/CookieBanner";
 import PostHogPageView from "@/components/PostHogPageView";
@@ -28,6 +28,20 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
   display: "swap",
   weight: ["400", "500"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+  weight: ["300", "400", "500"],
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-synapse",
+  display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -63,7 +77,7 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en" className={`${ibmPlexSans.variable} ${newsreader.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${ibmPlexSans.variable} ${newsreader.variable} ${jetbrainsMono.variable} ${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
         <script
           type="application/ld+json"

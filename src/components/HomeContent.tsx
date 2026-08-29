@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { type ReactNode } from "react";
+import { type ReactNode, useEffect } from "react";
 import { useLanguage } from "./LanguageProvider";
 import { translations, type Lang } from "@/lib/homepage-translations";
 import { Section } from "@/components/Section";
@@ -29,84 +29,141 @@ function Pill({ children }: { children: ReactNode }) {
   );
 }
 
-function FloatingIcon({ type }: { type: "radar" | "shield" | "chart" }) {
-  if (type === "shield") {
-    return (
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
-        <path d="M12 3l7 3v5c0 4.5-2.8 8.6-7 10-4.2-1.4-7-5.5-7-10V6l7-3Z" />
-        <path d="m9 12 2 2 4-5" />
-      </svg>
-    );
-  }
-  if (type === "chart") {
-    return (
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
-        <path d="M4 19V5" />
-        <path d="M4 19h16" />
-        <path d="M8 15v-4" />
-        <path d="M12 15V8" />
-        <path d="M16 15v-6" />
-      </svg>
-    );
-  }
+const heroMetrics = [
+  ["Vendor intake", "Triage"],
+  ["AI evidence review", "Assist"],
+  ["SOC 2 + ISO 27001", "Audit"],
+];
+
+function ArrowIcon() {
   return (
-    <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
-      <circle cx="12" cy="12" r="3" />
-      <path d="M4.9 4.9a10 10 0 0 0 0 14.2" />
-      <path d="M19.1 4.9a10 10 0 0 1 0 14.2" />
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M7 17 17 7M9 7h8v8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
 
-function HeroDashboard() {
-  const cards: [string, string, "radar" | "shield" | "chart"][] = [
-    ["Live assessment", "Public posture view", "radar"],
-    ["Security score", "Detailed report", "shield"],
-    ["Findings grouped", "74 items classified", "chart"],
-  ];
-
+function ShieldIcon() {
   return (
-    <div className="relative lg:pl-4">
-      <div className="absolute -inset-8 rounded-[3rem] bg-gradient-to-br from-blue-200/40 via-white/20 to-cyan-200/30 blur-3xl" />
-      <div className="relative rounded-[2rem] border border-white bg-[#f8fafc] p-3 shadow-[0_30px_80px_-35px_rgba(15,23,42,0.35),inset_0_2px_0_rgba(255,255,255,1)] sm:p-4">
-        <div className="pointer-events-none absolute inset-0 z-20 hidden md:block">
-          {cards.map(([title, subtitle, icon], index) => (
-            <div
-              key={title}
-              className={`absolute ${
-                index === 0
-                  ? "right-[-1.75rem] top-8"
-                  : index === 1
-                    ? "right-[-1.75rem] top-[42%]"
-                    : "left-8 bottom-[-1.25rem]"
-              } min-w-[12rem] rounded-2xl border border-white bg-white/90 px-4 py-3 shadow-[0_18px_38px_-20px_rgba(15,23,42,0.45),inset_0_1px_0_white] backdrop-blur`}
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-50 text-blue-500">
-                  <FloatingIcon type={icon} />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-900">{title}</p>
-                  <p className="text-xs font-light text-slate-400">{subtitle}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[inset_0_1px_0_white]">
-          <div className="relative aspect-[1.1/1] bg-slate-100 md:aspect-[1.16/1]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/checkfirst-hero-assessment.png"
-              alt="CheckFirst public posture assessment dashboard showing risk rating, security score, and grouped findings"
-              className="h-full w-full object-cover object-left-top"
-            />
-            <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/60" />
-          </div>
-        </div>
-      </div>
-    </div>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 3 19 6v5c0 4.5-2.8 8.6-7 10-4.2-1.4-7-5.5-7-10V6l7-3Z" stroke="currentColor" strokeWidth="1.7" />
+      <path d="m9 12 2 2 4-5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
   );
+}
+
+function SignalIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M4 19V5M4 19h16M8 15v-4M12 15V8M16 15V6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+function AetherCanvas() {
+  useEffect(() => {
+    const canvas = document.getElementById("aether-canvas") as HTMLCanvasElement | null;
+    const gl = canvas?.getContext("webgl");
+    if (!canvas || !gl) return;
+
+    const vertexSource = `
+      attribute vec4 aVertexPosition;
+      void main() {
+        gl_Position = aVertexPosition;
+      }
+    `;
+    const fragmentSource = `
+      precision highp float;
+      uniform vec2 u_resolution;
+      uniform float u_time;
+
+      void main() {
+        vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+        vec2 p = uv * 2.0 - 1.0;
+        p.x *= u_resolution.x / u_resolution.y;
+        p.y += 0.58;
+
+        float radius = 1.46 + sin(u_time * 0.35) * 0.04;
+        float thickness = 0.42;
+        float r = length(p);
+        float a = atan(p.y, p.x);
+        float dist = abs(r - radius);
+        float warp = sin(r * 4.0 - u_time * 0.65) * 0.34;
+        float lines = sin((a + warp) * 82.0 + u_time * 2.4);
+        lines = smoothstep(0.84, 1.0, lines);
+
+        float mask = smoothstep(thickness, 0.0, dist);
+        float coreGlow = 0.052 / (dist * dist + 0.045);
+        vec3 blue = vec3(0.14, 0.48, 1.0);
+        vec3 violet = vec3(0.55, 0.28, 1.0);
+        vec3 cyan = vec3(0.56, 0.76, 1.0);
+        vec3 baseColor = mix(blue, violet, sin(a * 2.0 + u_time * 0.55) * 0.5 + 0.5);
+        vec3 lineColor = mix(baseColor, cyan, 0.34);
+        vec3 finalColor = lineColor * lines * mask * 2.7 + baseColor * coreGlow * 1.45;
+        finalColor *= smoothstep(1.55, -0.55, p.y);
+        finalColor *= smoothstep(3.0, 1.0, r);
+
+        gl_FragColor = vec4(finalColor, 1.0);
+      }
+    `;
+
+    const loadShader = (type: number, source: string) => {
+      const shader = gl.createShader(type);
+      if (!shader) return null;
+      gl.shaderSource(shader, source);
+      gl.compileShader(shader);
+      if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+        gl.deleteShader(shader);
+        return null;
+      }
+      return shader;
+    };
+
+    const vertexShader = loadShader(gl.VERTEX_SHADER, vertexSource);
+    const fragmentShader = loadShader(gl.FRAGMENT_SHADER, fragmentSource);
+    const program = gl.createProgram();
+    if (!vertexShader || !fragmentShader || !program) return;
+    gl.attachShader(program, vertexShader);
+    gl.attachShader(program, fragmentShader);
+    gl.linkProgram(program);
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS)) return;
+
+    const positions = new Float32Array([-1, 1, 1, 1, -1, -1, 1, -1]);
+    const positionBuffer = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+    gl.bufferData(gl.ARRAY_BUFFER, positions, gl.STATIC_DRAW);
+
+    const vertexPosition = gl.getAttribLocation(program, "aVertexPosition");
+    const resolutionLocation = gl.getUniformLocation(program, "u_resolution");
+    const timeLocation = gl.getUniformLocation(program, "u_time");
+    let frame = 0;
+
+    const render = (time: number) => {
+      const width = canvas.clientWidth;
+      const height = canvas.clientHeight;
+      if (canvas.width !== width || canvas.height !== height) {
+        canvas.width = width;
+        canvas.height = height;
+        gl.viewport(0, 0, width, height);
+      }
+
+      gl.clearColor(0, 0, 0, 0);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.useProgram(program);
+      gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+      gl.vertexAttribPointer(vertexPosition, 2, gl.FLOAT, false, 0, 0);
+      gl.enableVertexAttribArray(vertexPosition);
+      gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
+      gl.uniform1f(timeLocation, time * 0.001);
+      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+      frame = requestAnimationFrame(render);
+    };
+
+    frame = requestAnimationFrame(render);
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
+  return <canvas id="aether-canvas" className="absolute inset-0 h-full w-full" aria-hidden="true" />;
 }
 
 export function HomeContent() {
@@ -253,49 +310,68 @@ export function HomeContent() {
 
   return (
     <>
-      {/* ─────────────────────── HERO ─────────────────────── */}
-      <section className="mx-auto max-w-7xl px-6 pb-14 pt-14 md:pb-20 md:pt-20 lg:pt-24">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16">
-          <div className="text-center lg:text-left">
-            <h1 className="mx-auto mt-8 max-w-5xl text-[2.35rem] font-light leading-[0.98] tracking-[-0.07em] text-slate-950 sm:text-[3.2rem] md:text-[3.85rem] lg:mx-0 lg:text-[4.35rem]">
-              <span className="block">AI-powered TPRM</span>
-              <span className="mt-4 block">for Audit-ready</span>
-              <span className="mx-auto mt-4 inline-flex whitespace-nowrap rounded-[1.35rem] border border-blue-700 bg-gradient-to-b from-blue-400 to-blue-600 px-4 pb-2.5 pt-1.5 text-[0.68em] font-normal text-white shadow-[0_18px_38px_-20px_rgba(59,130,246,0.55),inset_0_1px_0_rgba(255,255,255,0.38)] sm:text-[0.74em] md:text-[0.78em] lg:mx-0">
-                SOC 2 + ISO 27001{" "}
+      <section className="relative z-10 -mt-28 bg-gradient-to-b from-[#111111] to-black px-4 pb-8 pt-28 md:px-8 md:pb-12">
+        <div className="relative mx-auto flex min-h-[calc(100vh-7rem)] w-full max-w-[1400px] flex-col overflow-hidden rounded-[2rem] border border-[#333]/50 bg-gradient-to-b from-[#1e1e1e] to-[#0a0a0a] p-6 shadow-[0_30px_60px_-15px_rgba(0,0,0,1),inset_0_1px_2px_rgba(255,255,255,0.08),inset_0_-3px_12px_rgba(0,0,0,0.9)] md:p-12">
+          <div
+            className="pointer-events-none absolute inset-0 z-0 opacity-[0.05] mix-blend-overlay"
+            style={{
+              backgroundImage:
+                "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
+            }}
+          />
+          <AetherCanvas />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-1/2 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/70 to-transparent" />
+
+          <header className="relative z-10 flex justify-start">
+            <div className="flex items-center gap-2 rounded-full border border-black bg-gradient-to-b from-[#0f0f0f] to-[#1a1a1a] px-4 py-2 shadow-[inset_0_2px_6px_rgba(0,0,0,0.8),0_1px_1px_rgba(255,255,255,0.05)]">
+              <span className="flex h-4 w-4 items-center justify-center text-blue-400 drop-shadow-[0_1px_2px_rgba(0,0,0,1)]">
+              <ShieldIcon />
+            </span>
+              <span className="font-mono text-xs font-normal uppercase tracking-[0.18em] text-zinc-400 [text-shadow:0_1px_1px_rgba(0,0,0,1)]">
+                Initiate evidence flow
               </span>
-              <span className="mt-4 block">&amp; Vendor reviews</span>
-            </h1>
-            <p className="mx-auto mt-8 max-w-2xl text-base font-light leading-8 text-slate-600 md:text-lg lg:mx-0">
-              {lang === "en"
-                ? "Collect vendor evidence, assess supplier risk, and keep audit-ready records for third-party risk programs."
-                : t(tx.hero.description, lang)}
-            </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
-              <Button href="/contact" variant="primary" size="lg">
-                {t(tx.hero.ctaPrimary, lang)}
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                  <path d="M4.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-              </Button>
-              <Button href="/tprm-software" variant="secondary" size="lg">
-                Explore TPRM software
-              </Button>
             </div>
-            <div className="mt-9 flex flex-wrap justify-center gap-2 lg:justify-start">
-              {buyerPages.slice(0, 3).map((page) => (
-                <Link
-                  key={page.href}
-                  href={page.href}
-                  className="rounded-full border border-white bg-white/72 px-3 py-1.5 text-xs text-slate-600 shadow-[inset_0_1px_0_white] transition hover:text-blue-600"
-                >
-                  {page.title}
-                </Link>
+          </header>
+
+          <div className="relative z-10 mt-auto flex w-full flex-1 flex-col items-start justify-end pt-24">
+            <h1 className="mb-6 max-w-3xl text-[2.55rem] font-normal leading-tight tracking-normal text-zinc-100 [text-shadow:0_2px_4px_rgba(0,0,0,0.8),0_1px_1px_rgba(255,255,255,0.1)] sm:text-[3.6rem] lg:text-[4rem]">
+              Launch audit-ready vendor reviews now.
+            </h1>
+
+            <p className="mb-8 max-w-2xl text-base leading-relaxed text-zinc-400 [text-shadow:0_1px_1px_rgba(0,0,0,0.8)] md:text-lg">
+              Route supplier evidence, AI-assisted questionnaire review, and SOC 2 or ISO 27001 decisions through one controlled third-party risk workflow.
+            </p>
+
+            <div className="mb-12 flex w-full flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:items-center">
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center rounded-full border border-white/60 bg-gradient-to-b from-[#f0f0f0] to-[#c8c8c8] px-6 py-2.5 text-sm font-normal text-[#111111] shadow-[0_8px_16px_rgba(0,0,0,0.6),inset_0_2px_3px_rgba(255,255,255,1),inset_0_-2px_4px_rgba(0,0,0,0.3)] transition-all hover:from-white hover:to-[#e0e0e0] active:translate-y-px active:shadow-[inset_0_3px_6px_rgba(0,0,0,0.3),0_2px_4px_rgba(0,0,0,0.5)]"
+              >
+                Book a demo
+              </Link>
+              <Link
+                href="/tprm-software"
+                className="inline-flex items-center justify-center rounded-full border border-[#555]/30 bg-gradient-to-b from-[#3a3a3a] to-[#222] px-6 py-2.5 text-sm font-normal text-zinc-100 shadow-[0_8px_16px_rgba(0,0,0,0.8),inset_0_1px_2px_rgba(255,255,255,0.15),inset_0_-2px_5px_rgba(0,0,0,0.6)] transition-all hover:from-[#444] hover:to-[#2a2a2a] active:translate-y-px"
+              >
+                Explore TPRM software
+              </Link>
+            </div>
+
+            <div className="grid w-full grid-cols-1 gap-8 border-t border-black pt-8 shadow-[0_1px_0_rgba(255,255,255,0.05)] md:grid-cols-3 md:gap-12">
+              {heroMetrics.map(([title, subtitle], index) => (
+                <div key={title} className="flex flex-col gap-3">
+                  <div className="mb-1 flex h-10 w-10 items-center justify-center rounded-full border border-black bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] text-zinc-200 shadow-[inset_0_4px_8px_rgba(0,0,0,0.9),0_1px_1px_rgba(255,255,255,0.08)]">
+                    {index === 1 ? <SignalIcon /> : <ShieldIcon />}
+                  </div>
+                  <h3 className="text-base font-normal tracking-normal text-zinc-100 [text-shadow:0_1px_1px_rgba(0,0,0,0.8)]">{title}</h3>
+                  <p className="text-sm leading-relaxed text-zinc-500 [text-shadow:0_1px_1px_rgba(0,0,0,0.8)]">{subtitle}</p>
+              </div>
               ))}
             </div>
           </div>
-          <HeroDashboard />
         </div>
       </section>
+
 
       {/* ─────────────────────── METRICS BAR ─────────────────────── */}
       <section className="border-y border-ink-200 bg-canvas-raised px-6 py-10 lg:px-8 lg:py-14">
