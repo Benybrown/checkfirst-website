@@ -784,13 +784,13 @@ export const commercialPages: Record<string, CommercialPageContent> = {
   "/tprm-software": {
     path: "/tprm-software",
     eyebrow: "TPRM software",
-    title: "Third-party risk management software for vendor reviews, evidence, and audit readiness.",
+    title: "Third Party Risk Management Software for vendor assessments",
     lead:
       "CheckFirst helps teams build a repeatable TPRM program for vendor assessments, supplier due diligence, continuous monitoring, remediation, SOC 2 evidence, and ISO 27001 supplier controls.",
     cta: "Compare TPRM software",
-    metadataTitle: "TPRM Software | Third-Party Risk Management Software | CheckFirst",
+    metadataTitle: "Third Party Risk Management Software | CheckFirst",
     metadataDescription:
-      "Compare TPRM software for vendor assessments, supplier due diligence, continuous monitoring, AI-assisted review, remediation, and audit-ready evidence.",
+      "Compare CheckFirst for vendor assessments, supplier risk management in a documented third-party risk management saas workflow.",
     keywords: ["TPRM software", "third-party risk management software", "vendor risk management software", ...commonSocIsoKeywords],
     coverageTitle: "A complete TPRM workflow for vendor reviews and audit readiness",
     coverageText:
@@ -825,6 +825,18 @@ export const commercialPages: Record<string, CommercialPageContent> = {
         title: "AI with human approval",
         description:
           "AI helps analyze supplier context while final risk decisions remain human-owned, reviewable, and auditable.",
+      },
+      {
+        title: "Evaluate documented Third-party risk management SaaS capabilities",
+        description: "CheckFirst is described in the approved product profile as Third-party risk management SaaS. Its documented capabilities are vendor assessments, supplier risk management, evidence-backed assessment workflows, questionnaire review, document analysis. During evaluation, teams should map these capabilities to current vendor assessment stages, required evidence, review ownership, and approval checkpoints. This comparison stays focused on documented functionality and avoids unsupported performance or outcome claims.",
+      },
+      {
+        title: "Review regulatory requirements during selection",
+        description: "The approved context identifies DORA, NIS2, ISO 27001, SOC 2 Type II, CSA CAIQ as relevant to the buying process. Buyers should document which requirements apply to their organization and ask how evidence, questionnaires, documents, findings, and approvals are handled. This evaluation context does not claim certification or native framework support; it defines the questions the buying team should verify.",
+      },
+      {
+        title: "Align the evaluation with stakeholder responsibilities",
+        description: "The documented audience includes CISOs, compliance managers, risk officers, procurement leads. Each stakeholder should review the same workflow from a defined responsibility: security teams examine assessment evidence, compliance teams review applicable obligations, risk teams assess decision records, and procurement teams confirm process ownership. The final comparison should record accepted facts, open questions, and required follow-up.",
       },
     ],
     evidenceTitle: "Core components of a mature TPRM program",
