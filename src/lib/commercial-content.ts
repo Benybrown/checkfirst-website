@@ -931,9 +931,9 @@ export const commercialPages: Record<string, CommercialPageContent> = {
       "Need a Vanta alternative for vendor risk only? CheckFirst delivers SOC 2 and ISO 27001 vendor-risk evidence (questionnaires, scans, remediation, approval records) without a full GRC platform rollout — public pricing, multilingual, works beside broader stacks.",
     cta: "See vendor-risk workflow",
     // Phase1 2026-08-13 Vanta-alt CTR sprint #1 (branch only until website deploy OK)
-    metadataTitle: "Vanta Alternative for Vendor Risk | CheckFirst",
+    metadataTitle: "Vanta TPRM Alternative | Checkfirst",
     metadataDescription:
-      "Looking for a Vanta alternative focused on vendor risk? CheckFirst runs questionnaires, evidence, and SOC 2/ISO vendor proof — without a full compliance platform. Compare scope and book a demo.",
+      "Explore Checkfirst for vanta TPRM alternative, with a practical overview for teams comparing available options and deciding what fits their workflow.",
     keywords: ["Vanta vendor risk alternative", "Vanta alternative", ...commonSocIsoKeywords],
     proofMetrics: [
       { value: "CC9.2", label: "Vendor-risk evidence pack shape for SOC 2 conversations" },
