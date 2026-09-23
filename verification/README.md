@@ -31,3 +31,11 @@ A separate recovery folder contains the verified Git bundle, source archive, exa
 - Final contrast cleanup changes the cookie Accept button to the shared primary style and corrects four invalid decorative opacity utilities. Final release verification is recorded in the external release report.
 
 Final website release `a73a3082af1371d99f66a90c873f42ca94b8c373` is healthy. Repeated combined production verification passes 59/59. All three sitemap page inventories match the baseline; both legacy redirects pass in slash and non-slash forms.
+
+## Hero correction requested after initial release
+
+Release `377a1b4bd36ba8570f1574d7ae86fd700547d923` removes the homepage dashboard image and restores the exact original VoxAura fragment shader and 0.002 time multiplier using native WebGL. The original image asset remains available; only its homepage placement was removed. Native renderer avoids an external Three.js download. CSS fallback, reduced-motion preference, visibility and intersection controls remain.
+
+Build/TypeScript pass. Template shader equality verified directly. Local 22-route and final live 59-route preservation pass with `--hero-image-removed`, which allows only this named homepage image removal. Live 1280px desktop and 390px mobile show WebGL active, zero hero images, no overflow and no console errors/warnings. Distinct live frames visibly confirm flow. Local scroll-away/back and route-away/back confirm pause/resume and recreation. Reduced-motion branch was reviewed in code, not emulated in the browser.
+
+Local desktop visual inspection covered hero, metrics, evaluation paths, problem, capabilities, platform, workflow, testimonials, pricing, related workflow links, articles, FAQ, final CTA and footer. Live hero rechecked desktop/mobile.
