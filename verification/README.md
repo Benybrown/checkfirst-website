@@ -45,3 +45,11 @@ Local desktop visual inspection covered hero, metrics, evaluation paths, problem
 Release `373cc490eeb893fe98a706f1eb4e7f5ffaaf7ca4` applies six homepage-only colored bands: cyan metrics, indigo capabilities, blue workflow, indigo pricing, cyan resources and a blended final CTA. Intervening black sections retained. CSS module scopes all changes to HomeContent; shared Section and hero shader unchanged. Muted text is lighter within colored bands.
 
 Build/TypeScript and local 22-route preservation pass. Desktop visual inspection covered hero, metrics, evaluation links, problem, capabilities, platform, workflow, testimonials, pricing, workflow links, resources, FAQ, final CTA and footer. Mobile workflow at 390px readable without overflow. About page verified to contain no homepage color bands. Live deployment healthy; six bands confirmed, indigo section visually inspected, original WebGL hero active, no browser errors/warnings. Live main-site preservation report: home-colors-production.json.
+
+## Sitewide palette — completed 23 September 2026
+
+Website release `8ac3eed8c85663782d4450fc8558ecc26e8ee1b7` is healthy. Shared typed Section tones extend the approved homepage palette to all marketing routes, Arabic and consultant pages. Compact metrics and alternating legal reading blocks use the same palette. Homepage visual values and hero shader remain unchanged.
+
+Blog release https://41b5b5a6.checkfirst-blog-pages.pages.dev (run 35876833946) adds gradient archive/article headers and callouts, preserves dark reading surfaces, and hides redundant Astra branding above the preserved CheckFirst navigation. Stylesheet renamed to theme-sections-v2.css to avoid four-hour browser caching of the old file. Source PHP and styles saved in wordpress/.
+
+Build/TypeScript pass. Local 22-route and live 59-route preservation pass with the existing approved homepage image exception and four added blog navigation links. All 16 main routes have color coverage and no document overflow at mobile width. Representative product, contact, legal, consultant and Arabic layouts inspected; live About page through footer, contact section, and blog article/archive inspected. Final mobile blog verified at 390px: single navigation, visible gradients, no overflow. This follow-up did not repeat a complete scroll review of every page; content and route coverage are automated.

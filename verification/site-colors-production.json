@@ -1,0 +1,297 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/soc-2-vendor-risk",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/iso-27001-supplier-risk",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/vanta-vendor-risk-alternative",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/drata-vendor-risk-alternative",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/assessments",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/tprm-software",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/ai-engine",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/managed-tprm",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/pricing",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/about",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/contact",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/privacy",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/terms",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/vendor-security-assessment-guide-2026/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/tprm-agentic-ai-assessment/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/best-tprm-tool-2026/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/security-questionnaire-automation-ai-2026/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/best-ai-security-assessment-tools-2026/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/vendor-risk-assessment-questionnaire-template/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/streamline-security-why-you-need-security-questionnaire-automation/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/tprm-csa-ccm-framework/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/nis2-article-21-vendor-security-checklist/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/tprm-practical-guide-for-evaluating-and-automating-third-party-risk-management/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/third-party-risk-assessment-checklist/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/fourth-party-risk-management-guide/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/supply-chain-risk-management-tprm-2026/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/tprm-csa-explained-choosing-a-vendor-risk-assessment-platform-that-delivers-real-value/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/streamline-supplier-assessments-a-practical-guide-for-risk-and-compliance-teams/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/tprm-platforms-2026-choosing-the-right-solution-for-vendor-risk-management/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/checkfirst-the-tprm-platform-that-automates-vendor-risk-management/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/dora-ready-tprm-supplier-assessment/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/nis2-tprm-supplier-assessment/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/3rd-party-risk-management-maturity-framework/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/why-checkfirst-ai-tprm-platform/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/3rd-party-risk-management-program/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/open-source-tprm-tools-boosting-your-third-party-risk-management/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/navigating-the-labyrinth-how-cisos-can-deal-with-supplier-supply-chain-risks-in-2026/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/category/uncategorized/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/category/product/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/category/tprm/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/category/alternatives/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/ar",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/consultant",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/ar/about",
+    "status": 404,
+    "issues": {}
+  },
+  {
+    "path": "/ar/ai-engine",
+    "status": 404,
+    "issues": {}
+  },
+  {
+    "path": "/ar/assessments",
+    "status": 404,
+    "issues": {}
+  },
+  {
+    "path": "/ar/contact",
+    "status": 404,
+    "issues": {}
+  },
+  {
+    "path": "/ar/managed-tprm",
+    "status": 404,
+    "issues": {}
+  },
+  {
+    "path": "/ar/pricing",
+    "status": 404,
+    "issues": {}
+  },
+  {
+    "path": "/blog/author/",
+    "status": 404,
+    "issues": {}
+  },
+  {
+    "path": "/blog/author/admin/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/category/uncategorized/page/2/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/category/uncategorized/page/3/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/category/uncategorized/page/4/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/page/2/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/page/3/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/blog/page/4/",
+    "status": 200,
+    "issues": {}
+  }
+]

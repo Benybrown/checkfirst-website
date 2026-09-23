@@ -38,10 +38,11 @@ No real payment/test email sent; PageSpeed API quota prevented a measured score.
 - Deployed 373cc49; healthy container. Live six colored bands and unchanged active WebGL hero confirmed with no browser errors.
 - Desktop homepage inspected through footer; mobile workflow inspected at 390px with no overflow. About page has no homepage color classes.
 
-## Sitewide section colors — PARTIAL (23 September 2026)
+## Sitewide section colors — COMPLETED (23 September 2026)
 
 - Extended the approved homepage palette through typed shared Section tones, metric bands and legal reading sections.
 - Updated commercial template, Arabic, consultant, about, AI engine, contact, pricing, privacy and terms. Existing homepage palette and hero shader preserved.
 - Blog article/archive headers and callouts use the same colors; reading body stays black.
 - Build/TypeScript and local 22-route preservation pass; product, contact and legal layouts reviewed.
-- Pending: responsive review, publication and live verification.
+- Website release 8ac3eed healthy; blog final release 41b5b5a6 published successfully. All 16 main routes have palette coverage and pass mobile overflow checks.
+- Versioned the blog stylesheet to refresh browser caches; removed duplicate legacy mobile header. Live mobile blog gradients/header/overflow verified. Final 59-route content/SEO preservation passes.
