@@ -30,9 +30,10 @@ No real payment/test email sent; PageSpeed API quota prevented a measured score.
 - Deployed 377a1b4; production container healthy. Live desktop/mobile WebGL animation verified with visibly changing frames, zero hero images, no overflow and no browser errors.
 - Final 59-route live preservation check passes with the expressly authorized image-removal exception.
 
-## Homepage section color rhythm — PARTIAL (23 September 2026)
+## Homepage section color rhythm — COMPLETED (23 September 2026)
 
 - Replaced six near-black alternate homepage backgrounds with indigo/blue/cyan gradients drawn from the hero palette. Kept intervening black sections.
 - Scoped all new styles to HomeContent.module.css; other pages and the hero shader are unchanged. Raised muted-text brightness within colored sections.
 - Build/TypeScript and local 22-route content/SEO preservation pass. Desktop transitions reviewed.
-- Pending: finish visual verification and confirm live deployment.
+- Deployed 373cc49; healthy container. Live six colored bands and unchanged active WebGL hero confirmed with no browser errors.
+- Desktop homepage inspected through footer; mobile workflow inspected at 390px with no overflow. About page has no homepage color classes.

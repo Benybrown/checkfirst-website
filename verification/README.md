@@ -39,3 +39,9 @@ Release `377a1b4bd36ba8570f1574d7ae86fd700547d923` removes the homepage dashboar
 Build/TypeScript pass. Template shader equality verified directly. Local 22-route and final live 59-route preservation pass with `--hero-image-removed`, which allows only this named homepage image removal. Live 1280px desktop and 390px mobile show WebGL active, zero hero images, no overflow and no console errors/warnings. Distinct live frames visibly confirm flow. Local scroll-away/back and route-away/back confirm pause/resume and recreation. Reduced-motion branch was reviewed in code, not emulated in the browser.
 
 Local desktop visual inspection covered hero, metrics, evaluation paths, problem, capabilities, platform, workflow, testimonials, pricing, related workflow links, articles, FAQ, final CTA and footer. Live hero rechecked desktop/mobile.
+
+## Homepage section colors — 23 September 2026
+
+Release `373cc490eeb893fe98a706f1eb4e7f5ffaaf7ca4` applies six homepage-only colored bands: cyan metrics, indigo capabilities, blue workflow, indigo pricing, cyan resources and a blended final CTA. Intervening black sections retained. CSS module scopes all changes to HomeContent; shared Section and hero shader unchanged. Muted text is lighter within colored bands.
+
+Build/TypeScript and local 22-route preservation pass. Desktop visual inspection covered hero, metrics, evaluation links, problem, capabilities, platform, workflow, testimonials, pricing, workflow links, resources, FAQ, final CTA and footer. Mobile workflow at 390px readable without overflow. About page verified to contain no homepage color bands. Live deployment healthy; six bands confirmed, indigo section visually inspected, original WebGL hero active, no browser errors/warnings. Live main-site preservation report: home-colors-production.json.
