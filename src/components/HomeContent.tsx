@@ -58,7 +58,7 @@ function FloatingIcon({ type }: { type: "radar" | "shield" | "chart" }) {
   );
 }
 
-function HeroDashboard() {
+function HeroHighlights() {
   const cards: [string, string, "radar" | "shield" | "chart"][] = [
     ["Live assessment", "Public posture view", "radar"],
     ["Security score", "Detailed report", "shield"],
@@ -67,13 +67,6 @@ function HeroDashboard() {
 
   return (
     <div className="vox-proof">
-      <div className="vox-proof-frame">
-        {/* Preserve the real assessment image without cropping its evidence. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/checkfirst-hero-assessment.png"
-          alt="CheckFirst public posture assessment dashboard showing risk rating, security score, and grouped findings"
-          className="vox-proof-image" width={2046} height={1356} fetchPriority="high" />
-      </div>
       <div className="vox-proof-caption">
         {cards.map(([title, subtitle, icon]) => (
           <div key={title}>
@@ -268,7 +261,7 @@ export function HomeContent() {
               ))}
             </div>
           </div>
-          <HeroDashboard />
+          <HeroHighlights />
         </div>
       </section>
 

@@ -86,10 +86,8 @@
   .vox-hero-title span { display: block; }
   .vox-hero-title .vox-hero-highlight { background: linear-gradient(110deg,#a5b4fc 4%,#67e8f9 95%); background-clip: text; -webkit-background-clip: text; color: transparent; margin: .13em 0; white-space: nowrap; font-size: .82em; }
   .vox-hero-description { color: #b6b7c2; font-size: 17px; line-height: 1.75; max-width: 480px; margin-top: 28px; }
-  .vox-proof { position: relative; min-width: 0; padding-top: 20px; }
-  .vox-proof-frame { background: #0b1020d9; padding: 10px; border: 1px solid #ffffff20; border-radius: 10px; box-shadow: 0 36px 90px -28px #000a; }
-  .vox-proof-image { display: block; width: 100%; height: auto; border-radius: 5px; }
-  .vox-proof-caption { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; padding-top: 24px; }
+  .vox-proof { position: relative; min-width: 0; align-self: stretch; display: flex; align-items: flex-end; }
+  .vox-proof-caption { width: 100%; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 14px; padding-top: 24px; }
   .vox-proof-caption > div { border-top: 1px solid #ffffff20; padding-top: 14px; }
   .vox-proof-caption p { font-size: 11px; }
   .vox-proof-caption p + p { color: #a1a1aa; margin-top: 4px; }
@@ -109,6 +107,8 @@
 .vox-atmosphere { position: absolute; pointer-events: none; overflow: hidden; top: 0; right: 0; width: 70%; height: 950px; z-index: 0; mask-image: linear-gradient(to bottom,#000 70%,transparent); }
 .vox-plasma { position: absolute; inset: -12%; background: radial-gradient(ellipse at 75% 30%,#06b6d4c0,transparent 48%),radial-gradient(ellipse at 45% 65%,#4f46e5e6,transparent 62%),#100c32; animation: vox-flow 20s ease-in-out infinite alternate; animation-play-state: paused; }
 .vox-atmosphere[data-animate="true"] .vox-plasma { animation-play-state: running; }
+.vox-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.vox-atmosphere[data-renderer="webgl"] .vox-plasma { visibility: hidden; }
 .vox-atmosphere[data-home="false"] { height: 650px; opacity: .32; }
 .vox-slices { position: absolute; inset: 0; display: flex; }
 .vox-slices > div { flex: 1; border-inline-start: 1px solid #ffffff10; background: linear-gradient(90deg,#0307129e,#03071226); box-shadow: -16px 0 32px -12px #0006; }

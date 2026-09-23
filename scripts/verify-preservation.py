@@ -63,12 +63,15 @@ def verify(row):
     missing={decode_cloudflare_link(a) for a in row['anchors']}-{decode_cloudflare_link(a) for a in p.anchors}
     if missing: issues['missing_links']=sorted(missing)
     missing_images={(x.get('src'),x.get('alt','')) for x in row['images']}-{(x.get('src'),x.get('alt','')) for x in p.images}
+    # Explicit user request on 23 September: expose the template animation.
+    if args.hero_image_removed and path=='/':
+        missing_images.discard(('/checkfirst-hero-assessment.png','CheckFirst public posture assessment dashboard showing risk rating, security score, and grouped findings'))
     if missing_images: issues['missing_images']=sorted(missing_images)
     if row.get('x_robots_tag')!=robots: issues['robots_header']=[row.get('x_robots_tag'),robots]
     return {'path':path,'status':status,'issues':issues}
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--baseline',required=True);parser.add_argument('--origin',required=True);parser.add_argument('--output',required=True);parser.add_argument('--user-agent');parser.add_argument('--include-blog',action='store_true');parser.add_argument('--voxaura-blog-navigation',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--baseline',required=True);parser.add_argument('--origin',required=True);parser.add_argument('--output',required=True);parser.add_argument('--user-agent');parser.add_argument('--include-blog',action='store_true');parser.add_argument('--voxaura-blog-navigation',action='store_true');parser.add_argument('--hero-image-removed',action='store_true');args=parser.parse_args()
     d=json.loads(Path(args.baseline).read_text()); rows=d['pages']+d.get('additional_linked_pages',[])
     rows=[r for r in rows if args.include_blog or '/blog' not in r['url']]
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool: report=list(pool.map(verify,rows))

@@ -19,3 +19,12 @@ Apply the approved VoxAura theme while preserving the entire CheckFirst website 
 
 ### Limits
 No real payment/test email sent; PageSpeed API quota prevented a measured score. Existing translations, seven original 404s and dependency advisories retained. No implementation work remains pending.
+
+## Hero animation correction — PARTIAL (23 September 2026)
+
+- User requested removal of the dashboard image to expose the VoxAura animation.
+- Found the previous redesign used a CSS approximation. Restored the original template fragment shader and exact 0.002 time multiplier using native WebGL without an external runtime.
+- Removed the dashboard image/frame; preserved hero text, links and highlight captions.
+- Preserved offscreen/hidden-page pause, reduced-motion handling and CSS fallback.
+- Production build and TypeScript pass. Local 22-route preservation passes with one explicit hero-image exception. Desktop and mobile rendering verified; distinct animation frames observed.
+- Pending: production deployment and live animation verification.
