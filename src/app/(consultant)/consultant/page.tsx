@@ -196,7 +196,7 @@ export default function ConsultantPage() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="eyebrow eyebrow-dark mb-6 justify-center">
               <span className="relative flex h-2 w-2 items-center justify-center">
-                <span className="absolute inset-0 rounded-full bg-accent/100/35 animate-signal" />
+                <span className="absolute inset-0 rounded-full bg-accent/35 animate-signal" />
                 <span className="relative h-1.5 w-1.5 rounded-full bg-brand-400" />
               </span>
               <span>For Security Consultants</span>

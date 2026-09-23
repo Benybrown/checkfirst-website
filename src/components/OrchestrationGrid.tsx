@@ -42,10 +42,10 @@ export function OrchestrationGrid({ variant = "light", className = "" }: Props) 
           : "bg-ink-900/[0.04] border border-ink-900/10";
         const activeBg = isDark
           ? "bg-brand-400/70 border border-brand-300/50"
-          : "bg-accent/100/80 border border-brand-400/50";
+          : "bg-accent/80 border border-brand-400/50";
         const pulseBg = isDark
-          ? "bg-accent/100/40 border border-brand-400/30 animate-signal"
-          : "bg-accent/100/35 border border-brand-500/30 animate-signal";
+          ? "bg-accent/40 border border-brand-400/30 animate-signal"
+          : "bg-accent/35 border border-brand-500/30 animate-signal";
         const signalBg = isDark
           ? "bg-signal/70 border border-signal/40 animate-signal"
           : "bg-signal/70 border border-signal/30 animate-signal";

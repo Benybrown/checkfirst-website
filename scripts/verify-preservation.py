@@ -43,7 +43,7 @@ def verify(row):
     path=row['url'].removeprefix('https://checkfirst.io') or '/'
     url=args.origin.rstrip('/')+path
     try:
-        with urllib.request.urlopen(url,timeout=40) as r: status=r.status; raw=r.read().decode(); robots=r.headers.get('X-Robots-Tag')
+        with urllib.request.urlopen(urllib.request.Request(url,headers={"User-Agent":args.user_agent}) if args.user_agent else url,timeout=40) as r: status=r.status; raw=r.read().decode(); robots=r.headers.get('X-Robots-Tag')
     except urllib.error.HTTPError as e: status=e.code; raw=e.read().decode(); robots=e.headers.get('X-Robots-Tag')
     p=Page(); p.feed(raw); issues={}
     if status!=row['status']: issues['status']=[row['status'],status]
@@ -68,10 +68,10 @@ def verify(row):
     return {'path':path,'status':status,'issues':issues}
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--baseline',required=True);parser.add_argument('--origin',required=True);parser.add_argument('--output',required=True);parser.add_argument('--include-blog',action='store_true');parser.add_argument('--voxaura-blog-navigation',action='store_true');args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--baseline',required=True);parser.add_argument('--origin',required=True);parser.add_argument('--output',required=True);parser.add_argument('--user-agent');parser.add_argument('--include-blog',action='store_true');parser.add_argument('--voxaura-blog-navigation',action='store_true');args=parser.parse_args()
     d=json.loads(Path(args.baseline).read_text()); rows=d['pages']+d.get('additional_linked_pages',[])
     rows=[r for r in rows if args.include_blog or '/blog' not in r['url']]
     with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool: report=list(pool.map(verify,rows))
     Path(args.output).write_text(json.dumps(report,ensure_ascii=False,indent=2))
-    print(json.dumps({'checked':len(report),'passed':sum(not r['issues'] for r in report),'differences':[r for r in report if r['issues']]},ensure_ascii=False,indent=2))
+    print(json.dumps({'checked':len(report),'passed':sum(not r['issues'] for r in report),'differences':[{'path':r['path'],'status':r['status'],'checks':list(r['issues'])} for r in report if r['issues']]},ensure_ascii=False,indent=2))
     raise SystemExit(1 if any(r['issues'] for r in report) else 0)

@@ -234,7 +234,7 @@ export default function ArabicHomePage() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="eyebrow mb-6 justify-center">
               <span className="relative flex h-2 w-2 items-center justify-center">
-                <span className="absolute inset-0 rounded-full bg-accent/100/35 animate-signal" />
+                <span className="absolute inset-0 rounded-full bg-accent/35 animate-signal" />
                 <span className="relative h-1.5 w-1.5 rounded-full bg-brand-600" />
               </span>
               <span>منصة إدارة مخاطر الأطراف الثالثة بالذكاء الاصطناعي</span>

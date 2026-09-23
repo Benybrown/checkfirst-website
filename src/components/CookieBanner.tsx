@@ -67,7 +67,7 @@ export default function CookieBanner() {
           </button>
           <button
             onClick={accept}
-            className="px-5 py-2 text-sm font-medium text-white bg-accent/100 hover:bg-brand-600 rounded-lg shadow-button transition-colors cursor-pointer"
+            className="vox-button vox-button-primary px-5 py-2 text-sm cursor-pointer"
           >
             Accept
           </button>

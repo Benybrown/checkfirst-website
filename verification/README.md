@@ -12,7 +12,7 @@ The original website source commit is 6264699c66943e07cc4c5dd534bc228bb7509bda. 
 - Browser inspection: homepage hero through metrics, capabilities, workflow, testimonials, pricing, related links, FAQ, final CTA and footer; commercial template through all sections and footer; contact form; pricing and checkout modal; Arabic RTL and consultant mobile heroes; blog archive, pagination, article callout, complete long article through related reading, adjacent articles and footer. Article mobile reading width checked.
 - Interaction checks: main mobile menu opens/closes with Escape; checkout focus starts on Close, Escape dismisses and returns focus; dialog renders above sticky navigation and fits mobile; existing French language selection updates translated content.
 - Built CSS is static-first with reduced-motion support. Homepage atmosphere pauses when offscreen, hidden, or reduced-motion is requested. Interior atmosphere is static.
-- PHP syntax check passes for the WordPress MU plugin. Static export reports zero SEO validation errors. Version-query CSS/JS paths are normalized because the existing exporter otherwise emits mismatched filenames. Existing shared light-theme overrides and inline article callout colors are superseded in scoped theme CSS.
+- PHP syntax check passes for the WordPress MU plugin. Static export reports zero SEO validation errors. Version-query CSS/JS paths are normalized in the plugin. The current publisher retains its existing asset-path normalization. Existing shared light-theme overrides and inline article callout colors are superseded in scoped theme CSS.
 
 ## Limits and existing issues
 
@@ -21,3 +21,11 @@ No real payment was made and no unsolicited test email was sent. Checkout, email
 ## Recovery
 
 A separate recovery folder contains the verified Git bundle, source archive, exact production Docker image, public blog copy, WordPress-source static export, checksums and rollback guide. No production database or existing WordPress theme files were modified. Original dirty local repositories were left untouched.
+
+## Production verification
+
+- Main release 98aedb7: 22/22 preservation checks pass. Combined public site after blog publication: 59/59 pass, including seven original 404s.
+- Blog publication: https://8b14b692.checkfirst-blog-pages.pages.dev (GitHub run 35864573651). Scoped FlowSEO exporter correction d4c6b43483b86d00d46957eb4112907a0d6dede8 preserves redirects, normalizes source-host schema URLs, and fetches canonical trailing-slash source pages. Other publishing targets are unchanged.
+- Public responsive checks: six representative route families at 360, 768, 1024 and 1440px, all 24 without document overflow. Public homepage console has no errors. Desktop menu Escape behavior and required contact form validation pass.
+- Google PageSpeed API returned HTTP 429 quota exceeded; no performance score is claimed.
+- Final contrast cleanup changes the cookie Accept button to the shared primary style and corrects four invalid decorative opacity utilities. Final release verification is recorded in the external release report.

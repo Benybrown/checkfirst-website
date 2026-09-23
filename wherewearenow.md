@@ -9,8 +9,12 @@
 - Added versioned WordPress presentation plugin and reproducible preservation checker.
 
 ### Pending
-- Publish main website (production build passed).
-- Verify the live website and blog deployment, then record release identifiers.
+- Final cookie contrast/decorative-opacity cleanup deployment and final report.
+
+### Production progress
+- Main redesign release 98aedb7 is live and healthy.
+- Blog release 8b14b692 is live; scoped FlowSEO exporter fix d4c6b434 preserves complete content, schema URLs and configured redirects.
+- Combined production preservation: 59/59 URL checks pass.
 
 ### Files modified
 - src/app/globals.css, src/app/layout.tsx, presentation pages and shared components.

@@ -240,7 +240,7 @@ export default function AIEnginePage() {
             <div>
               <div className="eyebrow mb-6">
                 <span className="relative flex h-2 w-2 items-center justify-center">
-                  <span className="absolute inset-0 rounded-full bg-accent/100/35 animate-signal" />
+                  <span className="absolute inset-0 rounded-full bg-accent/35 animate-signal" />
                   <span className="relative h-1.5 w-1.5 rounded-full bg-brand-600" />
                 </span>
                 <span>AI vendor risk assessment engine</span>
@@ -290,7 +290,7 @@ export default function AIEnginePage() {
                 <div className="mb-4 flex items-center justify-between border-b border-line pb-3">
                   <div className="flex items-center gap-2">
                     <span className="relative flex h-2 w-2 items-center justify-center">
-                      <span className="absolute inset-0 rounded-full bg-accent/100/35 animate-signal" />
+                      <span className="absolute inset-0 rounded-full bg-accent/35 animate-signal" />
                       <span className="relative h-1 w-1 rounded-full bg-brand-600" />
                     </span>
                     <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
