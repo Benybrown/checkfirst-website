@@ -379,7 +379,7 @@ export default function AIEnginePage() {
       </Section>
 
       {/* ── USE CASES ── */}
-      <Section className="bg-canvas-raised">
+      <Section tone="indigo">
         <SectionHeader
           tag="Commercial use cases"
           title="Where the AI engine creates immediate buyer value"
@@ -407,7 +407,7 @@ export default function AIEnginePage() {
       </Section>
 
       {/* ── REVIEW PRINCIPLES (DARK) ── */}
-      <Section dark>
+      <Section dark tone="indigo">
         <SectionHeader
           tag="Review model"
           title="What stays human in the loop"
@@ -468,7 +468,7 @@ export default function AIEnginePage() {
       </Section>
 
       {/* ── SUPPORT RESOURCES ── */}
-      <Section className="bg-canvas-raised">
+      <Section tone="blue">
         <SectionHeader
           tag="Support resources"
           title="Internal links for deeper AI evaluation"
@@ -503,7 +503,7 @@ export default function AIEnginePage() {
       </Section>
 
       {/* ── CTA ── */}
-      <Section dark>
+      <Section dark tone="finale">
         <div className="mx-auto max-w-3xl text-center">
           <span className="eyebrow eyebrow-dark mb-6 justify-center">See it live</span>
           <h2 className="font-display text-[34px] leading-[1.08] tracking-[-0.028em] text-white sm:text-[44px] lg:text-[52px]">

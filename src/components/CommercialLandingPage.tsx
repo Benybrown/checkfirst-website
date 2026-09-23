@@ -262,7 +262,7 @@ export function CommercialLandingPage({ page }: { page: CommercialPageContent })
       </section>
 
       {page.proofMetrics && page.proofMetrics.length > 0 ? (
-        <section className="border-y border-line bg-surface">
+        <section className="vox-color-metrics">
           <div className="mx-auto grid max-w-7xl gap-6 px-6 py-10 sm:grid-cols-3">
             {page.proofMetrics.map((metric) => (
               <div
@@ -327,7 +327,7 @@ export function CommercialLandingPage({ page }: { page: CommercialPageContent })
       ) : null}
 
       {page.differentiation ? (
-        <Section className="bg-canvas-raised">
+        <Section tone="indigo">
           <SectionHeader
             tag="DIFFERENTIATION"
             title={page.differentiation.title}
@@ -343,7 +343,7 @@ export function CommercialLandingPage({ page }: { page: CommercialPageContent })
         <InfoGrid items={page.sections} />
       </Section>
 
-      <Section className="bg-canvas-raised">
+      <Section tone="blue">
         <SectionHeader tag="AUDIT EVIDENCE" title={page.evidenceTitle} description={page.evidenceText} align="left" />
         <InfoGrid items={page.evidence} />
       </Section>
@@ -365,7 +365,7 @@ export function CommercialLandingPage({ page }: { page: CommercialPageContent })
         </div>
       </Section>
 
-      <Section className="bg-canvas-raised">
+      <Section tone="cyan">
         <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[0.86fr_1.14fr]">
           <SectionHeader tag="BEST FIT" title={page.buyerTitle} description={page.buyerText} align="left" />
           <div className="rounded-lg border border-line bg-surface p-6 shadow-card backdrop-blur">
@@ -400,7 +400,7 @@ export function CommercialLandingPage({ page }: { page: CommercialPageContent })
         <LinkGrid items={buyerPages} />
       </Section>
 
-      <Section className="bg-canvas-raised">
+      <Section tone="indigo">
         <SectionHeader
           tag="GUIDES"
           title="Keep building your vendor-risk evidence plan"
@@ -415,7 +415,7 @@ export function CommercialLandingPage({ page }: { page: CommercialPageContent })
         <FAQ items={page.faqs} />
       </Section>
 
-      <Section dark>
+      <Section dark tone="finale">
         <div className="mx-auto max-w-3xl text-center">
           <span className="eyebrow eyebrow-dark mb-6 justify-center">GET STARTED</span>
           <h2 className="font-display text-[34px] leading-[1.08] tracking-[-0.028em] text-white sm:text-[44px] lg:text-[56px]">

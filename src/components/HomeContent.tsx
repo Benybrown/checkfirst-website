@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import styles from "./HomeContent.module.css";
+import styles from "./SectionColors.module.css";
 import { type ReactNode } from "react";
 import { useLanguage } from "./LanguageProvider";
 import { translations, type Lang } from "@/lib/homepage-translations";

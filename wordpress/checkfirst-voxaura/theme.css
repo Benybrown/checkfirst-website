@@ -72,3 +72,28 @@ body #page > #masthead{order:0}body #page > .cf-blog-navigation{order:1;width:10
 .entry-content .siamone-money-cta a strong{color:#a5b4fc}
 
 .entry-content tr[style*="background-color"]{background:#181e30!important}
+
+/* Approved sitewide section rhythm: color around clear reading landmarks. */
+body #page > h1.page-title,
+body.archive .ast-archive-description {
+  background:linear-gradient(120deg,#17183e,#24215b 55%,#123749)!important;
+  border-block:1px solid #a5b4fc30;
+  padding:40px 32px!important;
+  border-radius:8px;
+}
+.single .entry-header {
+  background:linear-gradient(120deg,#17183e,#24215b 55%,#123749);
+  border:1px solid #a5b4fc30;
+  padding:32px;
+  border-radius:8px;
+}
+.single .entry-header .entry-meta,.single .entry-header .entry-meta * {color:#c4cce0!important}
+.entry-content .siamone-money-cta,
+.entry-content blockquote {
+  background:linear-gradient(120deg,#15213f,#123b4b 55%,#17364b)!important;
+  color:#dce2ef;
+  border-color:#a5b4fc40!important;
+}
+.entry-content th {background:#24215b;color:#fff}
+.ast-separate-container .ast-article-single {background:#030712}
+@media(max-width:544px){.single .entry-header{padding:24px 18px}body.archive .ast-archive-description{padding:28px 20px!important}}

@@ -88,7 +88,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats — editorial strip with hairlines */}
-      <section className="border-y border-line bg-canvas-raised px-6 py-10 lg:px-8 lg:py-14">
+      <section className="vox-color-metrics px-6 py-10 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-[1200px] divide-ink-200 gap-0 sm:grid-cols-2 sm:divide-x lg:grid-cols-4">
           {stats.map((stat, idx) => (
             <div
@@ -144,7 +144,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Values */}
-      <Section className="bg-canvas-raised">
+      <Section tone="indigo">
         <SectionHeader
           tag="What we believe"
           title="Our values"
@@ -165,7 +165,7 @@ export default function AboutPage() {
       </Section>
 
       {/* CTA */}
-      <Section dark>
+      <Section dark tone="finale">
         <div className="mx-auto max-w-3xl text-center">
           <span className="eyebrow eyebrow-dark mb-6 justify-center">Get started</span>
           <h2 className="font-display text-[34px] leading-[1.08] tracking-[-0.028em] text-white sm:text-[44px] lg:text-[52px]">

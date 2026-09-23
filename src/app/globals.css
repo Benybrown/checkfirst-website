@@ -174,3 +174,17 @@
   -webkit-background-clip: text;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5), 0 8px 18px rgba(37, 99, 235, 0.14);
 }
+
+/* Compact metric bands and readable legal sections share the approved palette. */
+.vox-color-metrics {
+  --color-muted: #c4cce0;
+  border-block: 1px solid #a5b4fc30;
+  background: radial-gradient(ellipse at 85% 20%,#06b6d42e,transparent 65%),linear-gradient(120deg,#15213f,#123b4b 55%,#17364b);
+}
+.vox-legal-sections > div { padding: 24px; border-radius: 8px; }
+.vox-legal-sections > div:nth-child(even) {
+  color: #c4cce0;
+  border: 1px solid #a5b4fc30;
+  background: linear-gradient(120deg,#17183e,#24215b 55%,#123749);
+}
+.vox-legal-sections > div:nth-child(4n) { background: linear-gradient(120deg,#15213f,#123b4b 55%,#17364b); }

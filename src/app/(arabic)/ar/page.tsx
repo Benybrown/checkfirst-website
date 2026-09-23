@@ -261,7 +261,7 @@ export default function ArabicHomePage() {
       </section>
 
       {/* ── Metrics Bar ── */}
-      <section className="border-y border-line bg-canvas-raised px-6 py-10 lg:px-8 lg:py-14">
+      <section className="vox-color-metrics px-6 py-10 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-[1200px] divide-ink-200 gap-0 sm:grid-cols-2 sm:divide-x lg:grid-cols-4">
           {metrics.map((m, idx) => (
             <div
@@ -310,7 +310,7 @@ export default function ArabicHomePage() {
       </Section>
 
       {/* ── Core Capabilities — DARK brand moment ── */}
-      <Section dark>
+      <Section dark tone="indigo">
         <div className="mb-14 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end">
           <div>
             <span className="eyebrow eyebrow-dark mb-6">ما تحصل عليه</span>
@@ -368,7 +368,7 @@ export default function ArabicHomePage() {
       </Section>
 
       {/* ── How It Works ── */}
-      <Section id="how-it-works" className="bg-canvas-raised">
+      <Section id="how-it-works" tone="indigo">
         <SectionHeader
           tag="كيف يعمل"
           title="من استقبال المورد إلى المراقبة المستمرة"
@@ -407,7 +407,7 @@ export default function ArabicHomePage() {
       </Section>
 
       {/* ── Pricing Teaser ── */}
-      <Section className="bg-canvas-raised">
+      <Section tone="blue">
         <SectionHeader
           tag="الأسعار"
           title="أسعار بسيطة وشفافة"
@@ -463,7 +463,7 @@ export default function ArabicHomePage() {
       </Section>
 
       {/* ── Final CTA ── */}
-      <Section dark>
+      <Section dark tone="finale">
         <div className="mx-auto max-w-3xl text-center">
           <span className="eyebrow eyebrow-dark mb-6 justify-center">ابدأ الآن</span>
           <h2 className="font-display text-[34px] leading-[1.14] tracking-[-0.02em] text-white sm:text-[44px] lg:text-[52px]">

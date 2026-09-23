@@ -1,10 +1,12 @@
 import { type ReactNode } from "react";
+import colors from "./SectionColors.module.css";
 
 interface SectionProps {
   children: ReactNode;
   className?: string;
   id?: string;
   dark?: boolean;
+  tone?: "indigo" | "blue" | "cyan" | "finale";
   bleed?: boolean; // remove max-width container (for hero-type content)
 }
 
@@ -17,6 +19,7 @@ export function Section({
   className = "",
   id,
   dark,
+  tone,
   bleed = false,
 }: SectionProps) {
   return (
@@ -26,7 +29,7 @@ export function Section({
         dark
           ? "vox-section-dark overflow-hidden text-white"
           : ""
-      } ${className}`}
+      } ${tone ? `${colors.band} ${colors[tone]}` : ""} ${className}`}
     >
       {dark && (
         <>

@@ -223,7 +223,7 @@ export default function PricingPage() {
       </Section>
 
       {/* FAQ */}
-      <Section className="bg-canvas-raised">
+      <Section tone="indigo">
         <div className="mx-auto mb-14 max-w-2xl text-center sm:mb-16">
           <span className="eyebrow mb-6 justify-center">FAQ</span>
           <h2 className="font-display text-[32px] leading-[1.08] tracking-[-0.028em] text-foreground sm:text-[40px] lg:text-[52px]">
@@ -234,7 +234,7 @@ export default function PricingPage() {
       </Section>
 
       {/* CTA */}
-      <Section dark>
+      <Section dark tone="finale">
         <div className="mx-auto max-w-3xl text-center">
           <span className="eyebrow eyebrow-dark mb-6 justify-center">
             Get started

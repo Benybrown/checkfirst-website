@@ -38,7 +38,7 @@ export default function TermsPage() {
           Last updated: February 23, 2026
         </p>
 
-        <div className="mt-12 space-y-10 font-body text-base leading-relaxed text-muted">
+        <div className="vox-legal-sections mt-12 space-y-10 font-body text-base leading-relaxed text-muted">
           <div>
             <h2 className="font-display text-xl font-bold text-foreground">
               1. Acceptance of Terms

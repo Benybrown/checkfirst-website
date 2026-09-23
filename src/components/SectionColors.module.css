@@ -1,4 +1,4 @@
-/* Homepage-only color rhythm, drawn from the VoxAura hero palette.
+/* Shared section color rhythm, drawn from the VoxAura hero palette.
    Static backgrounds keep the live animation exclusive to the hero. */
 .band {
   --color-muted: #c4cce0;
