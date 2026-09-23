@@ -1,0 +1,46 @@
+{
+  "https://checkfirst.io/blog/the-ultimate-tprm-tools-list-enhancing-your-third-party-risk-management": {
+    "status": 301,
+    "location": "/blog/best-tprm-tool-2026/"
+  },
+  "https://checkfirst.io/blog/the-ultimate-tprm-tools-list-enhancing-your-third-party-risk-management/": {
+    "status": 301,
+    "location": "/blog/best-tprm-tool-2026/"
+  },
+  "https://checkfirst.io/blog/navigating-the-complexity-choosing-the-right-tprm-tools-for-your-organization": {
+    "status": 301,
+    "location": "/blog/best-tprm-tool-2026/"
+  },
+  "https://checkfirst.io/blog/navigating-the-complexity-choosing-the-right-tprm-tools-for-your-organization/": {
+    "status": 301,
+    "location": "/blog/best-tprm-tool-2026/"
+  },
+  "/sitemap.xml": {
+    "status": 200,
+    "type": "application/xml",
+    "urls": [
+      "https://checkfirst.io",
+      "https://checkfirst.io/soc-2-vendor-risk",
+      "https://checkfirst.io/iso-27001-supplier-risk",
+      "https://checkfirst.io/vanta-vendor-risk-alternative",
+      "https://checkfirst.io/drata-vendor-risk-alternative",
+      "https://checkfirst.io/assessments",
+      "https://checkfirst.io/tprm-software",
+      "https://checkfirst.io/ai-engine",
+      "https://checkfirst.io/managed-tprm",
+      "https://checkfirst.io/pricing",
+      "https://checkfirst.io/about",
+      "https://checkfirst.io/contact",
+      "https://checkfirst.io/privacy",
+      "https://checkfirst.io/terms"
+    ]
+  },
+  "/robots.txt": {
+    "status": 200,
+    "type": "text/plain"
+  },
+  "/opengraph-image": {
+    "status": 200,
+    "type": "image/png"
+  }
+}

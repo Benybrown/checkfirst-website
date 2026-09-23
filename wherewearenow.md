@@ -1,22 +1,21 @@
+## VoxAura website redesign — COMPLETED (23 September 2026)
 
+### Problem
+Apply the approved VoxAura theme while preserving the entire CheckFirst website and SEO, with a recoverable original copy.
 
-## VoxAura website redesign — PARTIAL (2026-09-23)
-
-### Completed
-- Applied approved VoxAura styling across existing main website routes and WordPress blog source, preserving content, logo assets and SEO.
-- Secured original Git history/source, production image and public/source blog exports with checksums and rollback instructions.
-- Verified main route preservation, mobile overflow, representative complete page templates and checkout keyboard behavior.
-- Added versioned WordPress presentation plugin and reproducible preservation checker.
-
-### Pending
-- Final cookie contrast/decorative-opacity cleanup deployment and final report.
-
-### Production progress
-- Main redesign release 98aedb7 is live and healthy.
-- Blog release 8b14b692 is live; scoped FlowSEO exporter fix d4c6b434 preserves complete content, schema URLs and configured redirects.
-- Combined production preservation: 59/59 URL checks pass.
+### Solution
+- Redesigned all existing main website page families and blog presentation.
+- Preserved original logo, copy, URLs and SEO; 59/59 final live preservation checks pass.
+- Preserved all three sitemap inventories and legacy article redirects.
+- Verified responsive layouts, representative complete templates, keyboard menus, checkout dialog and contact validation.
+- Deployed website a73a308 and blog 8b14b692; production container healthy.
+- Applied scoped FlowSEO publisher correction d4c6b434 to preserve blog exports and redirects.
+- Saved original source/history, exact Docker image, static blog copies, checksums, rollback guide and final release report outside the repository.
 
 ### Files modified
-- src/app/globals.css, src/app/layout.tsx, presentation pages and shared components.
-- wordpress/, scripts/, verification/, package manifest and lockfile.
-- No API, content-data, sitemap, robots, schema or database changes.
+- Presentation pages/components, global styles and layout; development React DOM types.
+- wordpress/, scripts/, verification/ and this completion record.
+- No API, database schema, content-data, sitemap, robots or metadata declaration changes.
+
+### Limits
+No real payment/test email sent; PageSpeed API quota prevented a measured score. Existing translations, seven original 404s and dependency advisories retained. No implementation work remains pending.

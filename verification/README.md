@@ -29,3 +29,5 @@ A separate recovery folder contains the verified Git bundle, source archive, exa
 - Public responsive checks: six representative route families at 360, 768, 1024 and 1440px, all 24 without document overflow. Public homepage console has no errors. Desktop menu Escape behavior and required contact form validation pass.
 - Google PageSpeed API returned HTTP 429 quota exceeded; no performance score is claimed.
 - Final contrast cleanup changes the cookie Accept button to the shared primary style and corrects four invalid decorative opacity utilities. Final release verification is recorded in the external release report.
+
+Final website release `a73a3082af1371d99f66a90c873f42ca94b8c373` is healthy. Repeated combined production verification passes 59/59. All three sitemap page inventories match the baseline; both legacy redirects pass in slash and non-slash forms.

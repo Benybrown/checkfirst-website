@@ -1,0 +1,20 @@
+{
+  "/sitemap.xml": {
+    "passed": true,
+    "count": 14,
+    "added": [],
+    "removed": []
+  },
+  "/blog/post-sitemap.xml": {
+    "passed": true,
+    "count": 25,
+    "added": [],
+    "removed": []
+  },
+  "/blog/category-sitemap.xml": {
+    "passed": true,
+    "count": 4,
+    "added": [],
+    "removed": []
+  }
+}
