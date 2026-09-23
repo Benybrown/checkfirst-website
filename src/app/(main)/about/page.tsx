@@ -74,11 +74,11 @@ export default function AboutPage() {
         <div className="relative mx-auto max-w-[1200px]">
           <div className="max-w-3xl">
             <span className="eyebrow mb-6">About CheckFirst</span>
-            <h1 className="font-display text-[30px] leading-[1.08] tracking-[-0.025em] text-ink-900 [text-wrap:balance] sm:text-[40px] md:text-[46px] lg:text-[52px] xl:text-[58px]">
+            <h1 className="font-display text-[30px] leading-[1.08] tracking-[-0.025em] text-foreground [text-wrap:balance] sm:text-[40px] md:text-[46px] lg:text-[52px] xl:text-[58px]">
               Security trust shouldn&apos;t{" "}
-              <span className="italic text-ink-500">be this hard</span>
+              <span className="italic text-muted">be this hard</span>
             </h1>
-            <p className="mt-7 max-w-[60ch] font-body text-[17px] leading-[1.65] text-ink-500 sm:text-[18px]">
+            <p className="mt-7 max-w-[60ch] font-body text-[17px] leading-[1.65] text-muted sm:text-[18px]">
               We&apos;ve been on both sides of the security assessment table — as
               vendors drowning in questionnaires and as buyers waiting weeks for
               answers. We built CheckFirst because there had to be a better way.
@@ -88,7 +88,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats — editorial strip with hairlines */}
-      <section className="border-y border-ink-200 bg-canvas-raised px-6 py-10 lg:px-8 lg:py-14">
+      <section className="border-y border-line bg-canvas-raised px-6 py-10 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-[1200px] divide-ink-200 gap-0 sm:grid-cols-2 sm:divide-x lg:grid-cols-4">
           {stats.map((stat, idx) => (
             <div
@@ -97,10 +97,10 @@ export default function AboutPage() {
                 idx === 0 ? "sm:pl-0" : ""
               } ${idx === stats.length - 1 ? "sm:pr-0" : ""}`}
             >
-              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
                 {stat.label}
               </span>
-              <span className="font-display text-[40px] tabular-nums leading-none tracking-[-0.03em] text-ink-900 sm:text-[44px]">
+              <span className="font-display text-[40px] tabular-nums leading-none tracking-[-0.03em] text-foreground sm:text-[44px]">
                 {stat.value}
               </span>
             </div>
@@ -116,7 +116,7 @@ export default function AboutPage() {
             title="Make security trust instant, transparent, and accessible"
             align="left"
           />
-          <div className="space-y-5 font-body text-base leading-relaxed text-ink-500">
+          <div className="space-y-5 font-body text-base leading-relaxed text-muted">
             <p>
               The average enterprise works with hundreds of vendors, each one a
               potential entry point for security breaches, compliance failures,
@@ -153,10 +153,10 @@ export default function AboutPage() {
         <div className="grid gap-8 sm:grid-cols-2">
           {values.map((value) => (
             <Card key={value.title}>
-              <h3 className="font-display text-lg font-bold text-ink-900">
+              <h3 className="font-display text-lg font-bold text-foreground">
                 {value.title}
               </h3>
-              <p className="mt-2 font-body text-sm leading-relaxed text-ink-500">
+              <p className="mt-2 font-body text-sm leading-relaxed text-muted">
                 {value.description}
               </p>
             </Card>
@@ -176,7 +176,7 @@ export default function AboutPage() {
             vendor list.
           </p>
           <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-            <Button href="/contact" variant="primary" size="lg" className="!bg-white !text-ink-950 !ring-white hover:!bg-ink-100">
+            <Button href="/contact" variant="primary" size="lg" >
               Book a demo
             </Button>
             <Button href="/pricing" variant="ghost-dark" size="lg">

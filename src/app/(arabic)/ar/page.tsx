@@ -234,16 +234,16 @@ export default function ArabicHomePage() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="eyebrow mb-6 justify-center">
               <span className="relative flex h-2 w-2 items-center justify-center">
-                <span className="absolute inset-0 rounded-full bg-brand-500/35 animate-signal" />
+                <span className="absolute inset-0 rounded-full bg-accent/100/35 animate-signal" />
                 <span className="relative h-1.5 w-1.5 rounded-full bg-brand-600" />
               </span>
               <span>منصة إدارة مخاطر الأطراف الثالثة بالذكاء الاصطناعي</span>
             </div>
-            <h1 className="font-display text-[30px] leading-[1.14] tracking-[-0.02em] text-ink-900 [text-wrap:balance] sm:text-[40px] md:text-[46px] lg:text-[52px] xl:text-[58px]">
+            <h1 className="font-display text-[30px] leading-[1.14] tracking-[-0.02em] text-foreground [text-wrap:balance] sm:text-[40px] md:text-[46px] lg:text-[52px] xl:text-[58px]">
               توقف عن ملاحقة جداول البيانات.{" "}
-              <span className="italic text-ink-500">قيّم الموردين في دقائق.</span>
+              <span className="italic text-muted">قيّم الموردين في دقائق.</span>
             </h1>
-            <p className="mx-auto mt-7 max-w-[60ch] font-body text-[17px] leading-[1.75] text-ink-500 sm:text-[18px]">
+            <p className="mx-auto mt-7 max-w-[60ch] font-body text-[17px] leading-[1.75] text-muted sm:text-[18px]">
               CheckFirst يستبدل تقييمات أمان الموردين اليدوية والبطيئة بتحليل فوري
               بالذكاء الاصطناعي. قيّم الموردين، وافحص البنية التحتية، وأدِر المخاطر
               من البداية إلى النهاية.
@@ -261,7 +261,7 @@ export default function ArabicHomePage() {
       </section>
 
       {/* ── Metrics Bar ── */}
-      <section className="border-y border-ink-200 bg-canvas-raised px-6 py-10 lg:px-8 lg:py-14">
+      <section className="border-y border-line bg-canvas-raised px-6 py-10 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-[1200px] divide-ink-200 gap-0 sm:grid-cols-2 sm:divide-x lg:grid-cols-4">
           {metrics.map((m, idx) => (
             <div
@@ -270,10 +270,10 @@ export default function ArabicHomePage() {
                 idx === 0 ? "sm:pl-0" : ""
               } ${idx === metrics.length - 1 ? "sm:pr-0" : ""}`}
             >
-              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
                 {m.label}
               </span>
-              <span className="font-display text-[40px] tabular-nums leading-none tracking-[-0.03em] text-ink-900 sm:text-[44px]">
+              <span className="font-display text-[40px] tabular-nums leading-none tracking-[-0.03em] text-foreground sm:text-[44px]">
                 {m.value}
               </span>
             </div>
@@ -291,8 +291,8 @@ export default function ArabicHomePage() {
         <div className="grid gap-6 sm:grid-cols-2">
           {problemPoints.map((p) => (
             <Card key={p.who}>
-              <p className="font-body text-base leading-relaxed text-ink-700">
-                <span className="font-display font-bold text-ink-900">
+              <p className="font-body text-base leading-relaxed text-foreground">
+                <span className="font-display font-bold text-foreground">
                   {p.who}
                 </span>{" "}
                 {p.pain}.
@@ -300,8 +300,8 @@ export default function ArabicHomePage() {
             </Card>
           ))}
         </div>
-        <p className="mx-auto mt-12 max-w-2xl text-center font-body text-base leading-relaxed text-ink-500">
-          <strong className="font-display text-ink-900">
+        <p className="mx-auto mt-12 max-w-2xl text-center font-body text-base leading-relaxed text-muted">
+          <strong className="font-display text-foreground">
             CheckFirst يتبع نهجاً مختلفاً.
           </strong>{" "}
           منصة موحدة تخدم كلاً من المشترين الذين يقيّمون الموردين والموردين الذين
@@ -318,7 +318,7 @@ export default function ArabicHomePage() {
               خمسة محركات. منصة واحدة. تغطية شاملة.
             </h2>
           </div>
-          <p className="max-w-md font-body text-[17px] leading-[1.75] text-white/65">
+          <p className="max-w-md font-body text-[17px] leading-[1.75] text-muted">
             أدوات محددة تقوم بأشياء محددة — وليست وعوداً غامضة حول الذكاء الاصطناعي.
           </p>
         </div>
@@ -327,7 +327,7 @@ export default function ArabicHomePage() {
           {capabilities.map((c, idx) => (
             <Card key={c.name} variant="data" className="flex h-full flex-col">
               <div className="mb-6 flex items-center justify-between">
-                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/45">
+                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
                   {String(idx + 1).padStart(2, "0")} · {c.tag}
                 </span>
                 <span className="h-px w-6 bg-brand-400/60" />
@@ -335,7 +335,7 @@ export default function ArabicHomePage() {
               <h3 className="font-display text-[22px] leading-[1.2] tracking-[-0.02em] text-white">
                 {c.name}
               </h3>
-              <p className="mt-3 font-body text-[14.5px] leading-[1.75] text-white/65">
+              <p className="mt-3 font-body text-[14.5px] leading-[1.75] text-muted">
                 {c.description}
               </p>
             </Card>
@@ -350,16 +350,16 @@ export default function ArabicHomePage() {
           title="كل شيء متصل"
           align="left"
         />
-        <div className="grid gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-px overflow-hidden rounded-[14px] border border-line bg-ink-200 sm:grid-cols-2 lg:grid-cols-3">
           {platformModules.map((m, idx) => (
             <div key={m.title} className="group relative bg-canvas-raised p-7 transition-colors hover:bg-canvas">
-              <span className="mb-5 flex h-8 w-8 items-center justify-center rounded-[8px] border border-ink-200 bg-canvas font-mono text-[11px] text-ink-500 transition-colors group-hover:border-ink-900 group-hover:text-ink-900">
+              <span className="mb-5 flex h-8 w-8 items-center justify-center rounded-[8px] border border-line bg-canvas font-mono text-[11px] text-muted transition-colors group-hover:border-ink-900 group-hover:text-foreground">
                 {String(idx + 1).padStart(2, "0")}
               </span>
-              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-ink-900">
+              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-foreground">
                 {m.title}
               </h3>
-              <p className="mt-3 font-body text-[14.5px] leading-[1.75] text-ink-500">
+              <p className="mt-3 font-body text-[14.5px] leading-[1.75] text-muted">
                 {m.description}
               </p>
             </div>
@@ -378,14 +378,14 @@ export default function ArabicHomePage() {
           {howItWorks.map((item, idx) => (
             <div key={item.step}>
               <div className="mb-5">
-                <span className="relative flex h-[52px] w-[52px] items-center justify-center rounded-full border border-ink-200 bg-canvas font-mono text-[13px] text-ink-700">
+                <span className="relative flex h-[52px] w-[52px] items-center justify-center rounded-full border border-line bg-canvas font-mono text-[13px] text-foreground">
                   {String(idx + 1).padStart(2, "0")}
                 </span>
               </div>
-              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-ink-900">
+              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-foreground">
                 {item.title}
               </h3>
-              <p className="mt-3 max-w-xs font-body text-[14.5px] leading-[1.75] text-ink-500">
+              <p className="mt-3 max-w-xs font-body text-[14.5px] leading-[1.75] text-muted">
                 {item.description}
               </p>
             </div>
@@ -420,7 +420,7 @@ export default function ArabicHomePage() {
               className={`relative flex flex-col rounded-[14px] border p-7 transition-all duration-200 ${
                 plan.highlight
                   ? "border-ink-900 bg-ink-950 text-white"
-                  : "border-ink-200 bg-canvas-raised hover:border-ink-900"
+                  : "border-line bg-canvas-raised hover:border-ink-900"
               }`}
             >
               {plan.highlight && (
@@ -429,13 +429,13 @@ export default function ArabicHomePage() {
                   الأكثر شعبية
                 </span>
               )}
-              <h3 className={`font-mono text-[11px] uppercase tracking-[0.14em] ${plan.highlight ? "text-white/60" : "text-ink-400"}`}>
+              <h3 className={`font-mono text-[11px] uppercase tracking-[0.14em] ${plan.highlight ? "text-muted" : "text-muted"}`}>
                 {plan.name}
               </h3>
-              <p className={`mt-4 font-display text-[40px] tabular-nums leading-none tracking-[-0.03em] ${plan.highlight ? "text-white" : "text-ink-900"}`}>
+              <p className={`mt-4 font-display text-[40px] tabular-nums leading-none tracking-[-0.03em] ${plan.highlight ? "text-white" : "text-foreground"}`}>
                 {plan.price}
               </p>
-              <p className={`mt-2 font-body text-[13.5px] ${plan.highlight ? "text-white/60" : "text-ink-500"}`}>
+              <p className={`mt-2 font-body text-[13.5px] ${plan.highlight ? "text-muted" : "text-muted"}`}>
                 {plan.note}
               </p>
               <div className="mt-7">
@@ -474,7 +474,7 @@ export default function ArabicHomePage() {
             والتخمين بمنصة واحدة مدعومة بالذكاء الاصطناعي.
           </p>
           <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-            <Button href="/ar/contact" variant="primary" size="lg" className="!bg-white !text-ink-950 !ring-white hover:!bg-ink-100">
+            <Button href="/ar/contact" variant="primary" size="lg" >
               احجز عرضاً تجريبياً
             </Button>
             <Button href="/ar/pricing" variant="ghost-dark" size="lg">

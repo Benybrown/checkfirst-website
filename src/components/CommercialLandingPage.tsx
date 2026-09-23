@@ -16,14 +16,14 @@ import {
 
 function Pill({ children }: { children: string }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-white bg-white/75 px-3.5 py-2 shadow-[0_6px_18px_-12px_rgba(15,23,42,0.3),inset_0_1px_0_white]">
-      <span className="flex h-7 w-7 items-center justify-center rounded-full border border-blue-100 bg-gradient-to-b from-blue-50 to-white text-blue-500 shadow-[inset_0_1px_0_white]">
+    <div className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-2 shadow-card">
+      <span className="flex h-7 w-7 items-center justify-center rounded-full border border-accent/25 bg-gradient-to-b from-blue-50 to-surface text-accent shadow-card">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
           <path d="M12 3l7 3v5c0 4.5-2.8 8.6-7 10-4.2-1.4-7-5.5-7-10V6l7-3Z" />
           <path d="m9 12 2 2 4-5" />
         </svg>
       </span>
-      <span className="font-mono text-xs font-medium tracking-[-0.04em] text-slate-500">{children}</span>
+      <span className="font-mono text-xs font-medium tracking-[-0.04em] text-muted">{children}</span>
     </div>
   );
 }
@@ -56,28 +56,28 @@ function RouteVisual({ label }: { label: string }) {
   const rows = ["Intake", "Evidence", "Scan", "Review", "Decision"];
 
   return (
-    <div className="rounded-[2.25rem] border border-white bg-white/72 p-5 shadow-[0_30px_80px_-45px_rgba(15,23,42,0.45),inset_0_1px_0_white]">
-      <div className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-gradient-to-b from-white to-slate-50">
-        <div className="flex items-center justify-between border-b border-slate-200/80 px-5 py-4">
+    <div className="rounded-lg border border-line bg-surface p-5 shadow-card">
+      <div className="overflow-hidden rounded-lg border border-line bg-gradient-to-b from-surface to-surface-high">
+        <div className="flex items-center justify-between border-b border-line px-5 py-4">
           <div className="flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-red-300" />
             <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
           </div>
-          <p className="font-mono text-xs uppercase tracking-[-0.04em] text-slate-400">{label}</p>
+          <p className="font-mono text-xs uppercase tracking-[-0.04em] text-muted">{label}</p>
         </div>
         <div className="grid gap-4 p-6">
           {rows.map((item, i) => (
             <div
               key={item}
-              className="grid grid-cols-[3rem_1fr_auto] items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4 shadow-[inset_0_1px_0_white]"
+              className="grid grid-cols-[2rem_minmax(0,1fr)_2rem] sm:grid-cols-[3rem_minmax(0,1fr)_auto] items-center gap-2 sm:gap-4 rounded-lg border border-line bg-surface p-4 shadow-card"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-sm text-blue-600">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-sm text-accent">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="text-sm text-slate-700">{item}</span>
-              <span className="h-2 w-24 overflow-hidden rounded-full bg-slate-100">
-                <span className="block h-full rounded-full bg-blue-500" style={{ width: `${45 + i * 11}%` }} />
+              <span className="text-sm text-foreground">{item}</span>
+              <span className="h-2 w-8 sm:w-24 overflow-hidden rounded-full bg-surface-high">
+                <span className="block h-full rounded-full bg-accent/100" style={{ width: `${45 + i * 11}%` }} />
               </span>
             </div>
           ))}
@@ -97,17 +97,17 @@ function HeroProductVisual({
   label: string;
 }) {
   return (
-    <div className="rounded-[2.25rem] border border-white bg-white/72 p-3 shadow-[0_30px_80px_-45px_rgba(15,23,42,0.45),inset_0_1px_0_white] sm:p-5">
-      <div className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-gradient-to-b from-white to-slate-50">
-        <div className="flex items-center justify-between border-b border-slate-200/80 px-5 py-4">
+    <div className="rounded-lg border border-line bg-surface p-3 shadow-card sm:p-5">
+      <div className="overflow-hidden rounded-lg border border-line bg-gradient-to-b from-surface to-surface-high">
+        <div className="flex items-center justify-between border-b border-line px-5 py-4">
           <div className="flex items-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-red-300" />
             <span className="h-2.5 w-2.5 rounded-full bg-amber-300" />
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-300" />
           </div>
-          <p className="font-mono text-xs uppercase tracking-[-0.04em] text-slate-400">{label}</p>
+          <p className="font-mono text-xs uppercase tracking-[-0.04em] text-muted">{label}</p>
         </div>
-        <div className="relative aspect-[16/11] bg-slate-100">
+        <div className="relative aspect-[16/11] bg-surface-high">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={src} alt={alt} className="h-full w-full object-cover object-left-top" />
           <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/60" />
@@ -122,16 +122,16 @@ function InfoGrid({ items }: { items: TextPair[] }) {
     <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
       {items.map((item) => (
         <Card key={item.title}>
-          <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-100 bg-blue-50 text-blue-500 shadow-[inset_0_1px_0_white]">
+          <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-lg border border-accent/25 bg-accent/10 text-accent shadow-card">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
               <path d="M12 3l7 3v5c0 4.5-2.8 8.6-7 10-4.2-1.4-7-5.5-7-10V6l7-3Z" />
               <path d="m9 12 2 2 4-5" />
             </svg>
           </div>
-          <h3 className="font-display text-[22px] leading-[1.15] tracking-[-0.02em] text-ink-900">
+          <h3 className="font-display text-[22px] leading-[1.15] tracking-[-0.02em] text-foreground">
             {item.title}
           </h3>
-          <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-ink-500">{item.description}</p>
+          <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-muted">{item.description}</p>
         </Card>
       ))}
     </div>
@@ -145,11 +145,11 @@ function LinkGrid({ items }: { items: LinkCard[] }) {
         <SmartLink
           key={item.href}
           href={item.href}
-          className="group rounded-[2rem] border border-white bg-white/72 p-6 shadow-card backdrop-blur transition-all hover:-translate-y-1 hover:bg-white/90"
+          className="group rounded-lg border border-line bg-surface p-6 shadow-card backdrop-blur transition-all hover:-translate-y-1 hover:bg-surface"
         >
-          <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-ink-900">{item.title}</h3>
-          <p className="mt-3 font-body text-[14px] leading-[1.6] text-ink-500">{item.description}</p>
-          <span className="mt-5 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-blue-600">
+          <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-foreground">{item.title}</h3>
+          <p className="mt-3 font-body text-[14px] leading-[1.6] text-muted">{item.description}</p>
+          <span className="mt-5 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
             Visit page
             <svg width="10" height="10" viewBox="0 0 12 12" fill="none" className="transition-transform group-hover:translate-x-0.5">
               <path d="M4.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -163,8 +163,8 @@ function LinkGrid({ items }: { items: LinkCard[] }) {
 
 function CheckRow({ children }: { children: string }) {
   return (
-    <div className="flex items-start gap-3 font-body text-[14.5px] leading-7 text-slate-700">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="mt-1 shrink-0 text-blue-500">
+    <div className="flex items-start gap-3 font-body text-[14.5px] leading-7 text-foreground">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="mt-1 shrink-0 text-accent">
         <path d="M20 6 9 17l-5-5" />
       </svg>
       <span>{children}</span>
@@ -226,13 +226,13 @@ export function CommercialLandingPage({ page }: { page: CommercialPageContent })
       />
 
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-8">
-        <div className="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[0.95fr_1.05fr]">
           <div>
             <Pill>{page.eyebrow.toUpperCase()}</Pill>
-            <h1 className="mt-8 font-display text-[40px] leading-[1.04] tracking-[-0.04em] text-ink-900 md:text-[56px]">
+            <h1 className="mt-8 font-display text-[40px] leading-[1.04] tracking-[-0.04em] text-foreground md:text-[56px]">
               {page.title}
             </h1>
-            <p className="mt-6 max-w-2xl font-body text-[17px] leading-[1.7] text-ink-500 md:text-[18px]">
+            <p className="mt-6 max-w-2xl font-body text-[17px] leading-[1.7] text-muted md:text-[18px]">
               {page.lead}
             </p>
             {page.heroBullets && page.heroBullets.length > 0 ? (
@@ -262,17 +262,17 @@ export function CommercialLandingPage({ page }: { page: CommercialPageContent })
       </section>
 
       {page.proofMetrics && page.proofMetrics.length > 0 ? (
-        <section className="border-y border-slate-200/80 bg-white/50">
+        <section className="border-y border-line bg-surface">
           <div className="mx-auto grid max-w-7xl gap-6 px-6 py-10 sm:grid-cols-3">
             {page.proofMetrics.map((metric) => (
               <div
                 key={metric.label}
-                className="rounded-[1.75rem] border border-white bg-white/80 px-6 py-5 shadow-card backdrop-blur"
+                className="rounded-lg border border-line bg-surface px-6 py-5 shadow-card backdrop-blur"
               >
-                <p className="font-display text-[34px] leading-none tracking-[-0.04em] text-ink-900">
+                <p className="font-display text-[34px] leading-none tracking-[-0.04em] text-foreground">
                   {metric.value}
                 </p>
-                <p className="mt-3 font-body text-[14px] leading-[1.5] text-ink-500">{metric.label}</p>
+                <p className="mt-3 font-body text-[14px] leading-[1.5] text-muted">{metric.label}</p>
               </div>
             ))}
           </div>
@@ -288,8 +288,8 @@ export function CommercialLandingPage({ page }: { page: CommercialPageContent })
             align="left"
           />
           {page.definition.comparison && page.definition.comparison.length > 0 ? (
-            <div className="overflow-hidden rounded-[2rem] border border-white bg-white/76 shadow-card backdrop-blur">
-              <div className="hidden grid-cols-[0.9fr_1.2fr_1.2fr] gap-4 border-b border-slate-200/80 bg-slate-50/80 px-6 py-4 font-mono text-[11px] uppercase tracking-[0.12em] text-slate-500 md:grid">
+            <div className="overflow-hidden rounded-lg border border-line bg-surface shadow-card backdrop-blur">
+              <div className="hidden grid-cols-[0.9fr_1.2fr_1.2fr] gap-4 border-b border-line bg-surface-high px-6 py-4 font-mono text-[11px] uppercase tracking-[0.12em] text-muted md:grid">
                 <span>Aspect</span>
                 <span>Manual</span>
                 <span>Automated</span>
@@ -300,18 +300,18 @@ export function CommercialLandingPage({ page }: { page: CommercialPageContent })
                     key={row.aspect}
                     className="grid gap-3 px-6 py-5 md:grid-cols-[0.9fr_1.2fr_1.2fr] md:items-start md:gap-4"
                   >
-                    <p className="font-display text-[17px] tracking-[-0.02em] text-ink-900">{row.aspect}</p>
+                    <p className="font-display text-[17px] tracking-[-0.02em] text-foreground">{row.aspect}</p>
                     <div>
-                      <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.12em] text-slate-400 md:hidden">
+                      <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted md:hidden">
                         Manual
                       </p>
-                      <p className="font-body text-[14.5px] leading-[1.6] text-ink-500">{row.manual}</p>
+                      <p className="font-body text-[14.5px] leading-[1.6] text-muted">{row.manual}</p>
                     </div>
                     <div>
-                      <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.12em] text-slate-400 md:hidden">
+                      <p className="mb-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted md:hidden">
                         Automated
                       </p>
-                      <p className="font-body text-[14.5px] leading-[1.6] text-ink-700">{row.automated}</p>
+                      <p className="font-body text-[14.5px] leading-[1.6] text-foreground">{row.automated}</p>
                     </div>
                   </div>
                 ))}
@@ -353,22 +353,22 @@ export function CommercialLandingPage({ page }: { page: CommercialPageContent })
         <div className="relative grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {page.workflow.map((item) => (
             <Card key={`${item.step}-${item.title}`}>
-              <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-100 bg-blue-50 font-mono text-sm text-blue-600">
+              <span className="flex h-12 w-12 items-center justify-center rounded-lg border border-accent/25 bg-accent/10 font-mono text-sm text-accent">
                 {item.step}
               </span>
-              <h3 className="mt-5 font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-ink-900">
+              <h3 className="mt-5 font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-foreground">
                 {item.title}
               </h3>
-              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-ink-500">{item.description}</p>
+              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-muted">{item.description}</p>
             </Card>
           ))}
         </div>
       </Section>
 
       <Section className="bg-canvas-raised">
-        <div className="grid items-start gap-10 lg:grid-cols-[0.86fr_1.14fr]">
+        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[0.86fr_1.14fr]">
           <SectionHeader tag="BEST FIT" title={page.buyerTitle} description={page.buyerText} align="left" />
-          <div className="rounded-[2rem] border border-white bg-white/76 p-6 shadow-card backdrop-blur">
+          <div className="rounded-lg border border-line bg-surface p-6 shadow-card backdrop-blur">
             <div className="grid gap-4">
               {page.buyerPoints.map((item) => (
                 <CheckRow key={item}>{item}</CheckRow>
@@ -425,7 +425,7 @@ export function CommercialLandingPage({ page }: { page: CommercialPageContent })
             Build a clean evidence trail for SOC 2, ISO 27001, and broader third-party risk decisions without rebuilding every review in spreadsheets.
           </p>
           <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-            <Button href="/contact" variant="primary" size="lg" className="!bg-white !text-ink-950 hover:!bg-ink-100">
+            <Button href="/contact" variant="primary" size="lg" className="">
               Book a demo
             </Button>
             <Button href="/pricing" variant="ghost-dark" size="lg">

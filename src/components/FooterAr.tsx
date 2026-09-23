@@ -75,7 +75,7 @@ export function FooterAr() {
                 <span className="italic">First</span>
               </span>
             </Link>
-            <p className="mt-5 max-w-xs font-body text-[15px] leading-[1.65] text-white/60">
+            <p className="mt-5 max-w-xs font-body text-[15px] leading-[1.65] text-muted">
               إدارة مخاطر الأطراف الثالثة بالذكاء الاصطناعي.
             </p>
             <div className="mt-8 flex items-center gap-2">
@@ -86,7 +86,7 @@ export function FooterAr() {
                 <span className="absolute inset-0 rounded-full bg-signal/30 animate-signal" />
                 <span className="relative h-1.5 w-1.5 rounded-full bg-signal" />
               </span>
-              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-white/50">
+              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
                 Enterprise TPRM · Operational
               </span>
             </div>
@@ -101,7 +101,7 @@ export function FooterAr() {
                     <li key={link.label}>
                       <SmartLink
                         href={link.href}
-                        className="font-body text-[14px] text-white/65 transition-colors duration-200 hover:text-white"
+                        className="font-body text-[14px] text-muted transition-colors duration-200 hover:text-white"
                       >
                         {link.label}
                       </SmartLink>
@@ -114,19 +114,19 @@ export function FooterAr() {
         </div>
 
         <div className="mt-20 flex flex-col items-start justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
-          <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-white/40">
+          <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-muted">
             &copy; {new Date().getFullYear()} CheckFirst · جميع الحقوق محفوظة
           </p>
           <div className="flex flex-wrap gap-6">
             <Link
               href="/privacy"
-              className="font-body text-[13px] text-white/55 transition-colors hover:text-white"
+              className="font-body text-[13px] text-muted transition-colors hover:text-white"
             >
               سياسة الخصوصية
             </Link>
             <Link
               href="/terms"
-              className="font-body text-[13px] text-white/55 transition-colors hover:text-white"
+              className="font-body text-[13px] text-muted transition-colors hover:text-white"
             >
               شروط الخدمة
             </Link>

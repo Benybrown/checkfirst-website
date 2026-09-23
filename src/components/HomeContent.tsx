@@ -17,14 +17,14 @@ function t(obj: Record<Lang, string>, lang: Lang) {
 
 function Pill({ children }: { children: ReactNode }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-white bg-white/75 px-3.5 py-2 shadow-[0_6px_18px_-12px_rgba(15,23,42,0.3),inset_0_1px_0_white]">
-      <span className="flex h-7 w-7 items-center justify-center rounded-full border border-blue-100 bg-gradient-to-b from-blue-50 to-white text-blue-500 shadow-[inset_0_1px_0_white]">
+    <div className="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3.5 py-2 shadow-card">
+      <span className="flex h-7 w-7 items-center justify-center rounded-full border border-accent/25 bg-gradient-to-b from-blue-50 to-surface text-accent shadow-card">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
           <path d="M12 3l7 3v5c0 4.5-2.8 8.6-7 10-4.2-1.4-7-5.5-7-10V6l7-3Z" />
           <path d="m9 12 2 2 4-5" />
         </svg>
       </span>
-      <span className="font-mono text-xs font-medium tracking-[-0.04em] text-slate-500">{children}</span>
+      <span className="font-mono text-xs font-medium tracking-[-0.04em] text-muted">{children}</span>
     </div>
   );
 }
@@ -66,44 +66,21 @@ function HeroDashboard() {
   ];
 
   return (
-    <div className="relative lg:pl-4">
-      <div className="absolute -inset-8 rounded-[3rem] bg-gradient-to-br from-blue-200/40 via-white/20 to-cyan-200/30 blur-3xl" />
-      <div className="relative rounded-[2rem] border border-white bg-[#f8fafc] p-3 shadow-[0_30px_80px_-35px_rgba(15,23,42,0.35),inset_0_2px_0_rgba(255,255,255,1)] sm:p-4">
-        <div className="pointer-events-none absolute inset-0 z-20 hidden md:block">
-          {cards.map(([title, subtitle, icon], index) => (
-            <div
-              key={title}
-              className={`absolute ${
-                index === 0
-                  ? "right-[-1.75rem] top-8"
-                  : index === 1
-                    ? "right-[-1.75rem] top-[42%]"
-                    : "left-8 bottom-[-1.25rem]"
-              } min-w-[12rem] rounded-2xl border border-white bg-white/90 px-4 py-3 shadow-[0_18px_38px_-20px_rgba(15,23,42,0.45),inset_0_1px_0_white] backdrop-blur`}
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-blue-50 text-blue-500">
-                  <FloatingIcon type={icon} />
-                </div>
-                <div>
-                  <p className="text-xs text-slate-900">{title}</p>
-                  <p className="text-xs font-light text-slate-400">{subtitle}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[inset_0_1px_0_white]">
-          <div className="relative aspect-[1.1/1] bg-slate-100 md:aspect-[1.16/1]">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/checkfirst-hero-assessment.png"
-              alt="CheckFirst public posture assessment dashboard showing risk rating, security score, and grouped findings"
-              className="h-full w-full object-cover object-left-top"
-            />
-            <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/60" />
+    <div className="vox-proof">
+      <div className="vox-proof-frame">
+        {/* Preserve the real assessment image without cropping its evidence. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/checkfirst-hero-assessment.png"
+          alt="CheckFirst public posture assessment dashboard showing risk rating, security score, and grouped findings"
+          className="vox-proof-image" width={2046} height={1356} fetchPriority="high" />
+      </div>
+      <div className="vox-proof-caption">
+        {cards.map(([title, subtitle, icon]) => (
+          <div key={title}>
+            <div className="mb-2 text-accent"><FloatingIcon type={icon} /></div>
+            <p>{title}</p><p>{subtitle}</p>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
@@ -254,23 +231,21 @@ export function HomeContent() {
   return (
     <>
       {/* ─────────────────────── HERO ─────────────────────── */}
-      <section className="mx-auto max-w-7xl px-6 pb-14 pt-14 md:pb-20 md:pt-20 lg:pt-24">
-        <div className="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-16">
-          <div className="text-center lg:text-left">
-            <h1 className="mx-auto mt-8 max-w-5xl text-[2.35rem] font-light leading-[0.98] tracking-[-0.07em] text-slate-950 sm:text-[3.2rem] md:text-[3.85rem] lg:mx-0 lg:text-[4.35rem]">
-              <span className="block">AI-powered TPRM</span>
-              <span className="mt-4 block">for Audit-ready</span>
-              <span className="mx-auto mt-4 inline-flex whitespace-nowrap rounded-[1.35rem] border border-blue-700 bg-gradient-to-b from-blue-400 to-blue-600 px-4 pb-2.5 pt-1.5 text-[0.68em] font-normal text-white shadow-[0_18px_38px_-20px_rgba(59,130,246,0.55),inset_0_1px_0_rgba(255,255,255,0.38)] sm:text-[0.74em] md:text-[0.78em] lg:mx-0">
-                SOC 2 + ISO 27001{" "}
-              </span>
-              <span className="mt-4 block">&amp; Vendor reviews</span>
+      <section className="vox-hero">
+        <div className="vox-hero-grid">
+          <div className="min-w-0">
+            <h1 className="vox-hero-title">
+              <span>AI-powered TPRM</span>
+              <span>for Audit-ready</span>
+              <span className="vox-hero-highlight">SOC 2 + ISO 27001{" "}</span>
+              <span>&amp; Vendor reviews</span>
             </h1>
-            <p className="mx-auto mt-8 max-w-2xl text-base font-light leading-8 text-slate-600 md:text-lg lg:mx-0">
+            <p className="vox-hero-description">
               {lang === "en"
                 ? "Collect vendor evidence, assess supplier risk, and keep audit-ready records for third-party risk programs."
                 : t(tx.hero.description, lang)}
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row lg:justify-start">
+            <div className="mt-9 flex flex-wrap items-center gap-3">
               <Button href="/contact" variant="primary" size="lg">
                 {t(tx.hero.ctaPrimary, lang)}
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -281,12 +256,12 @@ export function HomeContent() {
                 Explore TPRM software
               </Button>
             </div>
-            <div className="mt-9 flex flex-wrap justify-center gap-2 lg:justify-start">
+            <div className="mt-8 flex flex-wrap gap-2">
               {buyerPages.slice(0, 3).map((page) => (
                 <Link
                   key={page.href}
                   href={page.href}
-                  className="rounded-full border border-white bg-white/72 px-3 py-1.5 text-xs text-slate-600 shadow-[inset_0_1px_0_white] transition hover:text-blue-600"
+                  className="rounded-full border border-line bg-surface px-3 py-1.5 text-xs text-muted shadow-card transition hover:text-accent"
                 >
                   {page.title}
                 </Link>
@@ -298,7 +273,7 @@ export function HomeContent() {
       </section>
 
       {/* ─────────────────────── METRICS BAR ─────────────────────── */}
-      <section className="border-y border-ink-200 bg-canvas-raised px-6 py-10 lg:px-8 lg:py-14">
+      <section className="border-y border-line bg-canvas-raised px-6 py-10 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-[1200px] divide-ink-200 gap-0 sm:grid-cols-2 sm:divide-x lg:grid-cols-4">
           {metrics.map((m, idx) => (
             <div
@@ -307,10 +282,10 @@ export function HomeContent() {
                 idx === 0 ? "sm:pl-0" : ""
               } ${idx === metrics.length - 1 ? "sm:pr-0" : ""}`}
             >
-              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
                 {m.label}
               </span>
-              <span className="font-display text-[40px] tabular-nums leading-none tracking-[-0.03em] text-ink-900 sm:text-[44px]">
+              <span className="font-display text-[40px] tabular-nums leading-none tracking-[-0.03em] text-foreground sm:text-[44px]">
                 {m.value}
               </span>
             </div>
@@ -319,47 +294,47 @@ export function HomeContent() {
       </section>
 
       {/* ─────────────────────── COMMERCIAL INTENT STRIP ─────────────────────── */}
-      <section className="border-b border-ink-200 bg-canvas px-6 py-6 lg:px-8">
-        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-x-3 gap-y-2 text-sm text-ink-500">
+      <section className="border-b border-line bg-canvas px-6 py-6 lg:px-8">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted">
           <span className="eyebrow">Evaluation paths</span>
           <Link
             href="/soc-2-vendor-risk"
-            className="font-body text-[13.5px] text-ink-700 transition-colors hover:text-brand-600"
+            className="font-body text-[13.5px] text-foreground transition-colors hover:text-accent"
           >
             SOC 2 vendor risk
           </Link>
-          <span className="text-ink-200">·</span>
+          <span className="text-muted">·</span>
           <Link
             href="/iso-27001-supplier-risk"
-            className="font-body text-[13.5px] text-ink-700 transition-colors hover:text-brand-600"
+            className="font-body text-[13.5px] text-foreground transition-colors hover:text-accent"
           >
             ISO 27001 supplier risk
           </Link>
-          <span className="text-ink-200">·</span>
+          <span className="text-muted">·</span>
           <Link
             href="/tprm-software"
-            className="font-body text-[13.5px] text-ink-700 transition-colors hover:text-brand-600"
+            className="font-body text-[13.5px] text-foreground transition-colors hover:text-accent"
           >
             TPRM software
           </Link>
-          <span className="text-ink-200">·</span>
+          <span className="text-muted">·</span>
           <Link
             href="/assessments"
-            className="font-body text-[13.5px] text-ink-700 transition-colors hover:text-brand-600"
+            className="font-body text-[13.5px] text-foreground transition-colors hover:text-accent"
           >
             Security questionnaire automation
           </Link>
-          <span className="text-ink-200">·</span>
+          <span className="text-muted">·</span>
           <Link
             href="/managed-tprm"
-            className="font-body text-[13.5px] text-ink-700 transition-colors hover:text-brand-600"
+            className="font-body text-[13.5px] text-foreground transition-colors hover:text-accent"
           >
             Managed TPRM services
           </Link>
-          <span className="text-ink-200">·</span>
+          <span className="text-muted">·</span>
           <Link
             href="/ai-engine"
-            className="font-body text-[13.5px] text-ink-700 transition-colors hover:text-brand-600"
+            className="font-body text-[13.5px] text-foreground transition-colors hover:text-accent"
           >
             AI vendor risk assessment
           </Link>
@@ -371,33 +346,33 @@ export function HomeContent() {
         <div className="grid gap-12 lg:grid-cols-[1fr_1.4fr] lg:gap-20">
           <div>
             <span className="eyebrow mb-6">{t(tx.problem.tag, lang)}</span>
-            <h2 className="font-display text-[32px] leading-[1.08] tracking-[-0.028em] text-ink-900 sm:text-[40px] lg:text-[48px]">
+            <h2 className="font-display text-[32px] leading-[1.08] tracking-[-0.028em] text-foreground sm:text-[40px] lg:text-[48px]">
               {t(tx.problem.title, lang)}
             </h2>
-            <p className="mt-6 max-w-md font-body text-[16px] leading-[1.7] text-ink-500">
-              <strong className="font-display italic text-ink-900">
+            <p className="mt-6 max-w-md font-body text-[16px] leading-[1.7] text-muted">
+              <strong className="font-display italic text-foreground">
                 {t(tx.problem.conclusion, lang)}
               </strong>{" "}
               {t(tx.problem.conclusionBody, lang)}
             </p>
           </div>
-          <div className="grid gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 sm:grid-cols-2">
+          <div className="grid gap-px overflow-hidden rounded-[14px] border border-line bg-ink-200 sm:grid-cols-2">
             {problemPoints.map((p) => (
               <div
                 key={p.who}
                 className="bg-canvas-raised p-7 transition-colors hover:bg-canvas"
               >
                 <div className="mb-3 flex items-center gap-2">
-                  <span className="h-px w-6 bg-brand-500" />
-                  <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-brand-600">
+                  <span className="h-px w-6 bg-accent/100" />
+                  <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-accent">
                     Pain
                   </span>
                 </div>
-                <p className="font-body text-[15.5px] leading-[1.6] text-ink-700">
-                  <span className="font-display text-[18px] font-medium text-ink-900">
+                <p className="font-body text-[15.5px] leading-[1.6] text-foreground">
+                  <span className="font-display text-[18px] font-medium text-foreground">
                     {p.who}
                   </span>{" "}
-                  <span className="block mt-1.5 text-ink-500">{p.pain}.</span>
+                  <span className="block mt-1.5 text-muted">{p.pain}.</span>
                 </p>
               </div>
             ))}
@@ -416,7 +391,7 @@ export function HomeContent() {
               {t(tx.capabilities.title, lang)}
             </h2>
           </div>
-          <p className="max-w-md font-body text-[17px] leading-[1.7] text-white/65">
+          <p className="max-w-md font-body text-[17px] leading-[1.7] text-muted">
             {t(tx.capabilities.description, lang)}
           </p>
         </div>
@@ -430,7 +405,7 @@ export function HomeContent() {
             >
               {/* Index + tag row */}
               <div className="mb-6 flex items-center justify-between">
-                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/45">
+                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
                   {String(idx + 1).padStart(2, "0")} · {c.tag}
                 </span>
                 <svg
@@ -451,11 +426,11 @@ export function HomeContent() {
               <h3 className="font-display text-[22px] leading-[1.15] tracking-[-0.02em] text-white">
                 {c.name}
               </h3>
-              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-white/65">
+              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-muted">
                 {c.description}
               </p>
               <div className="mt-auto pt-6">
-                <div className="h-px w-full bg-gradient-to-r from-white/15 via-brand-400/30 to-transparent" />
+                <div className="h-px w-full bg-gradient-to-r from-surface/15 via-brand-400/30 to-transparent" />
               </div>
             </Card>
           ))}
@@ -469,19 +444,19 @@ export function HomeContent() {
           title={t(tx.platform.title, lang)}
           align="left"
         />
-        <div className="grid gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-px overflow-hidden rounded-[14px] border border-line bg-ink-200 sm:grid-cols-2 lg:grid-cols-3">
           {platformModules.map((m, idx) => (
             <div
               key={m.title}
               className="group relative bg-canvas-raised p-7 transition-colors hover:bg-canvas"
             >
-              <span className="mb-5 flex h-8 w-8 items-center justify-center rounded-[8px] border border-ink-200 bg-canvas font-mono text-[11px] text-ink-500 transition-colors group-hover:border-ink-900 group-hover:text-ink-900">
+              <span className="mb-5 flex h-8 w-8 items-center justify-center rounded-[8px] border border-line bg-canvas font-mono text-[11px] text-muted transition-colors group-hover:border-ink-900 group-hover:text-foreground">
                 {String(idx + 1).padStart(2, "0")}
               </span>
-              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-ink-900">
+              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-foreground">
                 {m.title}
               </h3>
-              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-ink-500">
+              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-muted">
                 {m.description}
               </p>
             </div>
@@ -504,19 +479,19 @@ export function HomeContent() {
           {howItWorksItems.map((item, idx) => (
             <div key={item.step} className="relative">
               <div className="mb-5 flex items-center justify-between">
-                <span className="relative flex h-[52px] w-[52px] items-center justify-center rounded-full border border-ink-200 bg-canvas font-mono text-[13px] text-ink-700">
+                <span className="relative flex h-[52px] w-[52px] items-center justify-center rounded-full border border-line bg-canvas font-mono text-[13px] text-foreground">
                   {String(idx + 1).padStart(2, "0")}
                 </span>
                 {idx < howItWorksItems.length - 1 && (
-                  <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-ink-300 lg:hidden">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.12em] text-muted lg:hidden">
                     Next →
                   </span>
                 )}
               </div>
-              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-ink-900">
+              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-foreground">
                 {item.title}
               </h3>
-              <p className="mt-3 max-w-xs font-body text-[14.5px] leading-[1.65] text-ink-500">
+              <p className="mt-3 max-w-xs font-body text-[14.5px] leading-[1.65] text-muted">
                 {item.description}
               </p>
             </div>
@@ -552,7 +527,7 @@ export function HomeContent() {
               className={`relative flex flex-col rounded-[14px] border p-7 transition-all duration-200 ${
                 plan.highlight
                   ? "border-ink-900 bg-ink-950 text-white"
-                  : "border-ink-200 bg-canvas-raised hover:border-ink-900"
+                  : "border-line bg-canvas-raised hover:border-ink-900"
               }`}
             >
               {plan.highlight && (
@@ -563,21 +538,21 @@ export function HomeContent() {
               )}
               <h3
                 className={`font-mono text-[11px] uppercase tracking-[0.14em] ${
-                  plan.highlight ? "text-white/60" : "text-ink-400"
+                  plan.highlight ? "text-muted" : "text-muted"
                 }`}
               >
                 {plan.name}
               </h3>
               <p
                 className={`mt-4 font-display text-[40px] tabular-nums leading-none tracking-[-0.03em] ${
-                  plan.highlight ? "text-white" : "text-ink-900"
+                  plan.highlight ? "text-white" : "text-foreground"
                 }`}
               >
                 {plan.price}
               </p>
               <p
                 className={`mt-2 font-body text-[13.5px] ${
-                  plan.highlight ? "text-white/60" : "text-ink-500"
+                  plan.highlight ? "text-muted" : "text-muted"
                 }`}
               >
                 {plan.note}
@@ -604,23 +579,23 @@ export function HomeContent() {
           description="Compare CheckFirst paths for TPRM software, SOC 2 and ISO 27001 audit evidence, vendor assessments, and managed TPRM support."
           align="left"
         />
-        <div className="grid gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-5">
           {buyerPages.map((page, idx) => (
             <Link
               key={page.href}
               href={page.href}
-              className="group relative flex flex-col bg-canvas-raised p-7 transition-colors hover:bg-canvas"
+              className="group relative flex flex-col rounded-lg border border-line bg-surface p-6 transition-colors hover:bg-canvas"
             >
-              <span className="mb-6 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+              <span className="mb-6 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
                 {String(idx + 1).padStart(2, "0")} · Workflow
               </span>
-              <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-ink-900">
+              <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-foreground">
                 {page.title}
               </h3>
-              <p className="mt-3 flex-1 font-body text-[14px] leading-[1.6] text-ink-500">
+              <p className="mt-3 flex-1 font-body text-[14px] leading-[1.6] text-muted">
                 {page.description}
               </p>
-              <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-900">
+              <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-foreground">
                 Visit page
                 <svg
                   width="10"
@@ -655,19 +630,19 @@ export function HomeContent() {
             <Link
               key={item.href}
               href={item.href}
-              className="group flex items-start gap-5 rounded-[14px] border border-ink-200 bg-canvas p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-ink-900"
+              className="group flex items-start gap-5 rounded-[14px] border border-line bg-canvas p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-ink-900"
             >
-              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
                 Article
               </span>
               <div className="flex-1">
-                <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-ink-900">
+                <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-foreground">
                   {item.title}
                 </h3>
-                <p className="mt-2 font-body text-[14px] leading-[1.6] text-ink-500">
+                <p className="mt-2 font-body text-[14px] leading-[1.6] text-muted">
                   {item.description}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-900">
+                <span className="mt-4 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-foreground">
                   Read article
                   <svg
                     width="10"
@@ -713,7 +688,7 @@ export function HomeContent() {
             {t(tx.cta.description, lang)}
           </p>
           <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-            <Button href="/contact" variant="primary" size="lg" className="!bg-white !text-ink-950 !ring-white hover:!bg-ink-100">
+            <Button href="/contact" variant="primary" size="lg" >
               {t(tx.cta.ctaPrimary, lang)}
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path

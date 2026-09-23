@@ -240,18 +240,18 @@ export default function AIEnginePage() {
             <div>
               <div className="eyebrow mb-6">
                 <span className="relative flex h-2 w-2 items-center justify-center">
-                  <span className="absolute inset-0 rounded-full bg-brand-500/35 animate-signal" />
+                  <span className="absolute inset-0 rounded-full bg-accent/100/35 animate-signal" />
                   <span className="relative h-1.5 w-1.5 rounded-full bg-brand-600" />
                 </span>
                 <span>AI vendor risk assessment engine</span>
               </div>
-              <h1 className="font-display text-[30px] leading-[1.08] tracking-[-0.025em] text-ink-900 [text-wrap:balance] sm:text-[40px] md:text-[46px] lg:text-[52px] xl:text-[58px]">
+              <h1 className="font-display text-[30px] leading-[1.08] tracking-[-0.025em] text-foreground [text-wrap:balance] sm:text-[40px] md:text-[46px] lg:text-[52px] xl:text-[58px]">
                 AI for supplier due diligence{" "}
-                <span className="italic text-ink-500">
+                <span className="italic text-muted">
                   that your security team can actually trust
                 </span>
               </h1>
-              <p className="mt-7 max-w-[58ch] font-body text-[17px] leading-[1.65] text-ink-500 sm:text-[18px]">
+              <p className="mt-7 max-w-[58ch] font-body text-[17px] leading-[1.65] text-muted sm:text-[18px]">
                 CheckFirst uses specialised AI engines to accelerate vendor risk assessment,
                 security questionnaire review, document analysis, and supplier research.
                 This is built for buyers who want faster due diligence and clearer risk signals without handing final decisions to a black box.
@@ -275,7 +275,7 @@ export default function AIEnginePage() {
                 ].map((chip) => (
                   <span
                     key={chip}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-ink-200 bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-500"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-line bg-canvas-raised px-3 py-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-muted"
                   >
                     <span className="h-1 w-1 rounded-full bg-ink-300" />
                     {chip}
@@ -286,34 +286,34 @@ export default function AIEnginePage() {
 
             {/* Motif */}
             <div className="relative hidden lg:block">
-              <div className="relative aspect-[5/4] w-full rounded-[14px] border border-ink-200 bg-canvas-raised p-5 shadow-card">
-                <div className="mb-4 flex items-center justify-between border-b border-ink-100 pb-3">
+              <div className="relative aspect-[5/4] w-full rounded-[14px] border border-line bg-canvas-raised p-5 shadow-card">
+                <div className="mb-4 flex items-center justify-between border-b border-line pb-3">
                   <div className="flex items-center gap-2">
                     <span className="relative flex h-2 w-2 items-center justify-center">
-                      <span className="absolute inset-0 rounded-full bg-brand-500/35 animate-signal" />
+                      <span className="absolute inset-0 rounded-full bg-accent/100/35 animate-signal" />
                       <span className="relative h-1 w-1 rounded-full bg-brand-600" />
                     </span>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-500">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
                       Jino Engines · Streaming
                     </span>
                   </div>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-ink-400">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-muted">
                     3 active
                   </span>
                 </div>
                 <OrchestrationGrid variant="light" />
-                <div className="mt-5 grid grid-cols-3 gap-3 border-t border-ink-100 pt-4">
+                <div className="mt-5 grid grid-cols-3 gap-3 border-t border-line pt-4">
                   <div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-400">CSA</div>
-                    <div className="mt-1 font-display text-[20px] tabular-nums tracking-[-0.02em] text-ink-900">243</div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted">CSA</div>
+                    <div className="mt-1 font-display text-[20px] tabular-nums tracking-[-0.02em] text-foreground">243</div>
                   </div>
                   <div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-400">Domains</div>
-                    <div className="mt-1 font-display text-[20px] tabular-nums tracking-[-0.02em] text-ink-900">18</div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted">Domains</div>
+                    <div className="mt-1 font-display text-[20px] tabular-nums tracking-[-0.02em] text-foreground">18</div>
                   </div>
                   <div>
-                    <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-ink-400">HITL</div>
-                    <div className="mt-1 font-display text-[20px] tabular-nums tracking-[-0.02em] text-brand-600">100%</div>
+                    <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-muted">HITL</div>
+                    <div className="mt-1 font-display text-[20px] tabular-nums tracking-[-0.02em] text-accent">100%</div>
                   </div>
                 </div>
               </div>
@@ -334,32 +334,32 @@ export default function AIEnginePage() {
           {engineBlocks.map((block, idx) => (
             <div
               key={block.title}
-              className="group relative flex h-full flex-col rounded-[14px] border border-ink-200 bg-canvas-raised p-7 transition-all hover:border-ink-900 hover:-translate-y-0.5"
+              className="group relative flex h-full flex-col rounded-[14px] border border-line bg-canvas-raised p-7 transition-all hover:border-ink-900 hover:-translate-y-0.5"
             >
               <div className="mb-6 flex items-center justify-between">
-                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
                   {String(idx + 1).padStart(2, "0")} · {block.tag}
                 </span>
-                <span className="h-px w-8 bg-brand-500" />
+                <span className="h-px w-8 bg-accent/100" />
               </div>
-              <h2 className="font-display text-[24px] leading-[1.15] tracking-[-0.02em] text-ink-900">
+              <h2 className="font-display text-[24px] leading-[1.15] tracking-[-0.02em] text-foreground">
                 {block.title}
               </h2>
-              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-ink-500">
+              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-muted">
                 {block.description}
               </p>
-              <ul className="mt-5 space-y-2.5 border-t border-ink-100 pt-5">
+              <ul className="mt-5 space-y-2.5 border-t border-line pt-5">
                 {block.bullets.map((bullet) => (
                   <li
                     key={bullet}
-                    className="flex items-start gap-3 font-body text-[13.5px] leading-[1.55] text-ink-700"
+                    className="flex items-start gap-3 font-body text-[13.5px] leading-[1.55] text-foreground"
                   >
                     <svg
                       width="14"
                       height="14"
                       viewBox="0 0 16 16"
                       fill="none"
-                      className="mt-0.5 shrink-0 text-brand-600"
+                      className="mt-0.5 shrink-0 text-accent"
                     >
                       <path
                         d="M3.5 8.5L6.5 11.5L12.5 4.5"
@@ -386,19 +386,19 @@ export default function AIEnginePage() {
           description="Built around the buyer-intent problems teams actually pay to solve."
           align="left"
         />
-        <div className="grid gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 sm:grid-cols-2">
+        <div className="grid gap-px overflow-hidden rounded-[14px] border border-line bg-ink-200 sm:grid-cols-2">
           {useCases.map((item, idx) => (
             <div
               key={item.title}
               className="group relative bg-canvas-raised p-7 transition-colors hover:bg-canvas"
             >
-              <span className="mb-5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+              <span className="mb-5 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
                 {String(idx + 1).padStart(2, "0")} · Use case
               </span>
-              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-ink-900">
+              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-foreground">
                 {item.title}
               </h3>
-              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-ink-500">
+              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-muted">
                 {item.description}
               </p>
             </div>
@@ -419,7 +419,7 @@ export default function AIEnginePage() {
           {reviewPrinciples.map((item, idx) => (
             <Card key={item.title} variant="data" className="flex h-full flex-col">
               <div className="mb-6 flex items-center justify-between">
-                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-white/45">
+                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
                   {String(idx + 1).padStart(2, "0")} · Principle
                 </span>
                 <span className="h-px w-8 bg-brand-400/60" />
@@ -427,7 +427,7 @@ export default function AIEnginePage() {
               <h3 className="font-display text-[22px] leading-[1.15] tracking-[-0.02em] text-white">
                 {item.title}
               </h3>
-              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-white/65">
+              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-muted">
                 {item.description}
               </p>
             </Card>
@@ -443,20 +443,20 @@ export default function AIEnginePage() {
           description="These internal links connect software, managed service, AI, and platform-intent pages so buyers can move to the next relevant evaluation step."
           align="left"
         />
-        <div className="grid gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 md:grid-cols-2">
+        <div className="grid gap-px overflow-hidden rounded-[14px] border border-line bg-ink-200 md:grid-cols-2">
           {relatedCommercialPages.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className="group relative flex flex-col bg-canvas-raised p-7 transition-colors hover:bg-canvas"
             >
-              <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-ink-900">
+              <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-foreground">
                 {item.title}
               </h3>
-              <p className="mt-3 font-body text-[14px] leading-[1.6] text-ink-500">
+              <p className="mt-3 font-body text-[14px] leading-[1.6] text-muted">
                 {item.description}
               </p>
-              <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-900">
+              <span className="mt-6 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-foreground">
                 Visit page
                 <svg width="10" height="10" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 group-hover:translate-x-0.5">
                   <path d="M4.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -480,18 +480,18 @@ export default function AIEnginePage() {
             <Link
               key={item.href}
               href={item.href}
-              className="group flex flex-col rounded-[14px] border border-ink-200 bg-canvas p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-ink-900"
+              className="group flex flex-col rounded-[14px] border border-line bg-canvas p-6 transition-all duration-200 hover:-translate-y-0.5 hover:border-ink-900"
             >
-              <span className="mb-5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+              <span className="mb-5 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
                 Article
               </span>
-              <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-ink-900">
+              <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-foreground">
                 {item.title}
               </h3>
-              <p className="mt-3 flex-1 font-body text-[14px] leading-[1.6] text-ink-500">
+              <p className="mt-3 flex-1 font-body text-[14px] leading-[1.6] text-muted">
                 {item.description}
               </p>
-              <span className="mt-5 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-900">
+              <span className="mt-5 inline-flex items-center gap-1.5 font-mono text-[11px] uppercase tracking-[0.12em] text-foreground">
                 Read article
                 <svg width="10" height="10" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 group-hover:translate-x-0.5">
                   <path d="M4.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -514,7 +514,7 @@ export default function AIEnginePage() {
             structure evidence, and support defensible vendor risk decisions.
           </p>
           <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-            <Button href="/contact" variant="primary" size="lg" className="!bg-white !text-ink-950 !ring-white hover:!bg-ink-100">
+            <Button href="/contact" variant="primary" size="lg" >
               Book a demo
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M4.5 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const painPoints = [
   {
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-600">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
         <circle cx="12" cy="12" r="10" />
         <polyline points="12 6 12 12 16 14" />
       </svg>
@@ -42,7 +42,7 @@ const painPoints = [
   },
   {
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-600">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
         <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
         <circle cx="9" cy="7" r="4" />
         <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
@@ -55,7 +55,7 @@ const painPoints = [
   },
   {
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-600">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
       </svg>
     ),
@@ -65,7 +65,7 @@ const painPoints = [
   },
   {
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-600">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-accent">
         <line x1="12" y1="1" x2="12" y2="23" />
         <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
       </svg>
@@ -196,7 +196,7 @@ export default function ConsultantPage() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="eyebrow eyebrow-dark mb-6 justify-center">
               <span className="relative flex h-2 w-2 items-center justify-center">
-                <span className="absolute inset-0 rounded-full bg-brand-500/35 animate-signal" />
+                <span className="absolute inset-0 rounded-full bg-accent/100/35 animate-signal" />
                 <span className="relative h-1.5 w-1.5 rounded-full bg-brand-400" />
               </span>
               <span>For Security Consultants</span>
@@ -213,7 +213,7 @@ export default function ConsultantPage() {
             <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
               <a
                 href="#pricing"
-                className="group inline-flex h-12 items-center justify-center gap-2 rounded-[10px] bg-white px-6 font-body text-[14.5px] font-medium text-ink-950 transition-all duration-200 hover:bg-ink-100"
+                className="group inline-flex h-12 items-center justify-center gap-2 vox-button vox-button-primary px-6 font-body text-[14.5px] font-medium"
               >
                 Get your promo code
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 group-hover:translate-x-0.5">
@@ -232,7 +232,7 @@ export default function ConsultantPage() {
       </section>
 
       {/* ── 2. Metrics Bar ── */}
-      <section className="border-y border-ink-200 bg-canvas-raised px-6 py-10 lg:px-8 lg:py-14">
+      <section className="border-y border-line bg-canvas-raised px-6 py-10 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-[1200px] divide-ink-200 gap-0 sm:grid-cols-2 sm:divide-x lg:grid-cols-4">
           {[
             { value: "4", label: "AI tools" },
@@ -246,10 +246,10 @@ export default function ConsultantPage() {
                 idx === 0 ? "sm:pl-0" : ""
               } ${idx === arr.length - 1 ? "sm:pr-0" : ""}`}
             >
-              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+              <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
                 {m.label}
               </span>
-              <span className="font-display text-[40px] tabular-nums leading-none tracking-[-0.03em] text-ink-900 sm:text-[44px]">
+              <span className="font-display text-[40px] tabular-nums leading-none tracking-[-0.03em] text-foreground sm:text-[44px]">
                 {m.value}
               </span>
             </div>
@@ -264,19 +264,19 @@ export default function ConsultantPage() {
           title="Security consulting shouldn't mean juggling 10 tools"
           align="left"
         />
-        <div className="grid gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 sm:grid-cols-2">
+        <div className="grid gap-px overflow-hidden rounded-[14px] border border-line bg-ink-200 sm:grid-cols-2">
           {painPoints.map((p) => (
             <div
               key={p.title}
               className="bg-canvas-raised p-7 transition-colors hover:bg-canvas"
             >
-              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-[10px] border border-ink-200 bg-canvas text-ink-700">
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-[10px] border border-line bg-canvas text-foreground">
                 {p.icon}
               </div>
-              <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-ink-900">
+              <h3 className="font-display text-[19px] leading-[1.2] tracking-[-0.02em] text-foreground">
                 {p.title}
               </h3>
-              <p className="mt-2 font-body text-[14px] leading-[1.6] text-ink-500">
+              <p className="mt-2 font-body text-[14px] leading-[1.6] text-muted">
                 {p.description}
               </p>
             </div>
@@ -291,22 +291,22 @@ export default function ConsultantPage() {
           title="Four AI tools. One subscription. No limits."
           description="The same AI engine that powers enterprise CheckFirst — plus ProvEye infrastructure scanning. Everything consultants need."
         />
-        <div className="mx-auto grid max-w-3xl gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 sm:grid-cols-2">
+        <div className="mx-auto grid max-w-3xl gap-px overflow-hidden rounded-[14px] border border-line bg-ink-200 sm:grid-cols-2">
           {aiTools.map((tool, idx) => (
             <div
               key={tool.name}
               className="group relative flex h-full flex-col bg-canvas-raised p-7 transition-colors hover:bg-canvas"
             >
               <div className="mb-5 flex items-center justify-between">
-                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+                <span className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
                   {String(idx + 1).padStart(2, "0")} · {tool.tag}
                 </span>
-                <span className="h-px w-6 bg-brand-500" />
+                <span className="h-px w-6 bg-accent/100" />
               </div>
-              <h3 className="font-display text-[22px] leading-[1.15] tracking-[-0.02em] text-ink-900">
+              <h3 className="font-display text-[22px] leading-[1.15] tracking-[-0.02em] text-foreground">
                 {tool.name}
               </h3>
-              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-ink-500">
+              <p className="mt-3 font-body text-[14.5px] leading-[1.65] text-muted">
                 {tool.description}
               </p>
             </div>
@@ -330,15 +330,15 @@ export default function ConsultantPage() {
               <div className="mb-5">
                 <span
                   aria-hidden="true"
-                  className="relative flex h-[52px] w-[52px] items-center justify-center rounded-full border border-ink-200 bg-canvas font-mono text-[13px] text-ink-700"
+                  className="relative flex h-[52px] w-[52px] items-center justify-center rounded-full border border-line bg-canvas font-mono text-[13px] text-foreground"
                 >
                   {item.step}
                 </span>
               </div>
-              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-ink-900">
+              <h3 className="font-display text-[20px] leading-[1.2] tracking-[-0.02em] text-foreground">
                 {item.title}
               </h3>
-              <p className="mt-3 max-w-xs font-body text-[14.5px] leading-[1.65] text-ink-500">
+              <p className="mt-3 max-w-xs font-body text-[14.5px] leading-[1.65] text-muted">
                 {item.description}
               </p>
             </div>
@@ -354,7 +354,7 @@ export default function ConsultantPage() {
         />
         <div className="grid items-start gap-8 lg:grid-cols-2">
           {/* Pricing card — dark ink surface with brand signal */}
-          <div className="relative flex flex-col rounded-[18px] border border-ink-200 bg-ink-950 p-8 text-white">
+          <div className="relative flex flex-col rounded-[18px] border border-line bg-ink-950 p-8 text-white">
             <span className="absolute -top-2.5 left-8 inline-flex items-center gap-1.5 rounded-full border border-brand-400/40 bg-ink-900 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-brand-300">
               <span className="h-1 w-1 rounded-full bg-brand-400 animate-signal" />
               Consultant Plan
@@ -364,11 +364,11 @@ export default function ConsultantPage() {
                 <span className="font-display text-[56px] tabular-nums leading-none tracking-[-0.03em] text-white">
                   $99
                 </span>
-                <span className="font-body text-[18px] text-white/60">
+                <span className="font-body text-[18px] text-muted">
                   /month
                 </span>
               </div>
-              <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.1em] text-white/50">
+              <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.1em] text-muted">
                 <span className="line-through">$399/month</span>{" "}
                 · consultant discount
               </p>
@@ -429,7 +429,7 @@ export default function ConsultantPage() {
           <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
             <a
               href="#pricing"
-              className="group inline-flex h-12 items-center justify-center gap-2 rounded-[10px] bg-white px-6 font-body text-[14.5px] font-medium text-ink-950 transition-all duration-200 hover:bg-ink-100"
+              className="group inline-flex h-12 items-center justify-center gap-2 vox-button vox-button-primary px-6 font-body text-[14.5px] font-medium"
             >
               Get your promo code
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 group-hover:translate-x-0.5">

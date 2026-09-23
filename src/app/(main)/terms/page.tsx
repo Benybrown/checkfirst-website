@@ -31,16 +31,16 @@ export default function TermsPage() {
   return (
     <Section>
       <div className="mx-auto max-w-3xl">
-        <h1 className="font-display text-[30px] leading-[1.08] tracking-[-0.025em] text-ink-900 [text-wrap:balance] sm:text-[40px] md:text-[44px] lg:text-[52px]">
+        <h1 className="font-display text-[30px] leading-[1.08] tracking-[-0.025em] text-foreground [text-wrap:balance] sm:text-[40px] md:text-[44px] lg:text-[52px]">
           Terms of Service
         </h1>
-        <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+        <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
           Last updated: February 23, 2026
         </p>
 
-        <div className="mt-12 space-y-10 font-body text-base leading-relaxed text-ink-500">
+        <div className="mt-12 space-y-10 font-body text-base leading-relaxed text-muted">
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">
+            <h2 className="font-display text-xl font-bold text-foreground">
               1. Acceptance of Terms
             </h2>
             <p className="mt-3">
@@ -52,7 +52,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">
+            <h2 className="font-display text-xl font-bold text-foreground">
               2. Description of Service
             </h2>
             <p className="mt-3">
@@ -66,7 +66,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">
+            <h2 className="font-display text-xl font-bold text-foreground">
               3. Account Registration
             </h2>
             <p className="mt-3">
@@ -90,7 +90,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">
+            <h2 className="font-display text-xl font-bold text-foreground">
               4. Acceptable Use
             </h2>
             <p className="mt-3">You agree not to:</p>
@@ -123,7 +123,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">
+            <h2 className="font-display text-xl font-bold text-foreground">
               5. Your Data
             </h2>
             <p className="mt-3">
@@ -137,7 +137,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">
+            <h2 className="font-display text-xl font-bold text-foreground">
               6. Intellectual Property
             </h2>
             <p className="mt-3">
@@ -150,7 +150,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">
+            <h2 className="font-display text-xl font-bold text-foreground">
               7. Subscription and Payment
             </h2>
             <p className="mt-3">
@@ -163,7 +163,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">
+            <h2 className="font-display text-xl font-bold text-foreground">
               8. Service Availability
             </h2>
             <p className="mt-3">
@@ -176,7 +176,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">
+            <h2 className="font-display text-xl font-bold text-foreground">
               9. Disclaimer of Warranties
             </h2>
             <p className="mt-3">
@@ -191,7 +191,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">
+            <h2 className="font-display text-xl font-bold text-foreground">
               10. Limitation of Liability
             </h2>
             <p className="mt-3">
@@ -206,7 +206,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">
+            <h2 className="font-display text-xl font-bold text-foreground">
               11. Indemnification
             </h2>
             <p className="mt-3">
@@ -218,7 +218,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">
+            <h2 className="font-display text-xl font-bold text-foreground">
               12. Termination
             </h2>
             <p className="mt-3">
@@ -231,7 +231,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">
+            <h2 className="font-display text-xl font-bold text-foreground">
               13. Changes to These Terms
             </h2>
             <p className="mt-3">
@@ -244,7 +244,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">
+            <h2 className="font-display text-xl font-bold text-foreground">
               14. Governing Law
             </h2>
             <p className="mt-3">
@@ -254,7 +254,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="font-display text-xl font-bold text-ink-900">
+            <h2 className="font-display text-xl font-bold text-foreground">
               15. Contact Us
             </h2>
             <p className="mt-3">
@@ -262,7 +262,7 @@ export default function TermsPage() {
               at{" "}
               <a
                 href="mailto:support@checkfirst.io"
-                className="text-brand-700 underline hover:text-brand-800"
+                className="text-accent underline hover:text-accent"
               >
                 support@checkfirst.io
               </a>

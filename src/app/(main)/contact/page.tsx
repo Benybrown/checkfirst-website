@@ -95,34 +95,34 @@ export default function ContactPage() {
         />
         <div className="relative mx-auto max-w-[1200px]">
           <span className="eyebrow mb-6">Get started</span>
-          <h1 className="font-display text-[30px] leading-[1.08] tracking-[-0.025em] text-ink-900 [text-wrap:balance] sm:text-[40px] md:text-[46px] lg:text-[52px] xl:text-[58px]">
+          <h1 className="font-display text-[30px] leading-[1.08] tracking-[-0.025em] text-foreground [text-wrap:balance] sm:text-[40px] md:text-[46px] lg:text-[52px] xl:text-[58px]">
             See CheckFirst in action
           </h1>
-          <p className="mt-6 max-w-2xl font-body text-[17px] leading-[1.65] text-ink-500 sm:text-[18px]">
+          <p className="mt-6 max-w-2xl font-body text-[17px] leading-[1.65] text-muted sm:text-[18px]">
             Book a personalised demo with our team. We&apos;ll walk you through
             the platform, run a live assessment, and answer your questions.
           </p>
-          <p className="mt-4 max-w-2xl font-body text-[15.5px] leading-[1.7] text-ink-500">
+          <p className="mt-4 max-w-2xl font-body text-[15.5px] leading-[1.7] text-muted">
             Use this page if you want to evaluate CheckFirst for vendor security
             assessments, TPRM software, AI-assisted supplier due diligence, or a
             managed third-party risk program. Share your current vendor review
             process, the number of suppliers you assess, and the frameworks you
             care about so the demo can focus on your real workflow.
           </p>
-          <p className="mt-4 max-w-2xl font-body text-[15.5px] leading-[1.7] text-ink-500">
+          <p className="mt-4 max-w-2xl font-body text-[15.5px] leading-[1.7] text-muted">
             We can also help clarify implementation questions such as WordPress
             or website setup, security questionnaire workflows, CSA CCM mapping,
             supplier evidence review, procurement handoff, and how CheckFirst
             fits beside your existing compliance process.
           </p>
-          <p className="mt-4 max-w-2xl font-body text-[15.5px] leading-[1.7] text-ink-500">
+          <p className="mt-4 max-w-2xl font-body text-[15.5px] leading-[1.7] text-muted">
             If you already have a vendor inventory, bring a sample supplier,
             questionnaire, or assessment pain point. We will show how CheckFirst
             turns that into an assessment workflow with intake, evidence
             collection, AI-assisted review, risk decisioning, remediation
             tracking, and reporting for stakeholders.
           </p>
-          <p className="mt-4 max-w-2xl font-body text-[15.5px] leading-[1.7] text-ink-500">
+          <p className="mt-4 max-w-2xl font-body text-[15.5px] leading-[1.7] text-muted">
             After the call, you should understand which assessment path fits
             your team, what data you need to start, and whether software,
             managed service support, or a combined approach is the right next
@@ -138,7 +138,7 @@ export default function ContactPage() {
             {/* What to Expect */}
             <div>
               <span className="eyebrow mb-5">What to expect</span>
-              <ul className="space-y-3.5 border-t border-ink-200 pt-5">
+              <ul className="space-y-3.5 border-t border-line pt-5">
                 {demoExpectations.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <svg
@@ -146,7 +146,7 @@ export default function ContactPage() {
                       height="16"
                       viewBox="0 0 16 16"
                       fill="none"
-                      className="mt-1 shrink-0 text-brand-600"
+                      className="mt-1 shrink-0 text-accent"
                     >
                       <path
                         d="M3.5 8.5L6.5 11.5L12.5 4.5"
@@ -156,7 +156,7 @@ export default function ContactPage() {
                         strokeLinejoin="round"
                       />
                     </svg>
-                    <span className="font-body text-[15px] leading-[1.55] text-ink-700">
+                    <span className="font-body text-[15px] leading-[1.55] text-foreground">
                       {item}
                     </span>
                   </li>
@@ -167,28 +167,28 @@ export default function ContactPage() {
             {/* Contact Methods — editorial grid */}
             <div className="mt-12">
               <span className="eyebrow mb-5">Other ways to reach us</span>
-              <div className="grid gap-px overflow-hidden rounded-[14px] border border-ink-200 bg-ink-200 sm:grid-cols-2">
+              <div className="grid gap-px overflow-hidden rounded-[14px] border border-line bg-ink-200 sm:grid-cols-2">
                 {contactMethods.map((method) => (
                   <div
                     key={method.label}
                     className="flex items-start gap-4 bg-canvas-raised p-5 transition-colors hover:bg-canvas"
                   >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] border border-ink-200 bg-canvas text-ink-700">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px] border border-line bg-canvas text-foreground">
                       {method.icon}
                     </div>
                     <div>
-                      <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-ink-400">
+                      <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-muted">
                         {method.label}
                       </p>
                       {method.href ? (
                         <a
                           href={method.href}
-                          className="mt-1 block font-body text-[14.5px] text-ink-900 transition-colors hover:text-brand-600"
+                          className="mt-1 block font-body text-[14.5px] text-foreground transition-colors hover:text-accent"
                         >
                           {method.value}
                         </a>
                       ) : (
-                        <p className="mt-1 font-body text-[14.5px] text-ink-700">
+                        <p className="mt-1 font-body text-[14.5px] text-foreground">
                           {method.value}
                         </p>
                       )}
@@ -200,7 +200,7 @@ export default function ContactPage() {
           </div>
 
           {/* Right: Form */}
-          <div className="rounded-[18px] border border-ink-200 bg-canvas-raised p-7 sm:p-10">
+          <div className="rounded-[18px] border border-line bg-canvas-raised p-7 sm:p-10">
             <ContactForm />
           </div>
         </div>

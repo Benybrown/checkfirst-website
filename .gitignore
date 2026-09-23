@@ -36,3 +36,6 @@ yarn-error.log*
 # Misc
 .cache
 tsconfig.tsbuildinfo
+
+# Verification runtime
+__pycache__/

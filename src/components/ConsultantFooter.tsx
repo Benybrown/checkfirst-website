@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function ConsultantFooter() {
   return (
-    <footer className="relative overflow-hidden bg-ink-950 text-white/65">
+    <footer className="relative overflow-hidden bg-ink-950 text-muted">
       <div aria-hidden="true" className="absolute inset-0 bg-diag-lines-dark opacity-60" />
       <div
         aria-hidden="true"
@@ -32,7 +32,7 @@ export function ConsultantFooter() {
                 <span className="italic">First</span>
               </span>
             </Link>
-            <p className="mt-3 font-body text-[14px] leading-[1.55] text-white/60">
+            <p className="mt-3 font-body text-[14px] leading-[1.55] text-muted">
               AI-powered security assessments for independent consultants.
             </p>
           </div>
@@ -40,13 +40,13 @@ export function ConsultantFooter() {
           <div className="flex flex-wrap items-center gap-6">
             <Link
               href="https://checkfirst.io/pricing"
-              className="font-body text-[14px] text-white/65 transition-colors hover:text-white"
+              className="font-body text-[14px] text-muted transition-colors hover:text-white"
             >
               Full platform
             </Link>
             <Link
               href="https://checkfirst.io/contact"
-              className="font-body text-[14px] text-white/65 transition-colors hover:text-white"
+              className="font-body text-[14px] text-muted transition-colors hover:text-white"
             >
               Contact
             </Link>
@@ -54,7 +54,7 @@ export function ConsultantFooter() {
               href="https://www.linkedin.com/company/checkfirstsecurity/"
               rel="me"
               target="_blank"
-              className="font-body text-[14px] text-white/65 transition-colors hover:text-white"
+              className="font-body text-[14px] text-muted transition-colors hover:text-white"
             >
               LinkedIn
             </a>
@@ -62,7 +62,7 @@ export function ConsultantFooter() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6">
-          <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-white/40">
+          <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-muted">
             &copy; {new Date().getFullYear()} CheckFirst · All rights reserved
           </p>
         </div>

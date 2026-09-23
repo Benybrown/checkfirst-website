@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 
 const plans = [
   {
@@ -63,6 +64,26 @@ export function PricingCards() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const dialogRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!modalPlan) return;
+    const previous = document.activeElement as HTMLElement | null;
+    const dialog = dialogRef.current;
+    const focusable = () => Array.from(dialog?.querySelectorAll<HTMLElement>('button, input, a[href], [tabindex="0"]') ?? []);
+    focusable()[0]?.focus();
+    const keydown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") { setModalPlan(null); setError(""); }
+      if (event.key === "Tab") {
+        const items = focusable(); const first = items[0]; const last = items[items.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+      }
+    };
+    document.addEventListener("keydown", keydown);
+    const overflow = document.body.style.overflow; document.body.style.overflow = "hidden";
+    return () => { document.removeEventListener("keydown", keydown); document.body.style.overflow = overflow; previous?.focus(); };
+  }, [modalPlan]);
+
   const [banner, setBanner] = useState<string | null>(null);
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -106,24 +127,24 @@ export function PricingCards() {
     <>
       {/* Success/Canceled banner */}
       {banner === "success" && (
-        <div className="mb-10 flex items-start gap-4 rounded-2xl border border-blue-100 bg-blue-50 p-5">
+        <div className="mb-10 flex items-start gap-4 rounded-lg border border-accent/25 bg-accent/10 p-5">
           <span className="relative mt-1 flex h-2.5 w-2.5 items-center justify-center">
-            <span className="absolute inset-0 rounded-full bg-brand-500/35 animate-signal" />
+            <span className="absolute inset-0 rounded-full bg-accent/35 animate-signal" />
             <span className="relative h-1.5 w-1.5 rounded-full bg-brand-600" />
           </span>
           <div>
-            <p className="font-display text-[18px] tracking-[-0.015em] text-brand-900">
+            <p className="font-display text-[18px] tracking-[-0.015em] text-accent">
               Payment successful
             </p>
-            <p className="mt-1 font-body text-[14px] text-brand-800">
+            <p className="mt-1 font-body text-[14px] text-accent">
               Your instance is being provisioned. You&apos;ll receive an email when it&apos;s ready.
             </p>
           </div>
         </div>
       )}
       {banner === "canceled" && (
-        <div className="mb-10 rounded-[14px] border border-ink-200 bg-canvas-raised p-5">
-          <p className="font-display text-[15px] tracking-[-0.01em] text-ink-800">
+        <div className="mb-10 rounded-[14px] border border-line bg-canvas-raised p-5">
+          <p className="font-display text-[15px] tracking-[-0.01em] text-foreground">
             Checkout was canceled. You can try again whenever you&apos;re ready.
           </p>
         </div>
@@ -136,29 +157,29 @@ export function PricingCards() {
           return (
             <div
               key={plan.name}
-              className={`relative flex flex-col p-7 transition-colors ${
+              className={`relative flex flex-col rounded-lg p-7 transition-colors ${
                 isHighlight
-                  ? "border border-blue-700 bg-gradient-to-b from-blue-400 to-blue-600 text-white shadow-[0_18px_44px_-26px_rgba(59,130,246,0.7),inset_0_1px_0_rgba(255,255,255,0.3)]"
-                  : "border border-white bg-white/72 shadow-card backdrop-blur hover:bg-white/90"
+                  ? "border border-accent/40 bg-gradient-to-b from-indigo-950 to-surface text-white shadow-card"
+                  : "border border-line bg-surface shadow-card backdrop-blur hover:bg-surface"
               }`}
             >
               {isHighlight && (
                 <span className="absolute -top-2.5 left-7 inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/20 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-[0.14em] text-white">
-                  <span className="h-1 w-1 rounded-full bg-white animate-signal" />
+                  <span className="h-1 w-1 rounded-full bg-surface animate-signal" />
                   Most popular
                 </span>
               )}
 
               <h3
                 className={`font-mono text-[11px] uppercase tracking-[0.14em] ${
-                  isHighlight ? "text-white/60" : "text-ink-400"
+                  isHighlight ? "text-muted" : "text-muted"
                 }`}
               >
                 {plan.name}
               </h3>
               <p
                 className={`mt-3 font-body text-[13.5px] leading-[1.5] min-h-[42px] ${
-                  isHighlight ? "text-white/70" : "text-ink-500"
+                  isHighlight ? "text-white/70" : "text-muted"
                 }`}
               >
                 {plan.description}
@@ -167,14 +188,14 @@ export function PricingCards() {
               <div className="mt-6 flex items-baseline gap-1">
                 <span
                   className={`font-display text-[40px] tabular-nums leading-none tracking-[-0.03em] ${
-                    isHighlight ? "text-white" : "text-ink-900"
+                    isHighlight ? "text-white" : "text-foreground"
                   }`}
                 >
                   {plan.price}
                 </span>
                 <span
                   className={`font-body text-[14px] ${
-                    isHighlight ? "text-white/60" : "text-ink-400"
+                    isHighlight ? "text-muted" : "text-muted"
                   }`}
                 >
                   {plan.period}
@@ -182,7 +203,7 @@ export function PricingCards() {
               </div>
               <p
                 className={`mt-2 font-mono text-[11px] uppercase tracking-[0.1em] ${
-                  isHighlight ? "text-white/55" : "text-ink-400"
+                  isHighlight ? "text-muted" : "text-muted"
                 }`}
               >
                 {plan.yearly}
@@ -195,8 +216,8 @@ export function PricingCards() {
                     onClick={() => setModalPlan(plan)}
                     className={`group inline-flex h-11 w-full items-center justify-center gap-2 rounded-[10px] font-body text-[13.5px] font-medium transition-all duration-200 ${
                       isHighlight
-                        ? "bg-white text-blue-600 hover:bg-blue-50"
-                        : "border border-blue-700 bg-gradient-to-b from-blue-500 to-blue-600 text-white shadow-button hover:from-blue-400 hover:to-blue-500"
+                        ? "vox-button vox-button-primary"
+                        : "vox-button vox-button-primary"
                     }`}
                   >
                     {plan.cta}
@@ -207,7 +228,7 @@ export function PricingCards() {
                 ) : (
                   <a
                     href="/contact"
-                    className="group inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-4 font-body text-[13.5px] font-medium text-slate-700 shadow-[inset_0_1px_0_white] transition-all duration-300 hover:-translate-y-0.5 hover:text-blue-600"
+                    className="group inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border border-line bg-surface px-4 font-body text-[13.5px] font-medium text-foreground shadow-card transition-all duration-300 hover:-translate-y-0.5 hover:text-accent"
                   >
                     {plan.cta}
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 group-hover:translate-x-0.5">
@@ -222,13 +243,14 @@ export function PricingCards() {
       </div>
 
       {/* Pre-checkout modal */}
-      {modalPlan && (
+      {modalPlan && createPortal(
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-ink-950/60 p-4 backdrop-blur-sm"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-ink-950/60 p-4 backdrop-blur-sm"
           onClick={() => setModalPlan(null)}
         >
           <div
-            className="relative w-full max-w-md rounded-[18px] border border-ink-200 bg-canvas-raised p-8 shadow-float animate-slide-up"
+            ref={dialogRef} role="dialog" aria-modal="true" aria-labelledby="checkout-title"
+            className="relative max-h-[90dvh] overflow-y-auto w-full max-w-md rounded-lg border border-line bg-canvas-raised p-8 shadow-float animate-slide-up"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -236,7 +258,7 @@ export function PricingCards() {
                 setModalPlan(null);
                 setError("");
               }}
-              className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-ink-200 text-ink-500 transition-colors hover:border-ink-900 hover:text-ink-900"
+              className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-ink-900 hover:text-foreground"
               aria-label="Close"
             >
               <svg
@@ -253,10 +275,10 @@ export function PricingCards() {
             </button>
 
             <span className="eyebrow mb-4">Checkout</span>
-            <h3 className="font-display text-[24px] leading-[1.15] tracking-[-0.02em] text-ink-900">
-              {modalPlan.name} · <span className="italic text-ink-500">{modalPlan.yearly}</span>
+            <h3 id="checkout-title" className="font-display text-[24px] leading-[1.15] tracking-[-0.02em] text-foreground">
+              {modalPlan.name} · <span className="italic text-muted">{modalPlan.yearly}</span>
             </h3>
-            <p className="mt-2 font-body text-[14px] text-ink-500">
+            <p className="mt-2 font-body text-[14px] text-muted">
               Enter your details to proceed to secure checkout.
             </p>
 
@@ -268,28 +290,29 @@ export function PricingCards() {
                 { key: "email", label: "Work Email", placeholder: "jane@acme.com", type: "email" },
               ].map((f) => (
                 <div key={f.key}>
-                  <label className="font-mono block text-[10.5px] uppercase tracking-[0.12em] text-ink-400">
+                  <label htmlFor={`checkout-${f.key}`} className="font-mono block text-[10.5px] uppercase tracking-[0.12em] text-muted">
                     {f.label}
                   </label>
                   <input
+                    id={`checkout-${f.key}`}
                     type={f.type}
                     required
                     value={form[f.key as keyof typeof form]}
                     onChange={(e) => setForm({ ...form, [f.key]: e.target.value })}
-                    className="mt-1.5 w-full rounded-[10px] border border-ink-200 bg-canvas-raised px-3.5 py-2.5 font-body text-[14px] text-ink-900 outline-none transition-colors placeholder:text-ink-300 focus:border-ink-900 focus:ring-2 focus:ring-brand-500/15"
+                    className="mt-1.5 w-full rounded-[10px] border border-line bg-canvas-raised px-3.5 py-2.5 font-body text-[14px] text-foreground outline-none transition-colors placeholder:text-muted focus:border-ink-900 focus:ring-2 focus:ring-brand-500/15"
                     placeholder={f.placeholder}
                   />
                 </div>
               ))}
 
               {error && (
-                <p className="font-body text-[13px] text-red-600">{error}</p>
+                <p role="alert" className="font-body text-[13px] text-red-300">{error}</p>
               )}
 
               <button
                 type="submit"
                 disabled={loading}
-                className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-ink-950 font-body text-[14px] font-medium text-white ring-1 ring-inset ring-ink-950 transition-all duration-200 hover:bg-ink-800 disabled:opacity-50"
+                className="group inline-flex h-12 w-full items-center justify-center gap-2 vox-button vox-button-primary font-body text-[14px] font-medium disabled:opacity-50"
               >
                 {loading ? "Redirecting to checkout…" : "Continue to payment"}
                 {!loading && (
@@ -300,11 +323,11 @@ export function PricingCards() {
               </button>
             </form>
 
-            <p className="mt-5 text-center font-mono text-[10px] uppercase tracking-[0.12em] text-ink-400">
+            <p className="mt-5 text-center font-mono text-[10px] uppercase tracking-[0.12em] text-muted">
               Secure payment · Stripe · Yearly subscription · Cancel anytime
             </p>
           </div>
-        </div>
+        </div>, document.body
       )}
     </>
   );

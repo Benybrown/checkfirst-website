@@ -73,7 +73,7 @@ function NavDropdown({
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="group/nav inline-flex items-center gap-1.5 font-body text-[13.5px] font-medium text-ink-600 transition-colors duration-200 hover:text-ink-900"
+        className="group/nav inline-flex items-center gap-1.5 font-body text-[13.5px] font-medium text-muted transition-colors duration-200 hover:text-foreground"
         aria-expanded={open}
       >
         {label}
@@ -89,13 +89,13 @@ function NavDropdown({
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full z-50 mt-3 w-60 overflow-hidden rounded-[12px] border border-ink-200 bg-canvas-raised p-1.5 shadow-float animate-fade-in" style={{ animationDuration: "140ms" }}>
+        <div className="absolute right-0 top-full z-50 mt-3 w-60 overflow-hidden rounded-[12px] border border-line bg-canvas-raised p-1.5 shadow-float animate-fade-in" style={{ animationDuration: "140ms" }}>
           {links.map((link) => (
             <SmartLink
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="flex items-center justify-between gap-3 rounded-[8px] px-3 py-2.5 font-body text-[13.5px] text-ink-700 transition-colors hover:bg-ink-50 hover:text-ink-900"
+              className="flex items-center justify-between gap-3 rounded-[8px] px-3 py-2.5 font-body text-[13.5px] text-foreground transition-colors hover:bg-surface-high hover:text-foreground"
             >
               <span>{link.label}</span>
             </SmartLink>
@@ -110,7 +110,7 @@ export function HeaderAr() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-ink-200/80 bg-canvas/85 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-line bg-canvas/85 backdrop-blur-md">
       <div className="mx-auto flex h-[76px] max-w-[1280px] items-center justify-between px-6 lg:px-8">
         <Link
           href="/ar"
@@ -124,7 +124,7 @@ export function HeaderAr() {
             height={48}
             className="h-12 w-12 shrink-0 transition-transform duration-200 group-hover:scale-105"
           />
-          <span className="inline-flex items-center font-display text-[22px] font-semibold tracking-[-0.03em] text-ink-900">
+          <span dir="ltr" className="inline-flex items-center font-display text-[22px] font-semibold tracking-[-0.03em] text-foreground">
             <span>Check</span>
             <span className="italic">First</span>
           </span>
@@ -139,7 +139,7 @@ export function HeaderAr() {
         <div className="hidden items-center gap-3 lg:flex">
           <Link
             href="/ar/contact"
-            className="group inline-flex h-10 items-center gap-2 rounded-[10px] bg-ink-950 px-4 font-body text-[13.5px] font-medium text-white shadow-button ring-1 ring-inset ring-ink-950 transition-all duration-200 hover:bg-ink-800 hover:ring-ink-800"
+            className="group inline-flex h-10 items-center gap-2 vox-button vox-button-primary px-4 font-body text-[13.5px] font-medium"
           >
             احجز عرضاً تجريبياً
           </Link>
@@ -148,7 +148,7 @@ export function HeaderAr() {
         <button
           type="button"
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-[10px] border border-ink-200 text-ink-700 transition-colors hover:border-ink-900 hover:text-ink-900 lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-[10px] border border-line text-foreground transition-colors hover:border-ink-900 hover:text-foreground lg:hidden"
           aria-expanded={mobileOpen}
           aria-label="القائمة"
         >
@@ -165,7 +165,7 @@ export function HeaderAr() {
       </div>
 
       {mobileOpen && (
-        <nav className="border-t border-ink-200 bg-canvas px-6 py-6 lg:hidden" aria-label="Mobile">
+        <nav className="border-t border-line bg-canvas px-6 py-6 lg:hidden" aria-label="Mobile">
           <div className="flex flex-col gap-5">
             {Object.entries(navGroups).map(([group, links]) => (
               <div key={group}>
@@ -176,7 +176,7 @@ export function HeaderAr() {
                       key={link.href}
                       href={link.href}
                       onClick={() => setMobileOpen(false)}
-                      className="flex items-center justify-between rounded-[10px] px-3 py-3 font-body text-[15px] text-ink-800 transition-colors hover:bg-ink-50"
+                      className="flex items-center justify-between rounded-[10px] px-3 py-3 font-body text-[15px] text-foreground transition-colors hover:bg-surface-high"
                     >
                       <span>{link.label}</span>
                     </SmartLink>

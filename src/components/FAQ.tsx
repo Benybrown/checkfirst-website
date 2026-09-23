@@ -15,18 +15,18 @@ function FAQEntry({ question, answer }: FAQItem) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-ink-200/80 last:border-0">
+    <div className="border-b border-line last:border-0">
       <button
         type="button"
         onClick={() => setOpen(!open)}
         className="group flex w-full items-center justify-between gap-6 py-6 text-left transition-colors sm:py-7"
         aria-expanded={open}
       >
-        <span className="font-display text-[19px] leading-tight tracking-[-0.015em] text-ink-900 sm:text-[21px]">
+        <span className="font-display text-[19px] leading-tight tracking-[-0.015em] text-foreground sm:text-[21px]">
           {question}
         </span>
         <span
-          className={`relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-ink-200 text-ink-500 transition-all duration-200 group-hover:border-ink-900 group-hover:text-ink-900 ${
+          className={`relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line text-muted transition-all duration-200 group-hover:border-ink-900 group-hover:text-foreground ${
             open ? "rotate-45 bg-ink-900 border-ink-900 text-white group-hover:text-white" : ""
           }`}
         >
@@ -51,7 +51,7 @@ function FAQEntry({ question, answer }: FAQItem) {
         }`}
       >
         <div className="overflow-hidden">
-          <p className="max-w-[58ch] font-body text-[16px] leading-[1.7] text-ink-500">
+          <p className="max-w-[58ch] font-body text-[16px] leading-[1.7] text-muted">
             {answer}
           </p>
         </div>
@@ -62,7 +62,7 @@ function FAQEntry({ question, answer }: FAQItem) {
 
 export function FAQ({ items }: FAQProps) {
   return (
-    <div className="mx-auto max-w-3xl border-y border-ink-200">
+    <div className="mx-auto max-w-3xl border-y border-line">
       {items.map((item) => (
         <FAQEntry key={item.question} {...item} />
       ))}

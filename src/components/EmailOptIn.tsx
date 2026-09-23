@@ -3,10 +3,10 @@
 import { useState, type FormEvent } from "react";
 
 const inputClasses =
-  "w-full rounded-[10px] border border-ink-200 bg-canvas-raised px-4 py-3 font-body text-[14.5px] text-ink-900 placeholder:text-ink-300 transition-colors duration-200 focus:border-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-500/15";
+  "w-full rounded-[10px] border border-line bg-canvas-raised px-4 py-3 font-body text-[14.5px] text-foreground placeholder:text-muted transition-colors duration-200 focus:border-ink-900 focus:outline-none focus:ring-2 focus:ring-brand-500/15";
 
 const labelClasses =
-  "block font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-400 mb-2";
+  "block font-mono text-[10.5px] uppercase tracking-[0.12em] text-muted mb-2";
 
 export function EmailOptIn() {
   const [submitted, setSubmitted] = useState(false);
@@ -45,9 +45,9 @@ export function EmailOptIn() {
 
   if (submitted) {
     return (
-      <div className="rounded-[18px] border border-ink-200 bg-canvas-raised p-8">
+      <div className="rounded-[18px] border border-line bg-canvas-raised p-8">
         <div className="flex flex-col items-center text-center">
-          <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-brand-500/30 bg-brand-50">
+          <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-full border border-brand-500/30 bg-accent/10">
             <svg
               width="24"
               height="24"
@@ -57,24 +57,24 @@ export function EmailOptIn() {
               strokeWidth="1.8"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-brand-600"
+              className="text-accent"
             >
               <path d="M20 6L9 17l-5-5" />
             </svg>
           </div>
           <span className="eyebrow mb-2">Your promo code</span>
-          <div className="mt-3 w-full rounded-[10px] border border-dashed border-brand-500/40 bg-brand-50/40 px-6 py-5">
-            <p className="font-mono text-[22px] font-semibold uppercase tracking-[0.18em] text-brand-700">
+          <div className="mt-3 w-full rounded-[10px] border border-dashed border-brand-500/40 bg-accent/10 px-6 py-5">
+            <p className="font-mono text-[22px] font-semibold uppercase tracking-[0.18em] text-accent">
               tprmexpert
             </p>
           </div>
-          <p className="mt-4 font-body text-[14px] leading-[1.6] text-ink-500">
+          <p className="mt-4 font-body text-[14px] leading-[1.6] text-muted">
             We&apos;ve also sent this code to your email. Use it at checkout
-            to get the Consultant plan at <strong className="text-ink-900">$99/month</strong>.
+            to get the Consultant plan at <strong className="text-foreground">$99/month</strong>.
           </p>
           <a
             href="https://buy.stripe.com/5kQ4gBctB8Ep9izazt7kc02"
-            className="group mt-6 inline-flex h-12 items-center justify-center gap-2 rounded-[10px] bg-ink-950 px-6 font-body text-[14px] font-medium text-white ring-1 ring-inset ring-ink-950 transition-all duration-200 hover:bg-ink-800"
+            className="group mt-6 inline-flex h-12 items-center justify-center gap-2 vox-button vox-button-primary px-6 font-body text-[14px] font-medium"
           >
             Subscribe now — $99/month
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="transition-transform duration-200 group-hover:translate-x-0.5">
@@ -87,20 +87,20 @@ export function EmailOptIn() {
   }
 
   return (
-    <div className="rounded-[18px] border border-ink-200 bg-canvas-raised p-7 sm:p-8">
+    <div className="rounded-[18px] border border-line bg-canvas-raised p-7 sm:p-8">
       <span className="eyebrow mb-5">Get your promo code</span>
-      <h3 className="font-display text-[24px] leading-[1.15] tracking-[-0.02em] text-ink-900">
+      <h3 className="font-display text-[24px] leading-[1.15] tracking-[-0.02em] text-foreground">
         Enter your email{" "}
-        <span className="italic text-ink-500">— we&apos;ll send the code.</span>
+        <span className="italic text-muted">— we&apos;ll send the code.</span>
       </h3>
-      <p className="mt-3 font-body text-[14px] leading-[1.55] text-ink-500">
+      <p className="mt-3 font-body text-[14px] leading-[1.55] text-muted">
         Instant consultant discount and access link to your inbox.
       </p>
 
       <form onSubmit={handleSubmit} className="mt-7 space-y-4">
         <div>
           <label htmlFor="optin-name" className={labelClasses}>
-            Name <span className="text-ink-300">(optional)</span>
+            Name <span className="text-muted">(optional)</span>
           </label>
           <input
             id="optin-name"
@@ -136,7 +136,7 @@ export function EmailOptIn() {
         <button
           type="submit"
           disabled={loading}
-          className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-[10px] bg-ink-950 font-body text-[14.5px] font-medium text-white ring-1 ring-inset ring-ink-950 transition-all duration-200 hover:bg-ink-800 disabled:opacity-60 disabled:cursor-not-allowed"
+          className="group inline-flex h-12 w-full items-center justify-center gap-2 vox-button vox-button-primary font-body text-[14.5px] font-medium disabled:opacity-60 disabled:cursor-not-allowed"
         >
           {loading ? "Sending…" : "Send me the code"}
           {!loading && (
@@ -146,7 +146,7 @@ export function EmailOptIn() {
           )}
         </button>
 
-        <p className="text-center font-mono text-[10.5px] uppercase tracking-[0.12em] text-ink-400">
+        <p className="text-center font-mono text-[10.5px] uppercase tracking-[0.12em] text-muted">
           No spam · Promo code only
         </p>
       </form>

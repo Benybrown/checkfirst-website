@@ -38,7 +38,7 @@ export function SectionHeader({
       )}
       <h2
         className={`font-display tracking-[-0.028em] text-[32px] leading-[1.08] sm:text-[40px] lg:text-[52px] ${
-          dark ? "text-white" : "text-ink-900"
+          dark ? "text-white" : "text-foreground"
         }`}
       >
         {title}
@@ -46,7 +46,7 @@ export function SectionHeader({
       {description && (
         <p
           className={`mt-5 text-[17px] leading-[1.65] sm:text-[18px] ${
-            dark ? "text-white/65" : "text-ink-500"
+            dark ? "text-muted" : "text-muted"
           }`}
         >
           {description}

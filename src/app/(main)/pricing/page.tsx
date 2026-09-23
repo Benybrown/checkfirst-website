@@ -36,7 +36,7 @@ const checkIcon = (
     height="14"
     viewBox="0 0 16 16"
     fill="none"
-    className="shrink-0 text-brand-600"
+    className="shrink-0 text-accent"
   >
     <path
       d="M3.5 8.5L6.5 11.5L12.5 4.5"
@@ -54,16 +54,16 @@ const dashIcon = (
     height="12"
     viewBox="0 0 16 16"
     fill="none"
-    className="shrink-0 text-ink-300"
+    className="shrink-0 text-muted"
   >
     <path d="M4 8h8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
   </svg>
 );
 
 const aiBadge = (
-  <span className="mr-2 inline-flex items-center gap-1 rounded-[4px] border border-brand-500/30 bg-brand-50/70 px-1.5 py-0.5">
-    <span className="h-1 w-1 rounded-full bg-brand-500 animate-signal" />
-    <span className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-brand-700">
+  <span className="mr-2 inline-flex items-center gap-1 rounded-[4px] border border-brand-500/30 bg-accent/10 px-1.5 py-0.5">
+    <span className="h-1 w-1 rounded-full bg-accent/100 animate-signal" />
+    <span className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-accent">
       AI
     </span>
   </span>
@@ -112,7 +112,7 @@ const featureRows: {
 function CellValue({ value }: { value: boolean | string }) {
   if (typeof value === "string") {
     return (
-      <span className="font-body text-[13px] text-ink-700">
+      <span className="font-body text-[13px] text-foreground">
         {value}
       </span>
     );
@@ -159,10 +159,10 @@ export default function PricingPage() {
       <Section>
         <div className="mx-auto mb-14 max-w-2xl text-center sm:mb-16">
           <span className="eyebrow mb-6 justify-center">Pricing</span>
-          <h1 className="font-display text-[32px] leading-[1.08] tracking-[-0.028em] text-ink-900 sm:text-[40px] lg:text-[52px]">
+          <h1 className="font-display text-[32px] leading-[1.08] tracking-[-0.028em] text-foreground sm:text-[40px] lg:text-[52px]">
             Clear plans. No surprises.
           </h1>
-          <p className="mt-5 text-[17px] leading-[1.65] text-ink-500 sm:text-[18px]">
+          <p className="mt-5 text-[17px] leading-[1.65] text-muted sm:text-[18px]">
             We believe transparency builds trust. If we&apos;re asking you to trust us with your security data, the least we can do is be upfront about what you get.
           </p>
         </div>
@@ -170,23 +170,23 @@ export default function PricingPage() {
         <PricingCards />
 
         {/* Feature Comparison Table — editorial, hairline-driven */}
-        <div className="mt-6 overflow-x-auto rounded-[14px] border border-ink-200 bg-canvas-raised">
+        <div className="mt-6 overflow-x-auto rounded-[14px] border border-line bg-canvas-raised">
           <table className="w-full border-collapse">
             <thead className="sticky top-0 bg-canvas-raised">
-              <tr className="border-b border-ink-200">
-                <th className="px-6 py-5 text-left font-mono text-[11px] uppercase tracking-[0.14em] text-ink-500">
+              <tr className="border-b border-line">
+                <th className="px-6 py-5 text-left font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
                   Feature
                 </th>
-                <th className="px-6 py-5 text-center font-mono text-[11px] uppercase tracking-[0.14em] text-ink-500">
+                <th className="px-6 py-5 text-center font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
                   Starter
                 </th>
-                <th className="px-6 py-5 text-center font-mono text-[11px] uppercase tracking-[0.14em] text-ink-500">
+                <th className="px-6 py-5 text-center font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
                   Professional
                 </th>
                 <th className="bg-ink-950 px-6 py-5 text-center font-mono text-[11px] uppercase tracking-[0.14em] text-brand-300">
                   Scale
                 </th>
-                <th className="px-6 py-5 text-center font-mono text-[11px] uppercase tracking-[0.14em] text-ink-500">
+                <th className="px-6 py-5 text-center font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
                   Enterprise
                 </th>
               </tr>
@@ -195,9 +195,9 @@ export default function PricingPage() {
               {featureRows.map((row) => (
                 <tr
                   key={row.feature}
-                  className="border-b border-ink-100 last:border-0 transition-colors hover:bg-canvas"
+                  className="border-b border-line last:border-0 transition-colors hover:bg-canvas"
                 >
-                  <td className="px-6 py-4 font-body text-[14px] text-ink-800">
+                  <td className="px-6 py-4 font-body text-[14px] text-foreground">
                     <span className="inline-flex items-center">
                       {row.ai && aiBadge}
                       {row.feature}
@@ -226,7 +226,7 @@ export default function PricingPage() {
       <Section className="bg-canvas-raised">
         <div className="mx-auto mb-14 max-w-2xl text-center sm:mb-16">
           <span className="eyebrow mb-6 justify-center">FAQ</span>
-          <h2 className="font-display text-[32px] leading-[1.08] tracking-[-0.028em] text-ink-900 sm:text-[40px] lg:text-[52px]">
+          <h2 className="font-display text-[32px] leading-[1.08] tracking-[-0.028em] text-foreground sm:text-[40px] lg:text-[52px]">
             Pricing questions
           </h2>
         </div>
@@ -251,7 +251,7 @@ export default function PricingPage() {
               href="/contact"
               variant="primary"
               size="lg"
-              className="!bg-white !text-ink-950 !ring-white hover:!bg-ink-100"
+
             >
               Book a demo
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none">

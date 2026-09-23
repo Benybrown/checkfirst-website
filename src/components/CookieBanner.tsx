@@ -48,12 +48,12 @@ export default function CookieBanner() {
       role="alert"
       aria-label="Cookie consent"
     >
-      <div className="mx-auto max-w-3xl rounded-xl bg-white/95 backdrop-blur-sm border border-gray-200 shadow-card p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4">
-        <p className="font-body text-sm text-gray-600 flex-1">
+      <div className="mx-auto max-w-3xl rounded-xl bg-surface backdrop-blur-sm border border-line shadow-card p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center gap-4">
+        <p className="font-body text-sm text-muted flex-1">
           We use cookies to improve your experience and analyze site traffic.{" "}
           <Link
             href="/privacy"
-            className="text-brand-600 underline underline-offset-2 hover:text-brand-700"
+            className="text-accent underline underline-offset-2 hover:text-accent"
           >
             Privacy policy
           </Link>
@@ -61,13 +61,13 @@ export default function CookieBanner() {
         <div className="flex gap-3 shrink-0">
           <button
             onClick={decline}
-            className="px-4 py-2 text-sm font-medium text-gray-600 hover:text-gray-800 rounded-lg transition-colors cursor-pointer"
+            className="px-4 py-2 text-sm font-medium text-muted hover:text-foreground rounded-lg transition-colors cursor-pointer"
           >
             Decline
           </button>
           <button
             onClick={accept}
-            className="px-5 py-2 text-sm font-medium text-white bg-brand-500 hover:bg-brand-600 rounded-lg shadow-button transition-colors cursor-pointer"
+            className="px-5 py-2 text-sm font-medium text-white bg-accent/100 hover:bg-brand-600 rounded-lg shadow-button transition-colors cursor-pointer"
           >
             Accept
           </button>

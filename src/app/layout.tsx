@@ -1,27 +1,15 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Script from "next/script";
-import { IBM_Plex_Sans, Newsreader, JetBrains_Mono } from "next/font/google";
+import { Geist, IBM_Plex_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import CookieBanner from "@/components/CookieBanner";
 import PostHogPageView from "@/components/PostHogPageView";
 import { PHProvider } from "./providers";
 import { defaultOgImage, defaultTwitterImages } from "@/lib/seo";
 
-const ibmPlexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  variable: "--font-body",
-  display: "swap",
-  weight: ["400", "500"],
-});
-
-const newsreader = Newsreader({
-  subsets: ["latin"],
-  variable: "--font-display",
-  display: "swap",
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-});
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist", display: "swap" });
+const logoFont = IBM_Plex_Sans({ subsets: ["latin"], variable: "--font-logo", display: "swap", weight: ["400", "500"] });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -63,7 +51,7 @@ export default function RootLayout({
   children: ReactNode;
 }) {
   return (
-    <html lang="en" className={`${ibmPlexSans.variable} ${newsreader.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" className={`${geist.variable} ${logoFont.variable} ${jetbrainsMono.variable}`}>
       <head>
         <script
           type="application/ld+json"
