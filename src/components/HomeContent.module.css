@@ -1,0 +1,26 @@
+/* Homepage-only color rhythm, drawn from the VoxAura hero palette.
+   Static backgrounds keep the live animation exclusive to the hero. */
+.band {
+  --color-muted: #c4cce0;
+  border-block: 1px solid #a5b4fc30;
+}
+
+.band.indigo {
+  background: radial-gradient(ellipse at 90% 15%, #4f46e54d, transparent 65%),
+    linear-gradient(120deg, #17183e, #24215b 55%, #123749);
+}
+
+.band.blue {
+  background: radial-gradient(ellipse at 10% 80%, #06b6d42b, transparent 65%),
+    linear-gradient(120deg, #102e45, #183653 50%, #242052);
+}
+
+.band.cyan {
+  background: radial-gradient(ellipse at 85% 20%, #06b6d42e, transparent 65%),
+    linear-gradient(120deg, #15213f, #123b4b 55%, #17364b);
+}
+
+.band.finale {
+  background: radial-gradient(ellipse at 85% 35%, #06b6d438, transparent 60%),
+    linear-gradient(120deg, #211b54, #242964 50%, #124353);
+}

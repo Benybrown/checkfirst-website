@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import styles from "./HomeContent.module.css";
 import { type ReactNode } from "react";
 import { useLanguage } from "./LanguageProvider";
 import { translations, type Lang } from "@/lib/homepage-translations";
@@ -266,7 +267,7 @@ export function HomeContent() {
       </section>
 
       {/* ─────────────────────── METRICS BAR ─────────────────────── */}
-      <section className="border-y border-line bg-canvas-raised px-6 py-10 lg:px-8 lg:py-14">
+      <section className={`${styles.band} ${styles.cyan} px-6 py-10 lg:px-8 lg:py-14`}>
         <div className="mx-auto grid max-w-[1200px] divide-ink-200 gap-0 sm:grid-cols-2 sm:divide-x lg:grid-cols-4">
           {metrics.map((m, idx) => (
             <div
@@ -374,7 +375,7 @@ export function HomeContent() {
       </Section>
 
       {/* ─────────────────────── CORE CAPABILITIES — BRAND MOMENT (DARK) ─────────────────────── */}
-      <Section dark>
+      <Section dark className={`${styles.band} ${styles.indigo}`}>
         <div className="mb-14 grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-end">
           <div>
             <span className="eyebrow eyebrow-dark mb-6">
@@ -458,7 +459,7 @@ export function HomeContent() {
       </Section>
 
       {/* ─────────────────────── HOW IT WORKS ─────────────────────── */}
-      <Section id="how-it-works" className="bg-canvas-raised">
+      <Section id="how-it-works" className={`${styles.band} ${styles.blue}`}>
         <SectionHeader
           tag={t(tx.howItWorks.tag, lang)}
           title={t(tx.howItWorks.title, lang)}
@@ -507,7 +508,7 @@ export function HomeContent() {
       </Section>
 
       {/* ─────────────────────── PRICING TEASER ─────────────────────── */}
-      <Section className="bg-canvas-raised">
+      <Section className={`${styles.band} ${styles.indigo}`}>
         <SectionHeader
           tag={t(tx.pricing.tag, lang)}
           title={t(tx.pricing.title, lang)}
@@ -611,7 +612,7 @@ export function HomeContent() {
       </Section>
 
       {/* ─────────────────────── CANONICAL RESOURCES ─────────────────────── */}
-      <Section className="bg-canvas-raised">
+      <Section className={`${styles.band} ${styles.cyan}`}>
         <SectionHeader
           tag="Learn more"
           title="Keep building your vendor-risk evidence plan"
@@ -669,7 +670,7 @@ export function HomeContent() {
       </Section>
 
       {/* ─────────────────────── FINAL CTA ─────────────────────── */}
-      <Section dark>
+      <Section dark className={`${styles.band} ${styles.finale}`}>
         <div className="mx-auto max-w-3xl text-center">
           <span className="eyebrow eyebrow-dark mb-6 justify-center">
             Get started

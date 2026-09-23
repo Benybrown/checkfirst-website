@@ -1,0 +1,112 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/soc-2-vendor-risk",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/iso-27001-supplier-risk",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/vanta-vendor-risk-alternative",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/drata-vendor-risk-alternative",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/assessments",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/tprm-software",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/ai-engine",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/managed-tprm",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/pricing",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/about",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/contact",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/privacy",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/terms",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/ar",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/consultant",
+    "status": 200,
+    "issues": {}
+  },
+  {
+    "path": "/ar/about",
+    "status": 404,
+    "issues": {}
+  },
+  {
+    "path": "/ar/ai-engine",
+    "status": 404,
+    "issues": {}
+  },
+  {
+    "path": "/ar/assessments",
+    "status": 404,
+    "issues": {}
+  },
+  {
+    "path": "/ar/contact",
+    "status": 404,
+    "issues": {}
+  },
+  {
+    "path": "/ar/managed-tprm",
+    "status": 404,
+    "issues": {}
+  },
+  {
+    "path": "/ar/pricing",
+    "status": 404,
+    "issues": {}
+  }
+]
