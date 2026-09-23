@@ -97,3 +97,8 @@ body.archive .ast-archive-description {
 .entry-content th {background:#24215b;color:#fff}
 .ast-separate-container .ast-article-single {background:#030712}
 @media(max-width:544px){.single .entry-header{padding:24px 18px}body.archive .ast-archive-description{padding:28px 20px!important}}
+
+/* The shared CheckFirst navigation replaces Astra's duplicated mobile branding. */
+body #page > #masthead {display:none!important}
+body #page > h1.page-title {width:calc(100% - 64px);box-sizing:border-box}
+@media(max-width:544px){body #page > h1.page-title{width:calc(100% - 40px)}}
