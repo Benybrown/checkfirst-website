@@ -2,11 +2,11 @@
 /**
  * Plugin Name: CheckFirst VoxAura presentation
  * Description: Versioned presentation layer for the WordPress source and FlowSEO static exports.
- * Version: 1.0.0
+ * Version: 1.1.0
  */
 if (!defined('ABSPATH')) { exit; }
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_style('checkfirst-voxaura', plugins_url('checkfirst-voxaura/theme.css', __FILE__), array(), null);
+    wp_enqueue_style('checkfirst-voxaura', plugins_url('checkfirst-voxaura/theme-sections.css', __FILE__), array(), null);
 }, 100);
 // Use established public-site paths; the exporter preserves relative navigation.
 add_action('astra_header_after', function () {
