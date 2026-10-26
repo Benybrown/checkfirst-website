@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Preserve the existing Pages article-consolidation redirects.
+      {"source": "/blog/the-ultimate-tprm-tools-list-enhancing-your-third-party-risk-management", "destination": "/blog/best-tprm-tool-2026/", "statusCode": 301},
+      {"source": "/blog/the-ultimate-tprm-tools-list-enhancing-your-third-party-risk-management/", "destination": "/blog/best-tprm-tool-2026/", "statusCode": 301},
+      {"source": "/blog/navigating-the-complexity-choosing-the-right-tprm-tools-for-your-organization", "destination": "/blog/best-tprm-tool-2026/", "statusCode": 301},
+      {"source": "/blog/navigating-the-complexity-choosing-the-right-tprm-tools-for-your-organization/", "destination": "/blog/best-tprm-tool-2026/", "statusCode": 301},
       // Canonical root aliases for blog sitemaps
       {
         source: "/sitemap_index.xml",
@@ -79,15 +84,15 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
-      { source: "/blog", destination: "https://checkfirst-blog-pages.pages.dev/blog/" },
-      { source: "/blog/", destination: "https://checkfirst-blog-pages.pages.dev/blog/" },
+      { source: "/blog", destination: "https://blog.checkfirst.io/blog/" },
+      { source: "/blog/", destination: "https://blog.checkfirst.io/blog/" },
       {
         source: "/blog/:path*/",
-        destination: "https://checkfirst-blog-pages.pages.dev/blog/:path*/",
+        destination: "https://blog.checkfirst.io/blog/:path*/",
       },
       {
         source: "/blog/:path*",
-        destination: "https://checkfirst-blog-pages.pages.dev/blog/:path*",
+        destination: "https://blog.checkfirst.io/blog/:path*",
       },
     ];
   },
